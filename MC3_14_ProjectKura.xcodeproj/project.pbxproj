@@ -39,6 +39,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5789034C24BF16F2006A0291 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5789034D24BF16FC006A0291 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5789034F24BF170C006A0291 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5789035224BF179F006A0291 /* Rumah */,
+				5789035124BF1797006A0291 /* Pantai */,
+				71907B7D24BDFCD5008E44CF /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5789035024BF1729006A0291 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				71907B7F24BDFCD5008E44CF /* Main.storyboard */,
+				71907B8724BDFCD7008E44CF /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		5789035124BF1797006A0291 /* Pantai */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pantai;
+			sourceTree = "<group>";
+		};
+		5789035224BF179F006A0291 /* Rumah */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Rumah;
+			sourceTree = "<group>";
+		};
 		71907B6D24BDFCD5008E44CF = {
 			isa = PBXGroup;
 			children = (
@@ -60,10 +107,11 @@
 			children = (
 				71907B7924BDFCD5008E44CF /* AppDelegate.swift */,
 				71907B7B24BDFCD5008E44CF /* SceneDelegate.swift */,
-				71907B7D24BDFCD5008E44CF /* ViewController.swift */,
-				71907B7F24BDFCD5008E44CF /* Main.storyboard */,
+				5789034C24BF16F2006A0291 /* Models */,
+				5789034D24BF16FC006A0291 /* Views */,
+				5789034F24BF170C006A0291 /* Controllers */,
+				5789035024BF1729006A0291 /* Storyboards */,
 				71907B8524BDFCD7008E44CF /* Assets.xcassets */,
-				71907B8724BDFCD7008E44CF /* LaunchScreen.storyboard */,
 				71907B8A24BDFCD7008E44CF /* Info.plist */,
 				71907B8224BDFCD5008E44CF /* MC3_14_ProjectKura.xcdatamodeld */,
 			);
