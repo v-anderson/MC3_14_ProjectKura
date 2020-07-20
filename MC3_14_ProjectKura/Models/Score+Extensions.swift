@@ -29,10 +29,41 @@ extension Score {
         }
     }
     
-    /// Saves score to core data
-    static func save(toContext viewContext: NSManagedObjectContext, score: Int) {
+    /// Checks if current date is already in entry and updates the data if needed
+    static func updateIfNeeded(fromContext viewContext: NSManagedObjectContext, score: Int) -> Bool {
         
-        // Create a score object
+        // Get today's beginning & end
+        let todayStart = Calendar.current.startOfDay(for: Date())
+        let todayEnd = Calendar.current.date(byAdding: .day, value: 1, to: todayStart)
+
+        // Set predicate as date being today's date
+        let fromPredicate = NSPredicate(format: "%@ >= %@", NSDate(), todayStart as NSDate)
+        let toPredicate = NSPredicate(format: "%@ < %@", NSDate(), todayEnd! as NSDate)
+        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
+        
+        let request = NSFetchRequest<Score>(entityName: "Score")
+        request.predicate = predicate
+        
+        do {
+            guard let result = try viewContext.fetch(request).first else { return false }
+            
+            result.score += Int32(score)
+            try viewContext.save()
+            
+            return true
+        } catch {
+            print("Failed to update entry: \(error)")
+            return false
+        }
+    }
+    
+    /// Saves score to core data
+    static func add(toContext viewContext: NSManagedObjectContext, score: Int) {
+        
+        // Returns immediately if there is an update
+        if updateIfNeeded(fromContext: viewContext, score: score) { return }
+        
+        // Create a new entry
         let scoreObject = Score(context: viewContext)
         scoreObject.score = Int32(score)
         scoreObject.date = Date()
@@ -102,13 +133,9 @@ extension UIViewController {
 extension Score {
     
     /// Calculates the amount of days after the current date
-    private static func daysAfter(date: Date) -> TimeInterval {
-        // Calculates the seconds since the given date
-        let seconds = Date().timeIntervalSince(date)
-        let minutes = seconds / 60
-        let hours = minutes / 60
-        let days = hours / 24
-        return days
+    private static func daysAfter(date: Date) -> Int {
+        let components = Calendar.current.dateComponents([.day], from: date, to: Date())
+        return components.day!
     }
 }
 
