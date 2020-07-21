@@ -11,6 +11,8 @@
 		710F595124C595870037185E /* Rumah.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710F595024C595870037185E /* Rumah.storyboard */; };
 		710F595324C5F6380037185E /* RumahViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710F595224C5F6380037185E /* RumahViewController.swift */; };
 		710F595524C601790037185E /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710F595424C601790037185E /* Gradient.swift */; };
+		713A7BFC24C6DAFB006049FB /* Pantai.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 713A7BFB24C6DAFB006049FB /* Pantai.storyboard */; };
+		713A7BFE24C723B7006049FB /* PantaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713A7BFD24C723B7006049FB /* PantaiViewController.swift */; };
 		71907B7A24BDFCD5008E44CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71907B7924BDFCD5008E44CF /* AppDelegate.swift */; };
 		71907B7C24BDFCD5008E44CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71907B7B24BDFCD5008E44CF /* SceneDelegate.swift */; };
 		71907B8424BDFCD5008E44CF /* MC3_14_ProjectKura.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71907B8224BDFCD5008E44CF /* MC3_14_ProjectKura.xcdatamodeld */; };
@@ -23,6 +25,8 @@
 		710F595024C595870037185E /* Rumah.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Rumah.storyboard; sourceTree = "<group>"; };
 		710F595224C5F6380037185E /* RumahViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RumahViewController.swift; path = MC3_14_ProjectKura/Storyboards/RumahViewController.swift; sourceTree = SOURCE_ROOT; };
 		710F595424C601790037185E /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Gradient.swift; path = MC3_14_ProjectKura/Storyboards/Gradient.swift; sourceTree = SOURCE_ROOT; };
+		713A7BFB24C6DAFB006049FB /* Pantai.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pantai.storyboard; sourceTree = "<group>"; };
+		713A7BFD24C723B7006049FB /* PantaiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PantaiViewController.swift; path = MC3_14_ProjectKura/Storyboards/PantaiViewController.swift; sourceTree = SOURCE_ROOT; };
 		71907B7624BDFCD5008E44CF /* MC3_14_ProjectKura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3_14_ProjectKura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71907B7924BDFCD5008E44CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71907B7B24BDFCD5008E44CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +77,7 @@
 			children = (
 				71907B8724BDFCD7008E44CF /* LaunchScreen.storyboard */,
 				710F595024C595870037185E /* Rumah.storyboard */,
+				713A7BFB24C6DAFB006049FB /* Pantai.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -80,6 +85,7 @@
 		5789035124BF1797006A0291 /* Pantai */ = {
 			isa = PBXGroup;
 			children = (
+				713A7BFD24C723B7006049FB /* PantaiViewController.swift */,
 			);
 			path = Pantai;
 			sourceTree = "<group>";
@@ -183,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				710F595124C595870037185E /* Rumah.storyboard in Resources */,
+				713A7BFC24C6DAFB006049FB /* Pantai.storyboard in Resources */,
 				71907B8924BDFCD7008E44CF /* LaunchScreen.storyboard in Resources */,
 				71907B8624BDFCD7008E44CF /* Assets.xcassets in Resources */,
 			);
@@ -198,6 +205,7 @@
 				57CAC68D24C590DF00062191 /* Score+Extensions.swift in Sources */,
 				71907B7A24BDFCD5008E44CF /* AppDelegate.swift in Sources */,
 				71907B7C24BDFCD5008E44CF /* SceneDelegate.swift in Sources */,
+				713A7BFE24C723B7006049FB /* PantaiViewController.swift in Sources */,
 				71907B8424BDFCD5008E44CF /* MC3_14_ProjectKura.xcdatamodeld in Sources */,
 				710F595324C5F6380037185E /* RumahViewController.swift in Sources */,
 				710F595524C601790037185E /* Gradient.swift in Sources */,

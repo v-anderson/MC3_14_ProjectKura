@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pv7-hg-C7s">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pantai View Controller-->
+        <scene sceneID="CSG-cd-NWm">
+            <objects>
+                <viewController id="pv7-hg-C7s" customClass="PantaiViewController" customModule="MC3_14_ProjectKura" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zkV-J7-CsJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Daratan Pagi Bersih" translatesAutoresizingMaskIntoConstraints="NO" id="AV4-KC-kOS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Laut Kedua Pagi Bersih" translatesAutoresizingMaskIntoConstraints="NO" id="JHe-k8-zEW">
+                                <rect key="frame" x="-140.5" y="493" width="654" height="383"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JHe-k8-zEW" secondAttribute="height" multiplier="654:383" id="otf-Qc-sL7"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Laut Ikan Pagi Bersih" translatesAutoresizingMaskIntoConstraints="NO" id="BjX-vd-22D">
+                                <rect key="frame" x="-56" y="497.5" width="609" height="349"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BjX-vd-22D" secondAttribute="height" multiplier="609:349" id="iIO-Xo-N4J"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bawah laut Pagi Bersih" translatesAutoresizingMaskIntoConstraints="NO" id="Lfx-Mm-oyX">
+                                <rect key="frame" x="-1" y="683" width="416" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Lfx-Mm-oyX" secondAttribute="height" multiplier="208:107" id="1KQ-Rt-ASD"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Jelly Fish" translatesAutoresizingMaskIntoConstraints="NO" id="lzq-nO-JEX">
+                                <rect key="frame" x="50.5" y="541" width="66" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lzq-nO-JEX" secondAttribute="height" multiplier="66:84" id="Qaa-Vr-YEX"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Small jelly fish" translatesAutoresizingMaskIntoConstraints="NO" id="R9K-wd-DGZ">
+                                <rect key="frame" x="174" y="406" width="53" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="R9K-wd-DGZ" secondAttribute="height" multiplier="53:68" id="sPA-pU-bn6"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fishh-1" translatesAutoresizingMaskIntoConstraints="NO" id="32T-LI-RU1">
+                                <rect key="frame" x="82.5" y="747" width="83" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="32T-LI-RU1" secondAttribute="height" multiplier="83:74" id="qlb-Gd-LBq"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fish" translatesAutoresizingMaskIntoConstraints="NO" id="Chm-fL-kO4">
+                                <rect key="frame" x="51.5" y="657.5" width="83" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Chm-fL-kO4" secondAttribute="height" multiplier="83:74" id="67E-1T-yGB"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fishh" translatesAutoresizingMaskIntoConstraints="NO" id="NDP-X5-W79">
+                                <rect key="frame" x="206.5" y="590.5" width="84" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NDP-X5-W79" secondAttribute="height" multiplier="84:73" id="Jt1-Bo-MRH"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fish-1" translatesAutoresizingMaskIntoConstraints="NO" id="Y7n-ym-rfP">
+                                <rect key="frame" x="268.5" y="680.5" width="84" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Y7n-ym-rfP" secondAttribute="height" multiplier="84:73" id="VcO-dx-HlE"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="NDP-X5-W79" firstAttribute="centerX" secondItem="zkV-J7-CsJ" secondAttribute="centerX" multiplier="1.2" id="0sW-KE-iIl"/>
+                            <constraint firstItem="32T-LI-RU1" firstAttribute="centerY" secondItem="zkV-J7-CsJ" secondAttribute="centerY" multiplier="1.75" id="1t8-kU-k0W"/>
+                            <constraint firstItem="AV4-KC-kOS" firstAttribute="leading" secondItem="zkV-J7-CsJ" secondAttribute="leading" id="2yd-XT-dQK"/>
+                            <constraint firstItem="Chm-fL-kO4" firstAttribute="centerY" secondItem="zkV-J7-CsJ" secondAttribute="centerY" multiplier="1.55" id="3Qr-0C-Nzw"/>
+                            <constraint firstItem="BjX-vd-22D" firstAttribute="centerY" secondItem="zkV-J7-CsJ" secondAttribute="centerY" multiplier="1.5" id="49R-A6-Qtd"/>
+                            <constraint firstItem="JHe-k8-zEW" firstAttribute="height" secondItem="AV4-KC-kOS" secondAttribute="height" multiplier="0.427455" id="4GH-5b-fTU"/>
+                            <constraint firstItem="AV4-KC-kOS" firstAttribute="trailing" secondItem="zkV-J7-CsJ" secondAttribute="trailing" id="7aK-rA-M0b"/>
+                            <constraint firstAttribute="trailing" secondItem="Lfx-Mm-oyX" secondAttribute="trailing" constant="-1" id="95K-Uf-3Us"/>
+                            <constraint firstAttribute="bottom" secondItem="AV4-KC-kOS" secondAttribute="bottom" id="9bY-bo-62H"/>
+                            <constraint firstItem="R9K-wd-DGZ" firstAttribute="height" secondItem="AV4-KC-kOS" secondAttribute="height" multiplier="0.0948661" id="Coc-66-88G"/>
+                            <constraint firstItem="lzq-nO-JEX" firstAttribute="height" secondItem="AV4-KC-kOS" secondAttribute="height" multiplier="0.0613839" id="H4I-MC-73M"/>
+                            <constraint firstItem="Y7n-ym-rfP" firstAttribute="centerX" secondItem="zkV-J7-CsJ" secondAttribute="centerX" multiplier="1.5" id="Iz5-Fi-AS3"/>
+                            <constraint firstItem="R9K-wd-DGZ" firstAttribute="centerY" secondItem="zkV-J7-CsJ" secondAttribute="centerY" multiplier="1.3" id="JeL-WA-6yq"/>
+                            <constraint firstItem="JHe-k8-zEW" firstAttribute="centerY" secondItem="zkV-J7-CsJ" secondAttribute="centerY" multiplier="1.53" id="MPq-xL-WUj"/>
+                            <constraint firstItem="R9K-wd-DGZ" firstAttribute="centerX" secondItem="zkV-J7-CsJ" secondAttribute="centerX" multiplier="0.4" id="UGC-rC-Sps"/>
+                            <constraint firstItem="Lfx-Mm-oyX" firstAttribute="height" secondItem="AV4-KC-kOS" secondAttribute="height" multiplier="0.238839" id="UGX-uL-Uv6"/>
+                            <constraint firstItem="32T-LI-RU1" firstAttribute="height" secondItem="AV4-KC-kOS" secondAttribute="height" multiplier="0.0825893" id="Y6y-8Y-bYn"/>
+                            <constraint firstItem="JHe-k8-zEW" firstAttribute="centerX" secondItem="zkV-J7-CsJ" secondAttribute="centerX" multiplier="0.9" id="YYX-bH-3jb"/>
+                            <constraint firstItem="Y7n-ym-rfP" firstAttribute="centerY" secondItem="zkV-J7-CsJ" secondAttribute="centerY" multiplier="1.6" id="Ypd-rq-e1n"/>
+                            <constraint firstItem="BjX-vd-22D" firstAttribute="height" secondItem="AV4-KC-kOS" secondAttribute="height" multiplier="0.389509" id="ZVO-A3-1tD"/>
+                            <constraint firstItem="lzq-nO-JEX" firstAttribute="centerX" secondItem="zkV-J7-CsJ" secondAttribute="centerX" multiplier="0.2" id="br5-A3-RMf"/>
+                            <constraint firstAttribute="bottom" secondItem="Lfx-Mm-oyX" secondAttribute="bottom" constant="-1" id="d4U-O7-wKs"/>
+                            <constraint firstItem="Chm-fL-kO4" firstAttribute="height" secondItem="AV4-KC-kOS" secondAttribute="height" multiplier="0.0825893" id="hn7-Dr-MU9"/>
+                            <constraint firstItem="Y7n-ym-rfP" firstAttribute="height" secondItem="AV4-KC-kOS" secondAttribute="height" multiplier="0.0814732" id="i0y-VB-Uxl"/>
+                            <constraint firstItem="lzq-nO-JEX" firstAttribute="centerY" secondItem="zkV-J7-CsJ" secondAttribute="centerY" multiplier="1.3" id="mcl-yK-0vX"/>
+                            <constraint firstItem="NDP-X5-W79" firstAttribute="height" secondItem="AV4-KC-kOS" secondAttribute="height" multiplier="0.0814732" id="onz-CZ-A8S"/>
+                            <constraint firstItem="32T-LI-RU1" firstAttribute="centerX" secondItem="zkV-J7-CsJ" secondAttribute="centerX" multiplier="0.6" id="pbd-uf-A4i"/>
+                            <constraint firstItem="Chm-fL-kO4" firstAttribute="centerX" secondItem="zkV-J7-CsJ" secondAttribute="centerX" multiplier="0.45" id="sCD-Wj-3GS"/>
+                            <constraint firstItem="BjX-vd-22D" firstAttribute="centerX" secondItem="zkV-J7-CsJ" secondAttribute="centerX" multiplier="1.2" id="vjV-2i-fyj"/>
+                            <constraint firstItem="Lfx-Mm-oyX" firstAttribute="leading" secondItem="zkV-J7-CsJ" secondAttribute="leading" constant="-1" id="x8K-NM-Dye"/>
+                            <constraint firstItem="NDP-X5-W79" firstAttribute="centerY" secondItem="zkV-J7-CsJ" secondAttribute="centerY" multiplier="1.4" id="xfC-mS-628"/>
+                            <constraint firstItem="AV4-KC-kOS" firstAttribute="top" secondItem="zkV-J7-CsJ" secondAttribute="top" id="ysU-0A-siX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="f9a-EZ-Xhb"/>
+                    </view>
+                    <connections>
+                        <outlet property="pantaiBG" destination="AV4-KC-kOS" id="qtk-i3-mSE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oNC-GC-OLa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3054" y="-245"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Bawah laut Pagi Bersih" width="418" height="214"/>
+        <image name="Daratan Pagi Bersih" width="418" height="896"/>
+        <image name="Fish" width="73" height="69.5"/>
+        <image name="Fish-1" width="73" height="69.5"/>
+        <image name="Fishh" width="98" height="94"/>
+        <image name="Fishh-1" width="98" height="94"/>
+        <image name="Jelly Fish" width="44.5" height="55"/>
+        <image name="Laut Ikan Pagi Bersih" width="706.5" height="398"/>
+        <image name="Laut Kedua Pagi Bersih" width="684" height="395"/>
+        <image name="Small jelly fish" width="66.5" height="84"/>
+    </resources>
+</document>
