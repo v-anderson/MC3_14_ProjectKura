@@ -19,6 +19,10 @@ extension Score {
         // Create a request
         let request: NSFetchRequest<Score> = Score.fetchRequest()
         
+        // Create a sort descriptor
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        request.sortDescriptors = [sortDescriptor]
+        
         // Fetching the request
         do {
             let result = try viewContext.fetch(request)
@@ -29,11 +33,11 @@ extension Score {
         }
     }
     
-    /// Checks if current date is already in entry and updates the data if needed
-    static func updateIfNeeded(fromContext viewContext: NSManagedObjectContext, score: Int) -> Bool {
+    /// Fetch score for a specific date
+    static func fetch(fromContext viewContext: NSManagedObjectContext, forDate date: Date) -> Score? {
         
         // Get today's beginning & end
-        let todayStart = Calendar.current.startOfDay(for: Date())
+        let todayStart = Calendar.current.startOfDay(for: date)
         let todayEnd = Calendar.current.date(byAdding: .day, value: 1, to: todayStart)
 
         // Set predicate as date being today's date
@@ -45,8 +49,21 @@ extension Score {
         request.predicate = predicate
         
         do {
-            guard let result = try viewContext.fetch(request).first else { return false }
-            
+            guard let result = try viewContext.fetch(request).first else { return nil }
+            return result
+        } catch {
+            print("Failed to fetch score: \(error)")
+            return nil
+        }
+    }
+    
+    /// Checks if current date is already in entry and updates the data if needed
+    static func updateIfNeeded(fromContext viewContext: NSManagedObjectContext, score: Int) -> Bool {
+        
+        // Check if current date already exists in core data. If there is no result, returns false to continue create new entry
+        guard let result = fetch(fromContext: viewContext, forDate: Date()) else { return false }
+        
+        do {
             result.score += Int32(score)
             try viewContext.save()
             
@@ -100,8 +117,8 @@ extension Score {
             for score in scores {
                 if let date = score.date {
                     // Checks if score data is older than one month
-                    if daysAfter(date: date) >= 30 {
-                        print("Deleting data from a month ago: \(daysAfter(date: date))")
+                    if Date.daysAfter(date: date) >= 30 {
+                        print("Deleting data from a month ago: \(Date.daysAfter(date: date))")
                         
                         // Deleting the object from core data
                         viewContext.delete(score)
@@ -116,24 +133,12 @@ extension Score {
     }
 }
 
-// MARK: - UIViewController
-
-extension UIViewController {
-    
-    /// Returns the persistent container's view context
-    func getViewContext() -> NSManagedObjectContext {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        return appDelegate.persistentContainer.viewContext
-    }
-}
-
 // MARK: - Score dates
 
-extension Score {
+extension Date {
     
     /// Calculates the amount of days after the current date
-    private static func daysAfter(date: Date) -> Int {
+    static func daysAfter(date: Date) -> Int {
         let components = Calendar.current.dateComponents([.day], from: date, to: Date())
         return components.day!
     }
