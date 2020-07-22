@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Daratan Pagi Bersih" translatesAutoresizingMaskIntoConstraints="NO" id="AV4-KC-kOS">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Island Pagi Bersih" translatesAutoresizingMaskIntoConstraints="NO" id="AV4-KC-kOS">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Laut Kedua Pagi Bersih" translatesAutoresizingMaskIntoConstraints="NO" id="JHe-k8-zEW">
@@ -112,6 +112,7 @@
                         <outlet property="firstOrangeFish" destination="32T-LI-RU1" id="RFR-oK-aQA"/>
                         <outlet property="firstWave" destination="JHe-k8-zEW" id="VNc-r3-LTi"/>
                         <outlet property="jellyFish" destination="lzq-nO-JEX" id="Jp1-jC-irR"/>
+                        <outlet property="koral" destination="Lfx-Mm-oyX" id="7R8-xP-BwI"/>
                         <outlet property="pantaiBG" destination="AV4-KC-kOS" id="qtk-i3-mSE"/>
                         <outlet property="secondGrayFish" destination="Y7n-ym-rfP" id="RPh-WC-XAS"/>
                         <outlet property="secondOrangeFish" destination="NDP-X5-W79" id="4T6-72-7sF"/>
@@ -121,16 +122,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNC-GC-OLa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3054" y="-245"/>
+            <point key="canvasLocation" x="-3094" y="-281"/>
         </scene>
     </scenes>
     <resources>
         <image name="Bawah laut Pagi Bersih" width="418" height="214"/>
-        <image name="Daratan Pagi Bersih" width="418" height="896"/>
         <image name="Fish" width="73" height="69.5"/>
         <image name="Fish-1" width="73" height="69.5"/>
         <image name="Fishh" width="98" height="94"/>
         <image name="Fishh-1" width="98" height="94"/>
+        <image name="Island Pagi Bersih" width="418" height="896"/>
         <image name="Jelly Fish" width="44.5" height="55"/>
         <image name="Laut Ikan Pagi Bersih" width="706.5" height="398"/>
         <image name="Laut Kedua Pagi Bersih" width="684" height="395"/>

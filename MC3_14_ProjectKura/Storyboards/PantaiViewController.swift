@@ -21,11 +21,108 @@ class PantaiViewController: UIViewController {
     
     @IBOutlet weak var pantaiBG: UIImageView!
     
+    @IBOutlet weak var koral: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadAnimation()
-        
+
+        pagiKotorBanget()
+    }
+    
+    
+    func ikanHilang() {
+        jellyFish.isHidden = true
+        smallJellyFish.isHidden = true
+        firstOrangeFish.isHidden = true
+        firstGrayFish.isHidden = true
+        secondOrangeFish.isHidden = true
+        secondGrayFish.isHidden = true
+    }
+    
+    func ikanMuncul() {
+        jellyFish.isHidden = false
+        smallJellyFish.isHidden = false
+        firstOrangeFish.isHidden = false
+        firstGrayFish.isHidden = false
+        secondOrangeFish.isHidden = false
+        secondGrayFish.isHidden = false
+    }
+    
+    
+    func pagiKotor() {
+        firstWave.image = UIImage(named: "Laut Belakang Pagi Kotor")
+        secondWave.image = UIImage(named: "Laut Depan Pagi Kotor")
+        pantaiBG.image = UIImage(named: "Island Pagi Kotor")
+        koral.image = UIImage(named: "Dasar Laut Pagi Kotor")
+        ikanHilang()
+    }
+    
+    
+    func pagiBersih() {
+        firstWave.image = UIImage(named: "Laut Pagi Bersih")
+        secondWave.image = UIImage(named: "Laut Ikan Pagi Bersih")
+        pantaiBG.image = UIImage(named: "Island Pagi Bersih")
+        koral.image = UIImage(named: "Bawah laut Pagi Bersih")
+        ikanMuncul()
+    }
+    
+    func pagiKotorBanget() {
+        firstWave.image = UIImage(named: "Laut Belakang Pagi Kotor Banget")
+        secondWave.image = UIImage(named: "Laut Depan Pagi Kotor Banget")
+        pantaiBG.image = UIImage(named: "Island Pagi Kotor Banget")
+        koral.image = UIImage(named: "Dasar Laut Kotor Banget")
+        ikanHilang()
+    }
+    
+    
+    func malemBersih() {
+        firstWave.image = UIImage(named: "Laut Malem Bersih")
+        secondWave.image = UIImage(named: "Laut Ikan Malem Bersih")
+        pantaiBG.image = UIImage(named: "Island Malem Bersih")
+        koral.image = UIImage(named: "Bawah laut Pagi Bersih")
+        ikanMuncul()
+    }
+    
+    func malemKotor() {
+        firstWave.image = UIImage(named: "Laut Belakang Malem Kotor")
+        secondWave.image = UIImage(named: "Laut Depan Malem Kotor")
+        pantaiBG.image = UIImage(named: "Island Malem Kotor")
+        koral.image = UIImage(named: "Dasar Laut Pagi Kotor")
+        ikanHilang()
+    }
+    
+    func malemKotorBanget() {
+        firstWave.image = UIImage(named: "Laut Belakang Malem Kotor Banget")
+        secondWave.image = UIImage(named: "Laut Depan Malem Kotor Banget")
+        pantaiBG.image = UIImage(named: "Island Malem Kotor Banget")
+        koral.image = UIImage(named: "Dasar Laut Kotor Banget")
+        ikanHilang()
+    }
+    
+    func soreBersih() {
+        firstWave.image = UIImage(named: "Laut Sore Bersih")
+        secondWave.image = UIImage(named: "Laut Ikan Sore Bersih")
+        pantaiBG.image = UIImage(named: "Island Sore Bersih")
+        koral.image = UIImage(named: "Bawah laut Pagi Bersih")
+        ikanMuncul()
+    }
+    
+    func soreKotor() {
+        firstWave.image = UIImage(named: "Laut Belakang Sore Kotor")
+        secondWave.image = UIImage(named: "Laut Depan Sore Kotor")
+        pantaiBG.image = UIImage(named: "Island Sore Kotor")
+        koral.image = UIImage(named: "Dasar Laut Pagi Kotor")
+        ikanHilang()
+    }
+    
+    func soreKotorBanget() {
+        firstWave.image = UIImage(named: "Laut Belakang Sore Kotor Banget")
+        secondWave.image = UIImage(named: "Laut Depan Sore Kotor Banget")
+        pantaiBG.image = UIImage(named: "Island Sore Kotor Banget")
+        koral.image = UIImage(named: "Dasar Laut Kotor Banget")
+        ikanHilang()
     }
     
     override func viewWillAppear(_ animated: Bool) {

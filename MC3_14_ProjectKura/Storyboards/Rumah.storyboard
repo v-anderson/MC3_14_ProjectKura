@@ -93,10 +93,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="asset.JendelaPagi" width="188" height="193"/>
-        <image name="asset.KipasAngin" width="208" height="186"/>
-        <image name="asset.LampuMatiDefault" width="54" height="111"/>
-        <image name="asset.TandaSeru" width="56" height="61"/>
+        <image name="asset.JendelaPagi" width="187.5" height="193"/>
+        <image name="asset.KipasAngin" width="207.5" height="185.5"/>
+        <image name="asset.LampuMatiDefault" width="53.5" height="110.5"/>
+        <image name="asset.TandaSeru" width="56" height="60.5"/>
         <image name="asset.TasBelanja" width="141" height="114"/>
         <image name="bg.Ruangan" width="414" height="896"/>
     </resources>

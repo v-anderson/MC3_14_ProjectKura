@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "asset.LampuNyalaDefault@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "asset.LampuNyalaDefault@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
