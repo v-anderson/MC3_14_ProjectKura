@@ -25,6 +25,33 @@ class PantaiViewController: UIViewController {
         super.viewDidLoad()
         
         loadAnimation()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let scores = Score.fetchAll(fromContext: getViewContext())
+        scores.forEach { score in
+            print(score.score, score.date)
+        }
+        
+        setupBackgroundByScore()
+    }
+    
+    private func setupBackgroundByScore() {
+        if let score = calculateFinalScore() {
+            // Score not nil, saatnya update
+            print("Final score: \(score)")
+            
+            // Update last updated date to today
+            UserDefaults.standard.set(Date(), forKey: "last_updated")
+        } else {
+            // Belom saatnya update, pake score dari user defaults
+            let lastScore = UserDefaults.standard.object(forKey: "last_score")
+            print("Last score: \(lastScore)")
+            
+        }
     }
     
     private func loadAnimation() {

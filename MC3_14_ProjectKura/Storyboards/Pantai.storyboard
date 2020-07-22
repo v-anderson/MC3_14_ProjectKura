@@ -18,8 +18,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Daratan Pagi Bersih" translatesAutoresizingMaskIntoConstraints="NO" id="AV4-KC-kOS">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Laut Kedua Pagi Bersih" translatesAutoresizingMaskIntoConstraints="NO" id="JHe-k8-zEW">
-                                <rect key="frame" x="-140.5" y="493" width="654" height="383"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Laut Kedua Pagi Bersih" translatesAutoresizingMaskIntoConstraints="NO" id="JHe-k8-zEW">
+                                <rect key="frame" x="-140.5" y="494" width="654" height="383"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="JHe-k8-zEW" secondAttribute="height" multiplier="654:383" id="otf-Qc-sL7"/>
                                 </constraints>
@@ -32,18 +32,15 @@
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bawah laut Pagi Bersih" translatesAutoresizingMaskIntoConstraints="NO" id="Lfx-Mm-oyX">
                                 <rect key="frame" x="-1" y="683" width="416" height="214"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Lfx-Mm-oyX" secondAttribute="height" multiplier="208:107" id="1KQ-Rt-ASD"/>
-                                </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Jelly Fish" translatesAutoresizingMaskIntoConstraints="NO" id="lzq-nO-JEX">
-                                <rect key="frame" x="50.5" y="541" width="66" height="84"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jelly Fish" translatesAutoresizingMaskIntoConstraints="NO" id="lzq-nO-JEX">
+                                <rect key="frame" x="20" y="555" width="43" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lzq-nO-JEX" secondAttribute="height" multiplier="66:84" id="Qaa-Vr-YEX"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Small jelly fish" translatesAutoresizingMaskIntoConstraints="NO" id="R9K-wd-DGZ">
-                                <rect key="frame" x="174" y="406" width="53" height="68"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Small jelly fish" translatesAutoresizingMaskIntoConstraints="NO" id="R9K-wd-DGZ">
+                                <rect key="frame" x="49.5" y="540" width="66.5" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="R9K-wd-DGZ" secondAttribute="height" multiplier="53:68" id="sPA-pU-bn6"/>
                                 </constraints>

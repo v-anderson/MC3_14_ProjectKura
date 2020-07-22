@@ -36,13 +36,20 @@ extension Score {
     /// Fetch score for a specific date
     static func fetch(fromContext viewContext: NSManagedObjectContext, forDate date: Date) -> Score? {
         
+        // date : 2020-17-19 06:13:00
+        //  2020-17-19 00:00  <= date <= 2020-17-20
+        
         // Get today's beginning & end
         let todayStart = Calendar.current.startOfDay(for: date)
         let todayEnd = Calendar.current.date(byAdding: .day, value: 1, to: todayStart)
 
         // Set predicate as date being today's date
-        let fromPredicate = NSPredicate(format: "%@ >= %@", NSDate(), todayStart as NSDate)
-        let toPredicate = NSPredicate(format: "%@ < %@", NSDate(), todayEnd! as NSDate)
+        // select all
+        // where
+        // tanggal sekarang >= tanggal start
+        // dan tanggal sekarang <= tanggal end
+        let fromPredicate = NSPredicate(format: "date >= %@", todayStart as NSDate)
+        let toPredicate = NSPredicate(format: "date < %@", todayEnd! as NSDate)
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
         
         let request = NSFetchRequest<Score>(entityName: "Score")
@@ -78,13 +85,17 @@ extension Score {
     static func add(toContext viewContext: NSManagedObjectContext, score: Int) {
         
         // Returns immediately if there is an update
-        if updateIfNeeded(fromContext: viewContext, score: score) { return }
+//        if updateIfNeeded(fromContext: viewContext, score: score) { return }
         
         // Create a new entry
         let scoreObject = Score(context: viewContext)
         scoreObject.score = Int32(score)
         scoreObject.date = Date()
         
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyyy/MM/dd"
+//        scoreObject.date = formatter.date(from: "2020/7/19")
+    
         // Save the score object to core data
         do {
             try viewContext.save()
