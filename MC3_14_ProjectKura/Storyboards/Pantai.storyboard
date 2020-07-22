@@ -111,7 +111,15 @@
                         <viewLayoutGuide key="safeArea" id="f9a-EZ-Xhb"/>
                     </view>
                     <connections>
+                        <outlet property="firstGrayFish" destination="Chm-fL-kO4" id="2Nm-T8-gLr"/>
+                        <outlet property="firstOrangeFish" destination="32T-LI-RU1" id="RFR-oK-aQA"/>
+                        <outlet property="firstWave" destination="JHe-k8-zEW" id="VNc-r3-LTi"/>
+                        <outlet property="jellyFish" destination="lzq-nO-JEX" id="Jp1-jC-irR"/>
                         <outlet property="pantaiBG" destination="AV4-KC-kOS" id="qtk-i3-mSE"/>
+                        <outlet property="secondGrayFish" destination="Y7n-ym-rfP" id="RPh-WC-XAS"/>
+                        <outlet property="secondOrangeFish" destination="NDP-X5-W79" id="4T6-72-7sF"/>
+                        <outlet property="secondWave" destination="BjX-vd-22D" id="Ys2-nm-DRe"/>
+                        <outlet property="smallJellyFish" destination="R9K-wd-DGZ" id="rnB-qx-Rn1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNC-GC-OLa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
