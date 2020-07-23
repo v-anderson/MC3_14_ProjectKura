@@ -28,7 +28,7 @@
 		710F595224C5F6380037185E /* RumahViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RumahViewController.swift; path = MC3_14_ProjectKura/Storyboards/RumahViewController.swift; sourceTree = SOURCE_ROOT; };
 		710F595424C601790037185E /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Gradient.swift; path = MC3_14_ProjectKura/Storyboards/Gradient.swift; sourceTree = SOURCE_ROOT; };
 		713A7BFB24C6DAFB006049FB /* Pantai.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pantai.storyboard; sourceTree = "<group>"; };
-		713A7BFD24C723B7006049FB /* PantaiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PantaiViewController.swift; path = MC3_14_ProjectKura/Storyboards/PantaiViewController.swift; sourceTree = SOURCE_ROOT; };
+		713A7BFD24C723B7006049FB /* PantaiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PantaiViewController.swift; path = Pantai/PantaiViewController.swift; sourceTree = SOURCE_ROOT; };
 		71907B7624BDFCD5008E44CF /* MC3_14_ProjectKura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3_14_ProjectKura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71907B7924BDFCD5008E44CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71907B7B24BDFCD5008E44CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };

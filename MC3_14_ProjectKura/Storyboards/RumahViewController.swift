@@ -14,6 +14,8 @@ class RumahViewController: UIViewController {
     @IBOutlet weak var filter: UILabel!
     @IBOutlet weak var jendela: UIImageView!
     
+    @IBOutlet weak var lampu: UIImageView!
+    
     // notif center property
     let date = Date()
     var dateComponents = DateComponents()
@@ -21,12 +23,17 @@ class RumahViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        perubahanSore()
-
+        if isMorning() {
+            perubahanPagi()
+        } else if isAfternoon() {
+            perubahanSore()
+        } else { perubahanMalam() }
+        
     }
     
     
     private func perubahanPagi() {
+        
         //panggil function ini buat perubahan background waktu pagi
         filter.backgroundColor = UIColor.white.withAlphaComponent(0)
         jendela.image = UIImage(named: "asset.JendelaPagi")

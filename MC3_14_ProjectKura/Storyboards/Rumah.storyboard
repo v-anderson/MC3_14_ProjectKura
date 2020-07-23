@@ -30,12 +30,6 @@
                                     <constraint firstAttribute="width" secondItem="fL2-84-erP" secondAttribute="height" multiplier="188:179" id="C7y-qc-oVO"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset.LampuMatiDefault" translatesAutoresizingMaskIntoConstraints="NO" id="9nn-Y6-Q4g">
-                                <rect key="frame" x="15" y="146.5" width="53" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="9nn-Y6-Q4g" secondAttribute="height" multiplier="53:110" id="czU-aK-0G1"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHo-s7-JQN">
                                 <rect key="frame" x="0.0" y="-2" width="414" height="898"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -44,6 +38,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset.LampuMatiDefault" translatesAutoresizingMaskIntoConstraints="NO" id="9nn-Y6-Q4g">
+                                <rect key="frame" x="15" y="146.5" width="53" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9nn-Y6-Q4g" secondAttribute="height" multiplier="53:110" id="czU-aK-0G1"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wb7-Rv-KIG">
                                 <rect key="frame" x="137.5" y="552" width="56" height="61"/>
                                 <constraints>
@@ -85,6 +85,7 @@
                     <connections>
                         <outlet property="filter" destination="SHo-s7-JQN" id="Qhe-KD-9PS"/>
                         <outlet property="jendela" destination="fL2-84-erP" id="EvA-jB-AZg"/>
+                        <outlet property="lampu" destination="9nn-Y6-Q4g" id="a2i-rw-Imz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Klc-81-3Kf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
