@@ -181,13 +181,6 @@
                         <outlet property="fishShadow5" destination="scO-nh-C69" id="ZDT-EJ-UEd"/>
                         <outlet property="fishShadow6" destination="jrJ-zd-MNT" id="0Jj-N1-7A6"/>
                         <outlet property="fishShadow7" destination="A07-lr-fLX" id="5mG-Wr-ilU"/>
-                        <outlet property="ikanBayangan" destination="AxZ-vq-ywB" id="aQj-An-txO"/>
-                        <outlet property="ikanBayangan2" destination="Sus-Il-coM" id="vDc-96-1iO"/>
-                        <outlet property="ikanBayangan3" destination="0X5-ea-ozr" id="EHJ-Pw-Sld"/>
-                        <outlet property="ikanBayangan4" destination="Jhz-cy-w0D" id="QRk-kc-MQq"/>
-                        <outlet property="ikanBayangan5" destination="scO-nh-C69" id="qn1-Xz-C6O"/>
-                        <outlet property="ikanBayangan6" destination="jrJ-zd-MNT" id="oro-Ht-6AS"/>
-                        <outlet property="ikanBayangan7" destination="A07-lr-fLX" id="7dj-ce-hnT"/>
                         <outlet property="jellyFish" destination="lzq-nO-JEX" id="Jp1-jC-irR"/>
                         <outlet property="koral" destination="Lfx-Mm-oyX" id="7R8-xP-BwI"/>
                         <outlet property="pantaiBG" destination="AV4-KC-kOS" id="qtk-i3-mSE"/>

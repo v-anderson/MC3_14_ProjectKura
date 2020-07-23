@@ -82,9 +82,8 @@ extension UIViewController {
     func isNight() -> Bool {
         let now = Date()
         let eighteenToday = Calendar.current.date(bySettingHour: 18, minute: 0, second: 0, of: now)!
-        let sixToday = Calendar.current.date(bySettingHour: 5, minute: 59, second: 59, of: now)!
         
-        if now >= eighteenToday && now <= sixToday {
+        if now >= eighteenToday  {
             print("Time is between 18.00 - 5:59")
             return true
         }

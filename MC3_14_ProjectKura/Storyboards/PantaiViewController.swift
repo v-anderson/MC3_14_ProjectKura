@@ -12,12 +12,15 @@ class PantaiViewController: UIViewController {
 
     @IBOutlet weak var firstWave: UIImageView!
     @IBOutlet weak var secondWave: UIImageView!
+    
     @IBOutlet weak var jellyFish: UIImageView!
     @IBOutlet weak var smallJellyFish: UIImageView!
+    
     @IBOutlet weak var firstOrangeFish: UIImageView!
     @IBOutlet weak var firstGrayFish: UIImageView!
     @IBOutlet weak var secondOrangeFish: UIImageView!
     @IBOutlet weak var secondGrayFish: UIImageView!
+    
     @IBOutlet weak var fishShadow: UIImageView!
     @IBOutlet weak var fishShadow2: UIImageView!
     @IBOutlet weak var fishShadow3: UIImageView!
@@ -25,89 +28,82 @@ class PantaiViewController: UIViewController {
     @IBOutlet weak var fishShadow5: UIImageView!
     @IBOutlet weak var fishShadow6: UIImageView!
     @IBOutlet weak var fishShadow7: UIImageView!
-    
     @IBOutlet weak var pantaiBG: UIImageView!
-    
     @IBOutlet weak var koral: UIImageView!
-    
-    @IBOutlet weak var ikanBayangan: UIImageView!
-    
-    @IBOutlet weak var ikanBayangan2: UIImageView!
-    
-    
-    @IBOutlet weak var ikanBayangan3: UIImageView!
-    
-    @IBOutlet weak var ikanBayangan4: UIImageView!
-    
-    
-    @IBOutlet weak var ikanBayangan5: UIImageView!
-    
-    @IBOutlet weak var ikanBayangan6: UIImageView!
-    
-    @IBOutlet weak var ikanBayangan7: UIImageView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadAnimation()
 
-        soreNetral()
+        UserDefaults.standard.set(0, forKey: "last_score")
     }
     
-    
-    private func ikanHilang() {
-        jellyFish.isHidden = true
-        smallJellyFish.isHidden = true
-        firstOrangeFish.isHidden = true
-        firstGrayFish.isHidden = true
-        secondOrangeFish.isHidden = true
-        secondGrayFish.isHidden = true
-        ikanBayangan.isHidden = true
-        ikanBayangan2.isHidden = true
-        ikanBayangan3.isHidden = true
-        ikanBayangan4.isHidden = true
-        ikanBayangan5.isHidden = true
-        ikanBayangan6.isHidden = true
-        ikanBayangan7.isHidden = true
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let scores = Score.fetchAll(fromContext: getViewContext())
+        scores.forEach { score in
+            print(score.score, score.date)
+        }
+        
+        setupBackgroundByScore()
     }
     
-    func ikanMuncul() {
-        loadAnimationFish()
-        jellyFish.isHidden = false
-        smallJellyFish.isHidden = false
-        firstOrangeFish.isHidden = false
-        firstGrayFish.isHidden = false
-        secondOrangeFish.isHidden = false
-        secondGrayFish.isHidden = false
-        ikanBayangan.isHidden = false
-        ikanBayangan2.isHidden = false
-        ikanBayangan3.isHidden = false
-        ikanBayangan4.isHidden = false
-        ikanBayangan5.isHidden = false
-        ikanBayangan6.isHidden = false
-        ikanBayangan7.isHidden = false
+    /// Update background according current time
+    private func updateBackgroundWith (score: Int) {
+            if isMorning() {
+                if score <= 5 {
+                    pagiKotorBanget()
+                } else if score <= 10 {
+                    pagiKotor()
+                } else if score <= 15 {
+                    pagiNetral()
+                } else { pagiBersih() }
+            } else if isAfternoon() {
+                if score <= 5 {
+                    soreKotorBanget()
+                } else if score <= 10 {
+                    soreKotor()
+                } else if score <= 15 {
+                    soreNetral()
+                } else { soreBersih() }
+            } else {
+                if score <= 5 {
+                    malemKotorBanget()
+                } else if score <= 10 {
+                    malemKotor()
+                } else if score <= 15 {
+                    malemNetral()
+                } else { malemBersih() }
+            }
     }
     
-    private func ikanBayanganMuncul() {
-        loadAnimationFish()
-        ikanBayangan.isHidden = false
-        ikanBayangan2.isHidden = false
-        ikanBayangan3.isHidden = false
-        ikanBayangan4.isHidden = false
-        ikanBayangan5.isHidden = false
-        ikanBayangan6.isHidden = false
-        ikanBayangan7.isHidden = false
+    private func setupBackgroundByScore() {
+        if let score = calculateFinalScore() {
+            // Score not nil, saatnya update
+            print("Final score: \(score)")
+            
+            //cek masuk kategori mana
+            updateBackgroundWith(score: score)
+            
+            // Update last updated date to today
+            UserDefaults.standard.set(Date(), forKey: "last_updated")
+        } else {
+            // Belom saatnya update, pake score dari user defaults
+            guard let lastScore = UserDefaults.standard.object(forKey: "last_score") as? Int else { return }
+            print("Last score: \(lastScore)")
+            
+            updateBackgroundWith(score: lastScore)
+        }
     }
-    
-    private func ikanWarnaHidden() {
-        jellyFish.isHidden = true
-        smallJellyFish.isHidden = true
-        firstOrangeFish.isHidden = true
-        firstGrayFish.isHidden = true
-        secondOrangeFish.isHidden = true
-        secondGrayFish.isHidden = true
-    }
-    
+
+
+}
+
+// MARK: Perubahan Environment
+extension PantaiViewController {
     private func pagiNetral() {
         firstWave.image = UIImage(named: "Laut Belakang Pagi Netral")
         secondWave.image = UIImage(named: "Laut Depan Pagi Netral")
@@ -168,7 +164,7 @@ class PantaiViewController: UIViewController {
         ikanHilang()
     }
     
-    func malemKotorBanget() {
+    private func malemKotorBanget() {
         firstWave.image = UIImage(named: "Laut Belakang Malem Kotor Banget")
         secondWave.image = UIImage(named: "Laut Depan Malem Kotor Banget")
         pantaiBG.image = UIImage(named: "Island Malem Kotor Banget")
@@ -185,7 +181,7 @@ class PantaiViewController: UIViewController {
         koral.image = UIImage(named: "Bawah laut Pagi Bersih")
     }
     
-    func soreBersih() {
+    private func soreBersih() {
         firstWave.image = UIImage(named: "Laut Sore Bersih")
         secondWave.image = UIImage(named: "Laut Ikan Sore Bersih")
         pantaiBG.image = UIImage(named: "Island Sore Bersih")
@@ -193,7 +189,7 @@ class PantaiViewController: UIViewController {
         ikanMuncul()
     }
     
-    func soreKotor() {
+    private func soreKotor() {
         firstWave.image = UIImage(named: "Laut Belakang Sore Kotor")
         secondWave.image = UIImage(named: "Laut Depan Sore Kotor")
         pantaiBG.image = UIImage(named: "Island Sore Kotor")
@@ -208,33 +204,68 @@ class PantaiViewController: UIViewController {
         koral.image = UIImage(named: "Dasar Laut Kotor Banget")
         ikanHilang()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        let scores = Score.fetchAll(fromContext: getViewContext())
-        scores.forEach { score in
-            print(score.score, score.date)
-        }
-        
-        setupBackgroundByScore()
+}
+
+
+// MARK: function ikan
+extension PantaiViewController {
+    private func ikanHilang() {
+        jellyFish.isHidden = true
+        smallJellyFish.isHidden = true
+        firstOrangeFish.isHidden = true
+        firstGrayFish.isHidden = true
+        secondOrangeFish.isHidden = true
+        secondGrayFish.isHidden = true
+        fishShadow.isHidden = true
+        fishShadow2.isHidden = true
+        fishShadow3.isHidden = true
+        fishShadow4.isHidden = true
+        fishShadow5.isHidden = true
+        fishShadow6.isHidden = true
+        fishShadow7.isHidden = true
     }
     
-    private func setupBackgroundByScore() {
-        if let score = calculateFinalScore() {
-            // Score not nil, saatnya update
-            print("Final score: \(score)")
-            
-            // Update last updated date to today
-            UserDefaults.standard.set(Date(), forKey: "last_updated")
-        } else {
-            // Belom saatnya update, pake score dari user defaults
-            let lastScore = UserDefaults.standard.object(forKey: "last_score")
-            print("Last score: \(lastScore)")
-            
-        }
+    func ikanMuncul() {
+        loadAnimationFish()
+        jellyFish.isHidden = false
+        smallJellyFish.isHidden = false
+        firstOrangeFish.isHidden = false
+        firstGrayFish.isHidden = false
+        secondOrangeFish.isHidden = false
+        secondGrayFish.isHidden = false
+        fishShadow.isHidden = false
+        fishShadow2.isHidden = false
+        fishShadow3.isHidden = false
+        fishShadow4.isHidden = false
+        fishShadow5.isHidden = false
+        fishShadow6.isHidden = false
+        fishShadow7.isHidden = false
     }
     
+    private func ikanBayanganMuncul() {
+        loadAnimationFish()
+        fishShadow.isHidden = false
+        fishShadow2.isHidden = false
+        fishShadow3.isHidden = false
+        fishShadow4.isHidden = false
+        fishShadow5.isHidden = false
+        fishShadow6.isHidden = false
+        fishShadow7.isHidden = false
+    }
+    
+    private func ikanWarnaHidden() {
+        jellyFish.isHidden = true
+        smallJellyFish.isHidden = true
+        firstOrangeFish.isHidden = true
+        firstGrayFish.isHidden = true
+        secondOrangeFish.isHidden = true
+        secondGrayFish.isHidden = true
+    }
+}
+
+
+// MARK: Animation
+extension PantaiViewController {
     private func loadAnimation() {
         
         UIView.animate(withDuration: 3, delay: 0, options: [.autoreverse, .repeat], animations: {
@@ -304,7 +335,4 @@ class PantaiViewController: UIViewController {
             
         }, completion: nil)
     }
-    
-
-
 }
