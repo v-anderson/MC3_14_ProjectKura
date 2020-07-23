@@ -51,7 +51,7 @@ class PantaiViewController: UIViewController {
         
         loadAnimation()
 
-        ikanMuncul()
+        soreNetral()
     }
     
     
@@ -89,6 +89,7 @@ class PantaiViewController: UIViewController {
     }
     
     private func ikanBayanganMuncul() {
+        loadAnimationFish()
         ikanBayangan.isHidden = false
         ikanBayangan2.isHidden = false
         ikanBayangan3.isHidden = false
@@ -98,12 +99,22 @@ class PantaiViewController: UIViewController {
         ikanBayangan7.isHidden = false
     }
     
+    private func ikanWarnaHidden() {
+        jellyFish.isHidden = true
+        smallJellyFish.isHidden = true
+        firstOrangeFish.isHidden = true
+        firstGrayFish.isHidden = true
+        secondOrangeFish.isHidden = true
+        secondGrayFish.isHidden = true
+    }
+    
     private func pagiNetral() {
-        firstWave.image = UIImage(named: "Laut Pagi Netral")
+        firstWave.image = UIImage(named: "Laut Belakang Pagi Netral")
         secondWave.image = UIImage(named: "Laut Depan Pagi Netral")
         pantaiBG.image = UIImage(named: "Island Pagi Netral")
         koral.image = UIImage(named: "Bawah laut Pagi Bersih")
         ikanBayanganMuncul()
+        ikanWarnaHidden()
     }
     
     private func pagiKotor() {
@@ -132,6 +143,15 @@ class PantaiViewController: UIViewController {
     }
     
     
+    private func malemNetral() {
+        firstWave.image = UIImage(named: "Laut Belakang Malem Netral")
+        secondWave.image = UIImage(named: "Laut Depan Malem Netral")
+        pantaiBG.image = UIImage(named: "Island Malem Netral")
+        ikanBayanganMuncul()
+        ikanWarnaHidden()
+        koral.image = UIImage(named: "Bawah laut Pagi Bersih")
+    }
+    
     private func malemBersih() {
         firstWave.image = UIImage(named: "Laut Malem Bersih")
         secondWave.image = UIImage(named: "Laut Ikan Malem Bersih")
@@ -154,6 +174,15 @@ class PantaiViewController: UIViewController {
         pantaiBG.image = UIImage(named: "Island Malem Kotor Banget")
         koral.image = UIImage(named: "Dasar Laut Kotor Banget")
         ikanHilang()
+    }
+    
+    private func soreNetral() {
+        firstWave.image = UIImage(named: "Laut Belakang Sore Netral")
+        secondWave.image = UIImage(named: "Laut Depan Sore Netral")
+        pantaiBG.image = UIImage(named: "Island Sore Netral")
+        ikanBayanganMuncul()
+        ikanWarnaHidden()
+        koral.image = UIImage(named: "Bawah laut Pagi Bersih")
     }
     
     func soreBersih() {
