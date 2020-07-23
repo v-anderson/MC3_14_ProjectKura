@@ -85,7 +85,7 @@ extension Score {
     static func add(toContext viewContext: NSManagedObjectContext, score: Int) {
         
         // Returns immediately if there is an update
-//        if updateIfNeeded(fromContext: viewContext, score: score) { return }
+        if updateIfNeeded(fromContext: viewContext, score: score) { return }
         
         // Create a new entry
         let scoreObject = Score(context: viewContext)
