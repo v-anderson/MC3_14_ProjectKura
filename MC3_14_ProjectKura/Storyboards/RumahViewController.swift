@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import UserNotifications
 
 class RumahViewController: UIViewController {
 
     @IBOutlet weak var filter: UILabel!
     @IBOutlet weak var jendela: UIImageView!
     
+    // notif center property
+    let date = Date()
+    var dateComponents = DateComponents()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         perubahanPagi()
-
     }
     
     func perubahanPagi() {
@@ -37,8 +40,4 @@ class RumahViewController: UIViewController {
         filter.gradientMalam(view: filter)
         jendela.image = UIImage(named: "asset.JendelaMalam")
     }
-    
-    
-
-
 }
