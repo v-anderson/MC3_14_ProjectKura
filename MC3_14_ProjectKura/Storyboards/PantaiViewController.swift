@@ -23,12 +23,28 @@ class PantaiViewController: UIViewController {
     
     @IBOutlet weak var koral: UIImageView!
     
+    @IBOutlet weak var ikanBayangan: UIImageView!
+    
+    @IBOutlet weak var ikanBayangan2: UIImageView!
+    
+    
+    @IBOutlet weak var ikanBayangan3: UIImageView!
+    
+    @IBOutlet weak var ikanBayangan4: UIImageView!
+    
+    
+    @IBOutlet weak var ikanBayangan5: UIImageView!
+    
+    @IBOutlet weak var ikanBayangan6: UIImageView!
+    
+    @IBOutlet weak var ikanBayangan7: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadAnimation()
 
-        pagiKotorBanget()
+        pagiKotor()
     }
     
     
@@ -39,6 +55,13 @@ class PantaiViewController: UIViewController {
         firstGrayFish.isHidden = true
         secondOrangeFish.isHidden = true
         secondGrayFish.isHidden = true
+        ikanBayangan.isHidden = true
+        ikanBayangan2.isHidden = true
+        ikanBayangan3.isHidden = true
+        ikanBayangan4.isHidden = true
+        ikanBayangan5.isHidden = true
+        ikanBayangan6.isHidden = true
+        ikanBayangan7.isHidden = true
     }
     
     func ikanMuncul() {
@@ -48,6 +71,13 @@ class PantaiViewController: UIViewController {
         firstGrayFish.isHidden = false
         secondOrangeFish.isHidden = false
         secondGrayFish.isHidden = false
+        ikanBayangan.isHidden = false
+        ikanBayangan2.isHidden = false
+        ikanBayangan3.isHidden = false
+        ikanBayangan4.isHidden = false
+        ikanBayangan5.isHidden = false
+        ikanBayangan6.isHidden = false
+        ikanBayangan7.isHidden = false
     }
     
     
@@ -62,7 +92,7 @@ class PantaiViewController: UIViewController {
     
     func pagiBersih() {
         firstWave.image = UIImage(named: "Laut Pagi Bersih")
-        secondWave.image = UIImage(named: "Laut Ikan Pagi Bersih")
+        secondWave.image = UIImage(named: "Laut Depan Pagi Bersih")
         pantaiBG.image = UIImage(named: "Island Pagi Bersih")
         koral.image = UIImage(named: "Bawah laut Pagi Bersih")
         ikanMuncul()
