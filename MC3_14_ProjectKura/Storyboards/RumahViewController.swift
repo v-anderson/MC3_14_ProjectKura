@@ -16,23 +16,24 @@ class RumahViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        perubahanPagi()
+        perubahanSore()
 
     }
     
-    func perubahanPagi() {
+    
+    private func perubahanPagi() {
         //panggil function ini buat perubahan background waktu pagi
         filter.backgroundColor = UIColor.white.withAlphaComponent(0)
         jendela.image = UIImage(named: "asset.JendelaPagi")
     }
     
-    func perubahanSore() {
+    private func perubahanSore() {
         //panggil function ini buat perubahan background waktu sore
         filter.gradientSore(view: filter)
         jendela.image = UIImage(named: "asset.JendelaSore")
     }
     
-    func perubahanMalam() {
+    private func perubahanMalam() {
         //panggil function ini buat perubahan background waktu malam
         filter.gradientMalam(view: filter)
         jendela.image = UIImage(named: "asset.JendelaMalam")

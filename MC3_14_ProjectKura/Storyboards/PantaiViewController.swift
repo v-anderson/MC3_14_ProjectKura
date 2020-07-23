@@ -44,11 +44,15 @@ class PantaiViewController: UIViewController {
         
         loadAnimation()
 
+<<<<<<< Updated upstream
         pagiKotor()
+=======
+        pagiNetral()
+>>>>>>> Stashed changes
     }
     
     
-    func ikanHilang() {
+    private func ikanHilang() {
         jellyFish.isHidden = true
         smallJellyFish.isHidden = true
         firstOrangeFish.isHidden = true
@@ -64,7 +68,12 @@ class PantaiViewController: UIViewController {
         ikanBayangan7.isHidden = true
     }
     
+<<<<<<< Updated upstream
     func ikanMuncul() {
+=======
+    private func ikanMuncul() {
+        loadAnimationFish()
+>>>>>>> Stashed changes
         jellyFish.isHidden = false
         smallJellyFish.isHidden = false
         firstOrangeFish.isHidden = false
@@ -80,8 +89,25 @@ class PantaiViewController: UIViewController {
         ikanBayangan7.isHidden = false
     }
     
+    private func ikanBayanganMuncul() {
+        ikanBayangan.isHidden = false
+        ikanBayangan2.isHidden = false
+        ikanBayangan3.isHidden = false
+        ikanBayangan4.isHidden = false
+        ikanBayangan5.isHidden = false
+        ikanBayangan6.isHidden = false
+        ikanBayangan7.isHidden = false
+    }
     
-    func pagiKotor() {
+    private func pagiNetral() {
+        firstWave.image = UIImage(named: "Laut Pagi Netral")
+        secondWave.image = UIImage(named: "Laut Depan Pagi Netral")
+        pantaiBG.image = UIImage(named: "Island Pagi Netral")
+        koral.image = UIImage(named: "Bawah laut Pagi Bersih")
+        ikanBayanganMuncul()
+    }
+    
+    private func pagiKotor() {
         firstWave.image = UIImage(named: "Laut Belakang Pagi Kotor")
         secondWave.image = UIImage(named: "Laut Depan Pagi Kotor")
         pantaiBG.image = UIImage(named: "Island Pagi Kotor")
@@ -90,7 +116,7 @@ class PantaiViewController: UIViewController {
     }
     
     
-    func pagiBersih() {
+    private func pagiBersih() {
         firstWave.image = UIImage(named: "Laut Pagi Bersih")
         secondWave.image = UIImage(named: "Laut Depan Pagi Bersih")
         pantaiBG.image = UIImage(named: "Island Pagi Bersih")
@@ -98,7 +124,7 @@ class PantaiViewController: UIViewController {
         ikanMuncul()
     }
     
-    func pagiKotorBanget() {
+    private func pagiKotorBanget() {
         firstWave.image = UIImage(named: "Laut Belakang Pagi Kotor Banget")
         secondWave.image = UIImage(named: "Laut Depan Pagi Kotor Banget")
         pantaiBG.image = UIImage(named: "Island Pagi Kotor Banget")
@@ -107,7 +133,7 @@ class PantaiViewController: UIViewController {
     }
     
     
-    func malemBersih() {
+    private func malemBersih() {
         firstWave.image = UIImage(named: "Laut Malem Bersih")
         secondWave.image = UIImage(named: "Laut Ikan Malem Bersih")
         pantaiBG.image = UIImage(named: "Island Malem Bersih")
@@ -115,7 +141,7 @@ class PantaiViewController: UIViewController {
         ikanMuncul()
     }
     
-    func malemKotor() {
+    private func malemKotor() {
         firstWave.image = UIImage(named: "Laut Belakang Malem Kotor")
         secondWave.image = UIImage(named: "Laut Depan Malem Kotor")
         pantaiBG.image = UIImage(named: "Island Malem Kotor")
@@ -147,7 +173,7 @@ class PantaiViewController: UIViewController {
         ikanHilang()
     }
     
-    func soreKotorBanget() {
+    private func soreKotorBanget() {
         firstWave.image = UIImage(named: "Laut Belakang Sore Kotor Banget")
         secondWave.image = UIImage(named: "Laut Depan Sore Kotor Banget")
         pantaiBG.image = UIImage(named: "Island Sore Kotor Banget")
