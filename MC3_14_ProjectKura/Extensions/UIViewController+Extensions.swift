@@ -51,4 +51,43 @@ extension UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
     }
+    
+    /// Returns true if current time is between 06.00 - 14:59
+    func isMorning() -> Bool {
+        let now = Date()
+        let sixToday = Calendar.current.date(bySettingHour: 6, minute: 0, second: 0, of: now)!
+        let fifteenToday = Calendar.current.date(bySettingHour: 14, minute: 59, second: 59, of: now)!
+        
+        if now >= sixToday && now <= fifteenToday {
+            print("Time is between 6.00 - 14.59")
+            return true
+        }
+        return false
+    }
+    
+    /// Returns true if current time is between 15:00 - 17:59
+    func isAfternoon() -> Bool {
+        let now = Date()
+        let fifteenToday = Calendar.current.date(bySettingHour: 15, minute: 0, second: 0, of: now)!
+        let eighteenToday = Calendar.current.date(bySettingHour: 17, minute: 59, second: 59, of: now)!
+        
+        if now >= fifteenToday && now <= eighteenToday {
+            print("Time is between 15.00 - 17.59")
+            return true
+        }
+        return false
+    }
+    
+    /// Returns true if current time is between 18.00 - 05.59
+    func isNight() -> Bool {
+        let now = Date()
+        let eighteenToday = Calendar.current.date(bySettingHour: 18, minute: 0, second: 0, of: now)!
+        let sixToday = Calendar.current.date(bySettingHour: 5, minute: 59, second: 59, of: now)!
+        
+        if now >= eighteenToday && now <= sixToday {
+            print("Time is between 18.00 - 5:59")
+            return true
+        }
+        return false
+    }
 }
