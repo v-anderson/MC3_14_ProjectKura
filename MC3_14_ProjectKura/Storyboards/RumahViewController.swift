@@ -38,7 +38,7 @@ class RumahViewController: UIViewController {
     // notif center property
     let date = Date()
     var dateComponents = DateComponents()
-    let randomQuestions = Int.random(in: 0..<3)
+    var randomQuestions: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +63,7 @@ class RumahViewController: UIViewController {
     //ini yang tombol tanda seru untuk munculin pertanyaan makanan
     @IBAction func tanyaMakanan(_ sender: Any) {
         tandaSeru.isHidden = true
+        randomQuestions = Int.random(in: 0..<3)
         foodQuestion()
     }
     
@@ -73,9 +74,12 @@ class RumahViewController: UIViewController {
         factImage.alpha = 0
         factTitle.alpha = 0
         factBody.alpha = 0
-        foodQuestions.text = questions[randomQuestions].questions
-        btnOption1.setTitle(questions[randomQuestions].answers[0], for: .normal)
-        btnOption2.setTitle(questions[randomQuestions].answers[1], for: .normal)
+        if let index = randomQuestions{
+            foodQuestions.text = questions[index].questions
+            btnOption1.setTitle(questions[index].answers[0], for: .normal)
+            btnOption2.setTitle(questions[index].answers[1], for: .normal)
+        }
+        
     }
     
     func fact() {
@@ -84,13 +88,15 @@ class RumahViewController: UIViewController {
         factBody.alpha = 1
         foodQuestions.alpha = 0
         btnStack.isHidden = true
-        factImage.image = UIImage(named: questions[randomQuestions].imageName)
-        factTitle.text = questions[randomQuestions].factTitle
-        factBody.text = questions[randomQuestions].factBody
-        lblTapToDismiss.alpha = 1
-        factBody.adjustsFontSizeToFitWidth = true
-        factBody.numberOfLines = 0
         
+        if let index = randomQuestions {
+            factImage.image = UIImage(named: questions[index].imageName)
+            factTitle.text = questions[index].factTitle
+            factBody.text = questions[index].factBody
+            lblTapToDismiss.alpha = 1
+            factBody.adjustsFontSizeToFitWidth = true
+            factBody.numberOfLines = 0
+        }
     }
     
     @IBAction func btn1(_ sender: Any) {
@@ -100,8 +106,6 @@ class RumahViewController: UIViewController {
     @IBAction func btn2(_ sender: Any) {
         fact()
     }
-    
-    
     
     //ini tombol tanda seru untuk munculin pertanyaan listrik
     @IBAction func tanyaListrik(_ sender: Any) {
