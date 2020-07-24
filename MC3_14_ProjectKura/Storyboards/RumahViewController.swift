@@ -27,6 +27,8 @@ class RumahViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       print(date)
+        //2020-07-24 09:46:25 +0000
         if isMorning() {
             perubahanPagi()
         } else if isAfternoon() {
@@ -37,14 +39,15 @@ class RumahViewController: UIViewController {
     
     //ini yang tombol tanda seru untuk munculin pertanyaan makanan
     @IBAction func tanyaMakanan(_ sender: Any) {
-        
         tandaSeru.isHidden = true
+        
     }
     
     
     //ini tombol tanda seru untuk munculin pertanyaan listrik
     @IBAction func tanyaListrik(_ sender: Any) {
         tandaSeru2.isHidden = true
+        UserDefaults.standard.set(Date(), forKey: "last_tappedListrik")
         
     }
     
@@ -52,6 +55,8 @@ class RumahViewController: UIViewController {
         //panggil function ini buat perubahan background waktu pagi
         filter.backgroundColor = UIColor.white.withAlphaComponent(0)
         jendela.image = UIImage(named: "asset.JendelaPagi")
+        
+        tandaSeru2.isHidden = false
         tandaSeru.isHidden = false
     }
     
@@ -60,6 +65,14 @@ class RumahViewController: UIViewController {
         filter.gradientSore(view: filter)
         jendela.image = UIImage(named: "asset.JendelaSore")
         tandaSeru.isHidden = false
+
+        guard let lastTappedListrik = UserDefaults.standard.object(forKey: "last_tappedListrik") as? Date else { return }
+        
+        let diff = Calendar.current.dateComponents([.day], from: lastTappedListrik, to: Date())
+        
+        if  diff.day == 0 {
+            tandaSeru2.isHidden = true
+        }
     }
     
     private func perubahanMalam() {
@@ -67,5 +80,13 @@ class RumahViewController: UIViewController {
         filter.gradientMalam(view: filter)
         jendela.image = UIImage(named: "asset.JendelaMalam")
         tandaSeru.isHidden = false
+        
+        guard let lastTappedListrik = UserDefaults.standard.object(forKey: "last_tappedListrik") as? Date else { return }
+        
+        let diff = Calendar.current.dateComponents([.day], from: lastTappedListrik, to: Date())
+        
+        if  diff.day == 0 {
+            tandaSeru2.isHidden = true
+        }
     }
 }
