@@ -37,7 +37,7 @@ class PantaiViewController: UIViewController {
         
         loadAnimation()
 
-        UserDefaults.standard.set(0, forKey: "last_score")
+        UserDefaults.standard.set(20, forKey: "last_score")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,8 +98,6 @@ class PantaiViewController: UIViewController {
             updateBackgroundWith(score: lastScore)
         }
     }
-
-
 }
 
 // MARK: Perubahan Environment

@@ -50,6 +50,9 @@
                                     <constraint firstAttribute="width" secondItem="wb7-Rv-KIG" secondAttribute="height" multiplier="56:61" id="GYg-3J-Lg3"/>
                                 </constraints>
                                 <state key="normal" image="asset.TandaSeru"/>
+                                <connections>
+                                    <action selector="tanyaMakanan:" destination="ZxY-bL-AeJ" eventType="touchUpInside" id="lHY-tt-vQm"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset.TasBelanja" translatesAutoresizingMaskIntoConstraints="NO" id="Fix-g2-7aa">
                                 <rect key="frame" x="102.5" y="251" width="105.5" height="89.5"/>
@@ -57,6 +60,16 @@
                                     <constraint firstAttribute="width" secondItem="Fix-g2-7aa" secondAttribute="height" multiplier="121:103" id="PWU-kB-KxI"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWo-s9-g8o">
+                                <rect key="frame" x="13.5" y="260.5" width="56" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YWo-s9-g8o" secondAttribute="height" multiplier="56:61" id="ZgJ-6P-QOl"/>
+                                </constraints>
+                                <state key="normal" image="asset.TandaSeruAtas"/>
+                                <connections>
+                                    <action selector="tanyaListrik:" destination="ZxY-bL-AeJ" eventType="touchUpInside" id="o2e-kf-mIV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -65,9 +78,12 @@
                             <constraint firstItem="9nn-Y6-Q4g" firstAttribute="centerX" secondItem="fUa-ev-uHk" secondAttribute="centerX" multiplier="0.2" id="5we-uB-e3a"/>
                             <constraint firstItem="aHM-IP-Sgi" firstAttribute="centerX" secondItem="fUa-ev-uHk" secondAttribute="centerX" multiplier="0.8" id="9He-hY-VbQ"/>
                             <constraint firstItem="fL2-84-erP" firstAttribute="centerX" secondItem="fUa-ev-uHk" secondAttribute="centerX" multiplier="1.7" id="D2T-pz-yHC"/>
+                            <constraint firstItem="YWo-s9-g8o" firstAttribute="height" secondItem="zk3-sL-6bR" secondAttribute="height" multiplier="0.0680804" id="Eka-b9-5jN"/>
                             <constraint firstItem="zk3-sL-6bR" firstAttribute="top" secondItem="fUa-ev-uHk" secondAttribute="top" id="JPy-V5-Oj3"/>
+                            <constraint firstItem="YWo-s9-g8o" firstAttribute="centerY" secondItem="fUa-ev-uHk" secondAttribute="centerY" multiplier="0.65" id="LFb-gu-2MX"/>
                             <constraint firstItem="wb7-Rv-KIG" firstAttribute="centerX" secondItem="fUa-ev-uHk" secondAttribute="centerX" multiplier="0.8" id="Pbh-Ql-X7O"/>
                             <constraint firstItem="9nn-Y6-Q4g" firstAttribute="height" secondItem="zk3-sL-6bR" secondAttribute="height" multiplier="0.122768" id="U94-SW-Jc3"/>
+                            <constraint firstItem="YWo-s9-g8o" firstAttribute="centerX" secondItem="fUa-ev-uHk" secondAttribute="centerX" multiplier="0.2" id="Vrj-Dt-25e"/>
                             <constraint firstAttribute="bottom" secondItem="zk3-sL-6bR" secondAttribute="bottom" id="dAp-WT-jn1"/>
                             <constraint firstItem="fL2-84-erP" firstAttribute="height" secondItem="zk3-sL-6bR" secondAttribute="height" multiplier="0.23" id="eTj-d0-9W2"/>
                             <constraint firstItem="Fix-g2-7aa" firstAttribute="centerY" secondItem="fUa-ev-uHk" secondAttribute="centerY" multiplier="0.66" id="fgq-3m-SGu"/>
@@ -86,6 +102,8 @@
                         <outlet property="filter" destination="SHo-s7-JQN" id="Qhe-KD-9PS"/>
                         <outlet property="jendela" destination="fL2-84-erP" id="EvA-jB-AZg"/>
                         <outlet property="lampu" destination="9nn-Y6-Q4g" id="a2i-rw-Imz"/>
+                        <outlet property="tandaSeru" destination="wb7-Rv-KIG" id="C3u-Pn-Yyj"/>
+                        <outlet property="tandaSeru2" destination="YWo-s9-g8o" id="bJU-Lh-agw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Klc-81-3Kf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -98,6 +116,7 @@
         <image name="asset.KipasAngin" width="207.5" height="185.5"/>
         <image name="asset.LampuMatiDefault" width="53.5" height="110.5"/>
         <image name="asset.TandaSeru" width="56" height="60.5"/>
+        <image name="asset.TandaSeruAtas" width="56" height="60.5"/>
         <image name="asset.TasBelanja" width="141" height="114"/>
         <image name="bg.Ruangan" width="414" height="896"/>
     </resources>
