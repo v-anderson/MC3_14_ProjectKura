@@ -20,26 +20,88 @@ class RumahViewController: UIViewController {
     
     @IBOutlet weak var lampu: UIImageView!
     
+    // FOOD QUESTIONS
+    @IBOutlet weak var backgroundDimmer: UIView!
+    @IBOutlet weak var viewPopUpBox: UIView!
+    @IBOutlet weak var viewContents: UIView!
+    @IBOutlet weak var factImage: UIImageView!
+    @IBOutlet weak var foodQuestions: UILabel!
+    @IBOutlet weak var factTitle: UILabel!
+    @IBOutlet weak var factBody: UILabel!
+    @IBOutlet weak var btnOption1: UIButton!
+    @IBOutlet weak var btnOption2: UIButton!
+    @IBOutlet weak var popUpBox: UIImageView!
+    @IBOutlet weak var lblTapToDismiss: UILabel!
+    @IBOutlet weak var btnStack: UIStackView!
+    
+    
     // notif center property
     let date = Date()
     var dateComponents = DateComponents()
+    let randomQuestions = Int.random(in: 0..<3)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        initialViewAlpha()
         if isMorning() {
             perubahanPagi()
-        } else if isAfternoon() {
+        }
+        else if isAfternoon() {
             perubahanSore()
-        } else { perubahanMalam() }
+        }
+        else {
+            perubahanMalam()
+        }
         
+    }
+    
+    func initialViewAlpha() {
+        backgroundDimmer.alpha = 0
+        viewPopUpBox.isHidden = true
     }
     
     //ini yang tombol tanda seru untuk munculin pertanyaan makanan
     @IBAction func tanyaMakanan(_ sender: Any) {
         
         tandaSeru.isHidden = true
+        foodQuestion()
     }
+    
+    func foodQuestion() {
+        backgroundDimmer.alpha = 0.5
+        viewPopUpBox.isHidden = false
+        lblTapToDismiss.alpha = 0
+        factImage.alpha = 0
+        factTitle.alpha = 0
+        factBody.alpha = 0
+        foodQuestions.text = questions[randomQuestions].questions
+        btnOption1.setTitle(questions[randomQuestions].answers[0], for: .normal)
+        btnOption2.setTitle(questions[randomQuestions].answers[1], for: .normal)
+    }
+    
+    func fact() {
+        factImage.alpha = 1
+        factTitle.alpha = 1
+        factBody.alpha = 1
+        foodQuestions.alpha = 0
+        btnStack.isHidden = true
+        factImage.image = UIImage(named: questions[randomQuestions].imageName)
+        factTitle.text = questions[randomQuestions].factTitle
+        factBody.text = questions[randomQuestions].factBody
+        lblTapToDismiss.alpha = 1
+        factBody.adjustsFontSizeToFitWidth = true
+        factBody.numberOfLines = 0
+        
+    }
+    
+    @IBAction func btn1(_ sender: Any) {
+        fact()
+    }
+    
+    @IBAction func btn2(_ sender: Any) {
+        fact()
+    }
+    
     
     
     //ini tombol tanda seru untuk munculin pertanyaan listrik
