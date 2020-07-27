@@ -53,6 +53,14 @@ class RumahViewController: UIViewController {
             perubahanMalam()
         }
         
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonDidTap)))
+    }
+    
+    @objc func buttonDidTap() {
+        let rumahStoryboard = UIStoryboard(name: "Pantai", bundle: nil)
+        guard let destinationVC = rumahStoryboard.instantiateViewController(identifier: "PantaiViewController") as? PantaiViewController else { return }
+        destinationVC.modalPresentationStyle = .fullScreen
+        present(destinationVC, animated: true, completion: nil)
     }
     
     func initialViewAlpha() {

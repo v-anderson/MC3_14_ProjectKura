@@ -10,7 +10,7 @@
         <!--Pantai View Controller-->
         <scene sceneID="CSG-cd-NWm">
             <objects>
-                <viewController id="pv7-hg-C7s" customClass="PantaiViewController" customModule="MC3_14_ProjectKura" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PantaiViewController" id="pv7-hg-C7s" customClass="PantaiViewController" customModule="MC3_14_ProjectKura" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zkV-J7-CsJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

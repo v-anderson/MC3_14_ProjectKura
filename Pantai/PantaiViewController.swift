@@ -38,6 +38,8 @@ class PantaiViewController: UIViewController {
         loadAnimation()
 
         UserDefaults.standard.set(20, forKey: "last_score")
+        
+        transitioningDelegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -332,5 +334,18 @@ extension PantaiViewController {
             
             
         }, completion: nil)
+    }
+}
+
+// MARK: - Transitioning Delegate
+
+extension PantaiViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return FadeAnimation(animationDuration: 1.5, animationType: .present)
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return FadeAnimation(animationDuration: 1.5, animationType: .dismiss)
     }
 }
