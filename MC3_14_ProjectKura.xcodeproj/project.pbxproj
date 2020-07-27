@@ -20,7 +20,10 @@
 		71907B8424BDFCD5008E44CF /* MC3_14_ProjectKura.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71907B8224BDFCD5008E44CF /* MC3_14_ProjectKura.xcdatamodeld */; };
 		71907B8624BDFCD7008E44CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71907B8524BDFCD7008E44CF /* Assets.xcassets */; };
 		71907B8924BDFCD7008E44CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71907B8724BDFCD7008E44CF /* LaunchScreen.storyboard */; };
+		CB0DABDB24CECA1200AD2DAF /* UIButton + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0DABDA24CECA1200AD2DAF /* UIButton + Extensions.swift */; };
 		CBB173CB24CAD1680090B742 /* FoodQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB173CA24CAD1680090B742 /* FoodQuestions.swift */; };
+		CBC4A83724CEC61700B3F5DC /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBC4A82C24CEC61700B3F5DC /* Rubik-Regular.ttf */; };
+		CBC4A83D24CEC6C400B3F5DC /* FredokaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBC4A83B24CEC6C400B3F5DC /* FredokaOne-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +42,10 @@
 		71907B8524BDFCD7008E44CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71907B8824BDFCD7008E44CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71907B8A24BDFCD7008E44CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB0DABDA24CECA1200AD2DAF /* UIButton + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extensions.swift"; sourceTree = "<group>"; };
 		CBB173CA24CAD1680090B742 /* FoodQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodQuestions.swift; sourceTree = "<group>"; };
+		CBC4A82C24CEC61700B3F5DC /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		CBC4A83B24CEC6C400B3F5DC /* FredokaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FredokaOne-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				572ABDC624C6D75D00481B86 /* UIViewController+Extensions.swift */,
+				CB0DABDA24CECA1200AD2DAF /* UIButton + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -140,6 +147,7 @@
 		71907B7824BDFCD5008E44CF /* MC3_14_ProjectKura */ = {
 			isa = PBXGroup;
 			children = (
+				CBC4A82124CEC5EB00B3F5DC /* Fonts */,
 				71907B7924BDFCD5008E44CF /* AppDelegate.swift */,
 				71907B7B24BDFCD5008E44CF /* SceneDelegate.swift */,
 				57777DEF24CACA6C00C3F342 /* Helper */,
@@ -153,6 +161,31 @@
 				71907B8224BDFCD5008E44CF /* MC3_14_ProjectKura.xcdatamodeld */,
 			);
 			path = MC3_14_ProjectKura;
+			sourceTree = "<group>";
+		};
+		CBC4A82124CEC5EB00B3F5DC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CBC4A83924CEC6C400B3F5DC /* Fredoka_One */,
+				CBC4A82224CEC61700B3F5DC /* Rubik */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CBC4A82224CEC61700B3F5DC /* Rubik */ = {
+			isa = PBXGroup;
+			children = (
+				CBC4A82C24CEC61700B3F5DC /* Rubik-Regular.ttf */,
+			);
+			path = Rubik;
+			sourceTree = "<group>";
+		};
+		CBC4A83924CEC6C400B3F5DC /* Fredoka_One */ = {
+			isa = PBXGroup;
+			children = (
+				CBC4A83B24CEC6C400B3F5DC /* FredokaOne-Regular.ttf */,
+			);
+			path = Fredoka_One;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,7 +247,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				710F595124C595870037185E /* Rumah.storyboard in Resources */,
+				CBC4A83724CEC61700B3F5DC /* Rubik-Regular.ttf in Resources */,
 				713A7BFC24C6DAFB006049FB /* Pantai.storyboard in Resources */,
+				CBC4A83D24CEC6C400B3F5DC /* FredokaOne-Regular.ttf in Resources */,
 				71907B8924BDFCD7008E44CF /* LaunchScreen.storyboard in Resources */,
 				71907B8624BDFCD7008E44CF /* Assets.xcassets in Resources */,
 			);
@@ -227,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB0DABDB24CECA1200AD2DAF /* UIButton + Extensions.swift in Sources */,
 				57CAC68D24C590DF00062191 /* Score+Extensions.swift in Sources */,
 				57777DF124CACA7F00C3F342 /* FadeAnimation.swift in Sources */,
 				71907B7A24BDFCD5008E44CF /* AppDelegate.swift in Sources */,
