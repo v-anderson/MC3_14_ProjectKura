@@ -22,8 +22,12 @@ class RumahViewController: UIViewController {
     
     // FOOD QUESTIONS
     @IBOutlet weak var backgroundDimmer: UIView!
+    // VIEW
     @IBOutlet weak var viewPopUpBox: UIView!
     @IBOutlet weak var viewContents: UIView!
+    @IBOutlet weak var viewHeaders: UIView!
+    @IBOutlet weak var viewBody: UIView!
+    
     @IBOutlet weak var factImage: UIImageView!
     @IBOutlet weak var foodQuestions: UILabel!
     @IBOutlet weak var factTitle: UILabel!
@@ -68,12 +72,21 @@ class RumahViewController: UIViewController {
     }
     
     func foodQuestion() {
-        backgroundDimmer.alpha = 0.5
         viewPopUpBox.isHidden = false
-        lblTapToDismiss.alpha = 0
-        factImage.alpha = 0
-        factTitle.alpha = 0
-        factBody.alpha = 0
+        viewPopUpBox.alpha = 0
+        viewPopUpBox.transform = CGAffineTransform(scaleX: 0, y: 0)
+        UIView.animate(withDuration: 0.3) {
+            self.viewPopUpBox.transform = CGAffineTransform.identity
+            self.backgroundDimmer.alpha = 0.5
+            self.viewPopUpBox.alpha = 1
+            self.lblTapToDismiss.alpha = 0
+            self.factImage.alpha = 0
+            self.factTitle.alpha = 0
+            self.factBody.alpha = 0
+        }
+        
+        foodQuestions.numberOfLines = 0
+        foodQuestions.adjustsFontSizeToFitWidth = true
         if let index = randomQuestions{
             foodQuestions.text = questions[index].questions
             btnOption1.setTitle(questions[index].answers[0], for: .normal)
@@ -97,6 +110,7 @@ class RumahViewController: UIViewController {
             factBody.adjustsFontSizeToFitWidth = true
             factBody.numberOfLines = 0
         }
+        addTapGesture()
     }
     
     @IBAction func btn1(_ sender: Any) {
@@ -106,6 +120,25 @@ class RumahViewController: UIViewController {
     @IBAction func btn2(_ sender: Any) {
         fact()
     }
+    
+    func addTapGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapToDismiss))
+        viewPopUpBox.addGestureRecognizer(tap)
+    }
+    
+    @objc func tapToDismiss() {
+        print("test")
+        viewPopUpBox.transform = CGAffineTransform.identity
+        UIView.animate(withDuration: 0.3, animations: {
+            self.viewPopUpBox.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+            self.backgroundDimmer.alpha = 0
+        }) { (_) in
+            self.viewPopUpBox.isHidden = true
+            self.viewPopUpBox.gestureRecognizers?.removeAll()
+        }
+    }
+    
+    
     
     //ini tombol tanda seru untuk munculin pertanyaan listrik
     @IBAction func tanyaListrik(_ sender: Any) {

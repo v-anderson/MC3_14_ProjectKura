@@ -26,8 +26,8 @@ let questions = [
                  imageName: "foodFact1"),
     
     FoodQuestion(questions: "Did you takeaway your food for lunch?",
-                 factTitle: "Hand washing dishes can use up to 50% more water than a water-saving energy-efficient dishwasher.",
-                 factBody: "Make sure you use the dishwater when it's fully load. If you do wash dishes in the sink, fill up your sink first. Don’t let the water run constantly down the drain.",
+                 factTitle: "If you buy food from outside, try not to ask for non-reusable cutlery (straws, spoon, etc.)",
+                 factBody: "Single use plastic cutlery does not get recycled because they are too light-weight and too contaminated. Maybe you think, “It’s just one fork,” but multiplied by millions upon millions, those plastic utensils are terrible for the environment!",
                  answers: ["No, I didn't", "Yes, I did"],
                  goodAnswer: 0,
                  imageName: "foodFact2"),
