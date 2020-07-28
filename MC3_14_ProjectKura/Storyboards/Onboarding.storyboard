@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Axt-ch-vm7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sv3-ae-uHv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,6 +7,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="2JW-1O-LxA">
+            <objects>
+                <viewController id="sv3-ae-uHv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sa9-eS-lxE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="LA1-vu-Dc1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rip-Tl-DQh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5240" y="-336"/>
+        </scene>
         <!--Cafe View Controller-->
         <scene sceneID="uVD-9V-9Hh">
             <objects>
@@ -309,6 +324,31 @@
                                     <constraint firstAttribute="width" secondItem="zXV-3F-oPV" secondAttribute="height" multiplier="51:28" id="I1D-dI-PEx"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nsb-5C-NWu">
+                                <rect key="frame" x="14" y="929.5" width="386" height="266.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Kura Text Box" translatesAutoresizingMaskIntoConstraints="NO" id="3Vd-h5-Czw">
+                                        <rect key="frame" x="0.0" y="0.0" width="386" height="266.5"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TaF-n5-2ja">
+                                        <rect key="frame" x="23" y="134" width="341" height="93"/>
+                                        <string key="text">Me and my family have a job to take care of the beach. We always protect the beaches. We will also go to another beach and help the turtles in there to take care of the beaches. </string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="3Vd-h5-Czw" secondAttribute="trailing" id="18i-ko-YLg"/>
+                                    <constraint firstItem="TaF-n5-2ja" firstAttribute="width" secondItem="nsb-5C-NWu" secondAttribute="width" multiplier="0.867876" constant="6" id="2VH-b7-YlG"/>
+                                    <constraint firstAttribute="bottom" secondItem="3Vd-h5-Czw" secondAttribute="bottom" id="2ew-Pj-57V"/>
+                                    <constraint firstItem="TaF-n5-2ja" firstAttribute="height" secondItem="nsb-5C-NWu" secondAttribute="height" multiplier="0.348968" id="AOJ-u6-CLd"/>
+                                    <constraint firstItem="3Vd-h5-Czw" firstAttribute="leading" secondItem="nsb-5C-NWu" secondAttribute="leading" id="ubs-Cc-Pk6"/>
+                                    <constraint firstItem="TaF-n5-2ja" firstAttribute="centerY" secondItem="nsb-5C-NWu" secondAttribute="centerY" constant="47.25" id="wH7-us-25L"/>
+                                    <constraint firstItem="3Vd-h5-Czw" firstAttribute="top" secondItem="nsb-5C-NWu" secondAttribute="top" id="x5i-fY-T8n"/>
+                                    <constraint firstItem="TaF-n5-2ja" firstAttribute="centerX" secondItem="nsb-5C-NWu" secondAttribute="centerX" constant="0.5" id="xiF-vf-bYj"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -342,9 +382,11 @@
                             <constraint firstItem="tdA-mS-VOH" firstAttribute="centerY" secondItem="l5Q-8J-vdL" secondAttribute="centerY" multiplier="1.3" id="XPe-Ay-lWJ"/>
                             <constraint firstItem="J3T-CD-uHd" firstAttribute="height" secondItem="BXh-DY-I08" secondAttribute="height" multiplier="0.0652902" id="YiG-Xp-hDh"/>
                             <constraint firstItem="zXV-3F-oPV" firstAttribute="centerX" secondItem="l5Q-8J-vdL" secondAttribute="centerX" multiplier="0.2" id="bLB-oV-qfC"/>
+                            <constraint firstAttribute="bottom" secondItem="nsb-5C-NWu" secondAttribute="bottom" constant="-300" id="bNk-q5-L0D"/>
                             <constraint firstItem="9eW-5J-el3" firstAttribute="centerX" secondItem="l5Q-8J-vdL" secondAttribute="centerX" multiplier="0.45" id="cx0-Xr-TbF"/>
                             <constraint firstItem="tdA-mS-VOH" firstAttribute="height" secondItem="BXh-DY-I08" secondAttribute="height" multiplier="0.0948661" id="dBk-Q9-f07"/>
                             <constraint firstItem="EwI-vU-zDw" firstAttribute="centerX" secondItem="l5Q-8J-vdL" secondAttribute="centerX" multiplier="1.7" id="dLB-1v-htY"/>
+                            <constraint firstItem="nsb-5C-NWu" firstAttribute="width" secondItem="BXh-DY-I08" secondAttribute="width" multiplier="0.932367" id="ejD-Eo-G16"/>
                             <constraint firstItem="BXh-DY-I08" firstAttribute="leading" secondItem="l5Q-8J-vdL" secondAttribute="leading" id="fHR-Jd-nM2"/>
                             <constraint firstItem="uOX-2w-Huv" firstAttribute="centerY" secondItem="l5Q-8J-vdL" secondAttribute="centerY" multiplier="1.6" id="fW2-UX-z1w"/>
                             <constraint firstItem="508-bg-ivL" firstAttribute="centerY" secondItem="l5Q-8J-vdL" secondAttribute="centerY" multiplier="1.53" id="grd-Mk-K83"/>
@@ -362,6 +404,8 @@
                             <constraint firstItem="8SM-oM-T7j" firstAttribute="height" secondItem="BXh-DY-I08" secondAttribute="height" multiplier="0.0825893" id="qGj-oQ-fD9"/>
                             <constraint firstItem="0jc-e9-nVz" firstAttribute="height" secondItem="BXh-DY-I08" secondAttribute="height" multiplier="0.0613839" id="qIE-J7-Bwl"/>
                             <constraint firstItem="0jc-e9-nVz" firstAttribute="centerX" secondItem="l5Q-8J-vdL" secondAttribute="centerX" multiplier="0.2" id="sm9-A2-ocm"/>
+                            <constraint firstItem="nsb-5C-NWu" firstAttribute="height" secondItem="BXh-DY-I08" secondAttribute="height" multiplier="0.297545" id="t3f-eJ-Ogq"/>
+                            <constraint firstItem="nsb-5C-NWu" firstAttribute="centerX" secondItem="l5Q-8J-vdL" secondAttribute="centerX" id="upe-HS-dpX"/>
                             <constraint firstItem="mem-Q9-PM1" firstAttribute="height" secondItem="BXh-DY-I08" secondAttribute="height" multiplier="0.03125" id="usk-Oe-pPz"/>
                             <constraint firstItem="uOX-2w-Huv" firstAttribute="centerX" secondItem="l5Q-8J-vdL" secondAttribute="centerX" multiplier="1.5" id="xZu-oX-48W"/>
                             <constraint firstAttribute="trailing" secondItem="4Od-xf-HFF" secondAttribute="trailing" constant="-1" id="yC4-pK-EO0"/>
@@ -381,6 +425,8 @@
                         <outlet property="fishShadow7" destination="zXV-3F-oPV" id="AfM-Em-fQE"/>
                         <outlet property="jellyFish" destination="0jc-e9-nVz" id="CYt-eG-oQx"/>
                         <outlet property="koral" destination="4Od-xf-HFF" id="DdP-eT-Ras"/>
+                        <outlet property="kuraChatBox" destination="TaF-n5-2ja" id="x58-kJ-5sn"/>
+                        <outlet property="kuraChatBoxConstraint" destination="bNk-q5-L0D" id="t17-Qk-I3i"/>
                         <outlet property="pantaiBG" destination="BXh-DY-I08" id="Spo-NM-Alc"/>
                         <outlet property="secondGrayFish" destination="uOX-2w-Huv" id="VBh-i3-O8M"/>
                         <outlet property="secondOrangeFish" destination="Kep-Kl-hOo" id="AhQ-UB-7Zx"/>
@@ -390,7 +436,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aCD-UI-gAG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3465" y="-333"/>
+            <point key="canvasLocation" x="-3465.217391304348" y="-333.48214285714283"/>
         </scene>
     </scenes>
     <resources>
@@ -409,6 +455,7 @@
         <image name="Island Pagi Bersih" width="418" height="896"/>
         <image name="Jelly Fish" width="44.5" height="55"/>
         <image name="Kura Duduk" width="130" height="165.5"/>
+        <image name="Kura Text Box" width="410" height="221"/>
         <image name="Laut Depan Pagi Bersih" width="706.5" height="391"/>
         <image name="Laut Kedua Pagi Bersih" width="684" height="395"/>
         <image name="Small jelly fish" width="66.5" height="84"/>

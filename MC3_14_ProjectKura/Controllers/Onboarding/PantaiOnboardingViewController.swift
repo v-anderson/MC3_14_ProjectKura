@@ -31,13 +31,71 @@ class PantaiOnboardingViewController: UIViewController {
     @IBOutlet weak var pantaiBG: UIImageView!
     @IBOutlet weak var koral: UIImageView!
     
+    @IBOutlet var kuraChatBox: UILabel!
+    @IBOutlet var kuraChatBoxConstraint: NSLayoutConstraint!
+    
+    
+    let texts = [
+        "When I was a little turtle, the beach is so pretty and I can play with my friends, swimming, walking around the beach. It’s always been my favorite place.",
+        "Me and my family have a job to take care of the beach. We always protect the beaches. We will also go to another beach and help the turtles in there to take care of the beaches.",
+        "Now that I’ve become a grown up turtle, it’s time for me to take care of the beach alone. But it’s been overwhelming to do this alone"
+    ]
+    
+    var textIndex = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         transitioningDelegate = self
         
+        
         // Do any additional setup after loading the view.
+        kuraChatBox.text = texts[textIndex]
+        addTapGesture()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         loadAnimation()
+        showtextBox()
+    }
+    
+    @objc func tapped() {
+        textIndex += 1
+        
+        if textIndex >= texts.count {
+            dismiss(animated: true)
+        } else {
+            typingAnimation(text: texts[textIndex])
+        }
+        
+    }
+    
+    private func addTapGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func typingAnimation(text: String) {
+        view.gestureRecognizers?.removeAll()
+        kuraChatBox.text = ""
+        var index = 0.0
+        for letter in text {
+            kuraChatBox.text?.append(letter)
+            
+            RunLoop.current.run(until: Date() + 0.02)
+            
+            index += 1
+        }
+        addTapGesture()
+    }
+    
+    func showtextBox() {
+        kuraChatBoxConstraint.constant = 20
+        UIView.animate(withDuration: 1, delay: 1, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+            self.view.layoutIfNeeded()
+        })
     }
     
     private func loadAnimation() {
@@ -50,9 +108,6 @@ class PantaiOnboardingViewController: UIViewController {
             self.firstWave.transform = CGAffineTransform(translationX: 20, y: -10)
         })
         
-    }
-    
-    private func loadAnimationFish() {
         UIView.animateKeyframes(withDuration: 4, delay: 0, options: [.allowUserInteraction, .repeat, .autoreverse, .calculationModeLinear], animations: {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1) {
                 self.jellyFish.transform = CGAffineTransform(translationX: 10, y: -20)
@@ -108,24 +163,15 @@ class PantaiOnboardingViewController: UIViewController {
             
             
         }, completion: nil)
+        
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    
 
-        dismiss(animated: true)
-    }
     
 }
 
+//MARK: - Transition
 extension PantaiOnboardingViewController: UIViewControllerTransitioningDelegate {
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return FadeAnimation(animationDuration: 1, animationType: .dismiss)
