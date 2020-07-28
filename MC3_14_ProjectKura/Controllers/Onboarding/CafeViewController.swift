@@ -25,6 +25,7 @@ class CafeViewController: UIViewController {
     @IBOutlet var stackButton2: UIButton!
     @IBOutlet var stackButtonConstraint: NSLayoutConstraint!
     
+    var hasMovedToAnotehrPage = false
     var questionIndex = 0
     var greetingIndex = 0
     let greeting = [
@@ -44,10 +45,20 @@ class CafeViewController: UIViewController {
         inputNameTextField.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        
+        if questionIndex == 5 && !hasMovedToAnotehrPage{
+            hasMovedToAnotehrPage = true
+            nextQuestion(currentAnswer: nil)
+        }
+        
         chatboxConstraints.constant = 20
-        constraintAnimation(delay: 0)
+        constraintAnimation()
     }
     
     @IBAction func singleButtonTapped(_ sender: UIButton) {
@@ -74,16 +85,22 @@ class CafeViewController: UIViewController {
         var index = 0.0
         
         for letter in text2 {
-            Timer.scheduledTimer(withTimeInterval: 0.02 * index, repeats: false) { (timer) in
-                self.chatLabel.text?.append(letter)
-            }
+//            Timer.scheduledTimer(withTimeInterval: 0.02 * index, repeats: false) { (timer) in
+//                self.chatLabel.text?.append(letter)
+//            }
             
+            chatLabel.text?.append(letter)
+            
+            RunLoop.current.run(until: Date() + 0.02)
+        
             index += 1
         }
+        
+        print("dfdfdfdfd")
     }
     
-    private func constraintAnimation(delay: Int) {
-        UIView.animate(withDuration: 1, delay: TimeInterval(delay), usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
+    private func constraintAnimation() {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
         })
     }
@@ -91,18 +108,18 @@ class CafeViewController: UIViewController {
     
     @objc func tapped() {
         print("tapped")
+        removeTapGesture()
         //MARK: - Tap pertama kali
         if greetingIndex == 0 {
-            removeTapGesture()
             inputNameConstraint.constant = 30
             chatboxConstraints.constant = -300
             inputNameTextField.becomeFirstResponder()
-            constraintAnimation(delay: 0)
+            constraintAnimation()
         //MARK: - Tap setelah mengisi nama
         } else if greetingIndex == 1 {
             chatLabel.text = ""
             showQuestion()
-            removeTapGesture()
+            
         }
         greetingIndex += 1
 
@@ -115,6 +132,16 @@ class CafeViewController: UIViewController {
     
     private func removeTapGesture() {
         view.gestureRecognizers?.removeAll()
+    }
+    
+    func changePage() {
+        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        
+        let destination = storyboard.instantiateViewController(identifier: "PantaiOnboardingViewController")
+        
+        destination.modalPresentationStyle = .fullScreen
+        
+        present(destination, animated: true)
     }
     
 }
@@ -140,7 +167,7 @@ extension CafeViewController: UITextFieldDelegate {
             chatboxConstraints.constant = 20
             chatLabel.text = greeting[greetingIndex]
             chatboxWidthConstraint.constant = 100
-            constraintAnimation(delay: 0)
+            constraintAnimation()
             addTapGesture()
         }
         return true
@@ -152,12 +179,12 @@ extension CafeViewController: UITextFieldDelegate {
 extension CafeViewController {
     
     func showQuestion() {
+        singleButton.setTitle(onboardingQuestions[questionIndex].answers[0], for: .normal)
         typingAnimation(text: onboardingQuestions[questionIndex].question)
         if onboardingQuestions[questionIndex].questionsType == .single {
-            singleButton.setTitle(onboardingQuestions[questionIndex].answers[0], for: .normal)
             singleButtonConstraint.constant = 20
             stackButtonConstraint.constant = -150
-            constraintAnimation(delay: 1)
+            constraintAnimation()
             
         } else {
             singleButtonConstraint.constant = -100
@@ -199,7 +226,7 @@ extension CafeViewController {
         } else {
             stackButtonConstraint.constant = -150
         }
-        constraintAnimation(delay: 0)
+        constraintAnimation()
     }
     
     func showButtonQuestion() {
@@ -208,30 +235,33 @@ extension CafeViewController {
         } else {
             stackButtonConstraint.constant = 20
         }
-        constraintAnimation(delay: 1)
+        constraintAnimation()
 
     }
     
-    func nextQuestion(currentAnswer: Int) {
-        questionIndex += 1
+    func nextQuestion(currentAnswer: Int?) {
         
-        if onboardingQuestions[questionIndex].isLongQuestion {
-            chatboxWidthConstraint.constant = 100
+        if questionIndex == 5 && !hasMovedToAnotehrPage{
+            changePage()
         } else {
-            chatboxWidthConstraint.constant = 0
+            questionIndex += 1
+            
+            if onboardingQuestions[questionIndex].isLongQuestion {
+                chatboxWidthConstraint.constant = 100
+            } else {
+                chatboxWidthConstraint.constant = 0
+            }
+            
+            chatLabel.text = ""
+            
+            if onboardingQuestions[questionIndex].questionsType == .single {
+                showAnswer(answerType: .single)
+            } else {
+                showAnswer(answerType: .multi)
+            }
         }
         
-        chatLabel.text = ""
-        
-        if onboardingQuestions[questionIndex].questionsType == .single {
-            showAnswer(answerType: .single)
-        } else {
-            showAnswer(answerType: .multi)
-        }
     }
-    
-    
-   
 }
 
 
@@ -280,10 +310,4 @@ extension CafeViewController {
 
 
 //        pindah halaman
-//        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
-//
-//        let destination = storyboard.instantiateViewController(identifier: "PantaiOnboardingViewController")
-//
-//        destination.modalPresentationStyle = .fullScreen
-//
-//        present(destination, animated: true)
+

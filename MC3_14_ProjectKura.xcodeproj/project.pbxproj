@@ -27,6 +27,7 @@
 		EC1E480A24CEC0D600975C83 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC1E480924CEC0D600975C83 /* Onboarding.storyboard */; };
 		EC1E480D24CEF0B400975C83 /* CafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E480C24CEF0B400975C83 /* CafeViewController.swift */; };
 		EC1E480F24CEFC4400975C83 /* PantaiOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E480E24CEFC4400975C83 /* PantaiOnboardingViewController.swift */; };
+		ECA008C424D029EB00148809 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA008C324D029EB00148809 /* TableViewController.swift */; };
 		ECC8D9C324CFC2BF00ACD8E4 /* OnboardingQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8D9C224CFC2BF00ACD8E4 /* OnboardingQuestion.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		EC1E480924CEC0D600975C83 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		EC1E480C24CEF0B400975C83 /* CafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeViewController.swift; sourceTree = "<group>"; };
 		EC1E480E24CEFC4400975C83 /* PantaiOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PantaiOnboardingViewController.swift; path = MC3_14_ProjectKura/Controllers/Onboarding/PantaiOnboardingViewController.swift; sourceTree = SOURCE_ROOT; };
+		ECA008C324D029EB00148809 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		ECC8D9C224CFC2BF00ACD8E4 /* OnboardingQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingQuestion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -204,6 +206,7 @@
 			children = (
 				EC1E480C24CEF0B400975C83 /* CafeViewController.swift */,
 				EC1E480E24CEFC4400975C83 /* PantaiOnboardingViewController.swift */,
+				ECA008C324D029EB00148809 /* TableViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				71907B8424BDFCD5008E44CF /* MC3_14_ProjectKura.xcdatamodeld in Sources */,
 				EC1E480F24CEFC4400975C83 /* PantaiOnboardingViewController.swift in Sources */,
 				710F595324C5F6380037185E /* RumahViewController.swift in Sources */,
+				ECA008C424D029EB00148809 /* TableViewController.swift in Sources */,
 				710F595524C601790037185E /* Gradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
