@@ -15,6 +15,12 @@ class RumahViewController: UIViewController {
     
     @IBOutlet weak var tandaSeru2: UIButton!
     
+    
+    @IBOutlet weak var tandaSeruKipas: UIButton!
+    
+    @IBOutlet weak var tandaSeruShoppingBag: UIButton!
+    
+    
     @IBOutlet weak var filter: UILabel!
     @IBOutlet weak var jendela: UIImageView!
     
@@ -72,6 +78,19 @@ class RumahViewController: UIViewController {
     @IBAction func tanyaListrik(_ sender: Any) {
         tandaSeru2.isHidden = true
         UserDefaults.standard.set(Date(), forKey: "last_tappedListrik")
+    }
+    
+    
+    @IBAction func tanyaShoppingBag(_ sender: Any) {
+        tandaSeruShoppingBag.isHidden = true
+        UserDefaults.standard.set(Date(), forKey: "last_tappedShoppingBag")
+    }
+    
+    
+
+    @IBAction func tanyaKipas(_ sender: Any) {
+        tandaSeruKipas.isHidden = true
+              UserDefaults.standard.set(Date(), forKey: "last_tappedKipas")
     }
     
     @IBAction func btn1(_ sender: Any) {
@@ -186,9 +205,13 @@ extension RumahViewController {
         
         tandaSeru2.isHidden = false
         tandaSeru.isHidden = false
+        tandaSeruShoppingBag.isHidden = false
+        tandaSeruKipas.isHidden = false
         
         checkListrik()
         checkMakanan()
+        checkKipas()
+        checkShoppingBag()
     }
     
     private func perubahanSore() {
@@ -199,6 +222,8 @@ extension RumahViewController {
         
         checkListrik()
         checkMakanan()
+        checkKipas()
+        checkShoppingBag()
     }
     
     private func perubahanMalam() {
@@ -209,6 +234,8 @@ extension RumahViewController {
         
         checkListrik()
         checkMakanan()
+        checkKipas()
+        checkShoppingBag()
     }
     
     private func checkListrik() {
@@ -219,6 +246,28 @@ extension RumahViewController {
         
         if  diff.day == 0 {
             tandaSeru2.isHidden = true
+        }
+    }
+    
+    private func checkKipas() {
+        guard let lastTappedKipas = UserDefaults.standard.object(forKey: "last_tappedKipas") as? Date else { return }
+        print("Last tapped kipas: \(lastTappedKipas.description(with: .current))")
+        
+        let diff = Calendar.current.dateComponents([.day], from: lastTappedKipas, to: Date())
+        
+        if  diff.day == 0 {
+            tandaSeruKipas.isHidden = true
+        }
+    }
+    
+    private func checkShoppingBag() {
+        guard let lastTappedShoppingBag = UserDefaults.standard.object(forKey: "last_tappedShoppingBag") as? Date else { return }
+        print("Last tapped shopping bag: \(lastTappedShoppingBag.description(with: .current))")
+        
+        let diff = Calendar.current.dateComponents([.day], from: lastTappedShoppingBag, to: Date())
+        
+        if  diff.day == 0 {
+            tandaSeruShoppingBag.isHidden = true
         }
     }
     

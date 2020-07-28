@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "asset.LampuMatiDefault.png",
+      "filename" : "asset.Diary.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "asset.LampuMatiDefault@2x.png",
+      "filename" : "asset.Diary@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "asset.LampuMatiDefault@3x.png",
+      "filename" : "asset.Diary@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
