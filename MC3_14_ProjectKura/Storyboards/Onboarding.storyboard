@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Axt-ch-vm7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sv3-ae-uHv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,10 +7,47 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Phone View Controller-->
+        <scene sceneID="64j-PL-hUE">
+            <objects>
+                <viewController storyboardIdentifier="PhoneViewController" id="uXE-Bm-LTh" customClass="PhoneViewController" customModule="MC3_14_ProjectKura" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rll-OR-fXF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phoneBackground" translatesAutoresizingMaskIntoConstraints="NO" id="SER-SM-F7F">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reply" translatesAutoresizingMaskIntoConstraints="NO" id="lAp-4T-hy7">
+                                <rect key="frame" x="221.5" y="514.5" width="108" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lAp-4T-hy7" secondAttribute="height" multiplier="27:7" id="SkM-va-fpU"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="SER-SM-F7F" firstAttribute="trailing" secondItem="b5F-xG-iHQ" secondAttribute="trailing" id="5RT-92-u6p"/>
+                            <constraint firstItem="lAp-4T-hy7" firstAttribute="centerY" secondItem="b5F-xG-iHQ" secondAttribute="centerY" multiplier="1.18" constant="-6.0399999999999636" id="ETm-07-yDT"/>
+                            <constraint firstItem="SER-SM-F7F" firstAttribute="top" secondItem="Rll-OR-fXF" secondAttribute="top" id="FRa-yq-8vD"/>
+                            <constraint firstItem="lAp-4T-hy7" firstAttribute="centerX" secondItem="Rll-OR-fXF" secondAttribute="centerX" multiplier="1.33" id="YLF-y1-GtM"/>
+                            <constraint firstItem="SER-SM-F7F" firstAttribute="leading" secondItem="b5F-xG-iHQ" secondAttribute="leading" id="dQc-nQ-zAl"/>
+                            <constraint firstAttribute="bottom" secondItem="SER-SM-F7F" secondAttribute="bottom" id="zyN-Qy-cuU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="b5F-xG-iHQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="reply" destination="lAp-4T-hy7" id="wkT-Jq-bVk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vWK-iW-EF0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5082.608695652174" y="-333.48214285714283"/>
+        </scene>
+        <!--Letter View Controller-->
         <scene sceneID="2JW-1O-LxA">
             <objects>
-                <viewController id="sv3-ae-uHv" customClass="TableViewController" customModule="MC3_14_ProjectKura" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sv3-ae-uHv" customClass="LetterViewController" customModule="MC3_14_ProjectKura" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sa9-eS-lxE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,6 +59,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LetterBuka" translatesAutoresizingMaskIntoConstraints="NO" id="DHg-xi-3JI">
+                                <rect key="frame" x="-16" y="636.5" width="301.5" height="279.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="DHg-xi-3JI" secondAttribute="height" multiplier="301:279" id="7Mm-L6-H1l"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Phone" translatesAutoresizingMaskIntoConstraints="NO" id="0HJ-hd-HwQ">
+                                <rect key="frame" x="263.5" y="358.5" width="130.5" height="179"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0HJ-hd-HwQ" secondAttribute="height" multiplier="157:216" id="EJN-rm-cGP"/>
+                                </constraints>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Letter Paper horizontal" translatesAutoresizingMaskIntoConstraints="NO" id="QEA-XG-50R">
                                 <rect key="frame" x="98.5" y="661.5" width="217" height="120.5"/>
                             </imageView>
@@ -34,8 +83,11 @@
                             <constraint firstItem="8UZ-ag-Au3" firstAttribute="top" secondItem="Sa9-eS-lxE" secondAttribute="top" id="0K4-Y1-h3s"/>
                             <constraint firstItem="LA1-vu-Dc1" firstAttribute="bottom" secondItem="QEA-XG-50R" secondAttribute="bottom" constant="80" id="3Y8-p9-jSE"/>
                             <constraint firstItem="rof-NH-NBS" firstAttribute="leading" secondItem="LA1-vu-Dc1" secondAttribute="leading" id="A5B-Xa-R8h"/>
+                            <constraint firstItem="DHg-xi-3JI" firstAttribute="leading" secondItem="Sa9-eS-lxE" secondAttribute="leading" constant="-16" id="DXm-EX-HYg"/>
                             <constraint firstItem="Lqa-bZ-kcz" firstAttribute="centerX" secondItem="Sa9-eS-lxE" secondAttribute="centerX" id="Dgs-9g-cZc"/>
                             <constraint firstItem="rof-NH-NBS" firstAttribute="top" secondItem="Sa9-eS-lxE" secondAttribute="top" id="Ehl-ag-JGC"/>
+                            <constraint firstAttribute="bottom" secondItem="DHg-xi-3JI" secondAttribute="bottom" constant="-20" id="L57-6T-gvm"/>
+                            <constraint firstItem="DHg-xi-3JI" firstAttribute="height" secondItem="LA1-vu-Dc1" secondAttribute="height" multiplier="0.341687" id="S17-du-Mjd"/>
                             <constraint firstItem="Lqa-bZ-kcz" firstAttribute="width" secondItem="8UZ-ag-Au3" secondAttribute="width" multiplier="0.637681" id="SZc-Hd-jWw"/>
                             <constraint firstItem="8UZ-ag-Au3" firstAttribute="trailing" secondItem="LA1-vu-Dc1" secondAttribute="trailing" id="SuI-8Z-bFC"/>
                             <constraint firstItem="QEA-XG-50R" firstAttribute="centerX" secondItem="Sa9-eS-lxE" secondAttribute="centerX" id="cao-Yz-3EQ"/>
@@ -43,22 +95,34 @@
                             <constraint firstItem="8UZ-ag-Au3" firstAttribute="leading" secondItem="Sa9-eS-lxE" secondAttribute="leading" id="fLT-rk-Eaa"/>
                             <constraint firstItem="Lqa-bZ-kcz" firstAttribute="height" secondItem="8UZ-ag-Au3" secondAttribute="height" multiplier="0.172567" id="h0b-K2-tui"/>
                             <constraint firstItem="QEA-XG-50R" firstAttribute="width" secondItem="8UZ-ag-Au3" secondAttribute="width" multiplier="0.52512" id="jGh-y7-mi6"/>
+                            <constraint firstItem="0HJ-hd-HwQ" firstAttribute="centerY" secondItem="Sa9-eS-lxE" secondAttribute="centerY" id="mR4-TK-aZ6"/>
+                            <constraint firstItem="0HJ-hd-HwQ" firstAttribute="height" secondItem="Sa9-eS-lxE" secondAttribute="height" multiplier="0.2" id="pwi-II-Qe8"/>
                             <constraint firstAttribute="bottom" secondItem="rof-NH-NBS" secondAttribute="bottom" id="q33-bT-ZdV"/>
                             <constraint firstItem="rof-NH-NBS" firstAttribute="trailing" secondItem="LA1-vu-Dc1" secondAttribute="trailing" id="rRf-EX-yHW"/>
+                            <constraint firstItem="LA1-vu-Dc1" firstAttribute="trailing" secondItem="0HJ-hd-HwQ" secondAttribute="trailing" constant="20" id="toK-np-Fqf"/>
                             <constraint firstItem="LA1-vu-Dc1" firstAttribute="bottom" secondItem="Lqa-bZ-kcz" secondAttribute="bottom" constant="59" id="weX-Ul-yzz"/>
                             <constraint firstItem="QEA-XG-50R" firstAttribute="height" secondItem="8UZ-ag-Au3" secondAttribute="height" multiplier="0.13471" id="wfU-wK-9wg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LA1-vu-Dc1"/>
                     </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="8UZ-ag-Au3" id="btr-wp-whF"/>
+                        <outlet property="letterBuka" destination="DHg-xi-3JI" id="7jP-Kc-Gac"/>
+                        <outlet property="letterImageView" destination="Lqa-bZ-kcz" id="Cjs-Rg-A1l"/>
+                        <outlet property="letterPaperBottomConstraint" destination="3Y8-p9-jSE" id="oBA-2X-OIP"/>
+                        <outlet property="letterPaperCenterXConstraint" destination="cao-Yz-3EQ" id="wmO-WR-grR"/>
+                        <outlet property="letterPaperImageView" destination="QEA-XG-50R" id="54X-lm-ZuQ"/>
+                        <outlet property="phone" destination="0HJ-hd-HwQ" id="5DK-HM-oK2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rip-Tl-DQh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5240.579710144928" y="-336.16071428571428"/>
+            <point key="canvasLocation" x="-5817" y="-333"/>
         </scene>
         <!--Cafe View Controller-->
         <scene sceneID="uVD-9V-9Hh">
             <objects>
-                <viewController id="Axt-ch-vm7" customClass="CafeViewController" customModule="MC3_14_ProjectKura" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CafeViewController" id="Axt-ch-vm7" customClass="CafeViewController" customModule="MC3_14_ProjectKura" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FHF-P7-Z72">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -469,7 +533,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aCD-UI-gAG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3465.217391304348" y="-333.48214285714283"/>
+            <point key="canvasLocation" x="-3614" y="-333"/>
         </scene>
     </scenes>
     <resources>
@@ -493,7 +557,11 @@
         <image name="Laut Kedua Pagi Bersih" width="684" height="395"/>
         <image name="Letter" width="264" height="181.5"/>
         <image name="Letter Paper horizontal" width="590" height="389.5"/>
+        <image name="LetterBuka" width="301" height="279.5"/>
+        <image name="Phone" width="157.5" height="216"/>
         <image name="Small jelly fish" width="66.5" height="84"/>
         <image name="Table" width="414" height="896"/>
+        <image name="phoneBackground" width="414" height="896"/>
+        <image name="reply" width="92.5" height="28"/>
     </resources>
 </document>
