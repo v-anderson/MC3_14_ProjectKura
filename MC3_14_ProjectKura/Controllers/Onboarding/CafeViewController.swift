@@ -43,6 +43,7 @@ class CafeViewController: UIViewController {
         chatLabel.text = greeting[0]
         
         inputNameTextField.delegate = self
+        transitioningDelegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -261,6 +262,17 @@ extension CafeViewController {
             }
         }
         
+    }
+}
+
+//MARK: - Transition
+extension CafeViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return FadeAnimation(animationDuration: 1, animationType: .dismiss)
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return FadeAnimation(animationDuration: 1, animationType: .present)
     }
 }
 
