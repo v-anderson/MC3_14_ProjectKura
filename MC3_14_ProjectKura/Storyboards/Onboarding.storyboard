@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sv3-ae-uHv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Axt-ch-vm7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,20 +7,53 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="2JW-1O-LxA">
             <objects>
-                <viewController id="sv3-ae-uHv" sceneMemberID="viewController">
+                <viewController id="sv3-ae-uHv" customClass="TableViewController" customModule="MC3_14_ProjectKura" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sa9-eS-lxE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Table" translatesAutoresizingMaskIntoConstraints="NO" id="rof-NH-NBS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8UZ-ag-Au3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Letter Paper horizontal" translatesAutoresizingMaskIntoConstraints="NO" id="QEA-XG-50R">
+                                <rect key="frame" x="98.5" y="661.5" width="217" height="120.5"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Letter" translatesAutoresizingMaskIntoConstraints="NO" id="Lqa-bZ-kcz">
+                                <rect key="frame" x="75" y="648.5" width="264" height="154.5"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8UZ-ag-Au3" firstAttribute="top" secondItem="Sa9-eS-lxE" secondAttribute="top" id="0K4-Y1-h3s"/>
+                            <constraint firstItem="LA1-vu-Dc1" firstAttribute="bottom" secondItem="QEA-XG-50R" secondAttribute="bottom" constant="80" id="3Y8-p9-jSE"/>
+                            <constraint firstItem="rof-NH-NBS" firstAttribute="leading" secondItem="LA1-vu-Dc1" secondAttribute="leading" id="A5B-Xa-R8h"/>
+                            <constraint firstItem="Lqa-bZ-kcz" firstAttribute="centerX" secondItem="Sa9-eS-lxE" secondAttribute="centerX" id="Dgs-9g-cZc"/>
+                            <constraint firstItem="rof-NH-NBS" firstAttribute="top" secondItem="Sa9-eS-lxE" secondAttribute="top" id="Ehl-ag-JGC"/>
+                            <constraint firstItem="Lqa-bZ-kcz" firstAttribute="width" secondItem="8UZ-ag-Au3" secondAttribute="width" multiplier="0.637681" id="SZc-Hd-jWw"/>
+                            <constraint firstItem="8UZ-ag-Au3" firstAttribute="trailing" secondItem="LA1-vu-Dc1" secondAttribute="trailing" id="SuI-8Z-bFC"/>
+                            <constraint firstItem="QEA-XG-50R" firstAttribute="centerX" secondItem="Sa9-eS-lxE" secondAttribute="centerX" id="cao-Yz-3EQ"/>
+                            <constraint firstAttribute="bottom" secondItem="8UZ-ag-Au3" secondAttribute="bottom" id="ee0-zB-yRB"/>
+                            <constraint firstItem="8UZ-ag-Au3" firstAttribute="leading" secondItem="Sa9-eS-lxE" secondAttribute="leading" id="fLT-rk-Eaa"/>
+                            <constraint firstItem="Lqa-bZ-kcz" firstAttribute="height" secondItem="8UZ-ag-Au3" secondAttribute="height" multiplier="0.172567" id="h0b-K2-tui"/>
+                            <constraint firstItem="QEA-XG-50R" firstAttribute="width" secondItem="8UZ-ag-Au3" secondAttribute="width" multiplier="0.52512" id="jGh-y7-mi6"/>
+                            <constraint firstAttribute="bottom" secondItem="rof-NH-NBS" secondAttribute="bottom" id="q33-bT-ZdV"/>
+                            <constraint firstItem="rof-NH-NBS" firstAttribute="trailing" secondItem="LA1-vu-Dc1" secondAttribute="trailing" id="rRf-EX-yHW"/>
+                            <constraint firstItem="LA1-vu-Dc1" firstAttribute="bottom" secondItem="Lqa-bZ-kcz" secondAttribute="bottom" constant="59" id="weX-Ul-yzz"/>
+                            <constraint firstItem="QEA-XG-50R" firstAttribute="height" secondItem="8UZ-ag-Au3" secondAttribute="height" multiplier="0.13471" id="wfU-wK-9wg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="LA1-vu-Dc1"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rip-Tl-DQh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5240" y="-336"/>
+            <point key="canvasLocation" x="-5240.579710144928" y="-336.16071428571428"/>
         </scene>
         <!--Cafe View Controller-->
         <scene sceneID="uVD-9V-9Hh">
@@ -458,6 +491,9 @@
         <image name="Kura Text Box" width="410" height="221"/>
         <image name="Laut Depan Pagi Bersih" width="706.5" height="391"/>
         <image name="Laut Kedua Pagi Bersih" width="684" height="395"/>
+        <image name="Letter" width="264" height="181.5"/>
+        <image name="Letter Paper horizontal" width="590" height="389.5"/>
         <image name="Small jelly fish" width="66.5" height="84"/>
+        <image name="Table" width="414" height="896"/>
     </resources>
 </document>
