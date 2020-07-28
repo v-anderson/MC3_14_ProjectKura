@@ -10,7 +10,7 @@ import UIKit
 import UserNotifications
 
 class RumahViewController: UIViewController {
-
+    
     @IBOutlet weak var tandaSeru: UIButton!
     
     @IBOutlet weak var tandaSeru2: UIButton!
@@ -38,27 +38,53 @@ class RumahViewController: UIViewController {
     @IBOutlet weak var lblTapToDismiss: UILabel!
     @IBOutlet weak var btnStack: UIStackView!
     
-    
     // notif center property
     let date = Date()
     var dateComponents = DateComponents()
     var randomQuestions: Int?
     
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialViewAlpha()
-        if isMorning() {
-            perubahanPagi()
-        }
-        else if isAfternoon() {
-            perubahanSore()
-        }
-        else {
-            perubahanMalam()
-        }
+        checkTimeOfDay()
         
+        // add tap gesture to whole screen
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonDidTap)))
+        
+        let results = Score.fetchAll(fromContext: getViewContext())
+        results.forEach { print($0.score, $0.date) }
     }
+    
+    // MARK: - IBActions
+    
+    //ini yang tombol tanda seru untuk munculin pertanyaan makananÏ
+    @IBAction func tanyaMakanan(_ sender: Any) {
+        tandaSeru.isHidden = true
+        randomQuestions = Int.random(in: 0..<3)
+        foodQuestion()
+        UserDefaults.standard.set(Date(), forKey: "last_tappedMakanan")
+    }
+    
+    //ini tombol tanda seru untuk munculin pertanyaan listrik
+    @IBAction func tanyaListrik(_ sender: Any) {
+        tandaSeru2.isHidden = true
+        UserDefaults.standard.set(Date(), forKey: "last_tappedListrik")
+    }
+    
+    @IBAction func btn1(_ sender: Any) {
+        checkAnswer(forSelectedButton: 0)
+        fact()
+    }
+    
+    @IBAction func btn2(_ sender: Any) {
+        checkAnswer(forSelectedButton: 1)
+        fact()
+    }
+    
+    // MARK: - OBJC Selectors
     
     @objc func buttonDidTap() {
         let rumahStoryboard = UIStoryboard(name: "Pantai", bundle: nil)
@@ -67,16 +93,43 @@ class RumahViewController: UIViewController {
         present(destinationVC, animated: true, completion: nil)
     }
     
+    @objc func tapToDismiss() {
+        print("test")
+        viewPopUpBox.transform = CGAffineTransform.identity
+        UIView.animate(withDuration: 0.3, animations: {
+            self.viewPopUpBox.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+            self.backgroundDimmer.alpha = 0
+        }) { (_) in
+            self.viewPopUpBox.isHidden = true
+            self.viewPopUpBox.gestureRecognizers?.removeAll()
+        }
+    }
+    
+    // MARK: - Helper functions
+    
+    private func checkAnswer(forSelectedButton buttonIndex: Int) {
+        if let index = randomQuestions {
+            let correctIndex = questions[index].goodAnswer
+            if correctIndex == buttonIndex {
+                print("Good Answer")
+                
+                // Insert to core data
+                Score.add(toContext: getViewContext(), score: 1)
+                
+            } else {
+                print("Bad Answer")
+            }
+        }
+    }
+    
+    func addTapGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapToDismiss))
+        viewPopUpBox.addGestureRecognizer(tap)
+    }
+    
     func initialViewAlpha() {
         backgroundDimmer.alpha = 0
         viewPopUpBox.isHidden = true
-    }
-    
-    //ini yang tombol tanda seru untuk munculin pertanyaan makananÏ
-    @IBAction func tanyaMakanan(_ sender: Any) {
-        tandaSeru.isHidden = true
-        randomQuestions = Int.random(in: 0..<3)
-        foodQuestion()
     }
     
     func foodQuestion() {
@@ -120,40 +173,11 @@ class RumahViewController: UIViewController {
         }
         addTapGesture()
     }
-    
-    @IBAction func btn1(_ sender: Any) {
-        fact()
-    }
-    
-    @IBAction func btn2(_ sender: Any) {
-        fact()
-    }
-    
-    func addTapGesture() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapToDismiss))
-        viewPopUpBox.addGestureRecognizer(tap)
-    }
-    
-    @objc func tapToDismiss() {
-        print("test")
-        viewPopUpBox.transform = CGAffineTransform.identity
-        UIView.animate(withDuration: 0.3, animations: {
-            self.viewPopUpBox.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-            self.backgroundDimmer.alpha = 0
-        }) { (_) in
-            self.viewPopUpBox.isHidden = true
-            self.viewPopUpBox.gestureRecognizers?.removeAll()
-        }
-    }
-    
-    
-    
-    //ini tombol tanda seru untuk munculin pertanyaan listrik
-    @IBAction func tanyaListrik(_ sender: Any) {
-        tandaSeru2.isHidden = true
-        UserDefaults.standard.set(Date(), forKey: "last_tappedListrik")
-        
-    }
+}
+
+// MARK: - Perubahan UI
+
+extension RumahViewController {
     
     private func perubahanPagi() {
         //panggil function ini buat perubahan background waktu pagi
@@ -162,6 +186,9 @@ class RumahViewController: UIViewController {
         
         tandaSeru2.isHidden = false
         tandaSeru.isHidden = false
+        
+        checkListrik()
+        checkMakanan()
     }
     
     private func perubahanSore() {
@@ -169,14 +196,9 @@ class RumahViewController: UIViewController {
         filter.gradientSore(view: filter)
         jendela.image = UIImage(named: "asset.JendelaSore")
         tandaSeru.isHidden = false
-
-        guard let lastTappedListrik = UserDefaults.standard.object(forKey: "last_tappedListrik") as? Date else { return }
         
-        let diff = Calendar.current.dateComponents([.day], from: lastTappedListrik, to: Date())
-        
-        if  diff.day == 0 {
-            tandaSeru2.isHidden = true
-        }
+        checkListrik()
+        checkMakanan()
     }
     
     private func perubahanMalam() {
@@ -185,12 +207,71 @@ class RumahViewController: UIViewController {
         jendela.image = UIImage(named: "asset.JendelaMalam")
         tandaSeru.isHidden = false
         
+        checkListrik()
+        checkMakanan()
+    }
+    
+    private func checkListrik() {
         guard let lastTappedListrik = UserDefaults.standard.object(forKey: "last_tappedListrik") as? Date else { return }
+        print("Last tapped listrik: \(lastTappedListrik.description(with: .current))")
         
         let diff = Calendar.current.dateComponents([.day], from: lastTappedListrik, to: Date())
         
         if  diff.day == 0 {
             tandaSeru2.isHidden = true
+        }
+    }
+    
+    private func checkMakanan() {
+        guard let lastTappedMakanan = UserDefaults.standard.object(forKey: "last_tappedMakanan") as? Date else { return }
+        
+        print("Last tapped makanan: \(lastTappedMakanan.description(with: .current))")
+        
+        // Check beda segmen ato ga
+        // check last tapped makanan itu beda segmen sama segmen sekarang
+        
+        if isMorning() {
+            let sixToday = Calendar.current.date(bySettingHour: 6, minute: 0, second: 0, of: Date())!
+            let fifteenToday = Calendar.current.date(bySettingHour: 14, minute: 59, second: 59, of: Date())!
+            
+            if lastTappedMakanan >= sixToday && lastTappedMakanan <= fifteenToday {
+                print("Last Tapped Makanan Time is between 6.00 - 14.59")
+                tandaSeru.isHidden = true
+            } else {
+                tandaSeru.isHidden = false
+            }
+        } else if isAfternoon() {
+            let fifteenToday = Calendar.current.date(bySettingHour: 15, minute: 0, second: 0, of: Date())!
+            let eighteenToday = Calendar.current.date(bySettingHour: 17, minute: 59, second: 59, of: Date())!
+            
+            //       28 jam 3    >= 29 jam 15          28 jam  3      <=  29 jam 18
+            if lastTappedMakanan >= fifteenToday && lastTappedMakanan <= eighteenToday {
+                print("Last Tapped Makanan Time is between 15.00 - 17.59")
+                tandaSeru.isHidden = true
+            } else {
+                tandaSeru.isHidden = false
+            }
+        } else {
+            let eighteenToday = Calendar.current.date(bySettingHour: 18, minute: 0, second: 0, of: Date())!
+            
+            if lastTappedMakanan >= eighteenToday  {
+                print("Last Tapped Makanan Time is between 18.00 - 5:59")
+                tandaSeru.isHidden = true
+            } else {
+                tandaSeru.isHidden = false
+            }
+        }
+    }
+    
+    private func checkTimeOfDay() {
+        if isMorning() {
+            perubahanPagi()
+        }
+        else if isAfternoon() {
+            perubahanSore()
+        }
+        else {
+            perubahanMalam()
         }
     }
 }
