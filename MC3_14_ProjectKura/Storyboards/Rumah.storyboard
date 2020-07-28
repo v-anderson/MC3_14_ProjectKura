@@ -46,7 +46,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset.LampuMatiDefault" translatesAutoresizingMaskIntoConstraints="NO" id="9nn-Y6-Q4g">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset.LampuNyalaDefault" translatesAutoresizingMaskIntoConstraints="NO" id="9nn-Y6-Q4g">
                                 <rect key="frame" x="15" y="146.5" width="53" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9nn-Y6-Q4g" secondAttribute="height" multiplier="53:110" id="czU-aK-0G1"/>
@@ -104,7 +104,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food questions" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTb-2b-pz3">
-                                                        <rect key="frame" x="0.0" y="78" width="326" height="21"/>
+                                                        <rect key="frame" x="0.0" y="77.5" width="326" height="22"/>
                                                         <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="18"/>
                                                         <color key="textColor" red="0.59526020290000003" green="0.37461543079999998" blue="0.2391709685" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
@@ -216,7 +216,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap anywhere to dismiss" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLM-ME-WUb">
-                                        <rect key="frame" x="141" y="690.5" width="132.5" height="14"/>
+                                        <rect key="frame" x="139" y="690.5" width="136.5" height="14.5"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="12"/>
                                         <color key="textColor" red="0.95242542029999999" green="0.88795477150000002" blue="0.78821635249999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -302,7 +302,7 @@
     <resources>
         <image name="asset.JendelaPagi" width="187.5" height="193"/>
         <image name="asset.KipasAngin" width="207.5" height="185.5"/>
-        <image name="asset.LampuMatiDefault" width="53.5" height="110.5"/>
+        <image name="asset.LampuNyalaDefault" width="230" height="351"/>
         <image name="asset.TandaSeru" width="56" height="60.5"/>
         <image name="asset.TandaSeruAtas" width="56" height="60.5"/>
         <image name="asset.TasBelanja" width="141" height="114"/>
