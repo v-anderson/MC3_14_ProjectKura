@@ -72,7 +72,7 @@ class RumahViewController: UIViewController {
         viewPopUpBox.isHidden = true
     }
     
-    //ini yang tombol tanda seru untuk munculin pertanyaan makanan
+    //ini yang tombol tanda seru untuk munculin pertanyaan makananÏ
     @IBAction func tanyaMakanan(_ sender: Any) {
         tandaSeru.isHidden = true
         randomQuestions = Int.random(in: 0..<3)
