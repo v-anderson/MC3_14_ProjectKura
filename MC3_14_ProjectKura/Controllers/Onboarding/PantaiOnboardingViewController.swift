@@ -63,8 +63,8 @@ class PantaiOnboardingViewController: UIViewController {
     }
     
     @objc func didBecomeActive() {
-        self.viewDidAppear(true)
-        firstWave.layer.animationKeys()
+        print("did become active")
+        loadAnimation()
     }
     
     @objc func willResign() {
