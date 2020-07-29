@@ -23,7 +23,11 @@ class PhoneViewController: UIViewController {
     
     @objc private func screenDidTap() {
         if !didReply {
-            reply.alpha = 1
+            reply.transform = CGAffineTransform(translationX: 0, y: 30)
+            UIView.animate(withDuration: 0.5) {
+                self.reply.transform = .identity
+                self.reply.alpha = 1
+            }
             didReply = true
         } else {
             // Transition

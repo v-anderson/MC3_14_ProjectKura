@@ -144,13 +144,24 @@ extension LetterViewController {
             }
         }, completion: { _ in
             self.isAnimationCompleted = true
-            DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.phone.image = UIImage(named: "PhoneNyala")
                 self.addTapGestureToPhone()
+                self.animatePhone()
                 
                 // TODO: - Add sound notif hp
             }
         })
+    }
+    
+    private func animatePhone() {
+        let shakeAnimation = CABasicAnimation(keyPath: "transform.translation.x")
+        shakeAnimation.duration = 0.03
+        shakeAnimation.fromValue = -3
+        shakeAnimation.toValue = 3
+        shakeAnimation.repeatCount = 5
+
+        phone.layer.add(shakeAnimation, forKey: "shake_phone")
     }
     
     private func animateLetter() {
@@ -158,13 +169,13 @@ extension LetterViewController {
         animationGroup.duration = 3;
         animationGroup.repeatCount = .infinity
 
-        let pulseAnimation = CAKeyframeAnimation(keyPath: "transform.translation.x")
-        pulseAnimation.duration = 0.7
-        pulseAnimation.values = [-4, 4, -4, 4, -4, 4, -3, 3, 0]
+        let shakeAnimation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        shakeAnimation.duration = 0.7
+        shakeAnimation.values = [-4, 4, -4, 4, -4, 4, -3, 3, 0]
 
-        animationGroup.animations = [pulseAnimation]
+        animationGroup.animations = [shakeAnimation]
 
-        letterImageView.layer.add(animationGroup, forKey: "pulse")
+        letterImageView.layer.add(animationGroup, forKey: "shake_letter")
     }
 }
 
