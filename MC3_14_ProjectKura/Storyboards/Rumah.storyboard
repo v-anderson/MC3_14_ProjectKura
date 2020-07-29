@@ -284,16 +284,16 @@
                         <outlet property="backgroundDimmer" destination="PO3-MI-5sS" id="S9M-Pi-MWA"/>
                         <outlet property="btnOption1" destination="FCU-Hg-biH" id="mYd-ry-sFr"/>
                         <outlet property="btnOption2" destination="byY-lk-a1T" id="ckl-nv-6hY"/>
-                        <outlet property="btnStack" destination="sTV-Az-vfb" id="koM-sF-oU6"/>
-                        <outlet property="factBody" destination="uqR-22-0lc" id="nfR-yF-Weq"/>
                         <outlet property="factImage" destination="Nuk-Ld-kzf" id="m6l-xZ-XM9"/>
-                        <outlet property="factTitle" destination="m0e-ql-NRr" id="2Bz-wD-Npg"/>
                         <outlet property="filter" destination="SHo-s7-JQN" id="Qhe-KD-9PS"/>
-                        <outlet property="foodQuestions" destination="KTb-2b-pz3" id="nyK-PJ-1jj"/>
                         <outlet property="jendela" destination="fL2-84-erP" id="EvA-jB-AZg"/>
                         <outlet property="lampu" destination="9nn-Y6-Q4g" id="a2i-rw-Imz"/>
+                        <outlet property="lblFactBody" destination="uqR-22-0lc" id="nfR-yF-Weq"/>
+                        <outlet property="lblFactTitle" destination="m0e-ql-NRr" id="2Bz-wD-Npg"/>
+                        <outlet property="lblQuestionsTitle" destination="KTb-2b-pz3" id="nyK-PJ-1jj"/>
                         <outlet property="lblTapToDismiss" destination="wLM-ME-WUb" id="dGH-fW-LC2"/>
                         <outlet property="popUpBox" destination="bbd-Y6-FVu" id="VGL-lv-7Ah"/>
+                        <outlet property="stackButton" destination="sTV-Az-vfb" id="koM-sF-oU6"/>
                         <outlet property="tandaSeru" destination="wb7-Rv-KIG" id="C3u-Pn-Yyj"/>
                         <outlet property="tandaSeru2" destination="YWo-s9-g8o" id="bJU-Lh-agw"/>
                         <outlet property="tandaSeruKipas" destination="WNH-rD-hJD" id="EGf-3t-Wqz"/>

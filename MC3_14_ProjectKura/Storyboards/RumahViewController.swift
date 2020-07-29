@@ -32,19 +32,26 @@ class RumahViewController: UIViewController {
     @IBOutlet weak var viewBody: UIView!
     
     @IBOutlet weak var factImage: UIImageView!
-    @IBOutlet weak var foodQuestions: UILabel!
-    @IBOutlet weak var factTitle: UILabel!
-    @IBOutlet weak var factBody: UILabel!
+    @IBOutlet weak var lblQuestionsTitle: UILabel!
+    @IBOutlet weak var lblFactTitle: UILabel!
+    @IBOutlet weak var lblFactBody: UILabel!
     @IBOutlet weak var btnOption1: UIButton!
     @IBOutlet weak var btnOption2: UIButton!
     @IBOutlet weak var popUpBox: UIImageView!
     @IBOutlet weak var lblTapToDismiss: UILabel!
-    @IBOutlet weak var btnStack: UIStackView!
+    @IBOutlet weak var stackButton: UIStackView!
     
     // notif center property
     let date = Date()
     var dateComponents = DateComponents()
     var randomQuestions: Int?
+    var factType: FactType?
+    
+    enum FactType {
+        case food
+        case electric
+        case shoppingBag
+    }
     
     
     // MARK: - Lifecycle
@@ -66,7 +73,8 @@ class RumahViewController: UIViewController {
     //ini yang tombol tanda seru untuk munculin pertanyaan makananÏ
     @IBAction func tanyaMakanan(_ sender: Any) {
         tandaSeru.isHidden = true
-        randomQuestions = Int.random(in: 0..<3)
+        randomQuestions = Int.random(in: 0..<FoodQuestions.count)
+        factType = .food
         foodQuestion()
         UserDefaults.standard.set(Date(), forKey: "last_tappedMakanan")
     }
@@ -74,14 +82,16 @@ class RumahViewController: UIViewController {
     //ini tombol tanda seru untuk munculin pertanyaan listrik
     @IBAction func tanyaListrik(_ sender: Any) {
         tandaSeru2.isHidden = true
-        randomQuestions = Int.random(in: 0..<3)
+        randomQuestions = Int.random(in: 0..<electricityQuestions.count)
+        factType = .electric
         electricQuestion()
         UserDefaults.standard.set(Date(), forKey: "last_tappedListrik")
     }
     
     @IBAction func tanyaShoppingBag(_ sender: Any) {
         tandaSeruShoppingBag.isHidden = true
-        randomQuestions = Int.random(in: 0..<3)
+        randomQuestions = Int.random(in: 0..<shoppingBagQuestions.count)
+        factType = .shoppingBag
         shoppingBagQuestion()
         UserDefaults.standard.set(Date(), forKey: "last_tappedShoppingBag")
     }
@@ -93,12 +103,30 @@ class RumahViewController: UIViewController {
     
     @IBAction func btn1(_ sender: Any) {
         checkAnswer(forSelectedButton: 0)
-        foodFact() // belum kelar
+        switch factType {
+        case .food:
+            foodFact()
+        case .electric:
+            electricFact()
+        case .shoppingBag:
+            shoppingBagFact()
+        default:
+            return
+        }
     }
     
     @IBAction func btn2(_ sender: Any) {
         checkAnswer(forSelectedButton: 1)
-        foodFact() // belum kelar
+        switch factType {
+        case .food:
+            foodFact()
+        case .electric:
+            electricFact()
+        case .shoppingBag:
+            shoppingBagFact()
+        default:
+            return
+        }
     }
     
     // MARK: - OBJC Selectors
@@ -157,28 +185,32 @@ class RumahViewController: UIViewController {
             self.viewPopUpBox.transform = CGAffineTransform.identity
             self.backgroundDimmer.alpha = 0.5
             self.viewPopUpBox.alpha = 1
+            self.lblQuestionsTitle.alpha = 1
+            self.stackButton.isHidden = false
             self.lblTapToDismiss.alpha = 0
             self.factImage.alpha = 0
-            self.factTitle.alpha = 0
-            self.factBody.alpha = 0
+            self.lblFactTitle.alpha = 0
+            self.lblFactBody.alpha = 0
         }
-        foodQuestions.numberOfLines = 0
-        foodQuestions.adjustsFontSizeToFitWidth = true
+        lblQuestionsTitle.numberOfLines = 0
+        lblQuestionsTitle.adjustsFontSizeToFitWidth = true
     }
     
     func hideQuestionsShowFact() {
         factImage.alpha = 1
-        factTitle.alpha = 1
-        factBody.alpha = 1
-        foodQuestions.alpha = 0
-        btnStack.isHidden = true
+        lblFactTitle.alpha = 1
+        lblFactBody.alpha = 1
+        lblQuestionsTitle.alpha = 0
+        stackButton.isHidden = true
     }
     
     // Q FOOD
     func foodQuestion() {
         showPopUpBox()
+        print("food q")
         if let index = randomQuestions{
-            foodQuestions.text = FoodQuestions[index].questions
+            print("if let food")
+            lblQuestionsTitle.text = FoodQuestions[index].questions
             btnOption1.setTitle(FoodQuestions[index].answers[0], for: .normal)
             btnOption2.setTitle(FoodQuestions[index].answers[1], for: .normal)
         }
@@ -187,8 +219,10 @@ class RumahViewController: UIViewController {
     // Q ELECTRIC
     func electricQuestion() {
         showPopUpBox()
-        if let index = randomQuestions{
-            foodQuestions.text = electricityQuestions[index].questions
+        print("elec q")
+        if let index = randomQuestions {
+            print("if let elec")
+            lblQuestionsTitle.text = electricityQuestions[index].questions
             btnOption1.setTitle(electricityQuestions[index].answers[0], for: .normal)
             btnOption2.setTitle(electricityQuestions[index].answers[1], for: .normal)
         }
@@ -198,7 +232,7 @@ class RumahViewController: UIViewController {
     func shoppingBagQuestion() {
         showPopUpBox()
         if let index = randomQuestions {
-            foodQuestions.text = shoppingBagQuestions[index].questions
+            lblQuestionsTitle.text = shoppingBagQuestions[index].questions
             btnOption1.setTitle(shoppingBagQuestions[index].answers[0], for: .normal)
             btnOption2.setTitle(shoppingBagQuestions[index].answers[1], for: .normal)
         }
@@ -209,11 +243,11 @@ class RumahViewController: UIViewController {
         hideQuestionsShowFact()
         if let index = randomQuestions {
             factImage.image = UIImage(named: FoodQuestions[index].imageName)
-            factTitle.text = FoodQuestions[index].factTitle
-            factBody.text = FoodQuestions[index].factBody
+            lblFactTitle.text = FoodQuestions[index].factTitle
+            lblFactBody.text = FoodQuestions[index].factBody
             lblTapToDismiss.alpha = 1
-            factBody.adjustsFontSizeToFitWidth = true
-            factBody.numberOfLines = 0
+            lblFactBody.adjustsFontSizeToFitWidth = true
+            lblFactBody.numberOfLines = 0
         }
         addTapGesture()
     }
@@ -223,11 +257,11 @@ class RumahViewController: UIViewController {
         hideQuestionsShowFact()
         if let index = randomQuestions {
             factImage.image = UIImage(named: electricityQuestions[index].imageName)
-            factTitle.text = electricityQuestions[index].factTitle
-            factBody.text = electricityQuestions[index].factBody
+            lblFactTitle.text = electricityQuestions[index].factTitle
+            lblFactBody.text = electricityQuestions[index].factBody
             lblTapToDismiss.alpha = 1
-            factBody.adjustsFontSizeToFitWidth = true
-            factBody.numberOfLines = 0
+            lblFactBody.adjustsFontSizeToFitWidth = true
+            lblFactBody.numberOfLines = 0
         }
         addTapGesture()
     }
@@ -237,11 +271,11 @@ class RumahViewController: UIViewController {
         hideQuestionsShowFact()
         if let index = randomQuestions {
             factImage.image = UIImage(named: shoppingBagQuestions[index].imageName)
-            factTitle.text = shoppingBagQuestions[index].factTitle
-            factBody.text = shoppingBagQuestions[index].factBody
+            lblFactTitle.text = shoppingBagQuestions[index].factTitle
+            lblFactBody.text = shoppingBagQuestions[index].factBody
             lblTapToDismiss.alpha = 1
-            factBody.adjustsFontSizeToFitWidth = true
-            factBody.numberOfLines = 0
+            lblFactBody.adjustsFontSizeToFitWidth = true
+            lblFactBody.numberOfLines = 0
         }
         addTapGesture()
     }
@@ -263,10 +297,10 @@ extension RumahViewController {
         tandaSeruShoppingBag.isHidden = false
         tandaSeruKipas.isHidden = false
         
-//        checkListrik()
+        checkListrik()
         checkMakanan()
-//        checkKipas()
-//        checkShoppingBag()
+        checkKipas()
+        checkShoppingBag()
     }
     
     private func perubahanSore() {
@@ -275,10 +309,10 @@ extension RumahViewController {
         jendela.image = UIImage(named: "asset.JendelaSore")
         tandaSeru.isHidden = false
         
-//        checkListrik()
+        checkListrik()
         checkMakanan()
-//        checkKipas()
-//        checkShoppingBag()
+        checkKipas()
+        checkShoppingBag()
     }
     
     private func perubahanMalam() {
@@ -287,10 +321,10 @@ extension RumahViewController {
         jendela.image = UIImage(named: "asset.JendelaMalam")
         tandaSeru.isHidden = false
         
-//        checkListrik()
+        checkListrik()
         checkMakanan()
-//        checkKipas()
-//        checkShoppingBag()
+        checkKipas()
+        checkShoppingBag()
     }
     
     private func checkListrik() {
