@@ -62,7 +62,7 @@ class RumahViewController: UIViewController {
         checkTimeOfDay()
         
         // add tap gesture to whole screen
-//        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonDidTap)))
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonDidTap)))
         
         let results = Score.fetchAll(fromContext: getViewContext())
         results.forEach { print($0.score, $0.date) }

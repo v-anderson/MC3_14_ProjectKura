@@ -548,17 +548,54 @@
                     <view key="view" contentMode="scaleToFill" id="shn-Yu-7ix">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BgTutorial" translatesAutoresizingMaskIntoConstraints="NO" id="5Xm-4V-Bca">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOU-wf-HUL">
+                                <rect key="frame" x="5" y="576.5" width="404" height="265.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Kura Text Box" translatesAutoresizingMaskIntoConstraints="NO" id="tcO-aM-JY5">
+                                        <rect key="frame" x="0.0" y="0.0" width="388" height="265.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ev-vC-I6l">
+                                        <rect key="frame" x="20" y="150" width="348" height="93"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bOU-wf-HUL" secondAttribute="height" multiplier="388:265" id="bmd-Pq-Mqk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5Xm-4V-Bca" firstAttribute="top" secondItem="shn-Yu-7ix" secondAttribute="top" id="3Aq-cy-crW"/>
+                            <constraint firstItem="bOU-wf-HUL" firstAttribute="centerX" secondItem="shn-Yu-7ix" secondAttribute="centerX" id="55Z-tp-JKV"/>
+                            <constraint firstItem="5Xm-4V-Bca" firstAttribute="trailing" secondItem="g5v-gN-A8m" secondAttribute="trailing" id="9yc-nQ-drb"/>
+                            <constraint firstItem="5Xm-4V-Bca" firstAttribute="leading" secondItem="g5v-gN-A8m" secondAttribute="leading" id="AwF-7x-NOO"/>
+                            <constraint firstItem="g5v-gN-A8m" firstAttribute="bottom" secondItem="bOU-wf-HUL" secondAttribute="bottom" constant="20" id="Foj-Mv-3Aq"/>
+                            <constraint firstAttribute="bottom" secondItem="5Xm-4V-Bca" secondAttribute="bottom" id="OfO-wb-Tio"/>
+                            <constraint firstItem="bOU-wf-HUL" firstAttribute="leading" secondItem="g5v-gN-A8m" secondAttribute="leading" constant="5" id="cxt-Qp-0nX"/>
+                            <constraint firstItem="bOU-wf-HUL" firstAttribute="height" secondItem="5Xm-4V-Bca" secondAttribute="height" multiplier="0.296317" id="jhH-5L-wTM"/>
+                            <constraint firstItem="g5v-gN-A8m" firstAttribute="trailing" secondItem="bOU-wf-HUL" secondAttribute="trailing" constant="5" id="qWK-cM-b0v"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="g5v-gN-A8m"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ap2-az-aYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4354" y="356"/>
+            <point key="canvasLocation" x="-4355.072463768116" y="355.58035714285711"/>
         </scene>
     </scenes>
     <resources>
         <image name="Bawah laut Pagi Bersih" width="418" height="214"/>
+        <image name="BgTutorial" width="414" height="896"/>
         <image name="Cafe" width="414" height="896"/>
         <image name="Chat Box" width="354" height="119"/>
         <image name="Chat Box 2" width="276" height="56.5"/>
