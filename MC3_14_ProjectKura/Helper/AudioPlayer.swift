@@ -39,7 +39,7 @@ class AudioPlayer {
         }
     }
     
-    func playSound() {
+    func playSound(withVolume volume: Float) {
         player?.stop()
         player?.volume = 0
         player?.prepareToPlay()
@@ -52,7 +52,7 @@ class AudioPlayer {
             guard let player = self?.player else { return }
             self?.player?.volume += 0.02
             
-            if player.volume >= Float(1) {
+            if player.volume >= volume {
                 print("Sound played")
                 timer.invalidate()
             }

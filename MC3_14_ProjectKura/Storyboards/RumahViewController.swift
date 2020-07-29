@@ -61,19 +61,12 @@ class RumahViewController: UIViewController {
         super.viewDidLoad()
         initialViewAlpha()
         checkTimeOfDay()
-        
-        // add tap gesture to whole screen
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonDidTap)))
-        
-        let results = Score.fetchAll(fromContext: getViewContext())
-        results.forEach { print($0.score, $0.date) }
-        
         audioPlayer.setupAudioService()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        audioPlayer.playSound()
+        audioPlayer.playSound(withVolume: 1.0)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -142,17 +135,16 @@ class RumahViewController: UIViewController {
         }
     }
     
-    // MARK: - OBJC Selectors
-    
-    @objc func buttonDidTap() {
+    @IBAction func kePantai(_ sender: Any) {
         let rumahStoryboard = UIStoryboard(name: "Pantai", bundle: nil)
         guard let destinationVC = rumahStoryboard.instantiateViewController(identifier: "PantaiViewController") as? PantaiViewController else { return }
         destinationVC.modalPresentationStyle = .fullScreen
         present(destinationVC, animated: true, completion: nil)
     }
     
+    // MARK: - OBJC Selectors
+    
     @objc func tapToDismiss() {
-        print("test")
         viewPopUpBox.transform = CGAffineTransform.identity
         UIView.animate(withDuration: 0.3, animations: {
             self.viewPopUpBox.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
@@ -170,10 +162,8 @@ class RumahViewController: UIViewController {
             let correctIndex = FoodQuestions[index].goodAnswer
             if correctIndex == buttonIndex {
                 print("Good Answer")
-                
                 // Insert to core data
                 Score.add(toContext: getViewContext(), score: 1)
-                
             } else {
                 print("Bad Answer")
             }
@@ -220,9 +210,7 @@ class RumahViewController: UIViewController {
     // Q FOOD
     func foodQuestion() {
         showPopUpBox()
-        print("food q")
         if let index = randomQuestions{
-            print("if let food")
             lblQuestionsTitle.text = FoodQuestions[index].questions
             btnOption1.setTitle(FoodQuestions[index].answers[0], for: .normal)
             btnOption2.setTitle(FoodQuestions[index].answers[1], for: .normal)
@@ -232,9 +220,7 @@ class RumahViewController: UIViewController {
     // Q ELECTRIC
     func electricQuestion() {
         showPopUpBox()
-        print("elec q")
         if let index = randomQuestions {
-            print("if let elec")
             lblQuestionsTitle.text = electricityQuestions[index].questions
             btnOption1.setTitle(electricityQuestions[index].answers[0], for: .normal)
             btnOption2.setTitle(electricityQuestions[index].answers[1], for: .normal)
@@ -342,7 +328,7 @@ extension RumahViewController {
     
     private func checkListrik() {
         guard let lastTappedListrik = UserDefaults.standard.object(forKey: "last_tappedListrik") as? Date else { return }
-        print("Last tapped listrik: \(lastTappedListrik.description(with: .current))")
+        print("Last tapped Listrik      : \(lastTappedListrik.description(with: .current))")
         
         let diff = Calendar.current.dateComponents([.day], from: lastTappedListrik, to: Date())
         
@@ -353,7 +339,7 @@ extension RumahViewController {
     
     private func checkKipas() {
         guard let lastTappedKipas = UserDefaults.standard.object(forKey: "last_tappedKipas") as? Date else { return }
-        print("Last tapped kipas: \(lastTappedKipas.description(with: .current))")
+        print("Last tapped Kipas        : \(lastTappedKipas.description(with: .current))")
         
         let diff = Calendar.current.dateComponents([.day], from: lastTappedKipas, to: Date())
         
@@ -364,7 +350,7 @@ extension RumahViewController {
     
     private func checkShoppingBag() {
         guard let lastTappedShoppingBag = UserDefaults.standard.object(forKey: "last_tappedShoppingBag") as? Date else { return }
-        print("Last tapped shopping bag: \(lastTappedShoppingBag.description(with: .current))")
+        print("Last tapped Shopping bag : \(lastTappedShoppingBag.description(with: .current))\n")
         
         let diff = Calendar.current.dateComponents([.day], from: lastTappedShoppingBag, to: Date())
         
@@ -376,7 +362,7 @@ extension RumahViewController {
     private func checkMakanan() {
         guard let lastTappedMakanan = UserDefaults.standard.object(forKey: "last_tappedMakanan") as? Date else { return }
         
-        print("Last tapped makanan: \(lastTappedMakanan.description(with: .current))")
+        print("Last tapped Makanan      : \(lastTappedMakanan.description(with: .current))")
         
         // Check beda segmen ato ga
         // check last tapped makanan itu beda segmen sama segmen sekarang
