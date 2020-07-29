@@ -255,6 +255,7 @@ extension RumahViewController {
     private func perubahanPagi() {
         //panggil function ini buat perubahan background waktu pagi
         filter.backgroundColor = UIColor.white.withAlphaComponent(0)
+        lampu.image = UIImage(named: "asset.LampuMati")
         jendela.image = UIImage(named: "asset.JendelaPagi")
         
         tandaSeru2.isHidden = false
@@ -262,10 +263,10 @@ extension RumahViewController {
         tandaSeruShoppingBag.isHidden = false
         tandaSeruKipas.isHidden = false
         
-        checkListrik()
+//        checkListrik()
         checkMakanan()
-        checkKipas()
-        checkShoppingBag()
+//        checkKipas()
+//        checkShoppingBag()
     }
     
     private func perubahanSore() {
@@ -274,10 +275,10 @@ extension RumahViewController {
         jendela.image = UIImage(named: "asset.JendelaSore")
         tandaSeru.isHidden = false
         
-        checkListrik()
+//        checkListrik()
         checkMakanan()
-        checkKipas()
-        checkShoppingBag()
+//        checkKipas()
+//        checkShoppingBag()
     }
     
     private func perubahanMalam() {
@@ -286,10 +287,10 @@ extension RumahViewController {
         jendela.image = UIImage(named: "asset.JendelaMalam")
         tandaSeru.isHidden = false
         
-        checkListrik()
+//        checkListrik()
         checkMakanan()
-        checkKipas()
-        checkShoppingBag()
+//        checkKipas()
+//        checkShoppingBag()
     }
     
     private func checkListrik() {
