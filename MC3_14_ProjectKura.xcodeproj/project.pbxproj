@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		572ABDC724C6D75D00481B86 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572ABDC624C6D75D00481B86 /* UIViewController+Extensions.swift */; };
+		57392E9224D1637A00908246 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57392E9124D1637A00908246 /* AudioPlayer.swift */; };
+		57392E9424D1645100908246 /* after-the-rain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 57392E9324D1645100908246 /* after-the-rain.wav */; };
+		57392E9B24D188D100908246 /* beach-waves.wav in Resources */ = {isa = PBXBuildFile; fileRef = 57392E9A24D188D100908246 /* beach-waves.wav */; };
 		5756A52524D056E100839343 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5756A52424D056E100839343 /* PhoneViewController.swift */; };
 		57777DF124CACA7F00C3F342 /* FadeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57777DF024CACA7F00C3F342 /* FadeAnimation.swift */; };
 		57CAC68D24C590DF00062191 /* Score+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CAC68C24C590DF00062191 /* Score+Extensions.swift */; };
@@ -34,6 +37,9 @@
 
 /* Begin PBXFileReference section */
 		572ABDC624C6D75D00481B86 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		57392E9124D1637A00908246 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		57392E9324D1645100908246 /* after-the-rain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "after-the-rain.wav"; sourceTree = "<group>"; };
+		57392E9A24D188D100908246 /* beach-waves.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beach-waves.wav"; sourceTree = "<group>"; };
 		5756A52424D056E100839343 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		57777DF024CACA7F00C3F342 /* FadeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeAnimation.swift; sourceTree = "<group>"; };
 		57CAC68C24C590DF00062191 /* Score+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Score+Extensions.swift"; sourceTree = "<group>"; };
@@ -80,10 +86,20 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		57392E9524D1694B00908246 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				57392E9324D1645100908246 /* after-the-rain.wav */,
+				57392E9A24D188D100908246 /* beach-waves.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		57777DEF24CACA6C00C3F342 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				57777DF024CACA7F00C3F342 /* FadeAnimation.swift */,
+				57392E9124D1637A00908246 /* AudioPlayer.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -162,6 +178,7 @@
 		71907B7824BDFCD5008E44CF /* MC3_14_ProjectKura */ = {
 			isa = PBXGroup;
 			children = (
+				57392E9524D1694B00908246 /* Sounds */,
 				CBC4A82124CEC5EB00B3F5DC /* Fonts */,
 				71907B7924BDFCD5008E44CF /* AppDelegate.swift */,
 				71907B7B24BDFCD5008E44CF /* SceneDelegate.swift */,
@@ -277,6 +294,8 @@
 				EC1E480A24CEC0D600975C83 /* Onboarding.storyboard in Resources */,
 				713A7BFC24C6DAFB006049FB /* Pantai.storyboard in Resources */,
 				CBC4A83D24CEC6C400B3F5DC /* FredokaOne-Regular.ttf in Resources */,
+				57392E9B24D188D100908246 /* beach-waves.wav in Resources */,
+				57392E9424D1645100908246 /* after-the-rain.wav in Resources */,
 				71907B8924BDFCD7008E44CF /* LaunchScreen.storyboard in Resources */,
 				71907B8624BDFCD7008E44CF /* Assets.xcassets in Resources */,
 			);
@@ -299,6 +318,7 @@
 				CBB173CB24CAD1680090B742 /* QuestionsAndFacts.swift in Sources */,
 				572ABDC724C6D75D00481B86 /* UIViewController+Extensions.swift in Sources */,
 				713A7BFE24C723B7006049FB /* PantaiViewController.swift in Sources */,
+				57392E9224D1637A00908246 /* AudioPlayer.swift in Sources */,
 				71907B8424BDFCD5008E44CF /* MC3_14_ProjectKura.xcdatamodeld in Sources */,
 				EC1E480F24CEFC4400975C83 /* PantaiOnboardingViewController.swift in Sources */,
 				710F595324C5F6380037185E /* RumahViewController.swift in Sources */,

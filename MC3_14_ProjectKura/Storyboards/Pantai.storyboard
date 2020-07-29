@@ -111,10 +111,21 @@
                                     <constraint firstAttribute="width" secondItem="A07-lr-fLX" secondAttribute="height" multiplier="51:28" id="dXL-HP-ktV"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCk-Zz-waK">
+                                <rect key="frame" x="4" y="378.5" width="68" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pCk-Zz-waK" secondAttribute="height" multiplier="68:49" id="wvb-O3-w8H"/>
+                                </constraints>
+                                <state key="normal" image="Button ke Rumah"/>
+                                <connections>
+                                    <action selector="keRumah:" destination="pv7-hg-C7s" eventType="touchUpInside" id="XGP-kb-Hi1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="NDP-X5-W79" firstAttribute="centerX" secondItem="zkV-J7-CsJ" secondAttribute="centerX" multiplier="1.2" id="0sW-KE-iIl"/>
+                            <constraint firstItem="pCk-Zz-waK" firstAttribute="leading" secondItem="f9a-EZ-Xhb" secondAttribute="leading" constant="4" id="1Zk-Px-1MO"/>
                             <constraint firstItem="32T-LI-RU1" firstAttribute="centerY" secondItem="zkV-J7-CsJ" secondAttribute="centerY" multiplier="1.75" id="1t8-kU-k0W"/>
                             <constraint firstItem="AxZ-vq-ywB" firstAttribute="height" secondItem="AV4-KC-kOS" secondAttribute="height" multiplier="0.0535714" id="289-IK-vuU"/>
                             <constraint firstItem="AV4-KC-kOS" firstAttribute="leading" secondItem="zkV-J7-CsJ" secondAttribute="leading" id="2yd-XT-dQK"/>
@@ -130,6 +141,7 @@
                             <constraint firstAttribute="bottom" secondItem="AV4-KC-kOS" secondAttribute="bottom" id="9bY-bo-62H"/>
                             <constraint firstItem="Jhz-cy-w0D" firstAttribute="centerX" secondItem="zkV-J7-CsJ" secondAttribute="centerX" multiplier="1.7" id="BUt-UD-8gH"/>
                             <constraint firstItem="R9K-wd-DGZ" firstAttribute="height" secondItem="AV4-KC-kOS" secondAttribute="height" multiplier="0.0948661" id="Coc-66-88G"/>
+                            <constraint firstItem="pCk-Zz-waK" firstAttribute="centerY" secondItem="zkV-J7-CsJ" secondAttribute="centerY" multiplier="0.9" id="DBd-8G-JQA"/>
                             <constraint firstItem="lzq-nO-JEX" firstAttribute="height" secondItem="AV4-KC-kOS" secondAttribute="height" multiplier="0.0613839" id="H4I-MC-73M"/>
                             <constraint firstItem="A07-lr-fLX" firstAttribute="centerY" secondItem="zkV-J7-CsJ" secondAttribute="centerY" multiplier="1.45" id="IOb-tc-bAx"/>
                             <constraint firstItem="Y7n-ym-rfP" firstAttribute="centerX" secondItem="zkV-J7-CsJ" secondAttribute="centerX" multiplier="1.5" id="Iz5-Fi-AS3"/>
@@ -143,6 +155,7 @@
                             <constraint firstItem="Y7n-ym-rfP" firstAttribute="centerY" secondItem="zkV-J7-CsJ" secondAttribute="centerY" multiplier="1.6" id="Ypd-rq-e1n"/>
                             <constraint firstItem="BjX-vd-22D" firstAttribute="height" secondItem="AV4-KC-kOS" secondAttribute="height" multiplier="0.389509" id="ZVO-A3-1tD"/>
                             <constraint firstItem="lzq-nO-JEX" firstAttribute="centerX" secondItem="zkV-J7-CsJ" secondAttribute="centerX" multiplier="0.2" id="br5-A3-RMf"/>
+                            <constraint firstItem="pCk-Zz-waK" firstAttribute="height" secondItem="zkV-J7-CsJ" secondAttribute="height" multiplier="0.0546875" id="ceC-bb-U8m"/>
                             <constraint firstItem="jrJ-zd-MNT" firstAttribute="centerY" secondItem="zkV-J7-CsJ" secondAttribute="centerY" multiplier="1.55" id="cpz-Mj-pHO"/>
                             <constraint firstAttribute="bottom" secondItem="Lfx-Mm-oyX" secondAttribute="bottom" constant="-1" id="d4U-O7-wKs"/>
                             <constraint firstItem="A07-lr-fLX" firstAttribute="centerX" secondItem="zkV-J7-CsJ" secondAttribute="centerX" multiplier="0.2" id="dFn-Cy-sit"/>
@@ -197,6 +210,7 @@
     </scenes>
     <resources>
         <image name="Bawah laut Pagi Bersih" width="418" height="214"/>
+        <image name="Button ke Rumah" width="68" height="49"/>
         <image name="Fish" width="73" height="69.5"/>
         <image name="Fish-1" width="73" height="69.5"/>
         <image name="Fishh" width="98" height="94"/>
