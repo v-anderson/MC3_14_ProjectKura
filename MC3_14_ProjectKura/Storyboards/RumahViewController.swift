@@ -12,14 +12,11 @@ import UserNotifications
 class RumahViewController: UIViewController {
     
     @IBOutlet weak var tandaSeru: UIButton!
-    
     @IBOutlet weak var tandaSeru2: UIButton!
-    
     
     @IBOutlet weak var tandaSeruKipas: UIButton!
     
     @IBOutlet weak var tandaSeruShoppingBag: UIButton!
-    
     
     @IBOutlet weak var filter: UILabel!
     @IBOutlet weak var jendela: UIImageView!
@@ -58,7 +55,7 @@ class RumahViewController: UIViewController {
         checkTimeOfDay()
         
         // add tap gesture to whole screen
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonDidTap)))
+//        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonDidTap)))
         
         let results = Score.fetchAll(fromContext: getViewContext())
         results.forEach { print($0.score, $0.date) }
@@ -77,16 +74,17 @@ class RumahViewController: UIViewController {
     //ini tombol tanda seru untuk munculin pertanyaan listrik
     @IBAction func tanyaListrik(_ sender: Any) {
         tandaSeru2.isHidden = true
+        randomQuestions = Int.random(in: 0..<3)
+        electricQuestion()
         UserDefaults.standard.set(Date(), forKey: "last_tappedListrik")
     }
     
-    
     @IBAction func tanyaShoppingBag(_ sender: Any) {
         tandaSeruShoppingBag.isHidden = true
+        randomQuestions = Int.random(in: 0..<3)
+        shoppingBagQuestion()
         UserDefaults.standard.set(Date(), forKey: "last_tappedShoppingBag")
     }
-    
-    
 
     @IBAction func tanyaKipas(_ sender: Any) {
         tandaSeruKipas.isHidden = true
@@ -95,12 +93,12 @@ class RumahViewController: UIViewController {
     
     @IBAction func btn1(_ sender: Any) {
         checkAnswer(forSelectedButton: 0)
-        fact()
+        foodFact() // belum kelar
     }
     
     @IBAction func btn2(_ sender: Any) {
         checkAnswer(forSelectedButton: 1)
-        fact()
+        foodFact() // belum kelar
     }
     
     // MARK: - OBJC Selectors
@@ -128,7 +126,7 @@ class RumahViewController: UIViewController {
     
     private func checkAnswer(forSelectedButton buttonIndex: Int) {
         if let index = randomQuestions {
-            let correctIndex = questions[index].goodAnswer
+            let correctIndex = FoodQuestions[index].goodAnswer
             if correctIndex == buttonIndex {
                 print("Good Answer")
                 
@@ -151,7 +149,7 @@ class RumahViewController: UIViewController {
         viewPopUpBox.isHidden = true
     }
     
-    func foodQuestion() {
+    func showPopUpBox() {
         viewPopUpBox.isHidden = false
         viewPopUpBox.alpha = 0
         viewPopUpBox.transform = CGAffineTransform(scaleX: 0, y: 0)
@@ -164,34 +162,90 @@ class RumahViewController: UIViewController {
             self.factTitle.alpha = 0
             self.factBody.alpha = 0
         }
-        
         foodQuestions.numberOfLines = 0
         foodQuestions.adjustsFontSizeToFitWidth = true
-        if let index = randomQuestions{
-            foodQuestions.text = questions[index].questions
-            btnOption1.setTitle(questions[index].answers[0], for: .normal)
-            btnOption2.setTitle(questions[index].answers[1], for: .normal)
-        }
-        
     }
     
-    func fact() {
+    func hideQuestionsShowFact() {
         factImage.alpha = 1
         factTitle.alpha = 1
         factBody.alpha = 1
         foodQuestions.alpha = 0
         btnStack.isHidden = true
-        
+    }
+    
+    // Q FOOD
+    func foodQuestion() {
+        showPopUpBox()
+        if let index = randomQuestions{
+            foodQuestions.text = FoodQuestions[index].questions
+            btnOption1.setTitle(FoodQuestions[index].answers[0], for: .normal)
+            btnOption2.setTitle(FoodQuestions[index].answers[1], for: .normal)
+        }
+    }
+    
+    // Q ELECTRIC
+    func electricQuestion() {
+        showPopUpBox()
+        if let index = randomQuestions{
+            foodQuestions.text = electricityQuestions[index].questions
+            btnOption1.setTitle(electricityQuestions[index].answers[0], for: .normal)
+            btnOption2.setTitle(electricityQuestions[index].answers[1], for: .normal)
+        }
+    }
+    
+    // Q SHOPPING BAG
+    func shoppingBagQuestion() {
+        showPopUpBox()
         if let index = randomQuestions {
-            factImage.image = UIImage(named: questions[index].imageName)
-            factTitle.text = questions[index].factTitle
-            factBody.text = questions[index].factBody
+            foodQuestions.text = shoppingBagQuestions[index].questions
+            btnOption1.setTitle(shoppingBagQuestions[index].answers[0], for: .normal)
+            btnOption2.setTitle(shoppingBagQuestions[index].answers[1], for: .normal)
+        }
+    }
+    
+    // FOOD FACT
+    func foodFact() {
+        hideQuestionsShowFact()
+        if let index = randomQuestions {
+            factImage.image = UIImage(named: FoodQuestions[index].imageName)
+            factTitle.text = FoodQuestions[index].factTitle
+            factBody.text = FoodQuestions[index].factBody
             lblTapToDismiss.alpha = 1
             factBody.adjustsFontSizeToFitWidth = true
             factBody.numberOfLines = 0
         }
         addTapGesture()
     }
+    
+    // ELECTRIC FACT
+    func electricFact() {
+        hideQuestionsShowFact()
+        if let index = randomQuestions {
+            factImage.image = UIImage(named: electricityQuestions[index].imageName)
+            factTitle.text = electricityQuestions[index].factTitle
+            factBody.text = electricityQuestions[index].factBody
+            lblTapToDismiss.alpha = 1
+            factBody.adjustsFontSizeToFitWidth = true
+            factBody.numberOfLines = 0
+        }
+        addTapGesture()
+    }
+    
+    // SHOPPING BAG FACT
+    func shoppingBagFact() {
+        hideQuestionsShowFact()
+        if let index = randomQuestions {
+            factImage.image = UIImage(named: shoppingBagQuestions[index].imageName)
+            factTitle.text = shoppingBagQuestions[index].factTitle
+            factBody.text = shoppingBagQuestions[index].factBody
+            lblTapToDismiss.alpha = 1
+            factBody.adjustsFontSizeToFitWidth = true
+            factBody.numberOfLines = 0
+        }
+        addTapGesture()
+    }
+    
 }
 
 // MARK: - Perubahan UI
@@ -201,6 +255,7 @@ extension RumahViewController {
     private func perubahanPagi() {
         //panggil function ini buat perubahan background waktu pagi
         filter.backgroundColor = UIColor.white.withAlphaComponent(0)
+        lampu.image = UIImage(named: "asset.LampuMati")
         jendela.image = UIImage(named: "asset.JendelaPagi")
         
         tandaSeru2.isHidden = false
@@ -208,10 +263,10 @@ extension RumahViewController {
         tandaSeruShoppingBag.isHidden = false
         tandaSeruKipas.isHidden = false
         
-        checkListrik()
+//        checkListrik()
         checkMakanan()
-        checkKipas()
-        checkShoppingBag()
+//        checkKipas()
+//        checkShoppingBag()
     }
     
     private func perubahanSore() {
@@ -220,10 +275,10 @@ extension RumahViewController {
         jendela.image = UIImage(named: "asset.JendelaSore")
         tandaSeru.isHidden = false
         
-        checkListrik()
+//        checkListrik()
         checkMakanan()
-        checkKipas()
-        checkShoppingBag()
+//        checkKipas()
+//        checkShoppingBag()
     }
     
     private func perubahanMalam() {
@@ -232,10 +287,10 @@ extension RumahViewController {
         jendela.image = UIImage(named: "asset.JendelaMalam")
         tandaSeru.isHidden = false
         
-        checkListrik()
+//        checkListrik()
         checkMakanan()
-        checkKipas()
-        checkShoppingBag()
+//        checkKipas()
+//        checkShoppingBag()
     }
     
     private func checkListrik() {

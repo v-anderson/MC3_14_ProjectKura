@@ -37,7 +37,7 @@ class PantaiViewController: UIViewController {
         
         loadAnimation()
 
-        UserDefaults.standard.set(20, forKey: "last_score")
+        UserDefaults.standard.set(11, forKey: "last_score")
         
         transitioningDelegate = self
     }
@@ -55,6 +55,7 @@ class PantaiViewController: UIViewController {
     
     /// Update background according current time
     private func updateBackgroundWith (score: Int) {
+        print("Ini score dalam updateBackgroundWith : ", score)
             if isMorning() {
                 if score <= 5 {
                     pagiKotorBanget()
