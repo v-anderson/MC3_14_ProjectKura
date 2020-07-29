@@ -541,6 +541,21 @@
             </objects>
             <point key="canvasLocation" x="-3614" y="-333"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="EBf-6t-hRd">
+            <objects>
+                <viewController id="KEe-uM-20z" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="shn-Yu-7ix">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="g5v-gN-A8m"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ap2-az-aYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4354" y="356"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Bawah laut Pagi Bersih" width="418" height="214"/>
