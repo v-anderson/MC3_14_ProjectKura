@@ -48,8 +48,9 @@ class PantaiOnboardingViewController: UIViewController {
         
         transitioningDelegate = self
         
-        
-        // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willResign), name: UIApplication.willResignActiveNotification, object: nil)
+    
         kuraChatBox.text = texts[textIndex]
         addTapGesture()
         
@@ -61,7 +62,17 @@ class PantaiOnboardingViewController: UIViewController {
         showtextBox()
     }
     
+    @objc func didBecomeActive() {
+        self.viewDidAppear(true)
+        firstWave.layer.animationKeys()
+    }
+    
+    @objc func willResign() {
+        print("will enter background")
+    }
+    
     @objc func tapped() {
+        print("tap")
         textIndex += 1
         
         if textIndex >= texts.count {
@@ -69,6 +80,8 @@ class PantaiOnboardingViewController: UIViewController {
         } else {
             typingAnimation(text: texts[textIndex])
         }
+        
+       
         
     }
     

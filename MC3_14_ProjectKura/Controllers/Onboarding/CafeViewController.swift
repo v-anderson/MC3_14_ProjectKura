@@ -25,6 +25,7 @@ class CafeViewController: UIViewController {
     @IBOutlet var stackButton2: UIButton!
     @IBOutlet var stackButtonConstraint: NSLayoutConstraint!
     
+    var score = 0
     var hasMovedToAnotehrPage = false
     var questionIndex = 0
     var greetingIndex = 0
@@ -32,8 +33,6 @@ class CafeViewController: UIViewController {
         "Hello! I’m Kura.\nYou must be....",
         "Nice to meet you.\nThank you for meeting me here!  My father believe that you can help me. But I’m still not sure, "
     ]
-    
-    var username = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,26 +77,13 @@ class CafeViewController: UIViewController {
     func typingAnimation(text: String) {
         chatLabel.text = ""
         
-        var text2 = text
-        //           if currentIndex == 1 {
-        //               text2 = "Hi \(nameInput.text!), " + text
-        //           }
-        //           label.text = ""
-        var index = 0.0
-        
-        for letter in text2 {
-//            Timer.scheduledTimer(withTimeInterval: 0.02 * index, repeats: false) { (timer) in
-//                self.chatLabel.text?.append(letter)
-//            }
+        for letter in text {
             
             chatLabel.text?.append(letter)
             
             RunLoop.current.run(until: Date() + 0.02)
-        
-            index += 1
         }
         
-        print("dfdfdfdfd")
     }
     
     private func constraintAnimation() {
@@ -108,7 +94,7 @@ class CafeViewController: UIViewController {
     
     
     @objc func tapped() {
-        print("tapped")
+      
         removeTapGesture()
         //MARK: - Tap pertama kali
         if greetingIndex == 0 {
@@ -152,7 +138,16 @@ extension CafeViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        if inputNameTextField.text == "" {
+        if isValidInput(Input: inputNameTextField.text){
+            UserDefaults.standard.set(inputNameTextField.text!, forKey: "user_name")
+            inputNameTextField.resignFirstResponder()
+            inputNameConstraint.constant = -300
+            chatboxConstraints.constant = 20
+            chatLabel.text = "Hi \(inputNameTextField.text!), " + greeting[greetingIndex]
+            chatboxWidthConstraint.constant = 100
+            constraintAnimation()
+            addTapGesture()
+        } else {
             inputNameConstraint.constant += 20
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
                 self.view.layoutIfNeeded()
@@ -162,16 +157,17 @@ extension CafeViewController: UITextFieldDelegate {
             UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
                 self.view.layoutIfNeeded()
             }, completion: nil)
-        } else {
-            inputNameTextField.resignFirstResponder()
-            inputNameConstraint.constant = -300
-            chatboxConstraints.constant = 20
-            chatLabel.text = greeting[greetingIndex]
-            chatboxWidthConstraint.constant = 100
-            constraintAnimation()
-            addTapGesture()
         }
         return true
+    }
+    
+    func isValidInput(Input: String?) -> Bool {
+        if let input = Input {
+            return input.range(of: "\\A\\w{3,18}\\z", options: .regularExpression) != nil
+        } else {
+            return false
+        }
+        
     }
 }
 
@@ -195,7 +191,7 @@ extension CafeViewController {
     }
     
     func showAnswer(answerType: OnboardingCuestionType) {
-        print(answerType)
+        
         if answerType == .single {
             
             hideButtonQuestion()
@@ -242,24 +238,38 @@ extension CafeViewController {
     
     func nextQuestion(currentAnswer: Int?) {
         
+        if let answer = currentAnswer {
+            if onboardingQuestions[questionIndex].questionsType == .multi {
+                if answer == onboardingQuestions[questionIndex].goodAnswer {
+                    score += 1
+                }
+            }
+        }
         if questionIndex == 5 && !hasMovedToAnotehrPage{
             changePage()
         } else {
-            questionIndex += 1
-            
-            if onboardingQuestions[questionIndex].isLongQuestion {
-                chatboxWidthConstraint.constant = 100
+            if questionIndex >= 8 {
+                score *= 5
+                UserDefaults.standard.set(score, forKey: "onboarding_score")
+                print("score: \(UserDefaults.standard.object(forKey: "onboarding_score") as! Int)")
             } else {
-                chatboxWidthConstraint.constant = 0
+                questionIndex += 1
+                
+                if onboardingQuestions[questionIndex].isLongQuestion {
+                    chatboxWidthConstraint.constant = 100
+                } else {
+                    chatboxWidthConstraint.constant = 0
+                }
+                
+                chatLabel.text = ""
+                
+                if onboardingQuestions[questionIndex].questionsType == .single {
+                    showAnswer(answerType: .single)
+                } else {
+                    showAnswer(answerType: .multi)
+                }
             }
             
-            chatLabel.text = ""
-            
-            if onboardingQuestions[questionIndex].questionsType == .single {
-                showAnswer(answerType: .single)
-            } else {
-                showAnswer(answerType: .multi)
-            }
         }
         
     }
