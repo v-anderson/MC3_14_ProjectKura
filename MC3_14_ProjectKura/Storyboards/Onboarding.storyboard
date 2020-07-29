@@ -6,6 +6,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Rubik-Regular.ttf">
+            <string>Rubik-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Phone View Controller-->
         <scene sceneID="64j-PL-hUE">
@@ -147,8 +152,8 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfB-m6-8MY">
                                         <rect key="frame" x="15" y="10" width="237" height="42.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
+                                        <color key="textColor" red="0.28235294119999998" green="0.1764705882" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -171,7 +176,8 @@
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O1p-yC-4Oi">
                                         <rect key="frame" x="30" y="8" width="218" height="41"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.28235294119999998" green="0.1764705882" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                 </subviews>
@@ -187,12 +193,12 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcj-9n-xXw">
-                                <rect key="frame" x="100" y="921" width="214" height="41"/>
+                                <rect key="frame" x="100" y="918" width="214" height="44"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.76078431372549016" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="YUU-FN-Eef"/>
+                                    <constraint firstAttribute="height" constant="44" id="YUU-FN-Eef"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
                                 <state key="normal" title="Just Coffe Please">
                                     <color key="titleColor" red="0.28235294119999998" green="0.1764705882" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -211,16 +217,16 @@
                                     <action selector="singleButtonTapped:" destination="Axt-ch-vm7" eventType="touchUpInside" id="dwa-IT-PSx"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0YB-3l-qvq">
-                                <rect key="frame" x="20" y="970" width="374" height="92"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0YB-3l-qvq">
+                                <rect key="frame" x="20" y="954" width="374" height="108"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nAR-Uc-K1A">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.76078431369999999" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="41" id="zsx-rW-yEu"/>
+                                            <constraint firstAttribute="height" constant="44" id="zsx-rW-yEu"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" red="0.28235294119999998" green="0.1764705882" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -240,12 +246,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="0kz-iH-kNs">
-                                        <rect key="frame" x="0.0" y="51" width="374" height="41"/>
+                                        <rect key="frame" x="0.0" y="64" width="374" height="44"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.76078431369999999" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="41" id="N6b-gB-8XU"/>
+                                            <constraint firstAttribute="height" constant="44" id="N6b-gB-8XU"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" red="0.28235294119999998" green="0.1764705882" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -430,8 +436,8 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TaF-n5-2ja">
                                         <rect key="frame" x="23" y="134" width="341" height="93"/>
                                         <string key="text">Me and my family have a job to take care of the beach. We always protect the beaches. We will also go to another beach and help the turtles in there to take care of the beaches. </string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
+                                        <color key="textColor" red="0.28235294119999998" green="0.1764705882" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>

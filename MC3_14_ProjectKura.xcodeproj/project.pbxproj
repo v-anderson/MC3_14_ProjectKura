@@ -441,7 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7JVNXKNT42;
+				DEVELOPMENT_TEAM = 4C46CAZW8L;
 				INFOPLIST_FILE = MC3_14_ProjectKura/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -459,7 +459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7JVNXKNT42;
+				DEVELOPMENT_TEAM = 4C46CAZW8L;
 				INFOPLIST_FILE = MC3_14_ProjectKura/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
