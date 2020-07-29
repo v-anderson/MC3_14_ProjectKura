@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         userNotifCenter.requestAuthorization(options: [.alert,.badge,.sound]) { (granted, err) in
             if granted {
-                print("Local notif")
                 self.addNotif(hour: 17, minute: 47)
 //                self.addNotif(hour: 12)
 //                self.addNotif(hour: 17)

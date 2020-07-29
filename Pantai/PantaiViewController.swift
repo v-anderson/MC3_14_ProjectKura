@@ -31,13 +31,14 @@ class PantaiViewController: UIViewController {
     @IBOutlet weak var pantaiBG: UIImageView!
     @IBOutlet weak var koral: UIImageView!
 
+    let audioPlayer = AudioPlayer(filename: "beach-waves", extension: "wav")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadAnimation()
+        audioPlayer.setupAudioService()
 
-        UserDefaults.standard.set(11, forKey: "last_score")
+//        UserDefaults.standard.set(20, forKey: "last_score")
         
         transitioningDelegate = self
     }
@@ -45,48 +46,61 @@ class PantaiViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        audioPlayer.playSound(withVolume: 0.5)
+        loadAnimation()
+
         let scores = Score.fetchAll(fromContext: getViewContext())
-        scores.forEach { score in
-            print(score.score, score.date)
+        print("\nCore data contents:")
+        for (i, score) in scores.enumerated() {
+            print("\(i+1). Score: \(score.score)  | Date: \(score.date)")
         }
+        print("")
         
         setupBackgroundByScore()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        audioPlayer.stopSound()
+    }
+    
+    @IBAction func keRumah(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     /// Update background according current time
     private func updateBackgroundWith (score: Int) {
-        print("Ini score dalam updateBackgroundWith : ", score)
-            if isMorning() {
-                if score <= 5 {
-                    pagiKotorBanget()
-                } else if score <= 10 {
-                    pagiKotor()
-                } else if score <= 15 {
-                    pagiNetral()
-                } else { pagiBersih() }
-            } else if isAfternoon() {
-                if score <= 5 {
-                    soreKotorBanget()
-                } else if score <= 10 {
-                    soreKotor()
-                } else if score <= 15 {
-                    soreNetral()
-                } else { soreBersih() }
-            } else {
-                if score <= 5 {
-                    malemKotorBanget()
-                } else if score <= 10 {
-                    malemKotor()
-                } else if score <= 15 {
-                    malemNetral()
-                } else { malemBersih() }
-            }
+        if isMorning() {
+            if score <= 5 {
+                pagiKotorBanget()
+            } else if score <= 10 {
+                pagiKotor()
+            } else if score <= 15 {
+                pagiNetral()
+            } else { pagiBersih() }
+        } else if isAfternoon() {
+            if score <= 5 {
+                soreKotorBanget()
+            } else if score <= 10 {
+                soreKotor()
+            } else if score <= 15 {
+                soreNetral()
+            } else { soreBersih() }
+        } else {
+            if score <= 5 {
+                malemKotorBanget()
+            } else if score <= 10 {
+                malemKotor()
+            } else if score <= 15 {
+                malemNetral()
+            } else { malemBersih() }
+        }
     }
     
     private func setupBackgroundByScore() {
         if let score = calculateFinalScore() {
             // Score not nil, saatnya update
-            print("Final score: \(score)")
+            print("Final score: \(score)\n")
             
             //cek masuk kategori mana
             updateBackgroundWith(score: score)
@@ -96,7 +110,7 @@ class PantaiViewController: UIViewController {
         } else {
             // Belom saatnya update, pake score dari user defaults
             guard let lastScore = UserDefaults.standard.object(forKey: "last_score") as? Int else { return }
-            print("Last score: \(lastScore)")
+            print("Last score: \(lastScore)\n")
             
             updateBackgroundWith(score: lastScore)
         }
@@ -276,7 +290,6 @@ extension PantaiViewController {
         UIView.animate(withDuration: 4, delay: 0, options: [.autoreverse, .repeat], animations: {
             self.firstWave.transform = CGAffineTransform(translationX: 20, y: -10)
         })
-        
     }
     
     private func loadAnimationFish() {

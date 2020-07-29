@@ -19,7 +19,7 @@ extension UIViewController {
             UserDefaults.standard.set(Date(), forKey: "last_updated")
             return nil
         }
-        print("Last updated at: \(lastUpdatedDate)")
+        print("Last updated background at: \(lastUpdatedDate)")
         
         // Only update background every 3 days
         if Date.daysAfter(date: lastUpdatedDate) <= 3 { return nil }
