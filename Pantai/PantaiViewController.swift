@@ -31,26 +31,44 @@ class PantaiViewController: UIViewController {
     @IBOutlet weak var pantaiBG: UIImageView!
     @IBOutlet weak var koral: UIImageView!
 
+    let audioPlayer = AudioPlayer(filename: "summer-by-lake-bird-chirping", extension: "wav")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadAnimation()
+        audioPlayer.setupAudioService()
 
-        UserDefaults.standard.set(11, forKey: "last_score")
+        UserDefaults.standard.set(20, forKey: "last_score")
         
         transitioningDelegate = self
+        
+        // add tap gesture to whole screen
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonDidTap)))
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        audioPlayer.playSound()
+        loadAnimation()
+
         let scores = Score.fetchAll(fromContext: getViewContext())
-        scores.forEach { score in
-            print(score.score, score.date)
+        print("\nCore data contents:")
+        for (i, score) in scores.enumerated() {
+            print("\(i+1). Score: \(score.score)  | Date: \(score.date)")
         }
+        print("")
         
         setupBackgroundByScore()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        audioPlayer.stopSound()
+    }
+    
+    @objc func buttonDidTap() {
+        dismiss(animated: true, completion: nil)
     }
     
     /// Update background according current time
@@ -276,7 +294,6 @@ extension PantaiViewController {
         UIView.animate(withDuration: 4, delay: 0, options: [.autoreverse, .repeat], animations: {
             self.firstWave.transform = CGAffineTransform(translationX: 20, y: -10)
         })
-        
     }
     
     private func loadAnimationFish() {

@@ -53,6 +53,7 @@ class RumahViewController: UIViewController {
         case shoppingBag
     }
     
+    let audioPlayer = AudioPlayer(filename: "after-the-rain", extension: "wav")
     
     // MARK: - Lifecycle
     
@@ -62,10 +63,22 @@ class RumahViewController: UIViewController {
         checkTimeOfDay()
         
         // add tap gesture to whole screen
-//        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonDidTap)))
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonDidTap)))
         
         let results = Score.fetchAll(fromContext: getViewContext())
         results.forEach { print($0.score, $0.date) }
+        
+        audioPlayer.setupAudioService()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        audioPlayer.playSound()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        audioPlayer.lowerSound()
     }
     
     // MARK: - IBActions
