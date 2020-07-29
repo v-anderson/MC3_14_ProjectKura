@@ -30,6 +30,7 @@
 		EC1E480F24CEFC4400975C83 /* PantaiOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E480E24CEFC4400975C83 /* PantaiOnboardingViewController.swift */; };
 		ECA008C424D029EB00148809 /* LetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA008C324D029EB00148809 /* LetterViewController.swift */; };
 		ECC8D9C324CFC2BF00ACD8E4 /* OnboardingQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8D9C224CFC2BF00ACD8E4 /* OnboardingQuestion.swift */; };
+		ECDD86F624D173EA002A2CF3 /* RumahOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDD86F524D173EA002A2CF3 /* RumahOnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		EC1E480E24CEFC4400975C83 /* PantaiOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PantaiOnboardingViewController.swift; path = MC3_14_ProjectKura/Controllers/Onboarding/PantaiOnboardingViewController.swift; sourceTree = SOURCE_ROOT; };
 		ECA008C324D029EB00148809 /* LetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterViewController.swift; sourceTree = "<group>"; };
 		ECC8D9C224CFC2BF00ACD8E4 /* OnboardingQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingQuestion.swift; sourceTree = "<group>"; };
+		ECDD86F524D173EA002A2CF3 /* RumahOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RumahOnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 				EC1E480E24CEFC4400975C83 /* PantaiOnboardingViewController.swift */,
 				ECA008C324D029EB00148809 /* LetterViewController.swift */,
 				5756A52424D056E100839343 /* PhoneViewController.swift */,
+				ECDD86F524D173EA002A2CF3 /* RumahOnboardingViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				CB0DABDB24CECA1200AD2DAF /* UIButton + Extensions.swift in Sources */,
 				57CAC68D24C590DF00062191 /* Score+Extensions.swift in Sources */,
 				57777DF124CACA7F00C3F342 /* FadeAnimation.swift in Sources */,
+				ECDD86F624D173EA002A2CF3 /* RumahOnboardingViewController.swift in Sources */,
 				71907B7A24BDFCD5008E44CF /* AppDelegate.swift in Sources */,
 				ECC8D9C324CFC2BF00ACD8E4 /* OnboardingQuestion.swift in Sources */,
 				71907B7C24BDFCD5008E44CF /* SceneDelegate.swift in Sources */,
