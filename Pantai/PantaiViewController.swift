@@ -38,29 +38,16 @@ class PantaiViewController: UIViewController {
         super.viewDidLoad()
         
         audioPlayer.setupAudioService()
-
-//        UserDefaults.standard.set(20, forKey: "last_score")
         
         transitioningDelegate = self
         
         buttonKeRumah.transform = CGAffineTransform(translationX: -100, y: 0)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(willResign), name: UIApplication.willResignActiveNotification, object: nil)
-    }
-    
-    @objc func didBecomeActive() {
-        print("Enter")
-    }
-    
-    @objc func willResign() {
-        print("Leave")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        audioPlayer.playSound(withVolume: 0.2)
+        audioPlayer.playSound(withVolume: 0.5)
         loadAnimation()
 
         let scores = Score.fetchAll(fromContext: getViewContext())

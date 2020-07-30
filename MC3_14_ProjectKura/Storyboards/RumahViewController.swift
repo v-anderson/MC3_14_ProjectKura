@@ -66,6 +66,13 @@ class RumahViewController: UIViewController {
         audioPlayer.setupAudioService()
         transitioningDelegate = self
         buttonKePantai.transform = CGAffineTransform(translationX: 100, y: 0)
+        
+        let scores = Score.fetchAll(fromContext: getViewContext())
+        print("\nCore data contents:")
+        for (i, score) in scores.enumerated() {
+            print("\(i+1). Score: \(score.score)  | Date: \(score.date)")
+        }
+        print("")
     }
     
     override func viewWillAppear(_ animated: Bool) {

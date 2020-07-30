@@ -338,13 +338,13 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pagi - Bersih Onboarding" translatesAutoresizingMaskIntoConstraints="NO" id="BXh-DY-I08">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Laut Kedua Pagi Bersih" translatesAutoresizingMaskIntoConstraints="NO" id="508-bg-ivL">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Laut Kedua Pagi Bersih" translatesAutoresizingMaskIntoConstraints="NO" id="508-bg-ivL" customClass="ImageViewWithPersistentAnimations" customModule="MC3_14_ProjectKura" customModuleProvider="target">
                                 <rect key="frame" x="-140.5" y="494" width="654" height="383"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="508-bg-ivL" secondAttribute="height" multiplier="654:383" id="C7w-hX-SuF"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Laut Depan Pagi Bersih" translatesAutoresizingMaskIntoConstraints="NO" id="QI0-Id-JII">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Laut Depan Pagi Bersih" translatesAutoresizingMaskIntoConstraints="NO" id="QI0-Id-JII" customClass="ImageViewWithPersistentAnimations" customModule="MC3_14_ProjectKura" customModuleProvider="target">
                                 <rect key="frame" x="-56" y="497.5" width="609" height="349"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QI0-Id-JII" secondAttribute="height" multiplier="609:349" id="B0w-rh-m4U"/>
@@ -353,79 +353,79 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bawah laut Pagi Bersih" translatesAutoresizingMaskIntoConstraints="NO" id="4Od-xf-HFF">
                                 <rect key="frame" x="-1" y="683" width="416" height="214"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jelly Fish" translatesAutoresizingMaskIntoConstraints="NO" id="0jc-e9-nVz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jelly Fish" translatesAutoresizingMaskIntoConstraints="NO" id="0jc-e9-nVz" customClass="ImageViewWithPersistentAnimations" customModule="MC3_14_ProjectKura" customModuleProvider="target">
                                 <rect key="frame" x="20" y="555" width="43" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0jc-e9-nVz" secondAttribute="height" multiplier="66:84" id="6pN-gm-Use"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Small jelly fish" translatesAutoresizingMaskIntoConstraints="NO" id="tdA-mS-VOH">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Small jelly fish" translatesAutoresizingMaskIntoConstraints="NO" id="tdA-mS-VOH" customClass="ImageViewWithPersistentAnimations" customModule="MC3_14_ProjectKura" customModuleProvider="target">
                                 <rect key="frame" x="49.5" y="540" width="66.5" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="tdA-mS-VOH" secondAttribute="height" multiplier="53:68" id="lBD-8D-QXa"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fishh-1" translatesAutoresizingMaskIntoConstraints="NO" id="8SM-oM-T7j">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fishh-1" translatesAutoresizingMaskIntoConstraints="NO" id="8SM-oM-T7j" customClass="ImageViewWithPersistentAnimations" customModule="MC3_14_ProjectKura" customModuleProvider="target">
                                 <rect key="frame" x="82.5" y="747" width="83" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8SM-oM-T7j" secondAttribute="height" multiplier="83:74" id="fsU-a2-DWr"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fish" translatesAutoresizingMaskIntoConstraints="NO" id="9eW-5J-el3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fish" translatesAutoresizingMaskIntoConstraints="NO" id="9eW-5J-el3" customClass="ImageViewWithPersistentAnimations" customModule="MC3_14_ProjectKura" customModuleProvider="target">
                                 <rect key="frame" x="51.5" y="657.5" width="83" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9eW-5J-el3" secondAttribute="height" multiplier="83:74" id="p82-cz-cU3"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fishh" translatesAutoresizingMaskIntoConstraints="NO" id="Kep-Kl-hOo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fishh" translatesAutoresizingMaskIntoConstraints="NO" id="Kep-Kl-hOo" customClass="ImageViewWithPersistentAnimations" customModule="MC3_14_ProjectKura" customModuleProvider="target">
                                 <rect key="frame" x="206.5" y="590.5" width="84" height="73"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Kep-Kl-hOo" secondAttribute="height" multiplier="84:73" id="k35-ic-TtS"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fish-1" translatesAutoresizingMaskIntoConstraints="NO" id="uOX-2w-Huv">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fish-1" translatesAutoresizingMaskIntoConstraints="NO" id="uOX-2w-Huv" customClass="ImageViewWithPersistentAnimations" customModule="MC3_14_ProjectKura" customModuleProvider="target">
                                 <rect key="frame" x="268.5" y="680.5" width="84" height="73"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="uOX-2w-Huv" secondAttribute="height" multiplier="84:73" id="oJE-gu-7Ww"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ikan 3" translatesAutoresizingMaskIntoConstraints="NO" id="cEm-hn-PpQ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ikan 3" translatesAutoresizingMaskIntoConstraints="NO" id="cEm-hn-PpQ" customClass="ImageViewWithPersistentAnimations" customModule="MC3_14_ProjectKura" customModuleProvider="target">
                                 <rect key="frame" x="168" y="536" width="57" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cEm-hn-PpQ" secondAttribute="height" multiplier="19:16" id="GOY-Lk-sbw"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ikan 3" translatesAutoresizingMaskIntoConstraints="NO" id="J3T-CD-uHd">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ikan 3" translatesAutoresizingMaskIntoConstraints="NO" id="J3T-CD-uHd" customClass="ImageViewWithPersistentAnimations" customModule="MC3_14_ProjectKura" customModuleProvider="target">
                                 <rect key="frame" x="113" y="562" width="63.5" height="58.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="J3T-CD-uHd" secondAttribute="height" multiplier="63:58" id="PjE-n0-gId"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ikan 1" translatesAutoresizingMaskIntoConstraints="NO" id="dPl-nZ-Wgq">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ikan 1" translatesAutoresizingMaskIntoConstraints="NO" id="dPl-nZ-Wgq" customClass="ImageViewWithPersistentAnimations" customModule="MC3_14_ProjectKura" customModuleProvider="target">
                                 <rect key="frame" x="264.5" y="568.5" width="51" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dPl-nZ-Wgq" secondAttribute="height" multiplier="51:28" id="Jvu-Mu-K6Q"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ikan 1" translatesAutoresizingMaskIntoConstraints="NO" id="mem-Q9-PM1">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ikan 1" translatesAutoresizingMaskIntoConstraints="NO" id="mem-Q9-PM1" customClass="ImageViewWithPersistentAnimations" customModule="MC3_14_ProjectKura" customModuleProvider="target">
                                 <rect key="frame" x="326.5" y="582" width="51" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mem-Q9-PM1" secondAttribute="height" multiplier="51:28" id="04v-rd-asP"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ikan 4" translatesAutoresizingMaskIntoConstraints="NO" id="EwI-vU-zDw">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ikan 4" translatesAutoresizingMaskIntoConstraints="NO" id="EwI-vU-zDw" customClass="ImageViewWithPersistentAnimations" customModule="MC3_14_ProjectKura" customModuleProvider="target">
                                 <rect key="frame" x="321.5" y="641.5" width="61" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="EwI-vU-zDw" secondAttribute="height" multiplier="61:34" id="DZB-tn-nVo"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ikan 3" translatesAutoresizingMaskIntoConstraints="NO" id="VAl-Ro-reo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ikan 3" translatesAutoresizingMaskIntoConstraints="NO" id="VAl-Ro-reo" customClass="ImageViewWithPersistentAnimations" customModule="MC3_14_ProjectKura" customModuleProvider="target">
                                 <rect key="frame" x="199" y="670.5" width="57" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="VAl-Ro-reo" secondAttribute="height" multiplier="19:16" id="lZK-ym-eDS"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ikan 2" translatesAutoresizingMaskIntoConstraints="NO" id="zXV-3F-oPV">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ikan 2" translatesAutoresizingMaskIntoConstraints="NO" id="zXV-3F-oPV" customClass="ImageViewWithPersistentAnimations" customModule="MC3_14_ProjectKura" customModuleProvider="target">
                                 <rect key="frame" x="16" y="635.5" width="51" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zXV-3F-oPV" secondAttribute="height" multiplier="51:28" id="I1D-dI-PEx"/>
@@ -636,7 +636,7 @@
                                         <rect key="frame" x="28" y="124.5" width="326" height="179"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you finish all of your food?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVX-BW-fu0">
-                                                <rect key="frame" x="20" y="78.5" width="286" height="22"/>
+                                                <rect key="frame" x="20" y="79" width="286" height="21"/>
                                                 <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="18"/>
                                                 <color key="textColor" red="0.59607843137254901" green="0.37647058823529411" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -648,7 +648,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's make sure to eat what you can eat." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDT-gz-48v">
-                                                <rect key="frame" x="20" y="116.5" width="286" height="17"/>
+                                                <rect key="frame" x="20" y="117" width="286" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="14"/>
                                                 <color key="textColor" red="0.59607843140000005" green="0.37647058820000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
