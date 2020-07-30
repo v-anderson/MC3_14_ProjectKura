@@ -59,12 +59,6 @@ class PantaiViewController: UIViewController {
         setupBackgroundByScore()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        loadAnimation()
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         audioPlayer.stopSound()

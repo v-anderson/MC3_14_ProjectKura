@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol PhoneViewControllerDelegate: class {
+    func stopBackgroundMusic()
+}
+
 class PhoneViewController: UIViewController {
 
     @IBOutlet weak var reply: UIImageView!
@@ -15,9 +19,16 @@ class PhoneViewController: UIViewController {
     
     var didReply = false
     
+    weak var delegate: PhoneViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         transitioningDelegate = self
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        delegate?.stopBackgroundMusic()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -27,6 +27,8 @@ class LetterViewController: UIViewController {
     
     let tapAnywhereLabel = UILabel()
     
+    let audioPlayer = AudioPlayer(filename: "BetterLife_Kantor", extension: "mp3")
+    
     // MARK: - VC Lifecycle
     
     override func viewDidLoad() {
@@ -35,6 +37,9 @@ class LetterViewController: UIViewController {
         animateLetter()
         addTapGestureToLetter()
         addTapGestureToScreen()
+        
+        audioPlayer.setupAudioService()
+        audioPlayer.playSound(withVolume: 1.0)
     }
     
     // MARK: - OBJC Functions
@@ -55,8 +60,9 @@ class LetterViewController: UIViewController {
         print("Phone did tap")
         
         let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
-        let destination = storyboard.instantiateViewController(identifier: "PhoneViewController")
+        guard let destination = storyboard.instantiateViewController(identifier: "PhoneViewController") as? PhoneViewController else { return }
         destination.modalPresentationStyle = .fullScreen
+        destination.delegate = self
         present(destination, animated: true, completion: nil)
     }
     
@@ -205,5 +211,12 @@ extension LetterViewController {
         phone.addGestureRecognizer(tapGestureRecognizer)
         
         phone.isUserInteractionEnabled = true
+    }
+}
+
+extension LetterViewController: PhoneViewControllerDelegate {
+    
+    func stopBackgroundMusic() {
+        audioPlayer.stopSound()
     }
 }
