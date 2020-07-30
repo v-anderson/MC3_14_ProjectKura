@@ -30,6 +30,7 @@ class PantaiOnboardingViewController: UIViewController {
     @IBOutlet weak var fishShadow7: UIImageView!
     @IBOutlet weak var pantaiBG: UIImageView!
     @IBOutlet weak var koral: UIImageView!
+    @IBOutlet var buttonBackToHomeConstraint: NSLayoutConstraint!
     
     @IBOutlet var kuraChatBox: UILabel!
     @IBOutlet var kuraChatBoxConstraint: NSLayoutConstraint!
@@ -38,10 +39,13 @@ class PantaiOnboardingViewController: UIViewController {
     let texts = [
         "When I was a little turtle, the beach is so pretty and I can play with my friends, swimming, walking around the beach. It’s always been my favorite place.",
         "Me and my family have a job to take care of the beach. We always protect the beaches. We will also go to another beach and help the turtles in there to take care of the beaches.",
-        "Now that I’ve become a grown up turtle, it’s time for me to take care of the beach alone. But it’s been overwhelming to do this alone"
+        "Now that I’ve become a grown up turtle, it’s time for me to take care of the beach alone. But it’s been overwhelming to do this alone",
+        "The beach will keep getting dirtier if you making non eco friendly choices. Try to change your action to make the beach clean",
+        "Now let’s headed back home again by clicking the sign."
     ]
     
     var textIndex = 0
+    var isItFromHome: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,9 +54,17 @@ class PantaiOnboardingViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(willResign), name: UIApplication.willResignActiveNotification, object: nil)
+        
+        isItFromHome = UserDefaults.standard.object(forKey: "fromHome") as? Bool
+        
+        if let fromHome = isItFromHome {
+            if fromHome {
+                textIndex = 3
+            }
+        }
     
         kuraChatBox.text = texts[textIndex]
-        addTapGesture()
+        
         
     }
     
@@ -60,6 +72,9 @@ class PantaiOnboardingViewController: UIViewController {
         super.viewDidAppear(true)
         loadAnimation()
         showtextBox()
+    }
+    @IBAction func backToHomeDidTap(_ sender: UIButton) {
+        dismiss(animated: true)
     }
     
     @objc func didBecomeActive() {
@@ -72,16 +87,22 @@ class PantaiOnboardingViewController: UIViewController {
     }
     
     @objc func tapped() {
-        print("tap")
         textIndex += 1
-        
-        if textIndex >= texts.count {
+
+        if textIndex == 3 && isItFromHome == nil {
             dismiss(animated: true)
-        } else {
+        } else if textIndex == texts.count - 1 {
+            UserDefaults.standard.set(nil, forKey: "fromHome")
+            view.gestureRecognizers?.removeAll()
             typingAnimation(text: texts[textIndex])
+            buttonBackToHomeConstraint.constant = 4
+            showtextBox()
+        } else {
+            if textIndex < texts.count {
+                typingAnimation(text: texts[textIndex])
+            }
+            
         }
-        
-       
         
     }
     
@@ -108,7 +129,10 @@ class PantaiOnboardingViewController: UIViewController {
         kuraChatBoxConstraint.constant = 20
         UIView.animate(withDuration: 1, delay: 1, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
-        })
+        }) { (_) in
+            self.addTapGesture()
+        }
+        
     }
     
     private func loadAnimation() {

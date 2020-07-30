@@ -20,12 +20,15 @@ class RumahOnboardingViewController: UIViewController {
     @IBOutlet var popUpFoodImage: UIImageView!
     @IBOutlet var popUpFactTitleLabel: UILabel!
     @IBOutlet var popUpFactLabel: UILabel!
+    @IBOutlet var buttonToBeach: UIButton!
+    @IBOutlet var buttonToBeachConstraint: NSLayoutConstraint!
     
     var chatBoxIndex = 0
     var tapIndex = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        transitioningDelegate = self
         addTapGesture()
     }
     
@@ -43,6 +46,13 @@ class RumahOnboardingViewController: UIViewController {
         }
     }
     
+    @IBAction func goToBeach(_ sender: UIButton) {
+        UserDefaults.standard.set(true, forKey: "fromHome")
+        changePage(identifier: "PantaiOnboardingViewController")
+        kuraChatBoxConstraint.constant = -300
+        buttonToBeachConstraint.constant = -100
+        animateChatBox()
+    }
     @IBAction func popUpButtonDidTap(_ sender: UIButton) {
         popUpQuestionLabel.alpha = 0
         popUpButton.alpha = 0
@@ -52,6 +62,15 @@ class RumahOnboardingViewController: UIViewController {
         addTapGesture()
     }
     
+    func changePage(identifier: String) {
+        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        
+        let destination = storyboard.instantiateViewController(identifier: identifier)
+        
+        destination.modalPresentationStyle = .fullScreen
+        
+        present(destination, animated: true)
+    }
     
     func addTapGesture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
@@ -71,6 +90,7 @@ class RumahOnboardingViewController: UIViewController {
             hideChatBox()
             removeTapGesture()
         } else if tapIndex == 1 {
+            tapIndex += 1
             popUpView.transform = CGAffineTransform.identity
             UIView.animate(withDuration: 0.3, animations: {
                 self.popUpView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
@@ -79,6 +99,10 @@ class RumahOnboardingViewController: UIViewController {
                 self.popUpView.isHidden = true
                 self.showChatBox()
             }
+            removeTapGesture()
+        } else if tapIndex == 2 {
+            //onboarding selsesai
+            print("finish")
         }
     }
     
@@ -86,14 +110,23 @@ class RumahOnboardingViewController: UIViewController {
         switch chatBoxIndex {
         case 0:
             kuraChatBox.text = "This is my home. In here you will find prompt at different times of the day. I will ask you about your daily life. Try tapping one yourself"
+            kuraChatBoxConstraint.constant = 20
             chatBoxIndex += 1
         case 1:
             kuraChatBox.text = "Your choices will affect the beach. You can go to the beach by clicking this button"
+            kuraChatBoxConstraint.constant = 55
+            buttonToBeachConstraint.constant = 4
+            chatBoxIndex += 1
+        case 2:
+            kuraChatBox.text = "Let’s keep making effort to the environment. Remember even your small action will have consequences to the environment"
+            kuraChatBoxConstraint.constant = 20
+            addTapGesture()
             chatBoxIndex += 1
         default:
-            print("last")
+            print("")
         }
-        kuraChatBoxConstraint.constant = 20
+        
+        
         animateChatBox()
     }
     
@@ -103,6 +136,7 @@ class RumahOnboardingViewController: UIViewController {
     }
     
     func animateChatBox() {
+        
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
         })
@@ -110,4 +144,16 @@ class RumahOnboardingViewController: UIViewController {
     
     
 
+}
+
+//MARK: - Transition
+extension RumahOnboardingViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return FadeAnimation(animationDuration: 1, animationType: .dismiss)
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return FadeAnimation(animationDuration: 1, animationType: .present)
+    }
+    
 }

@@ -121,10 +121,10 @@ class CafeViewController: UIViewController {
         view.gestureRecognizers?.removeAll()
     }
     
-    func changePage() {
+    func changePage(identifier: String) {
         let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
         
-        let destination = storyboard.instantiateViewController(identifier: "PantaiOnboardingViewController")
+        let destination = storyboard.instantiateViewController(identifier: identifier)
         
         destination.modalPresentationStyle = .fullScreen
         
@@ -246,12 +246,12 @@ extension CafeViewController {
             }
         }
         if questionIndex == 5 && !hasMovedToAnotehrPage{
-            changePage()
+            changePage(identifier: "PantaiOnboardingViewController")
         } else {
-            if questionIndex >= 8 {
+            if questionIndex == 8 {
                 score *= 5
                 UserDefaults.standard.set(score, forKey: "onboarding_score")
-                print("score: \(UserDefaults.standard.object(forKey: "onboarding_score") as! Int)")
+                changePage(identifier: "RumahOnboardingViewController")
             } else {
                 questionIndex += 1
                 
