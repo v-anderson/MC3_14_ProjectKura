@@ -156,9 +156,9 @@ extension LetterViewController {
     
     private func animatePhone() {
         let shakeAnimation = CABasicAnimation(keyPath: "transform.translation.x")
-        shakeAnimation.duration = 0.03
-        shakeAnimation.fromValue = -3
-        shakeAnimation.toValue = 3
+        shakeAnimation.duration = 0.05
+        shakeAnimation.fromValue = -2
+        shakeAnimation.toValue = 2
         shakeAnimation.repeatCount = 5
 
         phone.layer.add(shakeAnimation, forKey: "shake_phone")
