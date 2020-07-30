@@ -40,6 +40,7 @@ class RumahViewController: UIViewController {
     @IBOutlet weak var popUpBox: UIImageView!
     @IBOutlet weak var lblTapToDismiss: UILabel!
     @IBOutlet weak var stackButton: UIStackView!
+    @IBOutlet weak var buttonKePantai: UIButton!
     
     // notif center property
     let date = Date()
@@ -62,6 +63,8 @@ class RumahViewController: UIViewController {
         initialViewAlpha()
         checkTimeOfDay()
         audioPlayer.setupAudioService()
+        transitioningDelegate = self
+        buttonKePantai.transform = CGAffineTransform(translationX: 100, y: 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,6 +75,24 @@ class RumahViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         audioPlayer.lowerSound()
+        hideButtonKePantai()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animateButtonKePantai()
+        
+        let hasLaunchedBefore = UserDefaults.standard.bool(forKey: "has_launched_before")
+        
+        if !hasLaunchedBefore {
+            // Show onboarding
+            audioPlayer.stopSound()
+            print("Launching onboarding")
+            let onboardingStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
+            let destinationVC = onboardingStoryboard.instantiateViewController(identifier: "LetterViewController")
+            destinationVC.modalPresentationStyle = .fullScreen
+            present(destinationVC, animated: false, completion: nil)
+        }
     }
     
     // MARK: - IBActions
@@ -279,6 +300,18 @@ class RumahViewController: UIViewController {
         addTapGesture()
     }
     
+    func animateButtonKePantai() {
+        buttonKePantai.transform = CGAffineTransform(translationX: 100, y: 0)
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+            self.buttonKePantai.transform = .identity
+        })
+    }
+    
+    func hideButtonKePantai() {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+            self.buttonKePantai.transform = CGAffineTransform(translationX: 100, y: 0)
+        })
+    }
 }
 
 // MARK: - Perubahan UI
@@ -410,5 +443,16 @@ extension RumahViewController {
         else {
             perubahanMalam()
         }
+    }
+}
+
+//MARK: - Transition
+extension RumahViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return FadeAnimation(animationDuration: 1, animationType: .dismiss)
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return FadeAnimation(animationDuration: 3, animationType: .present)
     }
 }

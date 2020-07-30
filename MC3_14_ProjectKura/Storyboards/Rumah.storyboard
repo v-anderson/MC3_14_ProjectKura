@@ -297,6 +297,7 @@
                         <outlet property="backgroundDimmer" destination="PO3-MI-5sS" id="S9M-Pi-MWA"/>
                         <outlet property="btnOption1" destination="FCU-Hg-biH" id="mYd-ry-sFr"/>
                         <outlet property="btnOption2" destination="byY-lk-a1T" id="ckl-nv-6hY"/>
+                        <outlet property="buttonKePantai" destination="HM3-QM-aks" id="Xcz-QW-ZlL"/>
                         <outlet property="factImage" destination="Nuk-Ld-kzf" id="m6l-xZ-XM9"/>
                         <outlet property="filter" destination="SHo-s7-JQN" id="Qhe-KD-9PS"/>
                         <outlet property="jendela" destination="fL2-84-erP" id="EvA-jB-AZg"/>

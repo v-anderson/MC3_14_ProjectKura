@@ -25,15 +25,30 @@ class RumahOnboardingViewController: UIViewController {
     
     var chatBoxIndex = 0
     var tapIndex = 0
+    
+    let audioPlayer = AudioPlayer(filename: "after-the-rain", extension: "wav")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         transitioningDelegate = self
         addTapGesture()
+        
+        audioPlayer.setupAudioService()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        audioPlayer.playSound(withVolume: 1.0)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         showChatBox()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        audioPlayer.lowerSound()
     }
     
     @IBAction func tandaSeruDidTap(_ sender: UIButton) {
@@ -64,7 +79,13 @@ class RumahOnboardingViewController: UIViewController {
     
     
     func changePage(identifier: String) {
-        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        var storyboard: UIStoryboard
+        
+        if identifier == "RumahViewController" {
+            storyboard = UIStoryboard(name: "Rumah", bundle: nil)
+        } else {
+            storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        }
         
         let destination = storyboard.instantiateViewController(identifier: identifier)
         
@@ -103,6 +124,8 @@ class RumahOnboardingViewController: UIViewController {
             removeTapGesture()
         } else if tapIndex == 2 {
             //onboarding selsesai
+            UserDefaults.standard.set(true, forKey: "has_launched_before")
+            audioPlayer.stopSound()
             changePage(identifier: "RumahViewController")
         }
     }

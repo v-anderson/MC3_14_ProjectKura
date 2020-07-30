@@ -37,6 +37,8 @@ class CafeViewController: UIViewController {
         "Nice to meet you.\nThank you for meeting me here!  My father believe that you can help me. But I’m still not sure, "
     ]
     
+    let audioPlayer = AudioPlayer(filename: "DoneWithWork_Cafe", extension: "mp3")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,10 +48,9 @@ class CafeViewController: UIViewController {
         
         inputNameTextField.delegate = self
         transitioningDelegate = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
         
+        audioPlayer.setupAudioService()
+        audioPlayer.playSound(withVolume: 1.0)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -259,7 +260,9 @@ extension CafeViewController {
         } else {
             if questionIndex == 8 {
                 score *= 5
-                UserDefaults.standard.set(score, forKey: "onboarding_score")
+                print("Onboarding score: \(score)")
+                UserDefaults.standard.set(score, forKey: "last_score")
+                audioPlayer.stopSound()
                 changePage(identifier: "RumahOnboardingViewController")
             } else {
                 
@@ -330,7 +333,7 @@ extension CafeViewController: UIViewControllerTransitioningDelegate {
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return FadeAnimation(animationDuration: 1, animationType: .present)
+        return FadeAnimation(animationDuration: 3, animationType: .present)
     }
 }
 

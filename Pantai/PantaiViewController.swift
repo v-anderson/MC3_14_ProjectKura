@@ -30,7 +30,8 @@ class PantaiViewController: UIViewController {
     @IBOutlet weak var fishShadow7: UIImageView!
     @IBOutlet weak var pantaiBG: UIImageView!
     @IBOutlet weak var koral: UIImageView!
-
+    @IBOutlet weak var buttonKeRumah: UIButton!
+    
     let audioPlayer = AudioPlayer(filename: "beach-waves", extension: "wav")
     
     override func viewDidLoad() {
@@ -41,6 +42,8 @@ class PantaiViewController: UIViewController {
 //        UserDefaults.standard.set(20, forKey: "last_score")
         
         transitioningDelegate = self
+        
+        buttonKeRumah.transform = CGAffineTransform(translationX: -100, y: 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,6 +65,12 @@ class PantaiViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         audioPlayer.stopSound()
+        hideButtonKeRumah()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animateButtonKeRumah()
     }
     
     @IBAction func keRumah(_ sender: Any) {
@@ -348,6 +357,18 @@ extension PantaiViewController {
             
             
         }, completion: nil)
+    }
+    
+    private func animateButtonKeRumah() {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+            self.buttonKeRumah.transform = .identity
+        })
+    }
+    
+    private func hideButtonKeRumah() {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+            self.buttonKeRumah.transform = CGAffineTransform(translationX: -100, y: 0)
+        })
     }
 }
 

@@ -184,6 +184,7 @@
                         <viewLayoutGuide key="safeArea" id="f9a-EZ-Xhb"/>
                     </view>
                     <connections>
+                        <outlet property="buttonKeRumah" destination="pCk-Zz-waK" id="U9d-wH-bsx"/>
                         <outlet property="firstGrayFish" destination="Chm-fL-kO4" id="2Nm-T8-gLr"/>
                         <outlet property="firstOrangeFish" destination="32T-LI-RU1" id="RFR-oK-aQA"/>
                         <outlet property="firstWave" destination="JHe-k8-zEW" id="VNc-r3-LTi"/>

@@ -35,6 +35,7 @@ class PantaiOnboardingViewController: UIViewController {
     @IBOutlet var kuraChatBox: UILabel!
     @IBOutlet var kuraChatBoxConstraint: NSLayoutConstraint!
     
+    let audioPlayer = AudioPlayer(filename: "beach-waves", extension: "wav")
     
     let texts = [
         "When I was a little turtle, the beach is so pretty and I can play with my friends, swimming, walking around the beach. It’s always been my favorite place.",
@@ -65,7 +66,17 @@ class PantaiOnboardingViewController: UIViewController {
     
         kuraChatBox.text = texts[textIndex]
         
-        
+        audioPlayer.setupAudioService()
+        audioPlayer.playSound(withVolume: 1)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        audioPlayer.stopSound()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewDidAppear(_ animated: Bool) {

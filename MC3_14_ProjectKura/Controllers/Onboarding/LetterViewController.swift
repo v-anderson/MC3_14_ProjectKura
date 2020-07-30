@@ -40,6 +40,8 @@ class LetterViewController: UIViewController {
         
         audioPlayer.setupAudioService()
         audioPlayer.playSound(withVolume: 1.0)
+        
+        transitioningDelegate = self
     }
     
     // MARK: - OBJC Functions
@@ -161,13 +163,17 @@ extension LetterViewController {
     }
     
     private func animatePhone() {
-        let shakeAnimation = CABasicAnimation(keyPath: "transform.translation.x")
-        shakeAnimation.duration = 0.05
-        shakeAnimation.fromValue = -2
-        shakeAnimation.toValue = 2
-        shakeAnimation.repeatCount = 5
+        let animationGroup = CAAnimationGroup()
+        animationGroup.duration = 3;
+        animationGroup.repeatCount = .infinity
 
-        phone.layer.add(shakeAnimation, forKey: "shake_phone")
+        let shakeAnimation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        shakeAnimation.duration = 0.1
+        shakeAnimation.values = [-2, 2, -2, 2, -2, 2, -2, 2, -1, 1]
+
+        animationGroup.animations = [shakeAnimation]
+
+        phone.layer.add(animationGroup, forKey: "shake_phone")
     }
     
     private func animateLetter() {
@@ -218,5 +224,16 @@ extension LetterViewController: PhoneViewControllerDelegate {
     
     func stopBackgroundMusic() {
         audioPlayer.stopSound()
+    }
+}
+
+//MARK: - Transition
+extension LetterViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return FadeAnimation(animationDuration: 3, animationType: .dismiss)
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return FadeAnimation(animationDuration: 3, animationType: .present)
     }
 }
