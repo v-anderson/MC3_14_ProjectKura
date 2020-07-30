@@ -46,7 +46,7 @@ class PantaiViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        audioPlayer.playSound(withVolume: 0.5)
+        audioPlayer.playSound(withVolume: 0.2)
         loadAnimation()
 
         let scores = Score.fetchAll(fromContext: getViewContext())
@@ -57,6 +57,12 @@ class PantaiViewController: UIViewController {
         print("")
         
         setupBackgroundByScore()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        loadAnimation()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -240,7 +246,7 @@ extension PantaiViewController {
         fishShadow7.isHidden = true
     }
     
-    func ikanMuncul() {
+    private func ikanMuncul() {
         loadAnimationFish()
         jellyFish.isHidden = false
         smallJellyFish.isHidden = false

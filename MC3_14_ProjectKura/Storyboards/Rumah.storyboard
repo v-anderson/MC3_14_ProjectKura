@@ -170,7 +170,7 @@
                                                                         <real key="value" value="5"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                        <color key="value" red="0.99175125360000005" green="0.9464635253" blue="0.86665213109999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <color key="value" red="0.99215686274509807" green="0.94509803921568625" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
