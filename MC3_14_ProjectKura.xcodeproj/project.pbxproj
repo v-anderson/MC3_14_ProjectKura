@@ -17,6 +17,7 @@
 		57D68BEB24D2B83600C7BB1E /* BetterLife_Kantor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57D68BE924D2B83600C7BB1E /* BetterLife_Kantor.mp3 */; };
 		57D68BEC24D2B83600C7BB1E /* DoneWithWork_Cafe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57D68BEA24D2B83600C7BB1E /* DoneWithWork_Cafe.mp3 */; };
 		57D68BEE24D2DA8A00C7BB1E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D68BED24D2DA8A00C7BB1E /* MainViewController.swift */; };
+		57D68BF024D2F7A500C7BB1E /* ImageViewWithPersistentAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D68BEF24D2F7A500C7BB1E /* ImageViewWithPersistentAnimations.swift */; };
 		710F595124C595870037185E /* Rumah.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710F595024C595870037185E /* Rumah.storyboard */; };
 		710F595324C5F6380037185E /* RumahViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710F595224C5F6380037185E /* RumahViewController.swift */; };
 		710F595524C601790037185E /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710F595424C601790037185E /* Gradient.swift */; };
@@ -50,6 +51,7 @@
 		57D68BE924D2B83600C7BB1E /* BetterLife_Kantor.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BetterLife_Kantor.mp3; sourceTree = "<group>"; };
 		57D68BEA24D2B83600C7BB1E /* DoneWithWork_Cafe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DoneWithWork_Cafe.mp3; sourceTree = "<group>"; };
 		57D68BED24D2DA8A00C7BB1E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		57D68BEF24D2F7A500C7BB1E /* ImageViewWithPersistentAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewWithPersistentAnimations.swift; sourceTree = "<group>"; };
 		710F595024C595870037185E /* Rumah.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Rumah.storyboard; sourceTree = "<group>"; };
 		710F595224C5F6380037185E /* RumahViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RumahViewController.swift; path = MC3_14_ProjectKura/Storyboards/RumahViewController.swift; sourceTree = SOURCE_ROOT; };
 		710F595424C601790037185E /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Gradient.swift; path = MC3_14_ProjectKura/Storyboards/Gradient.swift; sourceTree = SOURCE_ROOT; };
@@ -129,6 +131,7 @@
 		5789034D24BF16FC006A0291 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				57D68BEF24D2F7A500C7BB1E /* ImageViewWithPersistentAnimations.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				71907B8424BDFCD5008E44CF /* MC3_14_ProjectKura.xcdatamodeld in Sources */,
 				EC1E480F24CEFC4400975C83 /* PantaiOnboardingViewController.swift in Sources */,
 				710F595324C5F6380037185E /* RumahViewController.swift in Sources */,
+				57D68BF024D2F7A500C7BB1E /* ImageViewWithPersistentAnimations.swift in Sources */,
 				5756A52524D056E100839343 /* PhoneViewController.swift in Sources */,
 				ECA008C424D029EB00148809 /* LetterViewController.swift in Sources */,
 				710F595524C601790037185E /* Gradient.swift in Sources */,

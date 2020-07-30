@@ -46,14 +46,16 @@ let electricityQuestions = [
                      factBody: "Turning off the lights when you leave your room can help save energy. It can also help reduce carbon emission and other harmful greenhouse gases. Hence, turning off your lights is a simple way to help protect the environment and save the Earth.",
                      answers: ["Leave The Lights On", "Turn It On and Off"],
                      goodAnswer: 1,
-                     imageName: "ElectFact1"),
-    
+                     imageName: "ElectFact1")
+]
+
+let kipasQuestions = [
     QuestionsAndFact(questions: "Fresh morning air is very good for your health. Turn off your AC or fan and open your windows to let the air flows in.",
-                     factTitle: "Turn off any air conditioning electronic in the morning to save enery and get fresh air.",
-                     factBody: "Inadequate ventilation, high temperature and humidity are a few of the primary causes of indoor air pollution in our homes. Morning is the right time to get fresh air. Open your windows to air out your home often, as indoor air pollution can actually be more toxic than the air outside.",
-                     answers: ["Agree", "Disagree"],
-                     goodAnswer: 0,
-                     imageName: "ElectFact2")
+    factTitle: "Turn off any air conditioning electronic in the morning to save enery and get fresh air.",
+    factBody: "Inadequate ventilation, high temperature and humidity are a few of the primary causes of indoor air pollution in our homes. Morning is the right time to get fresh air. Open your windows to air out your home often, as indoor air pollution can actually be more toxic than the air outside.",
+    answers: ["Agree", "Disagree"],
+    goodAnswer: 0,
+    imageName: "ElectFact2")
 ]
 
 let shoppingBagQuestions = [

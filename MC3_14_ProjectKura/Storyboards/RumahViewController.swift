@@ -52,6 +52,7 @@ class RumahViewController: UIViewController {
         case food
         case electric
         case shoppingBag
+        case kipas
     }
     
     let audioPlayer = AudioPlayer(filename: "after-the-rain", extension: "wav")
@@ -91,7 +92,6 @@ class RumahViewController: UIViewController {
         randomQuestions = Int.random(in: 0..<FoodQuestions.count)
         factType = .food
         foodQuestion()
-        
     }
     
     //ini tombol tanda seru untuk munculin pertanyaan listrik
@@ -100,7 +100,6 @@ class RumahViewController: UIViewController {
         randomQuestions = Int.random(in: 0..<electricityQuestions.count)
         factType = .electric
         electricQuestion()
-        
     }
     
     @IBAction func tanyaShoppingBag(_ sender: Any) {
@@ -108,12 +107,14 @@ class RumahViewController: UIViewController {
         randomQuestions = Int.random(in: 0..<shoppingBagQuestions.count)
         factType = .shoppingBag
         shoppingBagQuestion()
-        
     }
 
     @IBAction func tanyaKipas(_ sender: Any) {
         tandaSeruKipas.isHidden = true
-              UserDefaults.standard.set(Date(), forKey: "last_tappedKipas")
+        randomQuestions = Int.random(in: 0..<kipasQuestions.count)
+        factType = .kipas
+        kipasQuestion()
+        
     }
     
     @IBAction func btn1(_ sender: Any) {
@@ -128,6 +129,9 @@ class RumahViewController: UIViewController {
         case .shoppingBag:
             UserDefaults.standard.set(Date(), forKey: "last_tappedShoppingBag")
             shoppingBagFact()
+        case .kipas:
+            UserDefaults.standard.set(Date(), forKey: "last_tappedKipas")
+            kipasFact()
         default:
             return
         }
@@ -145,6 +149,9 @@ class RumahViewController: UIViewController {
         case .shoppingBag:
             UserDefaults.standard.set(Date(), forKey: "last_tappedShoppingBag")
             shoppingBagFact()
+        case .kipas:
+            UserDefaults.standard.set(Date(), forKey: "last_tappedKipas")
+            kipasFact()
         default:
             return
         }
@@ -252,6 +259,16 @@ class RumahViewController: UIViewController {
         }
     }
     
+    // Q KIPAS
+    func kipasQuestion() {
+        showPopUpBox()
+        if let index = randomQuestions {
+            lblQuestionsTitle.text = kipasQuestions[index].questions
+            btnOption1.setTitle(kipasQuestions[index].answers[0], for: .normal)
+            btnOption2.setTitle(kipasQuestions[index].answers[1], for: .normal)
+        }
+    }
+    
     // FOOD FACT
     func foodFact() {
         hideQuestionsShowFact()
@@ -287,6 +304,20 @@ class RumahViewController: UIViewController {
             factImage.image = UIImage(named: shoppingBagQuestions[index].imageName)
             lblFactTitle.text = shoppingBagQuestions[index].factTitle
             lblFactBody.text = shoppingBagQuestions[index].factBody
+            lblTapToDismiss.alpha = 1
+            lblFactBody.adjustsFontSizeToFitWidth = true
+            lblFactBody.numberOfLines = 0
+        }
+        addTapGesture()
+    }
+    
+    // KIPAS BAG FACT
+    func kipasFact() {
+        hideQuestionsShowFact()
+        if let index = randomQuestions {
+            factImage.image = UIImage(named: shoppingBagQuestions[index].imageName)
+            lblFactTitle.text = kipasQuestions[index].factTitle
+            lblFactBody.text = kipasQuestions[index].factBody
             lblTapToDismiss.alpha = 1
             lblFactBody.adjustsFontSizeToFitWidth = true
             lblFactBody.numberOfLines = 0

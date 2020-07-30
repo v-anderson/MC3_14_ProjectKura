@@ -44,6 +44,17 @@ class PantaiViewController: UIViewController {
         transitioningDelegate = self
         
         buttonKeRumah.transform = CGAffineTransform(translationX: -100, y: 0)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willResign), name: UIApplication.willResignActiveNotification, object: nil)
+    }
+    
+    @objc func didBecomeActive() {
+        print("Enter")
+    }
+    
+    @objc func willResign() {
+        print("Leave")
     }
     
     override func viewWillAppear(_ animated: Bool) {

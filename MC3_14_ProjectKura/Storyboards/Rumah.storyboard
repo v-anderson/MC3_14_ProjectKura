@@ -78,7 +78,7 @@
                                 </constraints>
                                 <state key="normal" image="asset.TandaSeruAtas"/>
                                 <connections>
-                                    <action selector="tanyaListrik:" destination="ZxY-bL-AeJ" eventType="touchUpInside" id="o2e-kf-mIV"/>
+                                    <action selector="tanyaLampu:" destination="ZxY-bL-AeJ" eventType="touchUpInside" id="o2e-kf-mIV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9f-AP-T2z" userLabel="TandaSeruShoppingBag">
