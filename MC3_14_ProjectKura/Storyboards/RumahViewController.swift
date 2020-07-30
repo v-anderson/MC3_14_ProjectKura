@@ -330,9 +330,9 @@ extension RumahViewController {
         guard let lastTappedListrik = UserDefaults.standard.object(forKey: "last_tappedListrik") as? Date else { return }
         print("Last tapped Listrik      : \(lastTappedListrik.description(with: .current))")
         
-        let diff = Calendar.current.dateComponents([.day], from: lastTappedListrik, to: Date())
+        let comparison = Calendar.current.compare(lastTappedListrik, to: Date(), toGranularity: .day)
         
-        if  diff.day == 0 {
+        if comparison == .orderedSame {
             tandaSeru2.isHidden = true
         }
     }
@@ -340,10 +340,10 @@ extension RumahViewController {
     private func checkKipas() {
         guard let lastTappedKipas = UserDefaults.standard.object(forKey: "last_tappedKipas") as? Date else { return }
         print("Last tapped Kipas        : \(lastTappedKipas.description(with: .current))")
+                
+        let comparison = Calendar.current.compare(lastTappedKipas, to: Date(), toGranularity: .day)
         
-        let diff = Calendar.current.dateComponents([.day], from: lastTappedKipas, to: Date())
-        
-        if  diff.day == 0 {
+        if comparison == .orderedSame {
             tandaSeruKipas.isHidden = true
         }
     }
@@ -352,9 +352,9 @@ extension RumahViewController {
         guard let lastTappedShoppingBag = UserDefaults.standard.object(forKey: "last_tappedShoppingBag") as? Date else { return }
         print("Last tapped Shopping bag : \(lastTappedShoppingBag.description(with: .current))\n")
         
-        let diff = Calendar.current.dateComponents([.day], from: lastTappedShoppingBag, to: Date())
+        let comparison = Calendar.current.compare(lastTappedShoppingBag, to: Date(), toGranularity: .day)
         
-        if  diff.day == 0 {
+        if comparison == .orderedSame {
             tandaSeruShoppingBag.isHidden = true
         }
     }
