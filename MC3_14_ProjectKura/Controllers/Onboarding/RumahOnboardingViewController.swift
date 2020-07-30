@@ -62,6 +62,7 @@ class RumahOnboardingViewController: UIViewController {
         addTapGesture()
     }
     
+    
     func changePage(identifier: String) {
         let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
         
@@ -102,7 +103,7 @@ class RumahOnboardingViewController: UIViewController {
             removeTapGesture()
         } else if tapIndex == 2 {
             //onboarding selsesai
-            print("finish")
+            changePage(identifier: "RumahViewController")
         }
     }
     

@@ -11,56 +11,13 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    let userNotifCenter = UNUserNotificationCenter.current()
-    var dateComponents = DateComponents()
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        userNotifCenter.requestAuthorization(options: [.alert,.badge,.sound]) { (granted, err) in
-            if granted {
-                self.addNotif(hour: 17, minute: 47)
-//                self.addNotif(hour: 12)
-//                self.addNotif(hour: 17)
-            }
-        }
+        
         return true
     }
     
-    // Req Permission Push Notif
-    func requestPushNotifAuthorization() {
-        let authOptions = UNAuthorizationOptions.init(arrayLiteral: .alert, .badge, .sound)
-        
-        userNotifCenter.requestAuthorization(options: authOptions) { (success, error) in
-            if let err = error {
-                print("Error : ", err)
-            }
-        }
-        print("Hello")
-    }
-    
-    // ADD notif
-    func addNotif(hour: Int, minute: Int) {
-            let notifContent = UNMutableNotificationContent()
-            
-            notifContent.title = "I Have New Questions For You 👀"
-            notifContent.body = "Go Check 'Em Out!"
-            notifContent.sound = .default
-            
-            dateComponents.hour = hour
-            dateComponents.minute = minute
-//            dateComponents.second = second
-            // Triggers
-            let notifTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-            let request = UNNotificationRequest(identifier: UUID().uuidString, content: notifContent, trigger: notifTrigger)
-            
-            userNotifCenter.add(request) { (error) in
-                if let err = error {
-                    print("Notif error :",err)
-                }
-            }
-        }
-
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

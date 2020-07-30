@@ -18,7 +18,7 @@
         <!--Rumah View Controller-->
         <scene sceneID="aKV-eH-sGj">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="ZxY-bL-AeJ" customClass="RumahViewController" customModule="MC3_14_ProjectKura" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RumahViewController" modalPresentationStyle="fullScreen" id="ZxY-bL-AeJ" customClass="RumahViewController" customModule="MC3_14_ProjectKura" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fUa-ev-uHk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
