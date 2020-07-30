@@ -18,6 +18,7 @@ class PhoneViewController: UIViewController {
     @IBOutlet weak var phoneImageView: UIImageView!
     
     var didReply = false
+    var isReplying = false
     
     weak var delegate: PhoneViewControllerDelegate?
     
@@ -45,7 +46,8 @@ class PhoneViewController: UIViewController {
     }
     
     @objc private func didTap() {
-        if !didReply {
+        if !didReply && !isReplying {
+            isReplying = true
             reply.alpha = 0
             reply.transform = CGAffineTransform(translationX: 0, y: 50)
             

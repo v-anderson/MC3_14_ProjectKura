@@ -81,18 +81,6 @@ class RumahViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         animateButtonKePantai()
-        
-        let hasLaunchedBefore = UserDefaults.standard.bool(forKey: "has_launched_before")
-        
-        if !hasLaunchedBefore {
-            // Show onboarding
-            audioPlayer.stopSound()
-            print("Launching onboarding")
-            let onboardingStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
-            let destinationVC = onboardingStoryboard.instantiateViewController(identifier: "LetterViewController")
-            destinationVC.modalPresentationStyle = .fullScreen
-            present(destinationVC, animated: false, completion: nil)
-        }
     }
     
     // MARK: - IBActions
