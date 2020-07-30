@@ -24,6 +24,7 @@
 	<array>
 		<string>Rubik-Regular.ttf</string>
 		<string>FredokaOne-Regular.ttf</string>
+		<string>Rubik-Bold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

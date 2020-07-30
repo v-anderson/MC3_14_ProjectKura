@@ -20,6 +20,7 @@ class PantaiOnboardingViewController: UIViewController {
     @IBOutlet weak var firstGrayFish: UIImageView!
     @IBOutlet weak var secondOrangeFish: UIImageView!
     @IBOutlet weak var secondGrayFish: UIImageView!
+    @IBOutlet var filter: UIImageView!
     
     @IBOutlet weak var fishShadow: UIImageView!
     @IBOutlet weak var fishShadow2: UIImageView!
@@ -42,6 +43,7 @@ class PantaiOnboardingViewController: UIViewController {
         "Me and my family have a job to take care of the beach. We always protect the beaches. We will also go to another beach and help the turtles in there to take care of the beaches.",
         "Now that I’ve become a grown up turtle, it’s time for me to take care of the beach alone. But it’s been overwhelming to do this alone",
         "The beach will keep getting dirtier if you making non eco friendly choices. Try to change your action to make the beach clean",
+        "The beach condition will change every 3 days according to your daily habit.",
         "Now let’s headed back home again by clicking the sign."
     ]
     
@@ -60,6 +62,8 @@ class PantaiOnboardingViewController: UIViewController {
         
         if let fromHome = isItFromHome {
             if fromHome {
+                filter.alpha = 0
+                pantaiBG.image = UIImage(named: "Island Pagi Bersih")
                 textIndex = 3
             }
         }

@@ -56,7 +56,8 @@ class CafeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        if questionIndex == 5 && !hasMovedToAnotehrPage{
+        if questionIndex == 6 && !hasMovedToAnotehrPage{
+            
             hasMovedToAnotehrPage = true
             chatboxConstraints.constant = 20
             nextQuestion(currentAnswer: nil)
@@ -252,13 +253,13 @@ extension CafeViewController {
                 }
             }
         }
-        if questionIndex == 5 && !hasMovedToAnotehrPage{
+        if questionIndex == 6 && !hasMovedToAnotehrPage{
             chatboxConstraints.constant = -300
-            stackButtonConstraint.constant = -150
+            singleButtonConstraint.constant = -100
             constraintAnimation()
             changePage(identifier: "PantaiOnboardingViewController")
         } else {
-            if questionIndex == 8 {
+            if questionIndex == 9 {
                 score *= 5
                 print("Onboarding score: \(score)")
                 UserDefaults.standard.set(score, forKey: "last_score")
@@ -268,7 +269,7 @@ extension CafeViewController {
                 
                 
                 questionIndex += 1
-                if questionIndex == 8 {
+                if questionIndex == 9 {
                     userNotifCenter.requestAuthorization(options: [.alert,.badge,.sound]) { (granted, err) in
                         if granted {
                             self.addNotif(hour: 6, minute: 00)

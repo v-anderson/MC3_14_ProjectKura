@@ -7,6 +7,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="FredokaOne-Regular.ttf">
+            <string>FredokaOne-Regular</string>
+        </array>
         <array key="Rubik-Regular.ttf">
             <string>Rubik-Regular</string>
         </array>
@@ -332,7 +335,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Island Pagi Bersih" translatesAutoresizingMaskIntoConstraints="NO" id="BXh-DY-I08">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pagi - Bersih Onboarding" translatesAutoresizingMaskIntoConstraints="NO" id="BXh-DY-I08">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Laut Kedua Pagi Bersih" translatesAutoresizingMaskIntoConstraints="NO" id="508-bg-ivL">
@@ -428,6 +431,9 @@
                                     <constraint firstAttribute="width" secondItem="zXV-3F-oPV" secondAttribute="height" multiplier="51:28" id="I1D-dI-PEx"/>
                                 </constraints>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Filter" translatesAutoresizingMaskIntoConstraints="NO" id="ptg-GT-u55">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nsb-5C-NWu">
                                 <rect key="frame" x="14" y="929.5" width="386" height="266.5"/>
                                 <subviews>
@@ -468,6 +474,7 @@
                         <constraints>
                             <constraint firstItem="QI0-Id-JII" firstAttribute="height" secondItem="BXh-DY-I08" secondAttribute="height" multiplier="0.389509" id="1C7-gb-jTE"/>
                             <constraint firstItem="EwI-vU-zDw" firstAttribute="centerY" secondItem="l5Q-8J-vdL" secondAttribute="centerY" multiplier="1.47" id="1EC-ts-9Md"/>
+                            <constraint firstItem="ptg-GT-u55" firstAttribute="trailing" secondItem="PZl-VS-Cxc" secondAttribute="trailing" id="1VK-US-Mcz"/>
                             <constraint firstItem="uOX-2w-Huv" firstAttribute="height" secondItem="BXh-DY-I08" secondAttribute="height" multiplier="0.0814732" id="24g-We-d0L"/>
                             <constraint firstItem="dPl-nZ-Wgq" firstAttribute="height" secondItem="BXh-DY-I08" secondAttribute="height" multiplier="0.03125" id="3Dd-HN-SQp"/>
                             <constraint firstItem="cEm-hn-PpQ" firstAttribute="centerX" secondItem="l5Q-8J-vdL" secondAttribute="centerX" multiplier="0.95" id="3m7-vg-Tnv"/>
@@ -480,13 +487,16 @@
                             <constraint firstItem="8SM-oM-T7j" firstAttribute="centerY" secondItem="l5Q-8J-vdL" secondAttribute="centerY" multiplier="1.75" id="9Dt-2a-Fks"/>
                             <constraint firstItem="QI0-Id-JII" firstAttribute="centerY" secondItem="l5Q-8J-vdL" secondAttribute="centerY" multiplier="1.5" id="BdM-u1-kHh"/>
                             <constraint firstItem="J3T-CD-uHd" firstAttribute="centerX" secondItem="l5Q-8J-vdL" secondAttribute="centerX" multiplier="0.7" id="Df5-D9-Dan"/>
+                            <constraint firstItem="ptg-GT-u55" firstAttribute="leading" secondItem="PZl-VS-Cxc" secondAttribute="leading" id="Ikd-KL-6QP"/>
                             <constraint firstItem="mem-Q9-PM1" firstAttribute="centerY" secondItem="l5Q-8J-vdL" secondAttribute="centerY" multiplier="1.33" id="Irn-Qa-kpT"/>
                             <constraint firstItem="BXh-DY-I08" firstAttribute="trailing" secondItem="l5Q-8J-vdL" secondAttribute="trailing" id="JbO-lJ-fht"/>
                             <constraint firstItem="cEm-hn-PpQ" firstAttribute="height" secondItem="BXh-DY-I08" secondAttribute="height" multiplier="0.0535714" id="K0n-82-pQf"/>
+                            <constraint firstItem="ptg-GT-u55" firstAttribute="top" secondItem="l5Q-8J-vdL" secondAttribute="top" id="Mp9-6Z-iYB"/>
                             <constraint firstAttribute="bottom" secondItem="4Od-xf-HFF" secondAttribute="bottom" constant="-1" id="MwH-dP-6YL"/>
                             <constraint firstItem="QI0-Id-JII" firstAttribute="centerX" secondItem="l5Q-8J-vdL" secondAttribute="centerX" multiplier="1.2" id="NQh-fY-Hdp"/>
                             <constraint firstItem="dPl-nZ-Wgq" firstAttribute="centerX" secondItem="l5Q-8J-vdL" secondAttribute="centerX" multiplier="1.4" id="Pxh-Hx-u1f"/>
                             <constraint firstItem="Kep-Kl-hOo" firstAttribute="centerX" secondItem="l5Q-8J-vdL" secondAttribute="centerX" multiplier="1.2" id="Qs0-wV-ooU"/>
+                            <constraint firstAttribute="bottom" secondItem="ptg-GT-u55" secondAttribute="bottom" id="S68-2u-MMD"/>
                             <constraint firstItem="508-bg-ivL" firstAttribute="centerX" secondItem="l5Q-8J-vdL" secondAttribute="centerX" multiplier="0.9" id="SKX-Ve-g8L"/>
                             <constraint firstItem="tdA-mS-VOH" firstAttribute="centerX" secondItem="l5Q-8J-vdL" secondAttribute="centerX" multiplier="0.4" id="Tik-Kp-WJm"/>
                             <constraint firstItem="0jc-e9-nVz" firstAttribute="centerY" secondItem="l5Q-8J-vdL" secondAttribute="centerY" multiplier="1.3" id="V8j-9y-nnW"/>
@@ -531,6 +541,7 @@
                     </view>
                     <connections>
                         <outlet property="buttonBackToHomeConstraint" destination="hKL-6E-wui" id="3Yn-6n-vY5"/>
+                        <outlet property="filter" destination="ptg-GT-u55" id="H1F-QL-T0T"/>
                         <outlet property="firstGrayFish" destination="9eW-5J-el3" id="Md5-qL-vuI"/>
                         <outlet property="firstOrangeFish" destination="8SM-oM-T7j" id="A5U-bJ-g6g"/>
                         <outlet property="firstWave" destination="508-bg-ivL" id="DHb-kP-71g"/>
@@ -554,7 +565,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aCD-UI-gAG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3614" y="-333"/>
+            <point key="canvasLocation" x="-3614.4927536231885" y="-333.48214285714283"/>
         </scene>
         <!--Rumah Onboarding View Controller-->
         <scene sceneID="EBf-6t-hRd">
@@ -568,13 +579,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOU-wf-HUL">
-                                <rect key="frame" x="5" y="896.5" width="404" height="265.5"/>
+                                <rect key="frame" x="5" y="941" width="404" height="221"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Kura Text Box" translatesAutoresizingMaskIntoConstraints="NO" id="tcO-aM-JY5">
-                                        <rect key="frame" x="0.0" y="0.0" width="404" height="265.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="404" height="221"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ev-vC-I6l">
-                                        <rect key="frame" x="26.5" y="133.5" width="351" height="92.5"/>
+                                        <rect key="frame" x="26.5" y="119" width="351" height="77"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
                                         <color key="textColor" red="0.28235294119999998" green="0.1764705882" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -625,9 +636,9 @@
                                         <rect key="frame" x="28" y="124.5" width="326" height="179"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you finish all of your food?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVX-BW-fu0">
-                                                <rect key="frame" x="20" y="79.5" width="286" height="20"/>
-                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
-                                                <color key="textColor" red="0.28235294119999998" green="0.1764705882" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="20" y="79" width="286" height="21"/>
+                                                <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="18"/>
+                                                <color key="textColor" red="0.59607843137254901" green="0.37647058823529411" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foodFact3" translatesAutoresizingMaskIntoConstraints="NO" id="JUh-cQ-wX4">
@@ -638,8 +649,8 @@
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's make sure to eat what you can eat." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDT-gz-48v">
                                                 <rect key="frame" x="20" y="117" width="286" height="16.5"/>
-                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
-                                                <color key="textColor" red="0.28235294119999998" green="0.1764705882" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="14"/>
+                                                <color key="textColor" red="0.59607843140000005" green="0.37647058820000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -668,19 +679,19 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="wXs-Up-6yq"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="16"/>
                                                         <state key="normal" title="No, I Didn’t">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" red="1" green="0.94509803920000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                 <real key="value" value="2"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="value" red="1" green="0.94509803920000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="10"/>
+                                                                <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
@@ -692,19 +703,19 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="eih-66-cdT"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="16"/>
                                                         <state key="normal" title="Yes, I Did">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" red="1" green="0.94509803920000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                 <real key="value" value="2"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="value" red="1" green="0.94509803920000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="10"/>
+                                                                <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
@@ -716,8 +727,8 @@
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sg-Wm-ja8">
                                                 <rect key="frame" x="20" y="16" width="286" height="117"/>
                                                 <string key="text">If you have leftovers, save any leftovers, rather than throwing them away. Food waste accounts for about 4,4 gigatonnes of greenhouse gas emissions (GHG) per year. To put this in perspective, if food loss and waste were its own country, it would be the world’s third-largest GHG emitter.</string>
-                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="12"/>
-                                                <color key="textColor" red="0.28235294119999998" green="0.1764705882" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
+                                                <color key="textColor" red="1" green="0.94509803920000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -750,7 +761,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="g5v-gN-A8m" firstAttribute="bottom" secondItem="bOU-wf-HUL" secondAttribute="bottom" constant="-300" id="0B3-kj-mMz"/>
-                            <constraint firstItem="bOU-wf-HUL" firstAttribute="height" secondItem="5Xm-4V-Bca" secondAttribute="height" multiplier="0.296317" id="1c3-qb-wIm"/>
                             <constraint firstItem="otJ-7b-3IS" firstAttribute="height" secondItem="5Xm-4V-Bca" secondAttribute="height" multiplier="0.0569196" id="1cN-1b-xtc"/>
                             <constraint firstItem="JUh-cQ-wX4" firstAttribute="width" secondItem="shn-Yu-7ix" secondAttribute="width" multiplier="0.357488" id="1sF-jY-np7"/>
                             <constraint firstAttribute="bottom" secondItem="DhO-Vr-Lqa" secondAttribute="bottom" id="36T-PF-D82"/>
@@ -773,6 +783,7 @@
                             <constraint firstItem="DhO-Vr-Lqa" firstAttribute="top" secondItem="shn-Yu-7ix" secondAttribute="top" id="jpQ-P9-mcD"/>
                             <constraint firstItem="bOU-wf-HUL" firstAttribute="leading" secondItem="g5v-gN-A8m" secondAttribute="leading" constant="5" id="lWY-zP-Xux"/>
                             <constraint firstItem="nWw-Cj-WnJ" firstAttribute="width" secondItem="shn-Yu-7ix" secondAttribute="width" multiplier="0.922705" id="ly2-Ot-b3J"/>
+                            <constraint firstItem="bOU-wf-HUL" firstAttribute="width" secondItem="shn-Yu-7ix" secondAttribute="width" multiplier="0.975845" id="psb-sE-yw1"/>
                             <constraint firstItem="STA-5u-KUI" firstAttribute="width" secondItem="shn-Yu-7ix" secondAttribute="width" multiplier="0.78744" id="yGt-jD-blK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g5v-gN-A8m"/>
@@ -805,6 +816,7 @@
         <image name="Cafe" width="414" height="896"/>
         <image name="Chat Box" width="354" height="119"/>
         <image name="Chat Box 2" width="276" height="56.5"/>
+        <image name="Filter" width="419" height="898"/>
         <image name="Fish" width="73" height="69.5"/>
         <image name="Fish-1" width="73" height="69.5"/>
         <image name="Fishh" width="98" height="94"/>
@@ -813,7 +825,6 @@
         <image name="Ikan 2" width="52" height="28.5"/>
         <image name="Ikan 3" width="63.5" height="58.5"/>
         <image name="Ikan 4" width="61" height="34"/>
-        <image name="Island Pagi Bersih" width="418" height="896"/>
         <image name="Jelly Fish" width="44.5" height="55"/>
         <image name="Kura Duduk" width="130" height="165.5"/>
         <image name="Kura Text Box" width="410" height="221"/>
@@ -822,6 +833,7 @@
         <image name="Letter" width="264" height="181.5"/>
         <image name="Letter Paper horizontal" width="590" height="389.5"/>
         <image name="LetterBuka" width="301" height="279.5"/>
+        <image name="Pagi - Bersih Onboarding" width="418" height="896"/>
         <image name="Phone" width="157.5" height="216"/>
         <image name="PhoneHolding" width="394" height="751"/>
         <image name="Small jelly fish" width="66.5" height="84"/>

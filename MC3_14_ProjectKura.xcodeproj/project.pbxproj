@@ -70,6 +70,7 @@
 		EC1E480C24CEF0B400975C83 /* CafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeViewController.swift; sourceTree = "<group>"; };
 		EC1E480E24CEFC4400975C83 /* PantaiOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PantaiOnboardingViewController.swift; path = MC3_14_ProjectKura/Controllers/Onboarding/PantaiOnboardingViewController.swift; sourceTree = SOURCE_ROOT; };
 		ECA008C324D029EB00148809 /* LetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterViewController.swift; sourceTree = "<group>"; };
+		ECB1369524D2E32A00156A25 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		ECC8D9C224CFC2BF00ACD8E4 /* OnboardingQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingQuestion.swift; sourceTree = "<group>"; };
 		ECDD86F524D173EA002A2CF3 /* RumahOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RumahOnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -218,6 +219,7 @@
 		CBC4A82224CEC61700B3F5DC /* Rubik */ = {
 			isa = PBXGroup;
 			children = (
+				ECB1369524D2E32A00156A25 /* Rubik-Bold.ttf */,
 				CBC4A82C24CEC61700B3F5DC /* Rubik-Regular.ttf */,
 			);
 			path = Rubik;

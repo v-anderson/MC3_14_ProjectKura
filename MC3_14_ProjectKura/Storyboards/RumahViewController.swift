@@ -91,7 +91,7 @@ class RumahViewController: UIViewController {
         randomQuestions = Int.random(in: 0..<FoodQuestions.count)
         factType = .food
         foodQuestion()
-        UserDefaults.standard.set(Date(), forKey: "last_tappedMakanan")
+        
     }
     
     //ini tombol tanda seru untuk munculin pertanyaan listrik
@@ -100,7 +100,7 @@ class RumahViewController: UIViewController {
         randomQuestions = Int.random(in: 0..<electricityQuestions.count)
         factType = .electric
         electricQuestion()
-        UserDefaults.standard.set(Date(), forKey: "last_tappedListrik")
+        
     }
     
     @IBAction func tanyaShoppingBag(_ sender: Any) {
@@ -108,7 +108,7 @@ class RumahViewController: UIViewController {
         randomQuestions = Int.random(in: 0..<shoppingBagQuestions.count)
         factType = .shoppingBag
         shoppingBagQuestion()
-        UserDefaults.standard.set(Date(), forKey: "last_tappedShoppingBag")
+        
     }
 
     @IBAction func tanyaKipas(_ sender: Any) {
@@ -120,10 +120,13 @@ class RumahViewController: UIViewController {
         checkAnswer(forSelectedButton: 0)
         switch factType {
         case .food:
+            UserDefaults.standard.set(Date(), forKey: "last_tappedMakanan")
             foodFact()
         case .electric:
+            UserDefaults.standard.set(Date(), forKey: "last_tappedListrik")
             electricFact()
         case .shoppingBag:
+            UserDefaults.standard.set(Date(), forKey: "last_tappedShoppingBag")
             shoppingBagFact()
         default:
             return
@@ -134,10 +137,13 @@ class RumahViewController: UIViewController {
         checkAnswer(forSelectedButton: 1)
         switch factType {
         case .food:
+            UserDefaults.standard.set(Date(), forKey: "last_tappedMakanan")
             foodFact()
         case .electric:
+            UserDefaults.standard.set(Date(), forKey: "last_tappedListrik")
             electricFact()
         case .shoppingBag:
+            UserDefaults.standard.set(Date(), forKey: "last_tappedShoppingBag")
             shoppingBagFact()
         default:
             return
