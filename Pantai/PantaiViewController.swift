@@ -41,7 +41,14 @@ class PantaiViewController: UIViewController {
         
         transitioningDelegate = self
         
+        let timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(checkBackgroundBySeconds), userInfo: nil, repeats: true)
+        
         buttonKeRumah.transform = CGAffineTransform(translationX: -100, y: 0)
+    
+    }
+    
+    @objc func checkBackgroundBySeconds () {
+        setupBackgroundByScore()
     }
     
     override func viewWillAppear(_ animated: Bool) {

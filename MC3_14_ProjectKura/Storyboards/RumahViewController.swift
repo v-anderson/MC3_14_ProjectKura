@@ -62,10 +62,12 @@ class RumahViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initialViewAlpha()
-        checkTimeOfDay()
+
         audioPlayer.setupAudioService()
         transitioningDelegate = self
         buttonKePantai.transform = CGAffineTransform(translationX: 100, y: 0)
+        
+        let timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(checkBackgroundBySeconds), userInfo: nil, repeats: true)
         
         let scores = Score.fetchAll(fromContext: getViewContext())
         print("\nCore data contents:")
@@ -74,10 +76,16 @@ class RumahViewController: UIViewController {
         }
         print("")
     }
+
+    
+    @objc func checkBackgroundBySeconds () {
+        checkTimeOfDay()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         audioPlayer.playSound(withVolume: 1.0)
+        checkTimeOfDay()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
