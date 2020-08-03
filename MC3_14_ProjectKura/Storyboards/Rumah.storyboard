@@ -22,13 +22,24 @@
                     <view key="view" contentMode="scaleToFill" id="8FY-iu-xN2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="oeZ-es-0Qr">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="oeZ-es-0Qr" secondAttribute="bottom" id="8BX-pj-8Vh"/>
+                            <constraint firstItem="oeZ-es-0Qr" firstAttribute="top" secondItem="8FY-iu-xN2" secondAttribute="top" id="G4b-Mk-HzK"/>
+                            <constraint firstItem="oeZ-es-0Qr" firstAttribute="trailing" secondItem="iU3-dB-wWB" secondAttribute="trailing" id="JWC-uU-04j"/>
+                            <constraint firstItem="oeZ-es-0Qr" firstAttribute="leading" secondItem="iU3-dB-wWB" secondAttribute="leading" id="N0E-E9-ZQk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iU3-dB-wWB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YyH-vp-XVG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-878" y="-139"/>
+            <point key="canvasLocation" x="-878.26086956521749" y="-139.28571428571428"/>
         </scene>
         <!--Rumah View Controller-->
         <scene sceneID="aKV-eH-sGj">
@@ -384,6 +395,7 @@
     <resources>
         <image name="BackgroundDiary" width="414" height="896"/>
         <image name="Button ke Pantai" width="68" height="49"/>
+        <image name="LaunchScreen" width="414" height="896"/>
         <image name="asset.JendelaPagi" width="187.5" height="193"/>
         <image name="asset.KuraDudukDiSofa" width="98.5" height="169"/>
         <image name="asset.LampuNyalaMalam" width="165.5" height="261.5"/>
