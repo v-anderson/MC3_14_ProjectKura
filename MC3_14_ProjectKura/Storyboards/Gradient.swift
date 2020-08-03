@@ -16,6 +16,9 @@ extension UIView {
         view.frame = bounds
         view.backgroundColor = .white
         
+        if let sublayers = view.layer.sublayers {
+            guard sublayers.count == 0 else { return }
+        }
         
         let layer0 = CAGradientLayer()
 
@@ -36,6 +39,8 @@ extension UIView {
     }
     
     func gradientMalam(view: UILabel) {
+        view.layer.sublayers?.removeLast()
+        view.layer.opacity = 1
         view.backgroundColor = UIColor(red: 0.262, green: 0.262, blue: 0.262, alpha: 0.3)
     }
     

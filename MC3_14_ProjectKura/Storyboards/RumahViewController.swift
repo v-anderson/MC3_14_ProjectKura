@@ -59,6 +59,12 @@ class RumahViewController: UIViewController {
     
     // MARK: - Lifecycle
     
+    // 1. view did load -- udh ngeload smua view ke memori tapi blm ditampilin
+    // 2. view will apper -- proses nampilin view ke layar
+    // 3. view did appear -- smua view udh ada di layar
+    // 4. view will dissapear -- view otw ngilang
+    // 5. view did dissabpear -- view udh ngilang
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialViewAlpha()
@@ -190,6 +196,7 @@ class RumahViewController: UIViewController {
             self.viewPopUpBox.isHidden = true
             self.viewPopUpBox.gestureRecognizers?.removeAll()
         }
+        checkTimeOfDay()
     }
     
     // MARK: - Helper functions
