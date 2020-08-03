@@ -322,7 +322,7 @@ class RumahViewController: UIViewController {
     func kipasFact() {
         hideQuestionsShowFact()
         if let index = randomQuestions {
-            factImage.image = UIImage(named: shoppingBagQuestions[index].imageName)
+            factImage.image = UIImage(named: kipasQuestions[index].imageName)
             lblFactTitle.text = kipasQuestions[index].factTitle
             lblFactBody.text = kipasQuestions[index].factBody
             lblTapToDismiss.alpha = 1
@@ -361,10 +361,10 @@ extension RumahViewController {
         tandaSeruShoppingBag.isHidden = false
         tandaSeruKipas.isHidden = false
         
-        checkListrik()
-        checkMakanan()
-        checkKipas()
-        checkShoppingBag()
+//        checkListrik()
+//        checkMakanan()
+//        checkKipas()
+//        checkShoppingBag()
     }
     
     private func perubahanSore() {

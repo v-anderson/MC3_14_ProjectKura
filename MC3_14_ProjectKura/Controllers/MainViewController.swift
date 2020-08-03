@@ -29,7 +29,8 @@ class MainViewController: UIViewController {
             let destinationVC = onboardingStoryboard.instantiateViewController(identifier: "LetterViewController")
             destinationVC.modalPresentationStyle = .fullScreen
             present(destinationVC, animated: true, completion: nil)
-        } else {
+        }
+        else {
             // Go straight to rumah
             let rumahStoryboard = UIStoryboard(name: "Rumah", bundle: nil)
             let destinationVC = rumahStoryboard.instantiateViewController(identifier: "RumahViewController")

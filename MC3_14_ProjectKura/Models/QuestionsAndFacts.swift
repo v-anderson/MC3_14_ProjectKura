@@ -85,6 +85,7 @@ let shoppingBagQuestions = [
                      answers: ["No, I Don’t", "Yes, I Do"],
                      goodAnswer: 1,
                      imageName: "ShopBagFact2"),
+    
     QuestionsAndFact(questions: "Do you often buy new shopping bag instead of using the old ones?",
                      factTitle: "Use available shopping bag instead of buying a new one.",
                      factBody: "Instead of always buying shopping bag, the best bag to use is one you already own no matter what it’s made from. Because if you just use it one or two times, it doesn't cover the the amount of resources wasted, and the levels of pollution produced.",
