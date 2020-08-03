@@ -94,7 +94,7 @@ extension FadeAnimation: UIViewControllerAnimatedTransitioning {
                 blackView.alpha = 0
             }
         }) { (completed) in
-            transitionContext.completeTransition(completed)
+            transitionContext.completeTransition(true)
         }
     }
     
