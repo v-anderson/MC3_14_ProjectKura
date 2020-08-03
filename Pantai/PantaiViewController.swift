@@ -60,7 +60,7 @@ class PantaiViewController: UIViewController {
         let scores = Score.fetchAll(fromContext: getViewContext())
         print("\nCore data contents:")
         for (i, score) in scores.enumerated() {
-            print("\(i+1). Score: \(score.score)  | Date: \(score.date)")
+            print("\(i+1). Score: \(score.score)  | Date: \(score.date?.description(with: .current))")
         }
         print("")
         
