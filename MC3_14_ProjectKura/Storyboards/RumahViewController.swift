@@ -361,10 +361,10 @@ extension RumahViewController {
         tandaSeruShoppingBag.isHidden = false
         tandaSeruKipas.isHidden = false
         
-//        checkListrik()
-//        checkMakanan()
-//        checkKipas()
-//        checkShoppingBag()
+        checkListrik()
+        checkMakanan()
+        checkKipas()
+        checkShoppingBag()
     }
     
     private func perubahanSore() {
