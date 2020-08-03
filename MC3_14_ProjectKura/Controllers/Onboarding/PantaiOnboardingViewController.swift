@@ -40,11 +40,11 @@ class PantaiOnboardingViewController: UIViewController {
     
     let texts = [
         "When I was a little turtle, the beach is so pretty and I can play with my friends, swimming, walking around the beach. It’s always been my favorite place.",
-        "Me and my family have a job to take care of the beach. We always protect the beaches. We will also go to another beach and help the turtles in there to take care of the beaches.",
-        "Now that I’ve become a grown up turtle, it’s time for me to take care of the beach alone. But it’s been overwhelming to do this alone",
-        "The beach will keep getting dirtier if you making non eco friendly choices. Try to change your action to make the beach clean",
+        "Me and my family have a job in taking care of the beach. It has been our duty to protect the beaches. We go around to another beach and help the other turtles.",
+        "Now that I’ve grown up, it’s time for me to take care of the beach on my own. But it seems to be overwhelming doing this by myself.",
+        "The beach will get dirtier if you keep on doing non-eco friendly actions. Try changing your actions to keep the beach clean",
         "The beach condition will change every 3 days according to your daily habit.",
-        "Now let’s headed back home again by clicking the sign."
+        "Now let’s head back home again by clicking the home sign."
     ]
     
     var textIndex = 0

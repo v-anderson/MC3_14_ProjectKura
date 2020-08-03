@@ -18,7 +18,7 @@
         <!--Main View Controller-->
         <scene sceneID="GQ2-Ig-yPu">
             <objects>
-                <viewController id="0jG-74-XAi" customClass="MainViewController" customModule="MC3_14_ProjectKura" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0jG-74-XAi" customClass="MainViewController" customModule="Kura" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8FY-iu-xN2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,13 +33,19 @@
         <!--Rumah View Controller-->
         <scene sceneID="aKV-eH-sGj">
             <objects>
-                <viewController storyboardIdentifier="RumahViewController" modalPresentationStyle="fullScreen" id="ZxY-bL-AeJ" customClass="RumahViewController" customModule="MC3_14_ProjectKura" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RumahViewController" modalPresentationStyle="fullScreen" id="ZxY-bL-AeJ" customClass="RumahViewController" customModule="Kura" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fUa-ev-uHk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.RuanganNew" translatesAutoresizingMaskIntoConstraints="NO" id="zk3-sL-6bR">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset.KuraDudukDiSofa" translatesAutoresizingMaskIntoConstraints="NO" id="Z48-Pd-yoL">
+                                <rect key="frame" x="231" y="453.5" width="97" height="168"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Z48-Pd-yoL" secondAttribute="height" multiplier="97:168" id="5dC-al-ADq"/>
+                                </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset.JendelaPagi" translatesAutoresizingMaskIntoConstraints="NO" id="fL2-84-erP">
                                 <rect key="frame" x="243.5" y="233" width="216.5" height="206"/>
@@ -137,7 +143,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food questions" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTb-2b-pz3">
-                                                        <rect key="frame" x="0.0" y="78" width="326" height="21"/>
+                                                        <rect key="frame" x="0.0" y="77.5" width="326" height="22"/>
                                                         <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="18"/>
                                                         <color key="textColor" red="0.59607843137254901" green="0.37647058823529411" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
@@ -249,7 +255,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap anywhere to dismiss" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLM-ME-WUb">
-                                        <rect key="frame" x="141" y="690.5" width="132.5" height="14"/>
+                                        <rect key="frame" x="139" y="690.5" width="136.5" height="14.5"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="12"/>
                                         <color key="textColor" red="0.95242542029999999" green="0.88795477150000002" blue="0.78821635249999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -285,6 +291,7 @@
                             <constraint firstItem="WNH-rD-hJD" firstAttribute="centerY" secondItem="fUa-ev-uHk" secondAttribute="centerY" multiplier="0.5" constant="-5" id="Pxu-4T-7US"/>
                             <constraint firstItem="9nn-Y6-Q4g" firstAttribute="height" secondItem="zk3-sL-6bR" secondAttribute="height" multiplier="0.122768" constant="183" id="U94-SW-Jc3"/>
                             <constraint firstItem="wb7-Rv-KIG" firstAttribute="centerY" secondItem="fUa-ev-uHk" secondAttribute="centerY" multiplier="1.3" id="WwX-zY-GkE"/>
+                            <constraint firstItem="Z48-Pd-yoL" firstAttribute="centerX" secondItem="fUa-ev-uHk" secondAttribute="centerX" multiplier="1.35" id="agB-Bb-2wa"/>
                             <constraint firstItem="262-e9-u1q" firstAttribute="centerX" secondItem="fUa-ev-uHk" secondAttribute="centerX" id="bCB-YZ-Mpe"/>
                             <constraint firstItem="Z9f-AP-T2z" firstAttribute="centerY" secondItem="fUa-ev-uHk" secondAttribute="centerY" multiplier="0.9" constant="-5.1999999999999886" id="cA5-gb-ZAM"/>
                             <constraint firstAttribute="bottom" secondItem="zk3-sL-6bR" secondAttribute="bottom" id="dAp-WT-jn1"/>
@@ -297,7 +304,9 @@
                             <constraint firstItem="9nn-Y6-Q4g" firstAttribute="centerY" secondItem="fUa-ev-uHk" secondAttribute="centerY" multiplier="0.68" id="jtC-Z1-700"/>
                             <constraint firstItem="fL2-84-erP" firstAttribute="centerY" secondItem="fUa-ev-uHk" secondAttribute="centerY" multiplier="0.75" id="lIK-oM-qWW"/>
                             <constraint firstItem="wb7-Rv-KIG" firstAttribute="height" secondItem="zk3-sL-6bR" secondAttribute="height" multiplier="0.0569196" id="m4C-FO-WtJ"/>
+                            <constraint firstItem="Z48-Pd-yoL" firstAttribute="centerY" secondItem="fUa-ev-uHk" secondAttribute="centerY" multiplier="1.2" id="o58-Q5-2Bs"/>
                             <constraint firstItem="wb7-Rv-KIG" firstAttribute="centerX" secondItem="fUa-ev-uHk" secondAttribute="centerX" multiplier="0.75" id="oac-4D-u9M"/>
+                            <constraint firstItem="Z48-Pd-yoL" firstAttribute="height" secondItem="zk3-sL-6bR" secondAttribute="height" multiplier="0.1875" id="pse-Bt-aQO"/>
                             <constraint firstItem="HM3-QM-aks" firstAttribute="height" secondItem="fUa-ev-uHk" secondAttribute="height" multiplier="0.0546875" id="qXz-yl-5dp"/>
                             <constraint firstItem="PO3-MI-5sS" firstAttribute="top" secondItem="fUa-ev-uHk" secondAttribute="top" id="rQH-KW-SeQ"/>
                             <constraint firstItem="zk3-sL-6bR" firstAttribute="leading" secondItem="YZP-eJ-fU1" secondAttribute="leading" id="rUa-rH-b2q"/>
@@ -341,6 +350,7 @@
     <resources>
         <image name="Button ke Pantai" width="68" height="49"/>
         <image name="asset.JendelaPagi" width="187.5" height="193"/>
+        <image name="asset.KuraDudukDiSofa" width="98.5" height="169"/>
         <image name="asset.LampuNyalaMalam" width="165.5" height="261.5"/>
         <image name="asset.TandaSeru" width="56" height="60.5"/>
         <image name="asset.TandaSeruAtas" width="56" height="60.5"/>

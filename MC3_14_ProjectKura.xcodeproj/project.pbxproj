@@ -57,7 +57,7 @@
 		710F595424C601790037185E /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Gradient.swift; path = MC3_14_ProjectKura/Storyboards/Gradient.swift; sourceTree = SOURCE_ROOT; };
 		713A7BFB24C6DAFB006049FB /* Pantai.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pantai.storyboard; sourceTree = "<group>"; };
 		713A7BFD24C723B7006049FB /* PantaiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PantaiViewController.swift; path = Pantai/PantaiViewController.swift; sourceTree = SOURCE_ROOT; };
-		71907B7624BDFCD5008E44CF /* MC3_14_ProjectKura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3_14_ProjectKura.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		71907B7624BDFCD5008E44CF /* Kura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71907B7924BDFCD5008E44CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71907B7B24BDFCD5008E44CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		71907B8324BDFCD5008E44CF /* MC3_14_ProjectKura.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MC3_14_ProjectKura.xcdatamodel; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 		71907B7724BDFCD5008E44CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				71907B7624BDFCD5008E44CF /* MC3_14_ProjectKura.app */,
+				71907B7624BDFCD5008E44CF /* Kura.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -265,7 +265,7 @@
 			);
 			name = MC3_14_ProjectKura;
 			productName = MC3_14_ProjectKura;
-			productReference = 71907B7624BDFCD5008E44CF /* MC3_14_ProjectKura.app */;
+			productReference = 71907B7624BDFCD5008E44CF /* Kura.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -483,14 +483,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4C46CAZW8L;
+				DEVELOPMENT_TEAM = D37VU89NNW;
 				INFOPLIST_FILE = MC3_14_ProjectKura/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "MC3-14.MC3-14-ProjectKura";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "MC3-14.ProjectKura";
+				PRODUCT_NAME = Kura;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -501,14 +501,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4C46CAZW8L;
+				DEVELOPMENT_TEAM = D37VU89NNW;
 				INFOPLIST_FILE = MC3_14_ProjectKura/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "MC3-14.MC3-14-ProjectKura";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "MC3-14.ProjectKura";
+				PRODUCT_NAME = Kura;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

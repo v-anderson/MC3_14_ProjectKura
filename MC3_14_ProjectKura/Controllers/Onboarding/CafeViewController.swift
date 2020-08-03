@@ -34,7 +34,7 @@ class CafeViewController: UIViewController {
     var greetingIndex = 0
     let greeting = [
         "Hello! I’m Kura.\nYou must be....",
-        "Nice to meet you.\nThank you for meeting me here!  My father believe that you can help me. But I’m still not sure, "
+        "Nice to meet you.\nThank you for meeting me here!  My father believed that you can help me. But I’m still not sure, "
     ]
     
     let audioPlayer = AudioPlayer(filename: "DoneWithWork_Cafe", extension: "mp3")
