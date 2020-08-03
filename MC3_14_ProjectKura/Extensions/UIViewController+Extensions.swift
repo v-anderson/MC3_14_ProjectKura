@@ -13,19 +13,20 @@ extension UIViewController {
     
     /// Calculate final score
     func calculateFinalScore() -> Int? {
-        
         // Get the last updated date
         guard let lastUpdatedDate = UserDefaults.standard.object(forKey: "last_updated") as? Date else {
             UserDefaults.standard.set(Date(), forKey: "last_updated")
             return nil
         }
-        print("Last updated background at: \(lastUpdatedDate)")
+        print("Last updated background at: \(lastUpdatedDate.description(with: .current))")
         
         // Only update background every 3 days
-        if Date.daysAfter(date: lastUpdatedDate) <= 3 { return nil }
+        guard let dateThreeDaysAgo = Calendar.current.date(byAdding: .day, value: -3, to: Date()) else { return nil }
+        let comparison = Calendar.current.compare(dateThreeDaysAgo, to: lastUpdatedDate, toGranularity: .day)
+        if comparison == .orderedAscending { return nil }
         
         // Fetch the score from the last 3 days
-        guard let day1 = Calendar.current.date(byAdding: .day, value: 0, to: Date()),
+        guard let day1 = Calendar.current.date(byAdding: .day, value: -3, to: Date()),
             let day2 = Calendar.current.date(byAdding: .day, value: -2, to: Date()),
             let day3 = Calendar.current.date(byAdding: .day, value: -1, to: Date()) else { return nil }
                 
@@ -39,7 +40,6 @@ extension UIViewController {
         
         // Calculate final score
         let finalScore = (score1?.score ?? 0) + (score2?.score ?? 0) + (score3?.score ?? 0)
-        print(finalScore)
         
         UserDefaults.standard.set(finalScore, forKey: "last_score")
         

@@ -34,7 +34,6 @@ class LetterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        animateLetter()
         addTapGestureToLetter()
         addTapGestureToScreen()
         
@@ -42,6 +41,11 @@ class LetterViewController: UIViewController {
         audioPlayer.playSound(withVolume: 1.0)
         
         transitioningDelegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animateLetter()
     }
     
     // MARK: - OBJC Functions
