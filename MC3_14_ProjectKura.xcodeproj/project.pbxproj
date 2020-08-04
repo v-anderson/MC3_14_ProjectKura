@@ -34,6 +34,9 @@
 		71907B8424BDFCD5008E44CF /* MC3_14_ProjectKura.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71907B8224BDFCD5008E44CF /* MC3_14_ProjectKura.xcdatamodeld */; };
 		71907B8624BDFCD7008E44CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71907B8524BDFCD7008E44CF /* Assets.xcassets */; };
 		71907B8924BDFCD7008E44CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71907B8724BDFCD7008E44CF /* LaunchScreen.storyboard */; };
+		71BED25124D96823009DC214 /* GloriaHallelujah-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71BED25024D9677A009DC214 /* GloriaHallelujah-Regular.ttf */; };
+		71E1248224D93E11002E78F2 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1248124D93E11002E78F2 /* DiaryViewController.swift */; };
+		71E1248424D93FE2002E78F2 /* DiaryContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1248324D93FE2002E78F2 /* DiaryContent.swift */; };
 		CB0DABDB24CECA1200AD2DAF /* UIButton + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0DABDA24CECA1200AD2DAF /* UIButton + Extensions.swift */; };
 		CBB173CB24CAD1680090B742 /* QuestionsAndFacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB173CA24CAD1680090B742 /* QuestionsAndFacts.swift */; };
 		CBC4A83724CEC61700B3F5DC /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBC4A82C24CEC61700B3F5DC /* Rubik-Regular.ttf */; };
@@ -76,6 +79,9 @@
 		71907B8524BDFCD7008E44CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71907B8824BDFCD7008E44CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71907B8A24BDFCD7008E44CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71BED25024D9677A009DC214 /* GloriaHallelujah-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GloriaHallelujah-Regular.ttf"; sourceTree = "<group>"; };
+		71E1248124D93E11002E78F2 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DiaryViewController.swift; path = MC3_14_ProjectKura/Storyboards/DiaryViewController.swift; sourceTree = SOURCE_ROOT; };
+		71E1248324D93FE2002E78F2 /* DiaryContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryContent.swift; sourceTree = "<group>"; };
 		CB0DABDA24CECA1200AD2DAF /* UIButton + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extensions.swift"; sourceTree = "<group>"; };
 		CBB173CA24CAD1680090B742 /* QuestionsAndFacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsAndFacts.swift; sourceTree = "<group>"; };
 		CBC4A82C24CEC61700B3F5DC /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
@@ -137,6 +143,7 @@
 				CBB173CA24CAD1680090B742 /* QuestionsAndFacts.swift */,
 				ECC8D9C224CFC2BF00ACD8E4 /* OnboardingQuestion.swift */,
 				57BFDA0C24D9570700D50F46 /* Gallery.swift */,
+				71E1248324D93FE2002E78F2 /* DiaryContent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -188,6 +195,7 @@
 			children = (
 				710F595224C5F6380037185E /* RumahViewController.swift */,
 				57BFDA0824D950D900D50F46 /* GalleryViewController.swift */,
+				71E1248124D93E11002E78F2 /* DiaryViewController.swift */,
 			);
 			path = Rumah;
 			sourceTree = "<group>";
@@ -228,9 +236,18 @@
 			path = MC3_14_ProjectKura;
 			sourceTree = "<group>";
 		};
+		71E1247F24D9376F002E78F2 /* Gloria Hallelujah */ = {
+			isa = PBXGroup;
+			children = (
+				71BED25024D9677A009DC214 /* GloriaHallelujah-Regular.ttf */,
+			);
+			path = "Gloria Hallelujah";
+			sourceTree = "<group>";
+		};
 		CBC4A82124CEC5EB00B3F5DC /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				71E1247F24D9376F002E78F2 /* Gloria Hallelujah */,
 				CBC4A83924CEC6C400B3F5DC /* Fredoka_One */,
 				CBC4A82224CEC61700B3F5DC /* Rubik */,
 			);
@@ -332,6 +349,7 @@
 				713A7BFC24C6DAFB006049FB /* Pantai.storyboard in Resources */,
 				CBC4A83D24CEC6C400B3F5DC /* FredokaOne-Regular.ttf in Resources */,
 				57392E9B24D188D100908246 /* beach-waves.wav in Resources */,
+				71BED25124D96823009DC214 /* GloriaHallelujah-Regular.ttf in Resources */,
 				57392E9424D1645100908246 /* after-the-rain.wav in Resources */,
 				71907B8924BDFCD7008E44CF /* LaunchScreen.storyboard in Resources */,
 				71907B8624BDFCD7008E44CF /* Assets.xcassets in Resources */,
@@ -358,6 +376,7 @@
 				71907B7C24BDFCD5008E44CF /* SceneDelegate.swift in Sources */,
 				EC1E480D24CEF0B400975C83 /* CafeViewController.swift in Sources */,
 				CBB173CB24CAD1680090B742 /* QuestionsAndFacts.swift in Sources */,
+				71E1248224D93E11002E78F2 /* DiaryViewController.swift in Sources */,
 				572ABDC724C6D75D00481B86 /* UIViewController+Extensions.swift in Sources */,
 				713A7BFE24C723B7006049FB /* PantaiViewController.swift in Sources */,
 				57392E9224D1637A00908246 /* AudioPlayer.swift in Sources */,
@@ -365,6 +384,7 @@
 				EC1E480F24CEFC4400975C83 /* PantaiOnboardingViewController.swift in Sources */,
 				57BFDA0924D950D900D50F46 /* GalleryViewController.swift in Sources */,
 				710F595324C5F6380037185E /* RumahViewController.swift in Sources */,
+				71E1248424D93FE2002E78F2 /* DiaryContent.swift in Sources */,
 				57D68BF024D2F7A500C7BB1E /* ImageViewWithPersistentAnimations.swift in Sources */,
 				5756A52524D056E100839343 /* PhoneViewController.swift in Sources */,
 				57BFDA0D24D9570700D50F46 /* Gallery.swift in Sources */,
@@ -507,7 +527,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = D37VU89NNW;
 				INFOPLIST_FILE = MC3_14_ProjectKura/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -527,7 +547,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = D37VU89NNW;
 				INFOPLIST_FILE = MC3_14_ProjectKura/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

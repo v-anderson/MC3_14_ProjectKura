@@ -22,6 +22,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>GloriaHallelujah-Regular.ttf</string>
 		<string>Rubik-Regular.ttf</string>
 		<string>FredokaOne-Regular.ttf</string>
 		<string>Rubik-Bold.ttf</string>
