@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "blackHeart.png",
+      "filename" : "Mask Group-2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "blackHeart@2x.png",
+      "filename" : "Mask Group@2x-2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "blackHeart@3x.png",
+      "filename" : "Mask Group@3x-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

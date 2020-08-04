@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "redHeart.png",
+      "filename" : "Red Heart.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "redHeart@2x.png",
+      "filename" : "Red Heart@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "redHeart@3x.png",
+      "filename" : "Red Heart@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -16,9 +16,14 @@ class DiaryViewController: UIViewController {
     
     @IBOutlet weak var isiDiaryText: UITextView!
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        kuraGalleryButton.semanticContentAttribute = .forceRightToLeft
+        
         guard let maxContent = diaryContents[.redHeart]?.diaryImage.count else {return}
         
         let randomIndex = Int.random(in: 0...maxContent - 1)
@@ -44,7 +49,7 @@ class DiaryViewController: UIViewController {
             isiDiaryText.text = diaryBlackHeart.isiDiary[randomIndex]
         } else if score < 8 {
             diaryImage.image = UIImage(named: diaryYellowHeart.diaryImage[randomIndex])
-            heartType.image = UIImage(named: "yellowHeart")
+            heartType.image = UIImage(named: "redHeart")
             isiDiaryText.text = diaryYellowHeart.isiDiary[randomIndex]
             
         } else if score < 12 {
