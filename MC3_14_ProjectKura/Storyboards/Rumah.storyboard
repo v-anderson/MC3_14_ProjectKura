@@ -413,6 +413,9 @@
                                     <constraint firstAttribute="width" secondItem="vMM-jU-2Vv" secondAttribute="height" multiplier="1:1" id="oNJ-7x-7BN"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="BackButton"/>
+                                <connections>
+                                    <action selector="backButton:" destination="p3o-0R-1lE" eventType="touchUpInside" id="O2c-XH-0ag"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpG-AO-uqU">
                                 <rect key="frame" x="329" y="40.5" width="65" height="77"/>
@@ -420,6 +423,9 @@
                                     <constraint firstAttribute="width" secondItem="rpG-AO-uqU" secondAttribute="height" multiplier="60:71" id="Xj1-f1-PMe"/>
                                 </constraints>
                                 <state key="normal" image="GalleryButton"/>
+                                <connections>
+                                    <action selector="galleryButton:" destination="p3o-0R-1lE" eventType="touchUpInside" id="T4D-yy-esO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

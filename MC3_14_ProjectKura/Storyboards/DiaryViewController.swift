@@ -21,8 +21,6 @@ class DiaryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        kuraGalleryButton.semanticContentAttribute = .forceRightToLeft
         
         guard let maxContent = diaryContents[.redHeart]?.diaryImage.count else {return}
         
@@ -83,5 +81,18 @@ class DiaryViewController: UIViewController {
             return lastScore
         }
     }
+    
+    @IBAction func galleryButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Gallery", bundle: nil)
+        
+       let destination = storyboard.instantiateViewController(withIdentifier: "GalleryViewController")
+        
+        present(destination, animated: true, completion: nil)
+        
+    }
+    
 
+    @IBAction func backButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

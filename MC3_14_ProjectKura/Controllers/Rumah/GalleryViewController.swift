@@ -33,6 +33,7 @@ class GalleryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
+        transitioningDelegate = self
     }
 }
 
@@ -102,5 +103,18 @@ extension GalleryViewController {
         galleryCollectionView.showsVerticalScrollIndicator = false
         galleryCollectionView.register(GalleryHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "GalleryHeader")
         galleryCollectionView.register(GalleryFooter.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "GalleryFooter")
+    }
+}
+
+// MARK: - Transitioning Delegate
+
+extension GalleryViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return FadeAnimation(animationDuration: 1, animationType: .present)
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return FadeAnimation(animationDuration: 1, animationType: .dismiss)
     }
 }

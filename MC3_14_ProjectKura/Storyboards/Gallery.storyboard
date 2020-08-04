@@ -11,7 +11,7 @@
         <!--Gallery View Controller-->
         <scene sceneID="Yz2-48-ElQ">
             <objects>
-                <viewController id="bRf-MR-qjC" customClass="GalleryViewController" customModule="Kura" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GalleryViewController" modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="bRf-MR-qjC" customClass="GalleryViewController" customModule="Kura" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U2x-3K-pHQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
