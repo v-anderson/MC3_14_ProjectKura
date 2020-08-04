@@ -385,6 +385,7 @@ extension RumahViewController {
     private func perubahanSore() {
         //panggil function ini buat perubahan background waktu sore
         filter.gradientSore(view: filter)
+        lampu.image = UIImage(named: "asset.LampuNyalaMalam")
         jendela.image = UIImage(named: "asset.JendelaSore")
         tandaSeru.isHidden = false
         
@@ -397,6 +398,7 @@ extension RumahViewController {
     private func perubahanMalam() {
         //panggil function ini buat perubahan background waktu malam
         filter.gradientMalam(view: filter)
+        lampu.image = UIImage(named: "asset.LampuNyalaMalam")
         jendela.image = UIImage(named: "asset.JendelaMalam")
         tandaSeru.isHidden = false
         
