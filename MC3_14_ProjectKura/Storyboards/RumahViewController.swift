@@ -139,18 +139,22 @@ class RumahViewController: UIViewController {
     }
     
     @IBAction func btn1(_ sender: Any) {
-        checkAnswer(forSelectedButton: 0)
+        
         switch factType {
         case .food:
+            checkAnswer(forSelectedButton: 0, type: .food)
             UserDefaults.standard.set(Date(), forKey: "last_tappedMakanan")
             foodFact()
         case .electric:
+            checkAnswer(forSelectedButton: 0, type: .electric)
             UserDefaults.standard.set(Date(), forKey: "last_tappedListrik")
             electricFact()
         case .shoppingBag:
+            checkAnswer(forSelectedButton: 0, type: .shoppingBag)
             UserDefaults.standard.set(Date(), forKey: "last_tappedShoppingBag")
             shoppingBagFact()
         case .kipas:
+            checkAnswer(forSelectedButton: 0, type: .kipas)
             UserDefaults.standard.set(Date(), forKey: "last_tappedKipas")
             kipasFact()
         default:
@@ -159,18 +163,21 @@ class RumahViewController: UIViewController {
     }
     
     @IBAction func btn2(_ sender: Any) {
-        checkAnswer(forSelectedButton: 1)
         switch factType {
         case .food:
+            checkAnswer(forSelectedButton: 0, type: .food)
             UserDefaults.standard.set(Date(), forKey: "last_tappedMakanan")
             foodFact()
         case .electric:
+            checkAnswer(forSelectedButton: 0, type: .electric)
             UserDefaults.standard.set(Date(), forKey: "last_tappedListrik")
             electricFact()
         case .shoppingBag:
+            checkAnswer(forSelectedButton: 0, type: .shoppingBag)
             UserDefaults.standard.set(Date(), forKey: "last_tappedShoppingBag")
             shoppingBagFact()
         case .kipas:
+            checkAnswer(forSelectedButton: 0, type: .kipas)
             UserDefaults.standard.set(Date(), forKey: "last_tappedKipas")
             kipasFact()
         default:
@@ -201,9 +208,24 @@ class RumahViewController: UIViewController {
     
     // MARK: - Helper functions
     
-    private func checkAnswer(forSelectedButton buttonIndex: Int) {
+    private func checkAnswer(forSelectedButton buttonIndex: Int, type: FactType) {
         if let index = randomQuestions {
-            let correctIndex = FoodQuestions[index].goodAnswer
+            
+            var correctIndex : Int
+            
+            switch type {
+                case .food:
+                    correctIndex = FoodQuestions[index].goodAnswer
+                case .electric:
+                    correctIndex = electricityQuestions[index].goodAnswer
+                case .kipas:
+                    correctIndex = kipasQuestions[index].goodAnswer
+                case .shoppingBag:
+                    correctIndex = shoppingBagQuestions[index].goodAnswer
+                default:
+                    break
+            }
+            
             if correctIndex == buttonIndex {
                 print("Good Answer")
                 // Insert to core data
