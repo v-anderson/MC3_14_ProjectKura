@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bRf-MR-qjC">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Gallery View Controller-->
+        <scene sceneID="Yz2-48-ElQ">
+            <objects>
+                <viewController id="bRf-MR-qjC" customClass="GalleryViewController" customModule="Kura" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U2x-3K-pHQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundDiary" translatesAutoresizingMaskIntoConstraints="NO" id="9sN-Gy-kDk">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pfx-3r-WBx">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="0.0" id="KSa-sJ-fZF">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GalleryCell" id="hOb-u6-bem" customClass="GalleryCell" customModule="Kura" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Fos-ri-QMD">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="bRf-MR-qjC" id="NBp-ci-617"/>
+                                    <outlet property="delegate" destination="bRf-MR-qjC" id="Kcq-bE-kIp"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Pfx-3r-WBx" firstAttribute="leading" secondItem="nso-bm-O82" secondAttribute="leading" id="6bN-PF-PDy"/>
+                            <constraint firstItem="Pfx-3r-WBx" firstAttribute="trailing" secondItem="nso-bm-O82" secondAttribute="trailing" id="QaX-jt-Ns3"/>
+                            <constraint firstItem="9sN-Gy-kDk" firstAttribute="leading" secondItem="nso-bm-O82" secondAttribute="leading" id="dH1-En-Yr1"/>
+                            <constraint firstItem="9sN-Gy-kDk" firstAttribute="top" secondItem="U2x-3K-pHQ" secondAttribute="top" id="gDG-ku-hzY"/>
+                            <constraint firstItem="Pfx-3r-WBx" firstAttribute="top" secondItem="U2x-3K-pHQ" secondAttribute="top" id="gmi-PU-wqA"/>
+                            <constraint firstItem="9sN-Gy-kDk" firstAttribute="trailing" secondItem="nso-bm-O82" secondAttribute="trailing" id="h0L-1C-ofN"/>
+                            <constraint firstAttribute="bottom" secondItem="Pfx-3r-WBx" secondAttribute="bottom" id="kEr-py-b4p"/>
+                            <constraint firstAttribute="bottom" secondItem="9sN-Gy-kDk" secondAttribute="bottom" id="oCb-jm-Pdw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nso-bm-O82"/>
+                    </view>
+                    <connections>
+                        <outlet property="galleryCollectionView" destination="Pfx-3r-WBx" id="y7C-y4-TcO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h9c-fd-XhU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-153.62318840579712" y="-38.169642857142854"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BackgroundDiary" width="414" height="896"/>
+    </resources>
+</document>
