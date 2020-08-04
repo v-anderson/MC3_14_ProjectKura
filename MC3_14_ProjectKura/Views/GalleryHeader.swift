@@ -27,7 +27,7 @@ class GalleryHeader: UICollectionReusableView {
         titleLabel.text = title
         
         if count == 0 {
-            stackView.spacing = 24
+            stackView.spacing = 16
             subtitleLabel.text = placeholder
         } else {
             stackView.spacing = 0
@@ -37,7 +37,11 @@ class GalleryHeader: UICollectionReusableView {
     
     private func configureContents() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.font = UIFont(name: "GloriaHallelujah", size: 16)
+        
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        subtitleLabel.font = UIFont(name: "GloriaHallelujah", size: 14)
+
         subtitleLabel.numberOfLines = 0
         
         stackView.axis = .vertical
