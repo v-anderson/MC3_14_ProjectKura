@@ -18,7 +18,7 @@ struct QuestionsAndFact {
 }
 
 let FoodQuestions = [
-    QuestionsAndFact(questions: "Did you wash your plates hand or in the dishwasher?",
+    QuestionsAndFact(questions: "Did you wash your plates by hand or in the dishwasher?",
                      factTitle: "Hand washing dishes can use up to 50% more water than a water-saving energy-efficient dishwasher.",
                      factBody: "Make sure you use the dishwater when it's fully load. If you do wash dishes in the sink, fill up your sink first. Don’t let the water run constantly down the drain.",
                      answers: ["Dishwasher", "By Hand"],
