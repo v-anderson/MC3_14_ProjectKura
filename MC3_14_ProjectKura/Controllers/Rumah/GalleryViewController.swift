@@ -26,6 +26,8 @@ class GalleryViewController: UIViewController {
     }
     
     private func loadData() {
+        Gallery.configureInitialState(toContext: getViewContext())
+        
         let galleries = Gallery.fetchAll(fromContext: getViewContext())
         galleryViewModel = GalleryViewModel(withGalleries: galleries)
     }
