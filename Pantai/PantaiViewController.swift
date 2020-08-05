@@ -91,27 +91,27 @@ class PantaiViewController: UIViewController {
     /// Update background according current time
     private func updateBackgroundWith (score: Int) {
         if isMorning() {
-            if score <= 5 {
+            if score < 4 {
                 pagiKotorBanget()
-            } else if score <= 10 {
+            } else if score < 8 {
                 pagiKotor()
-            } else if score <= 15 {
+            } else if score < 12 {
                 pagiNetral()
             } else { pagiBersih() }
         } else if isAfternoon() {
-            if score <= 5 {
+            if score < 4 {
                 soreKotorBanget()
-            } else if score <= 10 {
+            } else if score < 8 {
                 soreKotor()
-            } else if score <= 15 {
+            } else if score < 12 {
                 soreNetral()
             } else { soreBersih() }
         } else {
-            if score <= 5 {
+            if score < 4 {
                 malemKotorBanget()
-            } else if score <= 10 {
+            } else if score < 8 {
                 malemKotor()
-            } else if score <= 15 {
+            } else if score < 12 {
                 malemNetral()
             } else { malemBersih() }
         }

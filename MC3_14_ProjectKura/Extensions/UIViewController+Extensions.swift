@@ -43,6 +43,17 @@ extension UIViewController {
         
         UserDefaults.standard.set(finalScore, forKey: "last_score")
         
+        let randomIndex = Int.random(in: 0...1)
+        if finalScore < 4 {
+            Gallery.update(toContext: getViewContext(), withId: 3, imageId: randomIndex)
+        } else if finalScore < 8 {
+            Gallery.update(toContext: getViewContext(), withId: 2, imageId: randomIndex)
+        } else if finalScore < 12 {
+            Gallery.update(toContext: getViewContext(), withId: 1, imageId: randomIndex)
+        } else {
+            Gallery.update(toContext: getViewContext(), withId: 0, imageId: randomIndex)
+        }
+        
         return Int(finalScore)
     }
             
