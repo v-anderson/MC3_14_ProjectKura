@@ -43,15 +43,30 @@ extension UIViewController {
         
         UserDefaults.standard.set(finalScore, forKey: "last_score")
         
-        let randomIndex = Int.random(in: 0...1)
         if finalScore < 4 {
-            Gallery.update(toContext: getViewContext(), withId: 3, imageId: randomIndex)
+            if let blackHeartCount = diaryContents[.blackHeart]?.diaryImage.count {
+                let randomIndex = Int.random(in: 0..<blackHeartCount)
+                Gallery.update(toContext: getViewContext(), withId: 3, imageId: randomIndex)
+                UserDefaults.standard.set(randomIndex,forKey: "indexDiaryImage")
+            }
         } else if finalScore < 8 {
-            Gallery.update(toContext: getViewContext(), withId: 2, imageId: randomIndex)
+            if let yellowHeartCount = diaryContents[.yellowHeart]?.diaryImage.count {
+                let randomIndex = Int.random(in: 0..<yellowHeartCount)
+                Gallery.update(toContext: getViewContext(), withId: 2, imageId: randomIndex)
+                UserDefaults.standard.set(randomIndex,forKey: "indexDiaryImage")
+            }
         } else if finalScore < 12 {
-            Gallery.update(toContext: getViewContext(), withId: 1, imageId: randomIndex)
+            if let blueHeartCount = diaryContents[.blueHeart]?.diaryImage.count {
+                let randomIndex = Int.random(in: 0..<blueHeartCount)
+                Gallery.update(toContext: getViewContext(), withId: 1, imageId: randomIndex)
+                UserDefaults.standard.set(randomIndex,forKey: "indexDiaryImage")
+            }
         } else {
-            Gallery.update(toContext: getViewContext(), withId: 0, imageId: randomIndex)
+            if let redHeartCount = diaryContents[.yellowHeart]?.diaryImage.count {
+                let randomIndex = Int.random(in: 0..<redHeartCount)
+                Gallery.update(toContext: getViewContext(), withId: 0, imageId: randomIndex)
+                UserDefaults.standard.set(randomIndex,forKey: "indexDiaryImage")
+            }
         }
         
         return Int(finalScore)

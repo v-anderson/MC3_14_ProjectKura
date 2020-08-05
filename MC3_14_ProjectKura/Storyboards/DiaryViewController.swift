@@ -17,17 +17,16 @@ class DiaryViewController: UIViewController {
     @IBOutlet weak var isiDiaryText: UITextView!
     
     
-    
+    @IBOutlet weak var placeHolder: UILabel!
+    @IBOutlet weak var kuraHeart: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let maxContent = diaryContents[.redHeart]?.diaryImage.count else {return}
-        
-        let randomIndex = Int.random(in: 0...maxContent - 1)
-        
         guard let score = getScore() else { return }
         print(score)
+        
+        guard let randomIndex = UserDefaults.standard.object(forKey: "indexDiaryImage") as? Int else {return}
         
         guard let diaryRedHeart = diaryContents[.redHeart] else {return}
         
@@ -37,14 +36,17 @@ class DiaryViewController: UIViewController {
        
         guard let diaryBlackHeart = diaryContents[.blackHeart] else {return}
         
+        placeHolder.isHidden = true
+        kuraHeart.isHidden = false
         
         print(randomIndex)
-        let platform = NSString()
+//        let platform = NSString()
         
         if score < 4 {
             diaryImage.image = UIImage(named: diaryBlackHeart.diaryImage[randomIndex])
             heartType.image = UIImage(named: "blackHeart")
             isiDiaryText.text = diaryBlackHeart.isiDiary[randomIndex]
+            
         } else if score < 8 {
             diaryImage.image = UIImage(named: diaryYellowHeart.diaryImage[randomIndex])
             heartType.image = UIImage(named: "redHeart")
@@ -59,7 +61,7 @@ class DiaryViewController: UIViewController {
             heartType.image = UIImage(named: "redHeart")
             isiDiaryText.text = diaryRedHeart.isiDiary[randomIndex]
         }
-        
+        isiDiaryText.textAlignment = .justified
         isiDiaryText.adjustsFontForContentSizeCategory = true
     }
     

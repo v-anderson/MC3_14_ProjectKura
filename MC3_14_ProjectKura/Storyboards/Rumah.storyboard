@@ -377,34 +377,33 @@
                                 <color key="textColor" red="0.2196078431372549" green="0.32549019607843138" blue="0.050980392156862744" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PictureRedHeart" translatesAutoresizingMaskIntoConstraints="NO" id="78a-58-AQ0">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="78a-58-AQ0">
                                 <rect key="frame" x="60" y="103.5" width="294" height="358.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="78a-58-AQ0" secondAttribute="height" multiplier="252:307" id="JWn-rk-cF5"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pWm-Lt-y72">
-                                <rect key="frame" x="20" y="797" width="167.5" height="45"/>
+                                <rect key="frame" x="20" y="797" width="47.5" height="45"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kura's Heart:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGg-2K-b0D">
-                                        <rect key="frame" x="0.0" y="0.0" width="112" height="45"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kura's Heart:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGg-2K-b0D">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="45"/>
                                         <fontDescription key="fontDescription" name="GloriaHallelujah" family="Gloria Hallelujah" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowHeart" translatesAutoresizingMaskIntoConstraints="NO" id="vJB-0x-xa9">
-                                        <rect key="frame" x="120" y="0.0" width="47.5" height="45"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vJB-0x-xa9">
+                                        <rect key="frame" x="0.0" y="0.0" width="47.5" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vJB-0x-xa9" secondAttribute="height" multiplier="18:17" id="kXN-7X-Vtc"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xxc-ip-GY4">
-                                <rect key="frame" x="20" y="472" width="374" height="321.5"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xxc-ip-GY4">
+                                <rect key="frame" x="20" y="462" width="374" height="48"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" name="GloriaHallelujah" family="Gloria Hallelujah" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="GloriaHallelujah" family="Gloria Hallelujah" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMM-jU-2Vv">
@@ -427,13 +426,21 @@
                                     <action selector="galleryButton:" destination="p3o-0R-1lE" eventType="touchUpInside" id="T4D-yy-esO"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You haven't made any moments with Kura yet. Comeback here in a few days after spending more time with Kura !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYM-yh-qkF">
+                                <rect key="frame" x="20" y="397.5" width="374" height="101.5"/>
+                                <fontDescription key="fontDescription" name="GloriaHallelujah" family="Gloria Hallelujah" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="rpG-AO-uqU" firstAttribute="height" secondItem="HLJ-EH-6jJ" secondAttribute="height" multiplier="0.0859375" id="8gI-y6-AdS"/>
                             <constraint firstItem="HLJ-EH-6jJ" firstAttribute="trailing" secondItem="jcJ-Jj-xtr" secondAttribute="trailing" id="9oC-Kn-i90"/>
                             <constraint firstItem="78a-58-AQ0" firstAttribute="height" secondItem="HLJ-EH-6jJ" secondAttribute="height" multiplier="0.4" id="EH9-I4-2mz"/>
+                            <constraint firstItem="MYM-yh-qkF" firstAttribute="leading" secondItem="010-0C-ZHF" secondAttribute="leading" constant="20" id="Hbd-ux-hcN"/>
                             <constraint firstItem="HLJ-EH-6jJ" firstAttribute="leading" secondItem="jcJ-Jj-xtr" secondAttribute="leading" id="JQO-6j-Usw"/>
+                            <constraint firstAttribute="trailing" secondItem="MYM-yh-qkF" secondAttribute="trailing" constant="20" id="Mrx-BW-ewB"/>
                             <constraint firstItem="Xxc-ip-GY4" firstAttribute="leading" secondItem="jcJ-Jj-xtr" secondAttribute="leading" constant="20" id="QQC-ub-f4k"/>
                             <constraint firstItem="pWm-Lt-y72" firstAttribute="leading" secondItem="010-0C-ZHF" secondAttribute="leading" constant="20" id="Y7C-FD-iyU"/>
                             <constraint firstItem="vMM-jU-2Vv" firstAttribute="leading" secondItem="jcJ-Jj-xtr" secondAttribute="leading" constant="20" id="bBZ-gc-Fxh"/>
@@ -449,8 +456,10 @@
                             <constraint firstItem="vMM-jU-2Vv" firstAttribute="height" secondItem="HLJ-EH-6jJ" secondAttribute="height" multiplier="0.04" id="nl3-tk-odA"/>
                             <constraint firstItem="jcJ-Jj-xtr" firstAttribute="trailing" secondItem="Xxc-ip-GY4" secondAttribute="trailing" constant="20" id="pkq-i1-Qig"/>
                             <constraint firstItem="vMM-jU-2Vv" firstAttribute="centerY" secondItem="EFj-Kz-HHp" secondAttribute="centerY" id="sYe-xP-isB"/>
-                            <constraint firstItem="Xxc-ip-GY4" firstAttribute="top" secondItem="78a-58-AQ0" secondAttribute="bottom" constant="10" id="w7D-Pt-1m9"/>
+                            <constraint firstItem="Xxc-ip-GY4" firstAttribute="top" secondItem="78a-58-AQ0" secondAttribute="bottom" id="w7D-Pt-1m9"/>
                             <constraint firstAttribute="bottom" secondItem="HLJ-EH-6jJ" secondAttribute="bottom" id="wdS-Rf-DZl"/>
+                            <constraint firstItem="MYM-yh-qkF" firstAttribute="centerY" secondItem="010-0C-ZHF" secondAttribute="centerY" id="xgu-Oo-Tui"/>
+                            <constraint firstItem="MYM-yh-qkF" firstAttribute="centerX" secondItem="010-0C-ZHF" secondAttribute="centerX" id="zMV-uV-GP6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jcJ-Jj-xtr"/>
                     </view>
@@ -458,6 +467,8 @@
                         <outlet property="diaryImage" destination="78a-58-AQ0" id="7Ma-ma-Re3"/>
                         <outlet property="heartType" destination="vJB-0x-xa9" id="8gP-XT-S8L"/>
                         <outlet property="isiDiaryText" destination="Xxc-ip-GY4" id="Dal-CT-oMH"/>
+                        <outlet property="kuraHeart" destination="nGg-2K-b0D" id="UXF-15-EzV"/>
+                        <outlet property="placeHolder" destination="MYM-yh-qkF" id="FtA-Qx-d9m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tdk-oa-Doy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -471,7 +482,6 @@
         <image name="Button ke Pantai" width="68" height="49"/>
         <image name="GalleryButton" width="64" height="77"/>
         <image name="LaunchScreen" width="414" height="896"/>
-        <image name="PictureRedHeart" width="336" height="421"/>
         <image name="asset.JendelaPagi" width="187.5" height="193"/>
         <image name="asset.KuraDudukDiSofa" width="98.5" height="169"/>
         <image name="asset.LampuNyalaMalam" width="165.5" height="261.5"/>
@@ -480,6 +490,5 @@
         <image name="bg.RuanganNew" width="414" height="896"/>
         <image name="foodFact1" width="148" height="88"/>
         <image name="popUpBoxFood" width="382" height="475"/>
-        <image name="yellowHeart" width="36" height="36"/>
     </resources>
 </document>
