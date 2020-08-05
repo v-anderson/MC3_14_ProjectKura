@@ -75,6 +75,7 @@ class RumahViewController: UIViewController {
         initialViewAlpha()
 
         audioPlayer.setupAudioService()
+        audioPlayer.playSound(withVolume: 1.0)
         transitioningDelegate = self
         buttonKePantai.transform = CGAffineTransform(translationX: 100, y: 0)
         
@@ -100,13 +101,11 @@ class RumahViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        audioPlayer.playSound(withVolume: 1.0)
         checkTimeOfDay()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        audioPlayer.lowerSound()
         hideButtonKePantai()
     }
     
@@ -204,9 +203,11 @@ class RumahViewController: UIViewController {
     
     @IBAction func kePantai(_ sender: Any) {
         hideFact()
+        audioPlayer.lowerSound()
         let rumahStoryboard = UIStoryboard(name: "Pantai", bundle: nil)
         guard let destinationVC = rumahStoryboard.instantiateViewController(identifier: "PantaiViewController") as? PantaiViewController else { return }
         destinationVC.modalPresentationStyle = .fullScreen
+        destinationVC.delegate = self
         present(destinationVC, animated: true, completion: nil)
     }
     
@@ -575,12 +576,24 @@ extension RumahViewController {
             }
         } else {
             let eighteenToday = Calendar.current.date(bySettingHour: 18, minute: 0, second: 0, of: Date())!
-            
-            if lastTappedMakanan >= eighteenToday  {
-                print("Last Tapped Makanan Time is between 18.00 - 5:59")
-                tandaSeru.isHidden = true
+            let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
+            let eighteenYesterday = Calendar.current.date(bySettingHour: 18, minute: 0, second: 0, of: yesterday)!
+            let zeroToday = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
+            let sixToday = Calendar.current.date(bySettingHour: 6, minute: 0, second: 0, of: Date())!
+
+            if Date() >= zeroToday && Date() < sixToday {
+                if lastTappedMakanan >= eighteenYesterday && lastTappedMakanan < sixToday {
+                    tandaSeru.isHidden = true
+                } else {
+                    tandaSeru.isHidden = false
+                }
             } else {
-                tandaSeru.isHidden = false
+                if lastTappedMakanan >= eighteenToday {
+                    print("Last Tapped Makanan Time is between 18.00 - 5:59")
+                    tandaSeru.isHidden = true
+                } else {
+                    tandaSeru.isHidden = false
+                }
             }
         }
     }
@@ -595,6 +608,14 @@ extension RumahViewController {
         else {
             perubahanMalam()
         }
+    }
+}
+
+// MARK: - Pantai View Controller Delegate
+extension RumahViewController: PantaiViewControllerDelegate {
+    
+    func pantaiWillDismiss() {
+        audioPlayer.playSound(withVolume: 1.0)
     }
 }
 
