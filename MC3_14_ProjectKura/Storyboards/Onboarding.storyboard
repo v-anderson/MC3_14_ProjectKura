@@ -736,7 +736,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sg-Wm-ja8">
-                                                <rect key="frame" x="20" y="16" width="286" height="117"/>
+                                                <rect key="frame" x="5" y="5" width="316" height="133"/>
                                                 <string key="text">If you have leftovers, save any leftovers, rather than throwing them away. Food waste accounts for about 4,4 gigatonnes of greenhouse gas emissions (GHG) per year. To put this in perspective, if food loss and waste were its own country, it would be the world’s third-largest GHG emitter.</string>
                                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
                                                 <color key="textColor" red="1" green="0.94509803920000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -744,13 +744,13 @@
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="2sg-Wm-ja8" firstAttribute="top" secondItem="STA-5u-KUI" secondAttribute="top" constant="16" id="BUb-4P-3db"/>
-                                            <constraint firstItem="2sg-Wm-ja8" firstAttribute="leading" secondItem="STA-5u-KUI" secondAttribute="leading" constant="20" id="EYk-6p-CUC"/>
-                                            <constraint firstAttribute="trailing" secondItem="2sg-Wm-ja8" secondAttribute="trailing" constant="20" id="eoA-fp-P6H"/>
+                                            <constraint firstItem="2sg-Wm-ja8" firstAttribute="top" secondItem="STA-5u-KUI" secondAttribute="top" constant="5" id="BUb-4P-3db"/>
+                                            <constraint firstItem="2sg-Wm-ja8" firstAttribute="leading" secondItem="STA-5u-KUI" secondAttribute="leading" constant="5" id="EYk-6p-CUC"/>
+                                            <constraint firstAttribute="trailing" secondItem="2sg-Wm-ja8" secondAttribute="trailing" constant="5" id="eoA-fp-P6H"/>
                                             <constraint firstItem="oEx-zg-No1" firstAttribute="centerY" secondItem="STA-5u-KUI" secondAttribute="centerY" id="gL0-Wq-UzE"/>
                                             <constraint firstItem="oEx-zg-No1" firstAttribute="leading" secondItem="STA-5u-KUI" secondAttribute="leading" constant="20" id="jeA-yz-3Dz"/>
                                             <constraint firstAttribute="trailing" secondItem="oEx-zg-No1" secondAttribute="trailing" constant="20" id="mVQ-Ww-qgU"/>
-                                            <constraint firstAttribute="bottom" secondItem="2sg-Wm-ja8" secondAttribute="bottom" constant="10" id="n9N-Cg-STY"/>
+                                            <constraint firstAttribute="bottom" secondItem="2sg-Wm-ja8" secondAttribute="bottom" constant="5" id="n9N-Cg-STY"/>
                                             <constraint firstItem="oEx-zg-No1" firstAttribute="centerX" secondItem="STA-5u-KUI" secondAttribute="centerX" id="pQ3-dq-0tR"/>
                                             <constraint firstAttribute="width" secondItem="STA-5u-KUI" secondAttribute="height" multiplier="326:143" id="zhq-xe-Jr7"/>
                                         </constraints>

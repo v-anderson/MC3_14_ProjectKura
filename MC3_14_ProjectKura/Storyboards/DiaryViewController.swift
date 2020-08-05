@@ -40,7 +40,10 @@ class DiaryViewController: UIViewController {
         guard let diaryBlackHeart = diaryContents[.blackHeart] else {return}
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE, d MMMM"
+        
+        formatter.dateFormat = "dd/MM/yyyy"
+        
+//        formatter.dateFormat = "EEEE, d MMMM"
         // Monday, 6 January
         
         let labelTanggal = UILabel()
@@ -61,12 +64,10 @@ class DiaryViewController: UIViewController {
         
         
         NSLayoutConstraint(item: labelTanggal, attribute: .centerY, relatedBy: .equal, toItem: diaryImage, attribute: .centerY, multiplier: 1.47, constant: 0).isActive = true
-        NSLayoutConstraint(item: labelTanggal, attribute: .centerX, relatedBy: .equal, toItem: diaryImage, attribute: .centerX, multiplier: 0.55, constant: 0).isActive = true
+        NSLayoutConstraint(item: labelTanggal, attribute: .leading, relatedBy: .equal, toItem: diaryImage, attribute: .centerX, multiplier: 0.3, constant: 0).isActive = true
         
         placeHolder.isHidden = true
         kuraHeart.isHidden = false
-        
-//        let platform = NSString()
         
         if score < 4 {
             diaryImage.image = UIImage(named: diaryBlackHeart.diaryImage[randomIndex])
