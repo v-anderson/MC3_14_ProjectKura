@@ -23,6 +23,8 @@ class DiaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        transitioningDelegate = self
+        
         guard let score = getScore() else { return }
         print(score)
         
@@ -96,5 +98,16 @@ class DiaryViewController: UIViewController {
 
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+//MARK: - Transition
+extension DiaryViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return FadeAnimation(animationDuration: 1, animationType: .dismiss)
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return FadeAnimation(animationDuration: 1, animationType: .present)
     }
 }

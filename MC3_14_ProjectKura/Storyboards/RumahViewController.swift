@@ -44,6 +44,8 @@ class RumahViewController: UIViewController {
     @IBOutlet var kura: UIImageView!
     @IBOutlet var factLabel: UILabel!
     @IBOutlet var factConstraint: NSLayoutConstraint!
+    @IBOutlet var factWidthConstraint: NSLayoutConstraint!
+    
     
     // notif center property
     let date = Date()
@@ -114,6 +116,13 @@ class RumahViewController: UIViewController {
     }
     
     // MARK: - IBActions
+    
+    @IBAction func openDiary(_ sender: UIButton) {
+        let rumahStoryboard = UIStoryboard(name: "Rumah", bundle: nil)
+        guard let destinationVC = rumahStoryboard.instantiateViewController(identifier: "DiaryViewController") as? DiaryViewController else { return }
+        destinationVC.modalPresentationStyle = .fullScreen
+        present(destinationVC, animated: true, completion: nil)
+    }
     
     //ini yang tombol tanda seru untuk munculin pertanyaan makananÏ
     @IBAction func tanyaMakanan(_ sender: Any) {
@@ -194,6 +203,7 @@ class RumahViewController: UIViewController {
     }
     
     @IBAction func kePantai(_ sender: Any) {
+        hideFact()
         let rumahStoryboard = UIStoryboard(name: "Pantai", bundle: nil)
         guard let destinationVC = rumahStoryboard.instantiateViewController(identifier: "PantaiViewController") as? PantaiViewController else { return }
         destinationVC.modalPresentationStyle = .fullScreen
@@ -254,7 +264,8 @@ class RumahViewController: UIViewController {
     }
     
     func showPopUpBox() {
-        factConstraint.constant = -350
+        kura.image = UIImage(named: "asset.KuraDudukDiSofa")
+        factConstraint.constant = -380
         constraintAnimation()
         view.gestureRecognizers?.removeAll()
         
@@ -286,9 +297,19 @@ class RumahViewController: UIViewController {
     
     //
     @objc func randomFact() {
-        
+        kura.image = UIImage(named: "asset.KuraDudukNoleh")
         let index = Int.random(in: 0..<facts.count)
         factLabel.text = facts[index]
+        
+        let wordLength = facts[index].count
+        print(wordLength)
+        
+        if wordLength <= 100 {
+            factWidthConstraint.constant = -70
+        } else {
+            factWidthConstraint.constant = 0
+        }
+        constraintAnimation()
         
         if factConstraint.constant == 50 {
             typingAnimation(text: facts[index])
@@ -308,12 +329,14 @@ class RumahViewController: UIViewController {
     }
     
     func hideFact() {
-        factConstraint.constant = -350
+        kura.image = UIImage(named: "asset.KuraDudukNormal")
+        factConstraint.constant = -380
         constraintAnimation()
     }
     
     func typingAnimation(text: String) {
         kura.isUserInteractionEnabled = false
+        view.gestureRecognizers?.removeAll()
         factLabel.text = ""
         for letter in text {
             
@@ -322,6 +345,8 @@ class RumahViewController: UIViewController {
             RunLoop.current.run(until: Date() + 0.02)
         }
         kura.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(closeFactChatBox))
+        view.addGestureRecognizer(tap)
     }
     
     func constraintAnimation() {

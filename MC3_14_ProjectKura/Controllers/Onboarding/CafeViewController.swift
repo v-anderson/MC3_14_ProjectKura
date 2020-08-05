@@ -307,9 +307,19 @@ extension CafeViewController {
     
     func addNotif(hour: Int, minute: Int) {
         let notifContent = UNMutableNotificationContent()
+        let userName = (UserDefaults.standard.object(forKey: "user_name") as? String) ?? ""
         
-        notifContent.title = "I Have New Questions For You 👀"
-        notifContent.body = "Go Check 'Em Out!"
+        if hour == 6 {
+            notifContent.title = "Wakey wakey \(userName) ⛅️, I have new questions for you 👀"
+            notifContent.body = "Go check 'em out!"
+        } else if hour == 15 {
+            notifContent.title = "Hi \(userName), time to take a break "
+            notifContent.body = "I have new questions for you 👀"
+        } else {
+            notifContent.title = "Hi \(userName), how's your day?"
+            notifContent.body = "Let's catch up with me 🥳"
+        }
+        
         notifContent.sound = .default
         
         dateComponents.hour = hour

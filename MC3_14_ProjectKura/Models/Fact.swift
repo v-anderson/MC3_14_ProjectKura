@@ -6,6 +6,8 @@
 //  Copyright © 2020 Vincent Anderson Ngadiman. All rights reserved.
 //
 
+
+
 let facts = [
     "It only takes about 14 plastic bags for the equivalent of the gas required to drive one mile.",
     "According to Waste Management, only 1% of plastic bags are returned for recycling. That means that the average family only recycles 15 bags a year; the rest end up in landfills or as litter.",

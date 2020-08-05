@@ -13,7 +13,7 @@ class RumahOnboardingViewController: UIViewController {
     @IBOutlet var kuraChatBox: UILabel!
     @IBOutlet var kuraChatBoxConstraint: NSLayoutConstraint!
     @IBOutlet var tandaSeruButton: UIButton!
-    @IBOutlet var shadowView: UIView!
+//    @IBOutlet var shadowView: UIView!
     @IBOutlet var popUpView: UIView!
     @IBOutlet var popUpQuestionLabel: UILabel!
     @IBOutlet var popUpButton: UIStackView!
@@ -22,6 +22,8 @@ class RumahOnboardingViewController: UIViewController {
     @IBOutlet var popUpFactLabel: UILabel!
     @IBOutlet var buttonToBeach: UIButton!
     @IBOutlet var buttonToBeachConstraint: NSLayoutConstraint!
+    @IBOutlet var shadowView: UIView!
+    @IBOutlet var shadowView2: UIView!
     
     var chatBoxIndex = 0
     var tapIndex = 0
@@ -104,9 +106,11 @@ class RumahOnboardingViewController: UIViewController {
     }
     
     @objc func tapped() {
+        print(tapIndex)
         if tapIndex == 0 {
             tapIndex += 1
             UIView.animate(withDuration: 1) {
+                self.shadowView.alpha = 0.5
                 self.tandaSeruButton.alpha = 1
             }
             hideChatBox()
@@ -123,12 +127,29 @@ class RumahOnboardingViewController: UIViewController {
             }
             removeTapGesture()
         } else if tapIndex == 2 {
+            UIView.animate(withDuration: 1) {
+                self.shadowView2.alpha = 0.5
+            }
+            tapIndex += 1
+            kuraChatBox.text = ""
+            typingAnimation(text: "You can also tap on me to find out more information about our environment facts.")
+        } else if tapIndex == 3 {
+            UIView.animate(withDuration: 1) {
+                self.shadowView2.alpha = 0
+            }
+            tapIndex += 1
+            kuraChatBox.text = ""
+            typingAnimation(text: "Let’s keep making effort to the environment. Remember even your small action will have consequences to the environment")
+        }
+        else if tapIndex == 4 {
             //onboarding selsesai
             UserDefaults.standard.set(true, forKey: "has_launched_before")
             audioPlayer.stopSound()
             changePage(identifier: "RumahViewController")
         }
     }
+    
+
     
     func showChatBox() {
         switch chatBoxIndex {
@@ -142,8 +163,14 @@ class RumahOnboardingViewController: UIViewController {
             buttonToBeachConstraint.constant = 4
             chatBoxIndex += 1
         case 2:
-            kuraChatBox.text = "Let’s keep making effort to the environment. Remember even your small action will have consequences to the environment"
+            kuraChatBox.text = "Ah, I almost forgot, you can also check on my diary to see my thoughts on you."
             kuraChatBoxConstraint.constant = 20
+            addTapGesture()
+            chatBoxIndex += 1
+        case 3:
+            addTapGesture()
+            chatBoxIndex += 1
+        case 4:
             addTapGesture()
             chatBoxIndex += 1
         default:
@@ -166,7 +193,19 @@ class RumahOnboardingViewController: UIViewController {
         })
     }
     
-    
+    func typingAnimation(text: String) {
+        view.gestureRecognizers?.removeAll()
+        kuraChatBox.text = ""
+        var index = 0.0
+        for letter in text {
+            kuraChatBox.text?.append(letter)
+            
+            RunLoop.current.run(until: Date() + 0.02)
+            
+            index += 1
+        }
+        addTapGesture()
+    }
 
 }
 
