@@ -21,10 +21,17 @@ struct GalleryViewModel {
             
             switch gallery.id {
             case 0:
+                // RED HEART
                 var galleries: [GalleryModel] = []
                 
-                if gallery.images?[0] == 1 { galleries.append(GalleryModel(image: "swimAllDay")) }
-                if gallery.images?[1] == 1 { galleries.append(GalleryModel(image: "vitaminSea")) }
+                guard let images = gallery.images else { break }
+                
+                for i in 0..<images.count {
+                    if images[i] == 1 {
+                        guard let imageName = diaryContents[.redHeart]?.diaryImage[i] else { break }
+                        galleries.append(GalleryModel(image: imageName))
+                    }
+                }
                 
                 sections.append(
                     GallerySection(title: "LOVELY MOMENTS",
@@ -34,11 +41,18 @@ struct GalleryViewModel {
                                    placeholder: "Beautiful beach is Kura’s definition of perfect! Keep making the beach cleans and make Kura’s impressed."))
                 
             case 1:
+                // BLUE HEART
                 var galleries: [GalleryModel] = []
                 
-                if gallery.images?[0] == 1 { galleries.append(GalleryModel(image: "refreshForAWhile")) }
-                if gallery.images?[1] == 1 { galleries.append(GalleryModel(image: "relaxByTheBeach")) }
+                guard let images = gallery.images else { break }
                 
+                for i in 0..<images.count {
+                    if images[i] == 1 {
+                        guard let imageName = diaryContents[.blueHeart]?.diaryImage[i] else { break }
+                        galleries.append(GalleryModel(image: imageName))
+                    }
+                }
+                                
                 sections.append(
                     GallerySection(title: "ONE FINE DAY",
                                    brushImageName: "brushOneFineDay",
@@ -47,10 +61,17 @@ struct GalleryViewModel {
                                    placeholder: "Let’s make memories with Kura with a clean beach on the background!"))
                 
             case 2:
+                // YELLOW HEART
                 var galleries: [GalleryModel] = []
                 
-                if gallery.images?[0] == 1 { galleries.append(GalleryModel(image: "unexpectedNews")) }
-                if gallery.images?[1] == 1 { galleries.append(GalleryModel(image: "shocked")) }
+                guard let images = gallery.images else { break }
+
+                for i in 0..<images.count {
+                    if images[i] == 1 {
+                        guard let imageName = diaryContents[.yellowHeart]?.diaryImage[i] else { break }
+                        galleries.append(GalleryModel(image: imageName))
+                    }
+                }
                 
                 sections.append(
                     GallerySection(title: "SEA-RIOUSLY BAD",
@@ -60,10 +81,17 @@ struct GalleryViewModel {
                                    placeholder: "Kura is proud of you. Because of you, Kura never see the sea in trouble!"))
                 
             default:
+                // BLACK HEART
                 var galleries: [GalleryModel] = []
                 
-                if gallery.images?[0] == 1 { galleries.append(GalleryModel(image: "lossOfTheSea")) }
-                if gallery.images?[1] == 1 { galleries.append(GalleryModel(image: "nightmareAtTheBeach")) }
+                guard let images = gallery.images else { break }
+
+                for i in 0..<images.count {
+                    if images[i] == 1 {
+                        guard let imageName = diaryContents[.blackHeart]?.diaryImage[i] else { break }
+                        galleries.append(GalleryModel(image: imageName))
+                    }
+                }
                 
                 sections.append(
                     GallerySection(title: "SAD TRUTH",

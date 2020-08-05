@@ -26,7 +26,6 @@ class DiaryViewController: UIViewController {
         transitioningDelegate = self
         
         guard let score = getScore() else { return }
-        print(score)
         
         guard let randomIndex = UserDefaults.standard.object(forKey: "indexDiaryImage") as? Int else {return}
         
@@ -67,7 +66,6 @@ class DiaryViewController: UIViewController {
         placeHolder.isHidden = true
         kuraHeart.isHidden = false
         
-        print(randomIndex)
 //        let platform = NSString()
         
         if score < 4 {

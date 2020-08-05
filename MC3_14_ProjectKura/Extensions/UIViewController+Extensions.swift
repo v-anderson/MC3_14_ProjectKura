@@ -29,7 +29,7 @@ extension UIViewController {
         guard let day1 = Calendar.current.date(byAdding: .day, value: -3, to: Date()),
             let day2 = Calendar.current.date(byAdding: .day, value: -2, to: Date()),
             let day3 = Calendar.current.date(byAdding: .day, value: -1, to: Date()) else { return nil }
-                
+                        
         let score1 = Score.fetch(fromContext: getViewContext(), forDate: day1)
         let score2 = Score.fetch(fromContext: getViewContext(), forDate: day2)
         let score3 = Score.fetch(fromContext: getViewContext(), forDate: day3)
