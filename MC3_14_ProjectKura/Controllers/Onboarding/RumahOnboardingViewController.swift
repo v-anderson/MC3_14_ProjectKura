@@ -128,15 +128,13 @@ class RumahOnboardingViewController: UIViewController {
             removeTapGesture()
         } else if tapIndex == 2 {
             UIView.animate(withDuration: 1) {
-                self.shadowView2.alpha = 0.5
+                self.shadowView2.alpha = 0
             }
             tapIndex += 1
             kuraChatBox.text = ""
             typingAnimation(text: "You can also tap on me to find out more information about our environment facts.")
         } else if tapIndex == 3 {
-            UIView.animate(withDuration: 1) {
-                self.shadowView2.alpha = 0
-            }
+            
             tapIndex += 1
             kuraChatBox.text = ""
             typingAnimation(text: "Let’s keep making effort to the environment. Remember even your small action will have consequences to the environment")
@@ -163,6 +161,7 @@ class RumahOnboardingViewController: UIViewController {
             buttonToBeachConstraint.constant = 4
             chatBoxIndex += 1
         case 2:
+            shadowView2.alpha = 0.5
             kuraChatBox.text = "Ah, I almost forgot, you can also check on my diary to see my thoughts on you."
             kuraChatBoxConstraint.constant = 20
             addTapGesture()

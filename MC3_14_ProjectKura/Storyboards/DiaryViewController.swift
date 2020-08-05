@@ -16,7 +16,7 @@ class DiaryViewController: UIViewController {
     
     @IBOutlet weak var isiDiaryText: UITextView!
     
-    
+
     @IBOutlet weak var placeHolder: UILabel!
     @IBOutlet weak var kuraHeart: UILabel!
     
@@ -30,6 +30,8 @@ class DiaryViewController: UIViewController {
         
         guard let randomIndex = UserDefaults.standard.object(forKey: "indexDiaryImage") as? Int else {return}
         
+        guard let tanggal = UserDefaults.standard.object(forKey: "last_updated") as? Date else {return}
+        
         guard let diaryRedHeart = diaryContents[.redHeart] else {return}
         
         guard let diaryBlueHeart = diaryContents[.blueHeart] else {return}
@@ -37,6 +39,30 @@ class DiaryViewController: UIViewController {
         guard let diaryYellowHeart = diaryContents[.yellowHeart] else {return}
        
         guard let diaryBlackHeart = diaryContents[.blackHeart] else {return}
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE, d MMMM"
+        // Monday, 6 January
+        
+        let labelTanggal = UILabel()
+        labelTanggal.translatesAutoresizingMaskIntoConstraints = false
+        labelTanggal.text = formatter.string(from: tanggal)
+        
+        labelTanggal.font = UIFont(name: "FredokaOne-Regular", size: 10)
+        labelTanggal.textColor = UIColor(red: 56/255, green: 83/255, blue: 13/255, alpha: 1)
+        
+        
+        //cek penulisan font yang terdaftar
+//        for family in UIFont.familyNames.sorted() {
+//            let names = UIFont.fontNames(forFamilyName: family)
+//            print(family, names)
+//        }
+        
+        diaryImage.addSubview(labelTanggal)
+        
+        
+        NSLayoutConstraint(item: labelTanggal, attribute: .centerY, relatedBy: .equal, toItem: diaryImage, attribute: .centerY, multiplier: 1.47, constant: 0).isActive = true
+        NSLayoutConstraint(item: labelTanggal, attribute: .centerX, relatedBy: .equal, toItem: diaryImage, attribute: .centerX, multiplier: 0.55, constant: 0).isActive = true
         
         placeHolder.isHidden = true
         kuraHeart.isHidden = false
@@ -51,7 +77,7 @@ class DiaryViewController: UIViewController {
             
         } else if score < 8 {
             diaryImage.image = UIImage(named: diaryYellowHeart.diaryImage[randomIndex])
-            heartType.image = UIImage(named: "redHeart")
+            heartType.image = UIImage(named: "yellowHeart")
             isiDiaryText.text = diaryYellowHeart.isiDiary[randomIndex]
             
         } else if score < 12 {
@@ -111,3 +137,5 @@ extension DiaryViewController: UIViewControllerTransitioningDelegate {
         return FadeAnimation(animationDuration: 1, animationType: .present)
     }
 }
+
+
