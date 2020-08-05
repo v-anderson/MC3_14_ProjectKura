@@ -41,8 +41,6 @@ let facts = [
     "Try to use only what you need!",
 
     "If food waste were a country, it would be the 3rd largest emitter of greenhouse gases!",
-    "If food waste were a country, it would be the 3rd largest emitter of greenhouse gases!",
-    "If food waste were a country, it would be the 3rd largest emitter of greenhouse gases!",
     "Food waste ends up wasting nearly a quarter of our water supply in the form of uneaten food or over $172 billion in wasted water.",
     "Food waste that ends up in landfills produces a large amount of methane – a more powerful greenhouse gas than even CO2.",
     "If you look at land usage, around 1.4 billion hectares of land, which is roughly one-third the world’s total agricultural land area, is used to grow food that is wasted."
