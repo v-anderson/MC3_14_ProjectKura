@@ -302,7 +302,6 @@ class RumahViewController: UIViewController {
         factLabel.text = facts[index]
         
         let wordLength = facts[index].count
-        print(wordLength)
         
         if wordLength <= 100 {
             factWidthConstraint.constant = -70
