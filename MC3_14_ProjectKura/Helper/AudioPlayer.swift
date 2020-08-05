@@ -53,7 +53,6 @@ class AudioPlayer {
             self?.player?.volume += 0.02
             
             if player.volume >= volume {
-                print("Sound played")
                 timer.invalidate()
             }
         }
@@ -65,7 +64,6 @@ class AudioPlayer {
             player.volume -= 0.1
 
             if player.volume <= Float(0) {
-                print("Sound stopped")
                 timer.invalidate()
                 self?.player?.stop()
             }
@@ -78,7 +76,6 @@ class AudioPlayer {
                         
             if let volume = self?.player?.volume {
                 if volume <= Float(0.2) {
-                    print("Sound lowered")
                     timer.invalidate()
                 }
             }

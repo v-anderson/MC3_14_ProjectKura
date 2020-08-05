@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Gallery {
+struct GalleryModel {
     let image: String
 }
 
@@ -16,6 +16,6 @@ struct GallerySection {
     let title: String
     let brushImageName: String
     let count: Int
-    let galleries: [Gallery]
+    let galleries: [GalleryModel]
     let placeholder: String
 }

@@ -27,7 +27,7 @@ class GalleryHeader: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func configure(withGallerySection gallerySection: GallerySection) {
+    public func configure(withGallerySection gallerySection: GallerySection, inSection section: Int) {
         titleLabel.text = gallerySection.title
         brushTitleImageView.image = UIImage(named: gallerySection.brushImageName)
         counterLabel.text = gallerySection.count < 999 ? "\(gallerySection.count) x" : "999 x"
@@ -38,6 +38,17 @@ class GalleryHeader: UICollectionReusableView {
         } else {
             stackView.spacing = 0
             subtitleLabel.text = nil
+        }
+        
+        switch section {
+        case 0:
+            heartImageView.image = UIImage(named: "redHeart")
+        case 1:
+            heartImageView.image = UIImage(named: "blueHeart")
+        case 2:
+            heartImageView.image = UIImage(named: "yellowHeart")
+        default:
+            heartImageView.image = UIImage(named: "blackHeart")
         }
     }
     
@@ -53,7 +64,6 @@ class GalleryHeader: UICollectionReusableView {
         brushHeartImageView.image = UIImage(named: "brushHeart")
         
         heartImageView.translatesAutoresizingMaskIntoConstraints = false
-        heartImageView.image = UIImage(named: "redHeart")
         
         counterLabel.translatesAutoresizingMaskIntoConstraints = false
         counterLabel.font = UIFont(name: "GloriaHallelujah", size: 16)

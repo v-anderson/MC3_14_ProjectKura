@@ -78,12 +78,13 @@ class RumahViewController: UIViewController {
         let scores = Score.fetchAll(fromContext: getViewContext())
         print("\nCore data contents:")
         for (i, score) in scores.enumerated() {
-            print("\(i+1). Score: \(score.score)  | Date: \(score.date?.description(with: .current))")
+            print("\(i+1). Score: \(score.score)  | Date: \(score.date?.description(with: .current) ?? "")")
         }
         print("")
+        
+        NotificationCenter.default.addObserver(self, selector:#selector(checkBackgroundBySeconds), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
 
-    
     @objc func checkBackgroundBySeconds () {
         checkTimeOfDay()
     }
@@ -222,8 +223,6 @@ class RumahViewController: UIViewController {
                     correctIndex = kipasQuestions[index].goodAnswer
                 case .shoppingBag:
                     correctIndex = shoppingBagQuestions[index].goodAnswer
-                default:
-                    break
             }
             
             if correctIndex == buttonIndex {

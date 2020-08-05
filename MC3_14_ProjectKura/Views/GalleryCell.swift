@@ -17,7 +17,7 @@ class GalleryCell: UICollectionViewCell {
         configureContents()
     }
     
-    public func configure(with gallery: Gallery) {
+    public func configure(with gallery: GalleryModel) {
         imageView.image = UIImage(named: gallery.image)
     }
     

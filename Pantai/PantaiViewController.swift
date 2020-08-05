@@ -34,17 +34,22 @@ class PantaiViewController: UIViewController {
     
     let audioPlayer = AudioPlayer(filename: "beach-waves", extension: "wav")
     
+    weak var timer: Timer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         audioPlayer.setupAudioService()
-        
+        timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(checkBackgroundBySeconds), userInfo: nil, repeats: true)
+        buttonKeRumah.transform = CGAffineTransform(translationX: -100, y: 0)
         transitioningDelegate = self
         
-        let timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(checkBackgroundBySeconds), userInfo: nil, repeats: true)
-        
-        buttonKeRumah.transform = CGAffineTransform(translationX: -100, y: 0)
+        NotificationCenter.default.addObserver(self, selector:#selector(checkBackgroundBySeconds), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+        print("Timer invalidated, observers removed")
     }
     
     @objc func checkBackgroundBySeconds () {
@@ -60,7 +65,7 @@ class PantaiViewController: UIViewController {
         let scores = Score.fetchAll(fromContext: getViewContext())
         print("\nCore data contents:")
         for (i, score) in scores.enumerated() {
-            print("\(i+1). Score: \(score.score)  | Date: \(score.date?.description(with: .current))")
+            print("\(i+1). Score: \(score.score)  | Date: \(score.date?.description(with: .current) ?? "")")
         }
         print("")
         
@@ -71,6 +76,7 @@ class PantaiViewController: UIViewController {
         super.viewWillDisappear(animated)
         audioPlayer.stopSound()
         hideButtonKeRumah()
+        timer.invalidate()
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -12,32 +12,22 @@ class GalleryViewController: UIViewController {
 
     @IBOutlet weak var galleryCollectionView: UICollectionView!
     
-    let gallerySections = [
-        GallerySection(title: "LOVELY MOMENTS", brushImageName: "brushLovelyMoments", count: 999, galleries: [
-            Gallery(image: "swimAllDay"),
-            Gallery(image: "vitaminSea")
-        ], placeholder: "Beautiful beach is Kura’s definition of perfect! Keep making the beach cleans and make Kura’s impressed."),
-        
-        GallerySection(title: "ONE FINE DAY", brushImageName: "brushOneFineDay", count: 1200, galleries: [
-            Gallery(image: "refreshForAWhile"),
-            Gallery(image: "relaxByTheBeach")
-        ], placeholder: "Let’s make memories with Kura with a clean beach on the background!"),
-        
-        GallerySection(title: "SEA-RIOUSLY BAD", brushImageName: "brushSeariouslyBad", count: 0, galleries: [], placeholder: "Kura is proud of you. Because of you, Kura never see the sea in trouble!"),
-        
-        GallerySection(title: "SAD TRUTH", brushImageName: "brushSadTruth", count: 25, galleries: [
-            Gallery(image: "lossOfTheSea")
-        ], placeholder: "You are the protector of the beach. There’s no way a trash can enter the beach as long you’re there!")
-    ]
+    var galleryViewModel: GalleryViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
+        loadData()
         transitioningDelegate = self
     }
     
     @IBAction func didTapBackButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    private func loadData() {
+        let galleries = Gallery.fetchAll(fromContext: getViewContext())
+        galleryViewModel = GalleryViewModel(withGalleries: galleries)
     }
 }
 
@@ -46,17 +36,17 @@ class GalleryViewController: UIViewController {
 extension GalleryViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return gallerySections.count
+        return galleryViewModel.gallerySections.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return gallerySections[section].galleries.count
+        return galleryViewModel.gallerySections[section].galleries.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GalleryCell", for: indexPath) as! GalleryCell
         
-        cell.configure(with: gallerySections[indexPath.section].galleries[indexPath.row])
+        cell.configure(with: galleryViewModel.gallerySections[indexPath.section].galleries[indexPath.row])
         
         return cell
     }
@@ -65,8 +55,8 @@ extension GalleryViewController: UICollectionViewDataSource {
         if kind == UICollectionView.elementKindSectionHeader {
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "GalleryHeader", for: indexPath) as! GalleryHeader
             
-            let gallerySection = gallerySections[indexPath.section]
-            header.configure(withGallerySection: gallerySection)
+            let gallerySection = galleryViewModel.gallerySections[indexPath.section]
+            header.configure(withGallerySection: gallerySection, inSection: indexPath.section)
             
             return header
         } else {
@@ -87,7 +77,7 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
-        if gallerySections[section].count == 0 {
+        if galleryViewModel.gallerySections[section].count == 0 {
             return CGSize(width: view.frame.width, height: 145)
         } else {
             return CGSize(width: view.frame.width, height: 60)
@@ -95,7 +85,7 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        if section == gallerySections.count - 1 {
+        if section == galleryViewModel.gallerySections.count - 1 {
             return CGSize(width: view.frame.width, height: 0)
         } else {
             return CGSize(width: view.frame.width, height: 10)

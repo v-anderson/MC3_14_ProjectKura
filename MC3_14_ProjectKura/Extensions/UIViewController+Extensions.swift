@@ -34,9 +34,9 @@ extension UIViewController {
         let score2 = Score.fetch(fromContext: getViewContext(), forDate: day2)
         let score3 = Score.fetch(fromContext: getViewContext(), forDate: day3)
         
-        print("Score 1: \(score1?.score)")
-        print("Score 2: \(score2?.score)")
-        print("Score 3: \(score3?.score)")
+        print("Score 1: \(score1?.score ?? 0)")
+        print("Score 2: \(score2?.score ?? 0)")
+        print("Score 3: \(score3?.score ?? 0)")
         
         // Calculate final score
         let finalScore = (score1?.score ?? 0) + (score2?.score ?? 0) + (score3?.score ?? 0)
