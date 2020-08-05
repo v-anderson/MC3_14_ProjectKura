@@ -41,6 +41,9 @@ class RumahViewController: UIViewController {
     @IBOutlet weak var lblTapToDismiss: UILabel!
     @IBOutlet weak var stackButton: UIStackView!
     @IBOutlet weak var buttonKePantai: UIButton!
+    @IBOutlet var kura: UIImageView!
+    @IBOutlet var factLabel: UILabel!
+    @IBOutlet var factConstraint: NSLayoutConstraint!
     
     // notif center property
     let date = Date()
@@ -81,6 +84,10 @@ class RumahViewController: UIViewController {
             print("\(i+1). Score: \(score.score)  | Date: \(score.date?.description(with: .current) ?? "")")
         }
         print("")
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(randomFact))
+        kura.isUserInteractionEnabled = true
+        kura.addGestureRecognizer(tapGesture)
         
         NotificationCenter.default.addObserver(self, selector:#selector(checkBackgroundBySeconds), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
@@ -238,6 +245,7 @@ class RumahViewController: UIViewController {
     func addTapGesture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapToDismiss))
         viewPopUpBox.addGestureRecognizer(tap)
+        
     }
     
     func initialViewAlpha() {
@@ -246,6 +254,10 @@ class RumahViewController: UIViewController {
     }
     
     func showPopUpBox() {
+        factConstraint.constant = -350
+        constraintAnimation()
+        view.gestureRecognizers?.removeAll()
+        
         viewPopUpBox.isHidden = false
         viewPopUpBox.alpha = 0
         viewPopUpBox.transform = CGAffineTransform(scaleX: 0, y: 0)
@@ -270,6 +282,52 @@ class RumahViewController: UIViewController {
         lblFactBody.alpha = 1
         lblQuestionsTitle.alpha = 0
         stackButton.isHidden = true
+    }
+    
+    //
+    @objc func randomFact() {
+        
+        let index = Int.random(in: 0..<facts.count)
+        factLabel.text = facts[index]
+        
+        if factConstraint.constant == 50 {
+            typingAnimation(text: facts[index])
+        }
+        
+        factConstraint.constant = 50
+        constraintAnimation()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(closeFactChatBox))
+        view.addGestureRecognizer(tap)
+        
+    }
+    
+    @objc func closeFactChatBox() {
+        view.gestureRecognizers?.removeAll()
+        hideFact()
+    }
+    
+    func hideFact() {
+        factConstraint.constant = -350
+        constraintAnimation()
+    }
+    
+    func typingAnimation(text: String) {
+        kura.isUserInteractionEnabled = false
+        factLabel.text = ""
+        for letter in text {
+            
+            factLabel.text?.append(letter)
+            
+            RunLoop.current.run(until: Date() + 0.02)
+        }
+        kura.isUserInteractionEnabled = true
+    }
+    
+    func constraintAnimation() {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
+            self.view.layoutIfNeeded()
+        })
     }
     
     // Q FOOD

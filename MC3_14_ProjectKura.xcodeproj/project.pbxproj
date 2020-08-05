@@ -49,6 +49,7 @@
 		ECA008C424D029EB00148809 /* LetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA008C324D029EB00148809 /* LetterViewController.swift */; };
 		ECC8D9C324CFC2BF00ACD8E4 /* OnboardingQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8D9C224CFC2BF00ACD8E4 /* OnboardingQuestion.swift */; };
 		ECDD86F624D173EA002A2CF3 /* RumahOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDD86F524D173EA002A2CF3 /* RumahOnboardingViewController.swift */; };
+		ECF233FB24DAA28E00DE5904 /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF233FA24DAA28E00DE5904 /* Fact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		ECB1369524D2E32A00156A25 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		ECC8D9C224CFC2BF00ACD8E4 /* OnboardingQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingQuestion.swift; sourceTree = "<group>"; };
 		ECDD86F524D173EA002A2CF3 /* RumahOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RumahOnboardingViewController.swift; sourceTree = "<group>"; };
+		ECF233FA24DAA28E00DE5904 /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				57BFDA0C24D9570700D50F46 /* GalleryModel.swift */,
 				57BFDA1224DA59AE00D50F46 /* GalleryViewModel.swift */,
 				71E1248324D93FE2002E78F2 /* DiaryContent.swift */,
+				ECF233FA24DAA28E00DE5904 /* Fact.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				57BFDA1124D96C4D00D50F46 /* GalleryFooter.swift in Sources */,
 				57777DF124CACA7F00C3F342 /* FadeAnimation.swift in Sources */,
 				ECDD86F624D173EA002A2CF3 /* RumahOnboardingViewController.swift in Sources */,
+				ECF233FB24DAA28E00DE5904 /* Fact.swift in Sources */,
 				71907B7A24BDFCD5008E44CF /* AppDelegate.swift in Sources */,
 				57D68BEE24D2DA8A00C7BB1E /* MainViewController.swift in Sources */,
 				ECC8D9C324CFC2BF00ACD8E4 /* OnboardingQuestion.swift in Sources */,
