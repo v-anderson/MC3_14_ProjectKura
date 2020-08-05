@@ -14,6 +14,7 @@ struct Gallery {
 
 struct GallerySection {
     let title: String
+    let brushImageName: String
     let count: Int
     let galleries: [Gallery]
     let placeholder: String

@@ -73,7 +73,7 @@ class RumahViewController: UIViewController {
         transitioningDelegate = self
         buttonKePantai.transform = CGAffineTransform(translationX: 100, y: 0)
         
-        let timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(checkBackgroundBySeconds), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(checkBackgroundBySeconds), userInfo: nil, repeats: true)
         
         let scores = Score.fetchAll(fromContext: getViewContext())
         print("\nCore data contents:")

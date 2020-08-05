@@ -7,6 +7,11 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="FredokaOne-Regular.ttf">
+            <string>FredokaOne-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Gallery View Controller-->
         <scene sceneID="Yz2-48-ElQ">
@@ -20,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pfx-3r-WBx">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="101.5" width="414" height="794.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="0.0" id="KSa-sJ-fZF">
                                     <size key="itemSize" width="128" height="128"/>
@@ -43,17 +48,35 @@
                                     <outlet property="delegate" destination="bRf-MR-qjC" id="Kcq-bE-kIp"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kura's Diary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySS-I9-Jrp">
+                                <rect key="frame" x="138" y="64" width="138.5" height="29.5"/>
+                                <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="24"/>
+                                <color key="textColor" red="0.21960784310000001" green="0.32549019610000002" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25N-BQ-gHu">
+                                <rect key="frame" x="20" y="65" width="28" height="28"/>
+                                <state key="normal" backgroundImage="arrowBack"/>
+                                <connections>
+                                    <action selector="didTapBackButton:" destination="bRf-MR-qjC" eventType="touchUpInside" id="lkm-8l-CW1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Pfx-3r-WBx" firstAttribute="leading" secondItem="nso-bm-O82" secondAttribute="leading" id="6bN-PF-PDy"/>
+                            <constraint firstItem="25N-BQ-gHu" firstAttribute="leading" secondItem="nso-bm-O82" secondAttribute="leading" constant="20" id="BB7-BE-yma"/>
                             <constraint firstItem="Pfx-3r-WBx" firstAttribute="trailing" secondItem="nso-bm-O82" secondAttribute="trailing" id="QaX-jt-Ns3"/>
+                            <constraint firstItem="Pfx-3r-WBx" firstAttribute="top" secondItem="ySS-I9-Jrp" secondAttribute="bottom" constant="8" id="VH1-ZY-puE"/>
+                            <constraint firstItem="ySS-I9-Jrp" firstAttribute="top" secondItem="nso-bm-O82" secondAttribute="top" constant="20" id="bp2-lM-lKb"/>
                             <constraint firstItem="9sN-Gy-kDk" firstAttribute="leading" secondItem="nso-bm-O82" secondAttribute="leading" id="dH1-En-Yr1"/>
                             <constraint firstItem="9sN-Gy-kDk" firstAttribute="top" secondItem="U2x-3K-pHQ" secondAttribute="top" id="gDG-ku-hzY"/>
-                            <constraint firstItem="Pfx-3r-WBx" firstAttribute="top" secondItem="U2x-3K-pHQ" secondAttribute="top" id="gmi-PU-wqA"/>
                             <constraint firstItem="9sN-Gy-kDk" firstAttribute="trailing" secondItem="nso-bm-O82" secondAttribute="trailing" id="h0L-1C-ofN"/>
                             <constraint firstAttribute="bottom" secondItem="Pfx-3r-WBx" secondAttribute="bottom" id="kEr-py-b4p"/>
+                            <constraint firstItem="25N-BQ-gHu" firstAttribute="width" secondItem="25N-BQ-gHu" secondAttribute="height" multiplier="1:1" id="mSa-mv-4Q7"/>
                             <constraint firstAttribute="bottom" secondItem="9sN-Gy-kDk" secondAttribute="bottom" id="oCb-jm-Pdw"/>
+                            <constraint firstItem="ySS-I9-Jrp" firstAttribute="centerX" secondItem="U2x-3K-pHQ" secondAttribute="centerX" id="ro3-3p-9mw"/>
+                            <constraint firstItem="25N-BQ-gHu" firstAttribute="centerY" secondItem="ySS-I9-Jrp" secondAttribute="centerY" id="xFw-GV-2tn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nso-bm-O82"/>
                     </view>
@@ -68,5 +91,6 @@
     </scenes>
     <resources>
         <image name="BackgroundDiary" width="414" height="896"/>
+        <image name="arrowBack" width="28" height="28"/>
     </resources>
 </document>

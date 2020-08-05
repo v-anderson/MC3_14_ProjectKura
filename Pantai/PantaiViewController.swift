@@ -64,8 +64,6 @@ class PantaiViewController: UIViewController {
         }
         print("")
         
-        print("Pantai will apear")
-        
         setupBackgroundByScore()
     }
     

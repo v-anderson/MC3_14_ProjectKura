@@ -13,19 +13,19 @@ class GalleryViewController: UIViewController {
     @IBOutlet weak var galleryCollectionView: UICollectionView!
     
     let gallerySections = [
-        GallerySection(title: "LOVELY MOMENTS", count: 1, galleries: [
+        GallerySection(title: "LOVELY MOMENTS", brushImageName: "brushLovelyMoments", count: 999, galleries: [
             Gallery(image: "swimAllDay"),
             Gallery(image: "vitaminSea")
         ], placeholder: "Beautiful beach is Kura’s definition of perfect! Keep making the beach cleans and make Kura’s impressed."),
         
-        GallerySection(title: "ONE FINE DAY(S)", count: 2, galleries: [
+        GallerySection(title: "ONE FINE DAY", brushImageName: "brushOneFineDay", count: 1200, galleries: [
             Gallery(image: "refreshForAWhile"),
             Gallery(image: "relaxByTheBeach")
         ], placeholder: "Let’s make memories with Kura with a clean beach on the background!"),
         
-        GallerySection(title: "SEA-RIOUS PROBLEMS", count: 0, galleries: [], placeholder: "Kura is proud of you. Because of you, Kura never see the sea in trouble!"),
+        GallerySection(title: "SEA-RIOUSLY BAD", brushImageName: "brushSeariouslyBad", count: 0, galleries: [], placeholder: "Kura is proud of you. Because of you, Kura never see the sea in trouble!"),
         
-        GallerySection(title: "SAD TRUTH", count: 1, galleries: [
+        GallerySection(title: "SAD TRUTH", brushImageName: "brushSadTruth", count: 25, galleries: [
             Gallery(image: "lossOfTheSea")
         ], placeholder: "You are the protector of the beach. There’s no way a trash can enter the beach as long you’re there!")
     ]
@@ -34,6 +34,10 @@ class GalleryViewController: UIViewController {
         super.viewDidLoad()
         configureCollectionView()
         transitioningDelegate = self
+    }
+    
+    @IBAction func didTapBackButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -62,7 +66,7 @@ extension GalleryViewController: UICollectionViewDataSource {
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "GalleryHeader", for: indexPath) as! GalleryHeader
             
             let gallerySection = gallerySections[indexPath.section]
-            header.configure(withTitle: gallerySection.title, count: gallerySection.count, placeholder: gallerySection.placeholder)
+            header.configure(withGallerySection: gallerySection)
             
             return header
         } else {
@@ -84,14 +88,18 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
         if gallerySections[section].count == 0 {
-            return CGSize(width: view.frame.width, height: 140)
+            return CGSize(width: view.frame.width, height: 145)
         } else {
             return CGSize(width: view.frame.width, height: 60)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 10)
+        if section == gallerySections.count - 1 {
+            return CGSize(width: view.frame.width, height: 0)
+        } else {
+            return CGSize(width: view.frame.width, height: 10)
+        }
     }
 }
 
