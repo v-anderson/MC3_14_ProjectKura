@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol PantaiViewControllerDelegate: class {
+    func pantaiWillDismiss()
+}
+
 class PantaiViewController: UIViewController {
 
     @IBOutlet weak var firstWave: UIImageView!
@@ -35,6 +39,7 @@ class PantaiViewController: UIViewController {
     let audioPlayer = AudioPlayer(filename: "beach-waves", extension: "wav")
     
     weak var timer: Timer!
+    weak var delegate: PantaiViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,6 +90,7 @@ class PantaiViewController: UIViewController {
     }
     
     @IBAction func keRumah(_ sender: Any) {
+        delegate?.pantaiWillDismiss()
         dismiss(animated: true, completion: nil)
     }
     
