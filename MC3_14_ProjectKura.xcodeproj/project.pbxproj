@@ -13,6 +13,8 @@
 		57392E9B24D188D100908246 /* beach-waves.wav in Resources */ = {isa = PBXBuildFile; fileRef = 57392E9A24D188D100908246 /* beach-waves.wav */; };
 		5756A52524D056E100839343 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5756A52424D056E100839343 /* PhoneViewController.swift */; };
 		57777DF124CACA7F00C3F342 /* FadeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57777DF024CACA7F00C3F342 /* FadeAnimation.swift */; };
+		5778151624DC4C2500F4098C /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECB1369524D2E32A00156A25 /* Rubik-Bold.ttf */; };
+		5778151824DC51DC00F4098C /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5778151724DC51DC00F4098C /* Rubik-Medium.ttf */; };
 		57BFDA0724D9505400D50F46 /* Gallery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57BFDA0624D9505400D50F46 /* Gallery.storyboard */; };
 		57BFDA0924D950D900D50F46 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFDA0824D950D900D50F46 /* GalleryViewController.swift */; };
 		57BFDA0B24D9565100D50F46 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFDA0A24D9565100D50F46 /* GalleryCell.swift */; };
@@ -60,6 +62,7 @@
 		57392E9A24D188D100908246 /* beach-waves.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beach-waves.wav"; sourceTree = "<group>"; };
 		5756A52424D056E100839343 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		57777DF024CACA7F00C3F342 /* FadeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeAnimation.swift; sourceTree = "<group>"; };
+		5778151724DC51DC00F4098C /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
 		57BFDA0624D9505400D50F46 /* Gallery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Gallery.storyboard; sourceTree = "<group>"; };
 		57BFDA0824D950D900D50F46 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		57BFDA0A24D9565100D50F46 /* GalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
@@ -277,6 +280,7 @@
 		CBC4A82224CEC61700B3F5DC /* Rubik */ = {
 			isa = PBXGroup;
 			children = (
+				5778151724DC51DC00F4098C /* Rubik-Medium.ttf */,
 				ECB1369524D2E32A00156A25 /* Rubik-Bold.ttf */,
 				CBC4A82C24CEC61700B3F5DC /* Rubik-Regular.ttf */,
 			);
@@ -371,8 +375,10 @@
 				CBC4A83D24CEC6C400B3F5DC /* FredokaOne-Regular.ttf in Resources */,
 				57392E9B24D188D100908246 /* beach-waves.wav in Resources */,
 				71BED25124D96823009DC214 /* GloriaHallelujah-Regular.ttf in Resources */,
+				5778151824DC51DC00F4098C /* Rubik-Medium.ttf in Resources */,
 				57392E9424D1645100908246 /* after-the-rain.wav in Resources */,
 				71907B8924BDFCD7008E44CF /* LaunchScreen.storyboard in Resources */,
+				5778151624DC4C2500F4098C /* Rubik-Bold.ttf in Resources */,
 				71907B8624BDFCD7008E44CF /* Assets.xcassets in Resources */,
 				57D68BEC24D2B83600C7BB1E /* DoneWithWork_Cafe.mp3 in Resources */,
 			);
