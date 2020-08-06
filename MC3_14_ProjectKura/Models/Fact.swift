@@ -19,7 +19,7 @@ let facts = [
     "If just one person used recycled plastic bags over their lifetime, they would be removing 22,000 plastic bags from the environment.",
     "According to National Geographic, 73% of all beach litter is plastic. The litter includes filters from cigarette butts, bottles, food wrappers, grocery bags, and polystyrene containers.",
     "The average person eats 70,000 microplastics each year, according to a study published in Environmental Pollution.",
-    "The largest ocean garbage site in the world is located off the oast of California. This floating mass of plastic is twice the size of Texas, with plastic pieces outnumbering sea life six to one.",
+    "The largest ocean garbage site in the world is located off the coast of California. This floating mass of plastic is twice the size of Texas, with plastic pieces outnumbering sea life six to one.",
     
     "You’d have to reuse a paper bag at least three times before its environmental impact equaled that of a high-density polyethylene plastic bag used only once.",
     "Making paper bags not only adds waste to the world, it kills one of our greatest tools for fighting pollution.",
