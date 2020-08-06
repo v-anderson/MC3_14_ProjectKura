@@ -83,11 +83,16 @@ class PantaiOnboardingViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadAnimation()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        loadAnimation()
         showtextBox()
     }
+    
     @IBAction func backToHomeDidTap(_ sender: UIButton) {
         dismiss(animated: true)
     }

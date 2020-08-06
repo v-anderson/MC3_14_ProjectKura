@@ -159,7 +159,9 @@ class RumahOnboardingViewController: UIViewController {
             buttonToBeachConstraint.constant = 4
             chatBoxIndex += 1
         case 2:
-            shadowView2.alpha = 0.8
+            UIView.animate(withDuration: 1) {
+                self.shadowView2.alpha = 0.6
+            }
             kuraChatBox.text = "Ah, I almost forgot, you can also check on my diary to see my thoughts on you."
             kuraChatBoxConstraint.constant = 20
             addTapGesture()
