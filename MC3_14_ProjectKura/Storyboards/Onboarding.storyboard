@@ -640,131 +640,195 @@
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nWw-Cj-WnJ">
                                 <rect key="frame" x="16" y="210.5" width="382" height="475"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popUpBoxFood" translatesAutoresizingMaskIntoConstraints="NO" id="8Zq-46-Uri">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popUpBoxOnboarding" translatesAutoresizingMaskIntoConstraints="NO" id="8Zq-46-Uri">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="475"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vji-yu-fRK">
-                                        <rect key="frame" x="28" y="124.5" width="326" height="179"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tg9-WX-q8w" userLabel="View1">
+                                        <rect key="frame" x="39.5" y="114" width="303" height="333"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you finish all of your food?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVX-BW-fu0">
-                                                <rect key="frame" x="20" y="79" width="286" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you finish all of your food?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGt-Jd-vgR">
+                                                <rect key="frame" x="20" y="94.5" width="263" height="44"/>
                                                 <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="18"/>
-                                                <color key="textColor" red="0.59607843137254901" green="0.37647058823529411" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foodFact3" translatesAutoresizingMaskIntoConstraints="NO" id="JUh-cQ-wX4">
-                                                <rect key="frame" x="89" y="12" width="148" height="83"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="JUh-cQ-wX4" secondAttribute="height" multiplier="148:83" id="PUD-uo-MgA"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's make sure to eat what you can eat." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDT-gz-48v">
-                                                <rect key="frame" x="20" y="117" width="286" height="16.5"/>
-                                                <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="14"/>
                                                 <color key="textColor" red="0.59607843140000005" green="0.37647058820000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="iVX-BW-fu0" firstAttribute="centerX" secondItem="Vji-yu-fRK" secondAttribute="centerX" id="BXu-Oc-9xn"/>
-                                            <constraint firstAttribute="width" secondItem="Vji-yu-fRK" secondAttribute="height" multiplier="326:179" id="KUy-fA-eYz"/>
-                                            <constraint firstItem="iVX-BW-fu0" firstAttribute="centerY" secondItem="Vji-yu-fRK" secondAttribute="centerY" id="S8Y-m3-cN2"/>
-                                            <constraint firstItem="iVX-BW-fu0" firstAttribute="leading" secondItem="Vji-yu-fRK" secondAttribute="leading" constant="20" id="Tft-ai-U0P"/>
-                                            <constraint firstItem="zDT-gz-48v" firstAttribute="leading" secondItem="Vji-yu-fRK" secondAttribute="leading" constant="20" id="V2C-xs-tPZ"/>
-                                            <constraint firstItem="JUh-cQ-wX4" firstAttribute="centerX" secondItem="Vji-yu-fRK" secondAttribute="centerX" id="bRH-V7-If0"/>
-                                            <constraint firstAttribute="trailing" secondItem="zDT-gz-48v" secondAttribute="trailing" constant="20" id="bwH-jD-rcy"/>
-                                            <constraint firstItem="zDT-gz-48v" firstAttribute="centerX" secondItem="Vji-yu-fRK" secondAttribute="centerX" id="hkb-gU-47c"/>
-                                            <constraint firstItem="JUh-cQ-wX4" firstAttribute="centerY" secondItem="Vji-yu-fRK" secondAttribute="centerY" multiplier="0.6" id="lgd-Ds-sDy"/>
-                                            <constraint firstItem="zDT-gz-48v" firstAttribute="centerY" secondItem="Vji-yu-fRK" secondAttribute="centerY" multiplier="1.4" id="nMW-9s-9PD"/>
-                                            <constraint firstAttribute="trailing" secondItem="iVX-BW-fu0" secondAttribute="trailing" constant="20" id="xps-fF-kRq"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STA-5u-KUI">
-                                        <rect key="frame" x="28" y="304" width="326" height="143"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oEx-zg-No1">
-                                                <rect key="frame" x="20" y="26.5" width="286" height="90"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wbm-NM-meC">
+                                                <rect key="frame" x="20" y="213" width="263" height="100"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7V-FG-a0S">
-                                                        <rect key="frame" x="0.0" y="0.0" width="286" height="40"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfj-Pn-BtB">
+                                                        <rect key="frame" x="0.0" y="0.0" width="263" height="40"/>
+                                                        <color key="backgroundColor" red="0.74117647060000003" green="0.50980392159999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="wXs-Up-6yq"/>
+                                                            <constraint firstAttribute="height" constant="40" id="wWb-qW-waF"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="16"/>
                                                         <state key="normal" title="No, I Didn’t">
                                                             <color key="titleColor" red="1" green="0.94509803920000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="2"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="1" green="0.94509803920000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="5"/>
+                                                                <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="popUpButtonDidTap:" destination="KEe-uM-20z" eventType="touchUpInside" id="nsV-KZ-kIK"/>
+                                                            <action selector="popUpButtonDidTap:" destination="KEe-uM-20z" eventType="touchUpInside" id="2LK-gl-wAC"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWn-vr-NaJ">
-                                                        <rect key="frame" x="0.0" y="50" width="286" height="40"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTO-o0-1QB">
+                                                        <rect key="frame" x="0.0" y="60" width="263" height="40"/>
+                                                        <color key="backgroundColor" red="0.74117647060000003" green="0.50980392159999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="eih-66-cdT"/>
+                                                            <constraint firstAttribute="height" constant="40" id="lnk-HX-U9h"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="16"/>
                                                         <state key="normal" title="Yes, I Did">
                                                             <color key="titleColor" red="1" green="0.94509803920000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="2"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="1" green="0.94509803920000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="5"/>
+                                                                <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="popUpButtonDidTap:" destination="KEe-uM-20z" eventType="touchUpInside" id="3i7-Q5-vaR"/>
+                                                            <action selector="popUpButtonDidTap:" destination="KEe-uM-20z" eventType="touchUpInside" id="fPK-vk-xgg"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sg-Wm-ja8">
-                                                <rect key="frame" x="5" y="5" width="316" height="133"/>
-                                                <string key="text">If you have leftovers, save any leftovers, rather than throwing them away. Food waste accounts for about 4,4 gigatonnes of greenhouse gas emissions (GHG) per year. To put this in perspective, if food loss and waste were its own country, it would be the world’s third-largest GHG emitter.</string>
-                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
-                                                <color key="textColor" red="1" green="0.94509803920000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="2sg-Wm-ja8" firstAttribute="top" secondItem="STA-5u-KUI" secondAttribute="top" constant="5" id="BUb-4P-3db"/>
-                                            <constraint firstItem="2sg-Wm-ja8" firstAttribute="leading" secondItem="STA-5u-KUI" secondAttribute="leading" constant="5" id="EYk-6p-CUC"/>
-                                            <constraint firstAttribute="trailing" secondItem="2sg-Wm-ja8" secondAttribute="trailing" constant="5" id="eoA-fp-P6H"/>
-                                            <constraint firstItem="oEx-zg-No1" firstAttribute="centerY" secondItem="STA-5u-KUI" secondAttribute="centerY" id="gL0-Wq-UzE"/>
-                                            <constraint firstItem="oEx-zg-No1" firstAttribute="leading" secondItem="STA-5u-KUI" secondAttribute="leading" constant="20" id="jeA-yz-3Dz"/>
-                                            <constraint firstAttribute="trailing" secondItem="oEx-zg-No1" secondAttribute="trailing" constant="20" id="mVQ-Ww-qgU"/>
-                                            <constraint firstAttribute="bottom" secondItem="2sg-Wm-ja8" secondAttribute="bottom" constant="5" id="n9N-Cg-STY"/>
-                                            <constraint firstItem="oEx-zg-No1" firstAttribute="centerX" secondItem="STA-5u-KUI" secondAttribute="centerX" id="pQ3-dq-0tR"/>
-                                            <constraint firstAttribute="width" secondItem="STA-5u-KUI" secondAttribute="height" multiplier="326:143" id="zhq-xe-Jr7"/>
+                                            <constraint firstItem="wbm-NM-meC" firstAttribute="leading" secondItem="tg9-WX-q8w" secondAttribute="leading" constant="20" id="62K-pq-lCA"/>
+                                            <constraint firstAttribute="trailing" secondItem="BGt-Jd-vgR" secondAttribute="trailing" constant="20" id="FCO-20-pQB"/>
+                                            <constraint firstItem="BGt-Jd-vgR" firstAttribute="centerX" secondItem="tg9-WX-q8w" secondAttribute="centerX" id="LZw-cs-juW"/>
+                                            <constraint firstAttribute="bottom" secondItem="wbm-NM-meC" secondAttribute="bottom" constant="20" id="UEO-gu-vIe"/>
+                                            <constraint firstAttribute="width" secondItem="tg9-WX-q8w" secondAttribute="height" multiplier="101:111" id="jTa-Xy-7FC"/>
+                                            <constraint firstItem="BGt-Jd-vgR" firstAttribute="centerY" secondItem="tg9-WX-q8w" secondAttribute="centerY" multiplier="0.7" id="sG5-cg-ZCw"/>
+                                            <constraint firstItem="BGt-Jd-vgR" firstAttribute="leading" secondItem="tg9-WX-q8w" secondAttribute="leading" constant="20" id="tqu-Dg-mgl"/>
+                                            <constraint firstAttribute="trailing" secondItem="wbm-NM-meC" secondAttribute="trailing" constant="20" id="xNh-t9-N9V"/>
+                                        </constraints>
+                                    </view>
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2s1-yd-2A5" userLabel="View2">
+                                        <rect key="frame" x="39.5" y="114" width="303" height="333"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foodFact3" translatesAutoresizingMaskIntoConstraints="NO" id="QrS-4q-JIv">
+                                                <rect key="frame" x="23.5" y="23" width="256" height="120"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="QrS-4q-JIv" secondAttribute="height" multiplier="32:15" id="lDQ-XT-3Os"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's make sure to eat what you can eat." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0m-lC-AlV">
+                                                <rect key="frame" x="20" y="152" width="263" height="69"/>
+                                                <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="16"/>
+                                                <color key="textColor" red="0.28235294119999998" green="0.1764705882" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bxP-qI-92e">
+                                                <rect key="frame" x="20" y="241" width="263" height="77"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13S-dn-psH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="263" height="40"/>
+                                                        <color key="backgroundColor" red="0.74117647058823533" green="0.50980392156862742" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="I2m-BY-nsr"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="16"/>
+                                                        <state key="normal" title="Read More About This">
+                                                            <color key="titleColor" red="1" green="0.94509803920000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="readMoreDidTap:" destination="KEe-uM-20z" eventType="touchUpInside" id="dGl-aJ-djp"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdY-dZ-LNG">
+                                                        <rect key="frame" x="0.0" y="45" width="263" height="32"/>
+                                                        <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="16"/>
+                                                        <state key="normal" title="Skip">
+                                                            <color key="titleColor" red="0.74117647060000003" green="0.50980392159999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="bxP-qI-92e" firstAttribute="height" secondItem="2s1-yd-2A5" secondAttribute="height" multiplier="0.231231" id="2Ji-6M-mIE"/>
+                                            <constraint firstItem="bxP-qI-92e" firstAttribute="leading" secondItem="2s1-yd-2A5" secondAttribute="leading" constant="20" id="4Xm-z3-9Wp"/>
+                                            <constraint firstItem="q0m-lC-AlV" firstAttribute="leading" secondItem="2s1-yd-2A5" secondAttribute="leading" constant="20" id="79E-wi-g8y"/>
+                                            <constraint firstAttribute="trailing" secondItem="q0m-lC-AlV" secondAttribute="trailing" constant="20" id="8Q6-oe-Vf6"/>
+                                            <constraint firstItem="bxP-qI-92e" firstAttribute="top" secondItem="q0m-lC-AlV" secondAttribute="bottom" constant="20" id="9Go-qb-asU"/>
+                                            <constraint firstItem="QrS-4q-JIv" firstAttribute="height" secondItem="2s1-yd-2A5" secondAttribute="height" multiplier="0.36036" id="GZX-y0-Ea5"/>
+                                            <constraint firstAttribute="trailing" secondItem="q0m-lC-AlV" secondAttribute="trailing" constant="20" id="KHy-Ei-YQ6"/>
+                                            <constraint firstItem="QrS-4q-JIv" firstAttribute="width" secondItem="2s1-yd-2A5" secondAttribute="width" multiplier="0.844884" id="TYx-XY-56Q"/>
+                                            <constraint firstItem="QrS-4q-JIv" firstAttribute="centerY" secondItem="2s1-yd-2A5" secondAttribute="centerY" multiplier="0.5" id="mmA-Dh-UsO"/>
+                                            <constraint firstItem="q0m-lC-AlV" firstAttribute="leading" secondItem="2s1-yd-2A5" secondAttribute="leading" constant="20" id="pZ2-dK-eKe"/>
+                                            <constraint firstItem="QrS-4q-JIv" firstAttribute="centerX" secondItem="2s1-yd-2A5" secondAttribute="centerX" id="pkG-2D-t7h"/>
+                                            <constraint firstItem="q0m-lC-AlV" firstAttribute="height" secondItem="2s1-yd-2A5" secondAttribute="height" multiplier="0.207207" id="qTx-mg-KA8"/>
+                                            <constraint firstAttribute="trailing" secondItem="bxP-qI-92e" secondAttribute="trailing" constant="20" id="t1U-yQ-37k"/>
+                                            <constraint firstAttribute="width" secondItem="2s1-yd-2A5" secondAttribute="height" multiplier="101:111" id="vY9-dE-99t"/>
+                                            <constraint firstItem="bxP-qI-92e" firstAttribute="top" secondItem="q0m-lC-AlV" secondAttribute="bottom" constant="20" id="voa-yD-CUP"/>
+                                            <constraint firstAttribute="bottom" secondItem="bxP-qI-92e" secondAttribute="bottom" constant="15" id="zjr-Nx-e2l"/>
+                                        </constraints>
+                                    </view>
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bja-qD-g6l" userLabel="View3">
+                                        <rect key="frame" x="39.5" y="114" width="303" height="333"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Z9-Ku-9en">
+                                                <rect key="frame" x="20" y="20" width="263" height="233"/>
+                                                <string key="text">If you have leftovers, save any leftovers, rather than throwing them away. Food waste accounts for about 4,4 gigatonnes of greenhouse gas emissions (GHG) per year. To put this in perspective, if food loss and waste were its own country, it would be the world’s third-largest GHG emitter.</string>
+                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
+                                                <color key="textColor" red="0.28235294119999998" green="0.1764705882" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uV9-42-2MK">
+                                                <rect key="frame" x="98.5" y="273" width="106" height="40"/>
+                                                <color key="backgroundColor" red="0.74117647060000003" green="0.50980392159999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="106" id="gOZ-i6-osy"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="16"/>
+                                                <state key="normal" title="Got It!">
+                                                    <color key="titleColor" red="1" green="0.94509803920000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="gotItDidTap:" destination="KEe-uM-20z" eventType="touchUpInside" id="Rle-K3-PhV"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="uV9-42-2MK" firstAttribute="top" secondItem="4Z9-Ku-9en" secondAttribute="bottom" constant="20" id="A7k-xA-Tg3"/>
+                                            <constraint firstItem="uV9-42-2MK" firstAttribute="height" secondItem="bja-qD-g6l" secondAttribute="height" multiplier="0.12012" id="OgB-Af-Ivh"/>
+                                            <constraint firstAttribute="trailing" secondItem="4Z9-Ku-9en" secondAttribute="trailing" constant="20" id="RLz-Yx-GNd"/>
+                                            <constraint firstAttribute="bottom" secondItem="uV9-42-2MK" secondAttribute="bottom" constant="20" id="RcL-An-ubm"/>
+                                            <constraint firstItem="4Z9-Ku-9en" firstAttribute="leading" secondItem="bja-qD-g6l" secondAttribute="leading" constant="20" id="Uzq-W4-Aae"/>
+                                            <constraint firstItem="4Z9-Ku-9en" firstAttribute="top" secondItem="bja-qD-g6l" secondAttribute="top" constant="20" id="aw7-Id-YdV"/>
+                                            <constraint firstItem="uV9-42-2MK" firstAttribute="centerX" secondItem="bja-qD-g6l" secondAttribute="centerX" id="pIc-Kj-CiZ"/>
+                                            <constraint firstAttribute="width" secondItem="bja-qD-g6l" secondAttribute="height" multiplier="101:111" id="v1X-P8-BvV"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Vji-yu-fRK" firstAttribute="centerX" secondItem="nWw-Cj-WnJ" secondAttribute="centerX" id="1V7-e9-PKm"/>
+                                    <constraint firstItem="bja-qD-g6l" firstAttribute="width" secondItem="nWw-Cj-WnJ" secondAttribute="width" multiplier="0.793194" id="1zg-te-yWE"/>
                                     <constraint firstAttribute="bottom" secondItem="8Zq-46-Uri" secondAttribute="bottom" id="79B-o7-JmY"/>
                                     <constraint firstItem="8Zq-46-Uri" firstAttribute="top" secondItem="nWw-Cj-WnJ" secondAttribute="top" id="Bkc-EH-gcZ"/>
+                                    <constraint firstItem="2s1-yd-2A5" firstAttribute="centerX" secondItem="nWw-Cj-WnJ" secondAttribute="centerX" id="CGZ-7h-pLV"/>
+                                    <constraint firstItem="bja-qD-g6l" firstAttribute="centerY" secondItem="nWw-Cj-WnJ" secondAttribute="centerY" multiplier="1.18" id="F7l-Fq-7Xz"/>
+                                    <constraint firstItem="2s1-yd-2A5" firstAttribute="width" secondItem="nWw-Cj-WnJ" secondAttribute="width" multiplier="0.793194" id="LyM-IL-EIR"/>
+                                    <constraint firstItem="tg9-WX-q8w" firstAttribute="centerX" secondItem="nWw-Cj-WnJ" secondAttribute="centerX" id="R5w-6P-zic"/>
+                                    <constraint firstItem="tg9-WX-q8w" firstAttribute="centerY" secondItem="nWw-Cj-WnJ" secondAttribute="centerY" multiplier="1.18" id="R9O-Jh-PMh"/>
                                     <constraint firstItem="8Zq-46-Uri" firstAttribute="leading" secondItem="nWw-Cj-WnJ" secondAttribute="leading" id="cis-oL-xhC"/>
-                                    <constraint firstItem="STA-5u-KUI" firstAttribute="centerX" secondItem="nWw-Cj-WnJ" secondAttribute="centerX" id="eQc-Go-cV7"/>
+                                    <constraint firstItem="tg9-WX-q8w" firstAttribute="width" secondItem="nWw-Cj-WnJ" secondAttribute="width" multiplier="0.793194" id="kYR-6U-Vbv"/>
+                                    <constraint firstItem="2s1-yd-2A5" firstAttribute="centerY" secondItem="nWw-Cj-WnJ" secondAttribute="centerY" multiplier="1.18" id="mDQ-5e-4oc"/>
+                                    <constraint firstItem="bja-qD-g6l" firstAttribute="centerX" secondItem="nWw-Cj-WnJ" secondAttribute="centerX" id="quE-aP-ReK"/>
                                     <constraint firstAttribute="trailing" secondItem="8Zq-46-Uri" secondAttribute="trailing" id="s6m-CR-8eJ"/>
-                                    <constraint firstItem="Vji-yu-fRK" firstAttribute="centerY" secondItem="nWw-Cj-WnJ" secondAttribute="centerY" multiplier="0.9" id="tHu-O5-1No"/>
-                                    <constraint firstItem="STA-5u-KUI" firstAttribute="centerY" secondItem="nWw-Cj-WnJ" secondAttribute="centerY" multiplier="1.58" id="wDv-NE-seg"/>
                                     <constraint firstAttribute="width" secondItem="nWw-Cj-WnJ" secondAttribute="height" multiplier="382:475" id="wOa-ZF-dXA"/>
                                 </constraints>
                             </view>
@@ -774,10 +838,8 @@
                             <constraint firstItem="g5v-gN-A8m" firstAttribute="bottom" secondItem="bOU-wf-HUL" secondAttribute="bottom" constant="-300" id="0B3-kj-mMz"/>
                             <constraint firstItem="otJ-7b-3IS" firstAttribute="height" secondItem="5Xm-4V-Bca" secondAttribute="height" multiplier="0.0569196" id="1cN-1b-xtc"/>
                             <constraint firstItem="Mnf-kY-Jud" firstAttribute="leading" secondItem="g5v-gN-A8m" secondAttribute="leading" id="1qG-fQ-Sqd"/>
-                            <constraint firstItem="JUh-cQ-wX4" firstAttribute="width" secondItem="shn-Yu-7ix" secondAttribute="width" multiplier="0.357488" id="1sF-jY-np7"/>
                             <constraint firstItem="Mnf-kY-Jud" firstAttribute="trailing" secondItem="g5v-gN-A8m" secondAttribute="trailing" id="2fd-YS-G5A"/>
                             <constraint firstItem="5Xm-4V-Bca" firstAttribute="top" secondItem="shn-Yu-7ix" secondAttribute="top" id="3Aq-cy-crW"/>
-                            <constraint firstItem="Vji-yu-fRK" firstAttribute="width" secondItem="shn-Yu-7ix" secondAttribute="width" multiplier="0.78744" id="61u-a8-Nty"/>
                             <constraint firstAttribute="bottom" secondItem="Mnf-kY-Jud" secondAttribute="bottom" id="8VM-TL-nKA"/>
                             <constraint firstItem="otJ-7b-3IS" firstAttribute="centerX" secondItem="shn-Yu-7ix" secondAttribute="centerX" multiplier="0.8" id="8zM-So-TWP"/>
                             <constraint firstItem="g5v-gN-A8m" firstAttribute="trailing" secondItem="qRy-5v-hn4" secondAttribute="trailing" constant="-100" id="9AN-eu-tog"/>
@@ -800,7 +862,6 @@
                             <constraint firstItem="bOU-wf-HUL" firstAttribute="width" secondItem="shn-Yu-7ix" secondAttribute="width" multiplier="0.975845" id="psb-sE-yw1"/>
                             <constraint firstItem="Nvu-lN-cbx" firstAttribute="top" secondItem="shn-Yu-7ix" secondAttribute="top" id="rW1-Wm-5cd"/>
                             <constraint firstItem="Nvu-lN-cbx" firstAttribute="trailing" secondItem="g5v-gN-A8m" secondAttribute="trailing" id="sxU-N1-qbs"/>
-                            <constraint firstItem="STA-5u-KUI" firstAttribute="width" secondItem="shn-Yu-7ix" secondAttribute="width" multiplier="0.78744" id="yGt-jD-blK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g5v-gN-A8m"/>
                     </view>
@@ -809,11 +870,9 @@
                         <outlet property="buttonToBeachConstraint" destination="9AN-eu-tog" id="MBp-Pc-3In"/>
                         <outlet property="kuraChatBox" destination="8ev-vC-I6l" id="rpm-BF-lPW"/>
                         <outlet property="kuraChatBoxConstraint" destination="0B3-kj-mMz" id="3mq-Kx-PF4"/>
-                        <outlet property="popUpButton" destination="oEx-zg-No1" id="Neo-Z7-jbS"/>
-                        <outlet property="popUpFactLabel" destination="2sg-Wm-ja8" id="9kR-u3-S71"/>
-                        <outlet property="popUpFactTitleLabel" destination="zDT-gz-48v" id="dmI-Rf-P6t"/>
-                        <outlet property="popUpFoodImage" destination="JUh-cQ-wX4" id="YKs-ug-bIU"/>
-                        <outlet property="popUpQuestionLabel" destination="iVX-BW-fu0" id="PQR-5e-o6D"/>
+                        <outlet property="popUpContent1" destination="tg9-WX-q8w" id="Zxd-Sm-eco"/>
+                        <outlet property="popUpContent2" destination="2s1-yd-2A5" id="EQP-vM-CYK"/>
+                        <outlet property="popUpContent3" destination="bja-qD-g6l" id="PDT-R5-ipA"/>
                         <outlet property="popUpView" destination="nWw-Cj-WnJ" id="hq6-Jc-sNz"/>
                         <outlet property="shadowView" destination="Nvu-lN-cbx" id="FK6-qS-cg9"/>
                         <outlet property="shadowView2" destination="Mnf-kY-Jud" id="ayK-am-FXl"/>
@@ -858,7 +917,7 @@
         <image name="asset.Diary" width="87" height="46.5"/>
         <image name="asset.TandaSeru" width="56" height="60.5"/>
         <image name="foodFact3" width="148" height="83.5"/>
-        <image name="popUpBoxFood" width="382" height="475"/>
+        <image name="popUpBoxOnboarding" width="382" height="511"/>
         <image name="reply" width="92.5" height="28"/>
     </resources>
 </document>

@@ -15,15 +15,13 @@ class RumahOnboardingViewController: UIViewController {
     @IBOutlet var tandaSeruButton: UIButton!
 //    @IBOutlet var shadowView: UIView!
     @IBOutlet var popUpView: UIView!
-    @IBOutlet var popUpQuestionLabel: UILabel!
-    @IBOutlet var popUpButton: UIStackView!
-    @IBOutlet var popUpFoodImage: UIImageView!
-    @IBOutlet var popUpFactTitleLabel: UILabel!
-    @IBOutlet var popUpFactLabel: UILabel!
     @IBOutlet var buttonToBeach: UIButton!
     @IBOutlet var buttonToBeachConstraint: NSLayoutConstraint!
     @IBOutlet var shadowView: UIView!
     @IBOutlet var shadowView2: UIView!
+    @IBOutlet var popUpContent1: UIView!
+    @IBOutlet var popUpContent2: UIView!
+    @IBOutlet var popUpContent3: UIView!
     
     var chatBoxIndex = 0
     var tapIndex = 0
@@ -71,14 +69,25 @@ class RumahOnboardingViewController: UIViewController {
         animateChatBox()
     }
     @IBAction func popUpButtonDidTap(_ sender: UIButton) {
-        popUpQuestionLabel.alpha = 0
-        popUpButton.alpha = 0
-        popUpFoodImage.alpha = 1
-        popUpFactLabel.alpha = 1
-        popUpFactTitleLabel.alpha = 1
-        addTapGesture()
+        popUpContent1.alpha = 0
+        popUpContent2.alpha = 1
     }
     
+    @IBAction func readMoreDidTap(_ sender: UIButton) {
+        popUpContent2.alpha = 0
+        popUpContent3.alpha = 1
+    }
+    
+    @IBAction func gotItDidTap(_ sender: UIButton) {
+        popUpView.transform = CGAffineTransform.identity
+        UIView.animate(withDuration: 0.3, animations: {
+            self.popUpView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+            self.shadowView.alpha = 0
+        }) { (_) in
+            self.popUpView.isHidden = true
+            self.showChatBox()
+        }
+    }
     
     func changePage(identifier: String) {
         var storyboard: UIStoryboard
@@ -116,30 +125,19 @@ class RumahOnboardingViewController: UIViewController {
             hideChatBox()
             removeTapGesture()
         } else if tapIndex == 1 {
-            tapIndex += 1
-            popUpView.transform = CGAffineTransform.identity
-            UIView.animate(withDuration: 0.3, animations: {
-                self.popUpView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-                self.shadowView.alpha = 0
-            }) { (_) in
-                self.popUpView.isHidden = true
-                self.showChatBox()
-            }
-            removeTapGesture()
-        } else if tapIndex == 2 {
             UIView.animate(withDuration: 1) {
                 self.shadowView2.alpha = 0
             }
             tapIndex += 1
             kuraChatBox.text = ""
             typingAnimation(text: "You can also tap on me to find out more information about our environment facts.")
-        } else if tapIndex == 3 {
+        } else if tapIndex == 2 {
             
             tapIndex += 1
             kuraChatBox.text = ""
             typingAnimation(text: "Let’s keep making effort to the environment. Remember even your small action will have consequences to the environment")
         }
-        else if tapIndex == 4 {
+        else if tapIndex == 3 {
             //onboarding selsesai
             UserDefaults.standard.set(true, forKey: "has_launched_before")
             audioPlayer.stopSound()
