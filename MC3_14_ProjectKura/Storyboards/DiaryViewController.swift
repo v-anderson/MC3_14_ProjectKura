@@ -20,6 +20,10 @@ class DiaryViewController: UIViewController {
     @IBOutlet weak var placeHolder: UILabel!
     @IBOutlet weak var kuraHeart: UILabel!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

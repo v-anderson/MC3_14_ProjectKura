@@ -41,6 +41,16 @@ class PantaiViewController: UIViewController {
     weak var timer: Timer!
     weak var delegate: PantaiViewControllerDelegate?
     
+    var isDarkStatusBar = false {
+        didSet {
+            self.setNeedsStatusBarAppearanceUpdate()
+        }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return isDarkStatusBar ? .lightContent : .darkContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -97,6 +107,7 @@ class PantaiViewController: UIViewController {
     /// Update background according current time
     private func updateBackgroundWith (score: Int) {
         if isMorning() {
+            isDarkStatusBar = false
             if score < 4 {
                 pagiKotorBanget()
             } else if score < 8 {
@@ -105,6 +116,7 @@ class PantaiViewController: UIViewController {
                 pagiNetral()
             } else { pagiBersih() }
         } else if isAfternoon() {
+            isDarkStatusBar = false
             if score < 4 {
                 soreKotorBanget()
             } else if score < 8 {
@@ -113,6 +125,7 @@ class PantaiViewController: UIViewController {
                 soreNetral()
             } else { soreBersih() }
         } else {
+            isDarkStatusBar = true
             if score < 4 {
                 malemKotorBanget()
             } else if score < 8 {

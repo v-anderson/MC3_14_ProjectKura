@@ -67,6 +67,7 @@ class GalleryHeader: UICollectionReusableView {
         
         counterLabel.translatesAutoresizingMaskIntoConstraints = false
         counterLabel.font = UIFont(name: "GloriaHallelujah", size: 16)
+        counterLabel.textColor = .black
 
         brushHeartImageView.addSubview(heartImageView)
         brushHeartImageView.addSubview(counterLabel)

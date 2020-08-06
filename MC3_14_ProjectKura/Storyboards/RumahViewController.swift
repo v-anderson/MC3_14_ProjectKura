@@ -46,6 +46,9 @@ class RumahViewController: UIViewController {
     @IBOutlet var factConstraint: NSLayoutConstraint!
     @IBOutlet var factWidthConstraint: NSLayoutConstraint!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
+    }
     
     // notif center property
     let date = Date()
@@ -495,7 +498,7 @@ extension RumahViewController {
         tandaSeru.isHidden = false
         
         checkListrik()
-        checkMakanan()
+//        checkMakanan()
         checkKipas()
         checkShoppingBag()
     }

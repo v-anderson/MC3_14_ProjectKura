@@ -12,6 +12,10 @@ class GalleryViewController: UIViewController {
 
     @IBOutlet weak var galleryCollectionView: UICollectionView!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
+    }
+    
     var galleryViewModel: GalleryViewModel!
     
     override func viewDidLoad() {

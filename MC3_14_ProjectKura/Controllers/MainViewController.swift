@@ -9,6 +9,10 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
