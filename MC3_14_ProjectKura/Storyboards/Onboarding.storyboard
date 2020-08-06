@@ -647,7 +647,7 @@
                                         <rect key="frame" x="39.5" y="114" width="303" height="333"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you finish all of your food?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGt-Jd-vgR">
-                                                <rect key="frame" x="20" y="94.5" width="263" height="44"/>
+                                                <rect key="frame" x="20" y="106" width="263" height="21"/>
                                                 <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="18"/>
                                                 <color key="textColor" red="0.59607843140000005" green="0.37647058820000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -762,7 +762,6 @@
                                             <constraint firstItem="bxP-qI-92e" firstAttribute="top" secondItem="q0m-lC-AlV" secondAttribute="bottom" constant="20" id="9Go-qb-asU"/>
                                             <constraint firstItem="QrS-4q-JIv" firstAttribute="height" secondItem="2s1-yd-2A5" secondAttribute="height" multiplier="0.36036" id="GZX-y0-Ea5"/>
                                             <constraint firstAttribute="trailing" secondItem="q0m-lC-AlV" secondAttribute="trailing" constant="20" id="KHy-Ei-YQ6"/>
-                                            <constraint firstItem="QrS-4q-JIv" firstAttribute="width" secondItem="2s1-yd-2A5" secondAttribute="width" multiplier="0.844884" id="TYx-XY-56Q"/>
                                             <constraint firstItem="QrS-4q-JIv" firstAttribute="centerY" secondItem="2s1-yd-2A5" secondAttribute="centerY" multiplier="0.5" id="mmA-Dh-UsO"/>
                                             <constraint firstItem="q0m-lC-AlV" firstAttribute="leading" secondItem="2s1-yd-2A5" secondAttribute="leading" constant="20" id="pZ2-dK-eKe"/>
                                             <constraint firstItem="QrS-4q-JIv" firstAttribute="centerX" secondItem="2s1-yd-2A5" secondAttribute="centerX" id="pkG-2D-t7h"/>
