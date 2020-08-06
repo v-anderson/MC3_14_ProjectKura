@@ -27,19 +27,25 @@ class RumahViewController: UIViewController {
     @IBOutlet weak var backgroundDimmer: UIView!
     // VIEW
     @IBOutlet weak var viewPopUpBox: UIView!
-    @IBOutlet weak var viewContents: UIView!
-    @IBOutlet weak var viewHeaders: UIView!
-    @IBOutlet weak var viewBody: UIView!
+    @IBOutlet weak var viewQuestions: UIView!
+    @IBOutlet weak var viewFact: UIView!
+    @IBOutlet weak var viewFactBody: UIView!
+    
     
     @IBOutlet weak var factImage: UIImageView!
     @IBOutlet weak var lblQuestionsTitle: UILabel!
     @IBOutlet weak var lblFactTitle: UILabel!
     @IBOutlet weak var lblFactBody: UILabel!
+    
+    // Button
     @IBOutlet weak var btnOption1: UIButton!
     @IBOutlet weak var btnOption2: UIButton!
+    @IBOutlet weak var btnToFactBody: UIButton!
+    @IBOutlet weak var btnSkip: UIButton!
+    @IBOutlet weak var btnGotIt: UIButton!
+    
     @IBOutlet weak var popUpBox: UIImageView!
-    @IBOutlet weak var lblTapToDismiss: UILabel!
-    @IBOutlet weak var stackButton: UIStackView!
+    @IBOutlet weak var stackButtonOptions: UIStackView!
     @IBOutlet weak var buttonKePantai: UIButton!
     @IBOutlet var kura: UIImageView!
     @IBOutlet var factLabel: UILabel!
@@ -269,35 +275,48 @@ class RumahViewController: UIViewController {
     }
     
     func showPopUpBox() {
+        viewPopUpBox.isHidden = false
+        viewQuestions.isHidden = false
+        viewFact.isHidden = true
+        viewFactBody.isHidden = true
+        lblQuestionsTitle.numberOfLines = 0
+        lblQuestionsTitle.adjustsFontSizeToFitWidth = true
         kura.image = UIImage(named: "asset.KuraDudukNormal")
         factConstraint.constant = -380
         constraintAnimation()
         view.gestureRecognizers?.removeAll()
-        
-        viewPopUpBox.isHidden = false
+
         viewPopUpBox.alpha = 0
         viewPopUpBox.transform = CGAffineTransform(scaleX: 0, y: 0)
         UIView.animate(withDuration: 0.3) {
             self.viewPopUpBox.transform = CGAffineTransform.identity
             self.backgroundDimmer.alpha = 0.5
             self.viewPopUpBox.alpha = 1
-            self.lblQuestionsTitle.alpha = 1
-            self.stackButton.isHidden = false
-            self.lblTapToDismiss.alpha = 0
-            self.factImage.alpha = 0
-            self.lblFactTitle.alpha = 0
-            self.lblFactBody.alpha = 0
         }
-        lblQuestionsTitle.numberOfLines = 0
-        lblQuestionsTitle.adjustsFontSizeToFitWidth = true
     }
     
-    func hideQuestionsShowFact() {
-        factImage.alpha = 1
-        lblFactTitle.alpha = 1
-        lblFactBody.alpha = 1
-        lblQuestionsTitle.alpha = 0
-        stackButton.isHidden = true
+    @IBAction func btnGoToFactBody(_ sender: Any) {
+        switch factType {
+        case .food:
+            foodFactBody()
+        case .electric:
+            electricFactBody()
+        case .shoppingBag:
+            shoppingBagFactBody()
+        case .kipas:
+            kipasFactBody()
+        default:
+            return
+        }
+    }
+    
+    @IBAction func btnSkip(_ sender: Any) {
+        print("mashuuuuk")
+        tapToDismiss()
+    }
+    
+    @IBAction func btnGotIt(_ sender: Any) {
+        tapToDismiss()
     }
     
     //
@@ -401,58 +420,83 @@ class RumahViewController: UIViewController {
     
     // FOOD FACT
     func foodFact() {
-        hideQuestionsShowFact()
+        viewQuestions.isHidden = true
+        viewFact.isHidden = false
         if let index = randomQuestions {
             factImage.image = UIImage(named: FoodQuestions[index].imageName)
             lblFactTitle.text = FoodQuestions[index].factTitle
+        }
+    }
+    
+    func foodFactBody() {
+        viewFactBody.isHidden = false
+        if let index = randomQuestions {
+            print("fct food")
             lblFactBody.text = FoodQuestions[index].factBody
-            lblTapToDismiss.alpha = 1
             lblFactBody.adjustsFontSizeToFitWidth = true
             lblFactBody.numberOfLines = 0
         }
-        addTapGesture()
     }
+    
     
     // ELECTRIC FACT
     func electricFact() {
-        hideQuestionsShowFact()
+        viewQuestions.isHidden = true
+        viewFact.isHidden = false
         if let index = randomQuestions {
             factImage.image = UIImage(named: electricityQuestions[index].imageName)
             lblFactTitle.text = electricityQuestions[index].factTitle
+        }
+    }
+    
+    func electricFactBody() {
+        viewFactBody.isHidden = false
+        if let index = randomQuestions {
+            print("fat electric")
             lblFactBody.text = electricityQuestions[index].factBody
-            lblTapToDismiss.alpha = 1
             lblFactBody.adjustsFontSizeToFitWidth = true
             lblFactBody.numberOfLines = 0
         }
-        addTapGesture()
     }
     
     // SHOPPING BAG FACT
     func shoppingBagFact() {
-        hideQuestionsShowFact()
+        viewQuestions.isHidden = true
+        viewFact.isHidden = false
         if let index = randomQuestions {
             factImage.image = UIImage(named: shoppingBagQuestions[index].imageName)
             lblFactTitle.text = shoppingBagQuestions[index].factTitle
+        }
+    }
+    
+    func shoppingBagFactBody() {
+        viewFactBody.isHidden = false
+        if let index = randomQuestions {
+            print("fact shop bag")
             lblFactBody.text = shoppingBagQuestions[index].factBody
-            lblTapToDismiss.alpha = 1
             lblFactBody.adjustsFontSizeToFitWidth = true
             lblFactBody.numberOfLines = 0
         }
-        addTapGesture()
     }
     
     // KIPAS BAG FACT
     func kipasFact() {
-        hideQuestionsShowFact()
+        viewQuestions.isHidden = true
+        viewFact.isHidden = false
         if let index = randomQuestions {
             factImage.image = UIImage(named: kipasQuestions[index].imageName)
             lblFactTitle.text = kipasQuestions[index].factTitle
+        }
+    }
+    
+    func kipasFactBody() {
+        viewFactBody.isHidden = false
+        if let index = randomQuestions {
+            print("fact kipas")
             lblFactBody.text = kipasQuestions[index].factBody
-            lblTapToDismiss.alpha = 1
             lblFactBody.adjustsFontSizeToFitWidth = true
             lblFactBody.numberOfLines = 0
         }
-        addTapGesture()
     }
     
     func animateButtonKePantai() {

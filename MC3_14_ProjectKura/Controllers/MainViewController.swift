@@ -29,7 +29,7 @@ class MainViewController: UIViewController {
         if !hasLaunchedBefore {
             // Show onboarding
             Gallery.configureInitialState(toContext: getViewContext())
-            
+
             print("Launching onboarding")
             let onboardingStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
             let destinationVC = onboardingStoryboard.instantiateViewController(identifier: "LetterViewController")

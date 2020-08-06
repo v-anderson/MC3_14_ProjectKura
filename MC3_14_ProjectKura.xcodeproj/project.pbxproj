@@ -40,6 +40,7 @@
 		71E1248224D93E11002E78F2 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1248124D93E11002E78F2 /* DiaryViewController.swift */; };
 		71E1248424D93FE2002E78F2 /* DiaryContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1248324D93FE2002E78F2 /* DiaryContent.swift */; };
 		CB0DABDB24CECA1200AD2DAF /* UIButton + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0DABDA24CECA1200AD2DAF /* UIButton + Extensions.swift */; };
+		CB2D0AB224DC10DA003A0479 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB2D0AA324DC10D9003A0479 /* Nunito-Regular.ttf */; };
 		CBB173CB24CAD1680090B742 /* QuestionsAndFacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB173CA24CAD1680090B742 /* QuestionsAndFacts.swift */; };
 		CBC4A83724CEC61700B3F5DC /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBC4A82C24CEC61700B3F5DC /* Rubik-Regular.ttf */; };
 		CBC4A83D24CEC6C400B3F5DC /* FredokaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBC4A83B24CEC6C400B3F5DC /* FredokaOne-Regular.ttf */; };
@@ -88,6 +89,7 @@
 		71E1248124D93E11002E78F2 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DiaryViewController.swift; path = MC3_14_ProjectKura/Storyboards/DiaryViewController.swift; sourceTree = SOURCE_ROOT; };
 		71E1248324D93FE2002E78F2 /* DiaryContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryContent.swift; sourceTree = "<group>"; };
 		CB0DABDA24CECA1200AD2DAF /* UIButton + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extensions.swift"; sourceTree = "<group>"; };
+		CB2D0AA324DC10D9003A0479 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		CBB173CA24CAD1680090B742 /* QuestionsAndFacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsAndFacts.swift; sourceTree = "<group>"; };
 		CBC4A82C24CEC61700B3F5DC /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		CBC4A83B24CEC6C400B3F5DC /* FredokaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FredokaOne-Regular.ttf"; sourceTree = "<group>"; };
@@ -253,11 +255,20 @@
 			path = "Gloria Hallelujah";
 			sourceTree = "<group>";
 		};
+		CB2D0A9E24DC10D9003A0479 /* Nunito */ = {
+			isa = PBXGroup;
+			children = (
+				CB2D0AA324DC10D9003A0479 /* Nunito-Regular.ttf */,
+			);
+			path = Nunito;
+			sourceTree = "<group>";
+		};
 		CBC4A82124CEC5EB00B3F5DC /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				71E1247F24D9376F002E78F2 /* Gloria Hallelujah */,
 				CBC4A83924CEC6C400B3F5DC /* Fredoka_One */,
+				CB2D0A9E24DC10D9003A0479 /* Nunito */,
 				CBC4A82224CEC61700B3F5DC /* Rubik */,
 			);
 			path = Fonts;
@@ -355,6 +366,7 @@
 				CBC4A83724CEC61700B3F5DC /* Rubik-Regular.ttf in Resources */,
 				EC1E480A24CEC0D600975C83 /* Onboarding.storyboard in Resources */,
 				57D68BEB24D2B83600C7BB1E /* BetterLife_Kantor.mp3 in Resources */,
+				CB2D0AB224DC10DA003A0479 /* Nunito-Regular.ttf in Resources */,
 				713A7BFC24C6DAFB006049FB /* Pantai.storyboard in Resources */,
 				CBC4A83D24CEC6C400B3F5DC /* FredokaOne-Regular.ttf in Resources */,
 				57392E9B24D188D100908246 /* beach-waves.wav in Resources */,

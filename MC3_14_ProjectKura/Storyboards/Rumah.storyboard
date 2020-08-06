@@ -13,6 +13,9 @@
         <array key="GloriaHallelujah-Regular.ttf">
             <string>GloriaHallelujah</string>
         </array>
+        <array key="Nunito-Regular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
         <array key="Rubik-Regular.ttf">
             <string>Rubik-Regular</string>
         </array>
@@ -177,154 +180,227 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="262-e9-u1q">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popUpBoxFood" translatesAutoresizingMaskIntoConstraints="NO" id="bbd-Y6-FVu">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newPopUpFrame" translatesAutoresizingMaskIntoConstraints="NO" id="bbd-Y6-FVu">
                                         <rect key="frame" x="16" y="210.5" width="382" height="475"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="bbd-Y6-FVu" secondAttribute="height" multiplier="382:475" id="Ybk-i2-i9c"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obq-F5-sSd">
-                                        <rect key="frame" x="44" y="332" width="326" height="328"/>
+                                        <rect key="frame" x="44" y="324" width="326" height="336"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBU-Dd-A0J">
-                                                <rect key="frame" x="0.0" y="0.0" width="326" height="175"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8fr-IT-wtj">
+                                                <rect key="frame" x="20" y="211" width="286" height="95"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foodFact1" translatesAutoresizingMaskIntoConstraints="NO" id="Nuk-Ld-kzf">
-                                                        <rect key="frame" x="89" y="7" width="148" height="88"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4z-r1-cgO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="286" height="40"/>
+                                                        <color key="backgroundColor" red="0.70881849529999996" green="0.52099400760000003" blue="0.2665874064" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="Nuk-Ld-kzf" secondAttribute="height" multiplier="37:22" id="XHD-Bu-m9U"/>
+                                                            <constraint firstAttribute="height" constant="40" id="Ehw-Pz-G9f"/>
                                                         </constraints>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food questions" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTb-2b-pz3">
-                                                        <rect key="frame" x="0.0" y="78" width="326" height="21"/>
-                                                        <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="18"/>
-                                                        <color key="textColor" red="0.59607843137254901" green="0.37647058823529411" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fact Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0e-ql-NRr">
-                                                        <rect key="frame" x="25" y="105" width="276" height="62"/>
-                                                        <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="14"/>
-                                                        <color key="textColor" red="0.59526020290000003" green="0.37461543079999998" blue="0.2391709685" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                        <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="16"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleColor" red="1" green="0.94509803921568625" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="btn1:" destination="ZxY-bL-AeJ" eventType="touchUpInside" id="PW0-k9-PsK"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WR0-Vv-no2">
+                                                        <rect key="frame" x="0.0" y="55" width="286" height="40"/>
+                                                        <color key="backgroundColor" red="0.70881849529999996" green="0.52099400760000003" blue="0.2665874064" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="Gtv-cy-gnl"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="16"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleColor" red="1" green="0.94509803921568625" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="btn2:" destination="ZxY-bL-AeJ" eventType="touchUpInside" id="T0Y-5J-giB"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="Nuk-Ld-kzf" firstAttribute="centerY" secondItem="NBU-Dd-A0J" secondAttribute="centerY" constant="-36.5" id="Eag-0U-V7a"/>
-                                                    <constraint firstItem="KTb-2b-pz3" firstAttribute="leading" secondItem="NBU-Dd-A0J" secondAttribute="leading" id="S0F-Of-zeA"/>
-                                                    <constraint firstItem="KTb-2b-pz3" firstAttribute="centerX" secondItem="NBU-Dd-A0J" secondAttribute="centerX" id="UtI-VR-hNR"/>
-                                                    <constraint firstItem="Nuk-Ld-kzf" firstAttribute="centerX" secondItem="NBU-Dd-A0J" secondAttribute="centerX" id="bIG-eF-CRC"/>
-                                                    <constraint firstItem="KTb-2b-pz3" firstAttribute="centerY" secondItem="NBU-Dd-A0J" secondAttribute="centerY" constant="1" id="gTY-OI-1Gg"/>
-                                                    <constraint firstAttribute="trailing" secondItem="m0e-ql-NRr" secondAttribute="trailing" constant="25" id="ith-p6-HFd"/>
-                                                    <constraint firstAttribute="bottom" secondItem="m0e-ql-NRr" secondAttribute="bottom" constant="8" id="pJ2-Ci-JQG"/>
-                                                    <constraint firstAttribute="trailing" secondItem="KTb-2b-pz3" secondAttribute="trailing" id="pgi-hN-YsV"/>
-                                                    <constraint firstItem="m0e-ql-NRr" firstAttribute="top" secondItem="Nuk-Ld-kzf" secondAttribute="bottom" constant="10" id="qsc-AT-tip"/>
-                                                    <constraint firstItem="m0e-ql-NRr" firstAttribute="leading" secondItem="NBU-Dd-A0J" secondAttribute="leading" constant="25" id="xZ9-Lr-Ief"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkG-GL-Kky">
-                                                <rect key="frame" x="0.0" y="176" width="326" height="152"/>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAr-TM-OyI">
+                                                <rect key="frame" x="20" y="20" width="286" height="171"/>
+                                                <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="18"/>
+                                                <color key="textColor" red="0.52869641779999998" green="0.39056351779999998" blue="0.2234818935" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="KAr-TM-OyI" firstAttribute="centerX" secondItem="obq-F5-sSd" secondAttribute="centerX" id="6f9-fo-1dw"/>
+                                            <constraint firstItem="8fr-IT-wtj" firstAttribute="leading" secondItem="obq-F5-sSd" secondAttribute="leading" constant="20" id="CGY-Lh-Q2G"/>
+                                            <constraint firstAttribute="bottom" secondItem="8fr-IT-wtj" secondAttribute="bottom" constant="30" id="Dw4-h8-P63"/>
+                                            <constraint firstAttribute="trailing" secondItem="KAr-TM-OyI" secondAttribute="trailing" constant="20" id="Lc5-ja-1s6"/>
+                                            <constraint firstItem="8fr-IT-wtj" firstAttribute="top" secondItem="KAr-TM-OyI" secondAttribute="bottom" constant="20" id="MzV-K9-waF"/>
+                                            <constraint firstItem="KAr-TM-OyI" firstAttribute="leading" secondItem="obq-F5-sSd" secondAttribute="leading" constant="20" id="S2b-xJ-alE"/>
+                                            <constraint firstAttribute="trailing" secondItem="8fr-IT-wtj" secondAttribute="trailing" constant="20" id="bBB-ac-CAz"/>
+                                            <constraint firstItem="KAr-TM-OyI" firstAttribute="top" secondItem="obq-F5-sSd" secondAttribute="top" constant="20" id="spj-Lx-Ysh"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BhE-6K-F2q">
+                                        <rect key="frame" x="44" y="324" width="326" height="336"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xsk-fj-mFh">
+                                                <rect key="frame" x="20" y="211" width="286" height="95"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="sTV-Az-vfb">
-                                                        <rect key="frame" x="20" y="28.5" width="286" height="95"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCU-Hg-biH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="286" height="40"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="40" id="Wgh-T7-dWY"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="16"/>
-                                                                <state key="normal" title="Button 1">
-                                                                    <color key="titleColor" red="0.99175125360000005" green="0.9464635253" blue="0.86665213109999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                </state>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                        <real key="value" value="2"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                        <real key="value" value="5"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                        <color key="value" red="0.99215686274509807" green="0.94509803921568625" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <action selector="btn1:" destination="ZxY-bL-AeJ" eventType="touchUpInside" id="uTg-cO-9sG"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byY-lk-a1T">
-                                                                <rect key="frame" x="0.0" y="55" width="286" height="40"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="40" id="fNQ-YM-did"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="16"/>
-                                                                <state key="normal" title="Button 2">
-                                                                    <color key="titleColor" red="0.99175125360000005" green="0.9464635253" blue="0.86665213109999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                </state>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                        <real key="value" value="2"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                        <real key="value" value="5"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                        <color key="value" red="0.99175125360000005" green="0.9464635253" blue="0.86665213109999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <action selector="btn2:" destination="ZxY-bL-AeJ" eventType="touchUpInside" id="GqO-BK-g6L"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fact's body" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqR-22-0lc">
-                                                        <rect key="frame" x="8" y="8" width="310" height="136"/>
-                                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
-                                                        <color key="textColor" red="1" green="0.94509803920000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8z-Yo-8DZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="286" height="40"/>
+                                                        <color key="backgroundColor" red="0.70881849529999996" green="0.52099400760000003" blue="0.2665874064" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="shA-tS-Gks"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="16"/>
+                                                        <state key="normal" title="Read More About This">
+                                                            <color key="titleColor" red="1" green="0.94509803920000002" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="btnGoToFactBody:" destination="ZxY-bL-AeJ" eventType="touchUpInside" id="mc9-st-lmg"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfc-fs-LbQ">
+                                                        <rect key="frame" x="0.0" y="55" width="286" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="Mj3-hh-aLH"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="16"/>
+                                                        <state key="normal" title="Skip">
+                                                            <color key="titleColor" red="0.55294117647058827" green="0.38431372549019605" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="btnSkip:" destination="ZxY-bL-AeJ" eventType="touchUpInside" id="pHy-Au-daV"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huY-bc-fUB">
+                                                <rect key="frame" x="20" y="20" width="286" height="171"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sfs-m0-ILW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="286" height="98"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdN-Ev-H8d">
+                                                        <rect key="frame" x="0.0" y="108" width="286" height="63"/>
+                                                        <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="16"/>
+                                                        <color key="textColor" red="0.52869641779999998" green="0.39056351779999998" blue="0.2234818935" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="uqR-22-0lc" firstAttribute="top" secondItem="mkG-GL-Kky" secondAttribute="top" constant="8" id="Q4j-Z4-X13"/>
-                                                    <constraint firstItem="sTV-Az-vfb" firstAttribute="leading" secondItem="mkG-GL-Kky" secondAttribute="leading" constant="20" id="Rzm-NA-M1e"/>
-                                                    <constraint firstItem="sTV-Az-vfb" firstAttribute="centerX" secondItem="mkG-GL-Kky" secondAttribute="centerX" id="SQS-fV-p4t"/>
-                                                    <constraint firstAttribute="trailing" secondItem="sTV-Az-vfb" secondAttribute="trailing" constant="20" id="h78-pS-s8g"/>
-                                                    <constraint firstItem="uqR-22-0lc" firstAttribute="leading" secondItem="mkG-GL-Kky" secondAttribute="leading" constant="8" id="mET-a3-ZTS"/>
-                                                    <constraint firstAttribute="trailing" secondItem="uqR-22-0lc" secondAttribute="trailing" constant="8" id="n2S-aj-fbw"/>
-                                                    <constraint firstAttribute="bottom" secondItem="uqR-22-0lc" secondAttribute="bottom" constant="8" id="oqx-Xn-brm"/>
-                                                    <constraint firstItem="sTV-Az-vfb" firstAttribute="centerY" secondItem="mkG-GL-Kky" secondAttribute="centerY" id="rJB-Gw-1ci"/>
+                                                    <constraint firstItem="sfs-m0-ILW" firstAttribute="top" secondItem="huY-bc-fUB" secondAttribute="top" id="1hX-ru-ldK"/>
+                                                    <constraint firstItem="tdN-Ev-H8d" firstAttribute="top" secondItem="sfs-m0-ILW" secondAttribute="bottom" constant="10" id="45c-MK-Hv3"/>
+                                                    <constraint firstItem="sfs-m0-ILW" firstAttribute="leading" secondItem="huY-bc-fUB" secondAttribute="leading" id="Iyg-Rw-zJJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="sfs-m0-ILW" secondAttribute="trailing" id="JLa-jJ-bwS"/>
+                                                    <constraint firstAttribute="bottom" secondItem="sfs-m0-ILW" secondAttribute="bottom" constant="73" id="MkA-EO-NhU"/>
+                                                    <constraint firstAttribute="trailing" secondItem="tdN-Ev-H8d" secondAttribute="trailing" id="Mu5-Ii-NFg"/>
+                                                    <constraint firstAttribute="bottom" secondItem="tdN-Ev-H8d" secondAttribute="bottom" id="UHM-Og-bb7"/>
+                                                    <constraint firstItem="tdN-Ev-H8d" firstAttribute="leading" secondItem="huY-bc-fUB" secondAttribute="leading" id="WKX-JJ-FGa"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="NBU-Dd-A0J" firstAttribute="top" secondItem="obq-F5-sSd" secondAttribute="top" id="4HY-ZY-PNF"/>
-                                            <constraint firstItem="NBU-Dd-A0J" firstAttribute="leading" secondItem="obq-F5-sSd" secondAttribute="leading" id="GAY-A5-I9Y"/>
-                                            <constraint firstAttribute="bottom" secondItem="mkG-GL-Kky" secondAttribute="bottom" id="R0t-hj-2DE"/>
-                                            <constraint firstAttribute="trailing" secondItem="mkG-GL-Kky" secondAttribute="trailing" id="SAb-Yx-QVd"/>
-                                            <constraint firstItem="mkG-GL-Kky" firstAttribute="leading" secondItem="obq-F5-sSd" secondAttribute="leading" id="TX2-hc-GhS"/>
-                                            <constraint firstAttribute="trailing" secondItem="NBU-Dd-A0J" secondAttribute="trailing" id="XEY-K6-ZvZ"/>
-                                            <constraint firstItem="mkG-GL-Kky" firstAttribute="top" secondItem="NBU-Dd-A0J" secondAttribute="bottom" constant="1" id="dmh-9T-hkU"/>
-                                            <constraint firstItem="NBU-Dd-A0J" firstAttribute="centerX" secondItem="obq-F5-sSd" secondAttribute="centerX" id="tnt-eb-ctW"/>
+                                            <constraint firstAttribute="trailing" secondItem="huY-bc-fUB" secondAttribute="trailing" constant="20" id="1Wk-ad-BmP"/>
+                                            <constraint firstItem="xsk-fj-mFh" firstAttribute="top" secondItem="huY-bc-fUB" secondAttribute="bottom" constant="20" id="6Zb-HT-Oyt"/>
+                                            <constraint firstAttribute="bottom" secondItem="xsk-fj-mFh" secondAttribute="bottom" constant="30" id="Rda-yh-FCm"/>
+                                            <constraint firstItem="huY-bc-fUB" firstAttribute="leading" secondItem="BhE-6K-F2q" secondAttribute="leading" constant="20" id="aJr-Un-rP0"/>
+                                            <constraint firstItem="xsk-fj-mFh" firstAttribute="leading" secondItem="BhE-6K-F2q" secondAttribute="leading" constant="20" id="kNN-83-EPU"/>
+                                            <constraint firstItem="huY-bc-fUB" firstAttribute="top" secondItem="BhE-6K-F2q" secondAttribute="top" constant="20" id="pmI-BP-CI3"/>
+                                            <constraint firstAttribute="trailing" secondItem="xsk-fj-mFh" secondAttribute="trailing" constant="20" id="tcy-im-fKs"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap anywhere to dismiss" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLM-ME-WUb">
-                                        <rect key="frame" x="141" y="690.5" width="132.5" height="14"/>
-                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="12"/>
-                                        <color key="textColor" red="0.95242542029999999" green="0.88795477150000002" blue="0.78821635249999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U3e-Ed-auE">
+                                        <rect key="frame" x="44" y="324" width="326" height="336"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60O-k8-qll">
+                                                <rect key="frame" x="20" y="20" width="286" height="186"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKd-7f-eBe">
+                                                <rect key="frame" x="80" y="256" width="166" height="40"/>
+                                                <color key="backgroundColor" red="0.74222666029999995" green="0.5112794638" blue="0.2131999135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="dak-v3-SlC"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="16"/>
+                                                <state key="normal" title="Got It!">
+                                                    <color key="titleColor" red="1" green="0.94509803921568625" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="btnGotIt:" destination="ZxY-bL-AeJ" eventType="touchUpInside" id="IaK-6n-1QH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="wKd-7f-eBe" secondAttribute="bottom" constant="40" id="X9f-jZ-bYJ"/>
+                                            <constraint firstItem="wKd-7f-eBe" firstAttribute="top" secondItem="60O-k8-qll" secondAttribute="bottom" constant="50" id="Y7i-xi-dvH"/>
+                                            <constraint firstItem="wKd-7f-eBe" firstAttribute="leading" secondItem="U3e-Ed-auE" secondAttribute="leading" constant="80" id="hjo-gt-EVp"/>
+                                            <constraint firstAttribute="trailing" secondItem="60O-k8-qll" secondAttribute="trailing" constant="20" id="hoa-yy-Q43"/>
+                                            <constraint firstAttribute="trailing" secondItem="wKd-7f-eBe" secondAttribute="trailing" constant="80" id="i2E-Kt-Nlo"/>
+                                            <constraint firstItem="60O-k8-qll" firstAttribute="leading" secondItem="U3e-Ed-auE" secondAttribute="leading" constant="20" id="sbb-lH-atu"/>
+                                            <constraint firstItem="60O-k8-qll" firstAttribute="top" secondItem="U3e-Ed-auE" secondAttribute="top" constant="20" id="uRL-LT-XL1"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="wLM-ME-WUb" firstAttribute="centerX" secondItem="262-e9-u1q" secondAttribute="centerX" id="84P-2F-xGF"/>
+                                    <constraint firstItem="obq-F5-sSd" firstAttribute="centerX" secondItem="BhE-6K-F2q" secondAttribute="centerX" id="6KX-Cz-SFf"/>
+                                    <constraint firstItem="U3e-Ed-auE" firstAttribute="leading" secondItem="obq-F5-sSd" secondAttribute="leading" id="CCI-ql-Hyq"/>
+                                    <constraint firstItem="obq-F5-sSd" firstAttribute="centerY" secondItem="BhE-6K-F2q" secondAttribute="centerY" id="CgA-F7-Q8u"/>
                                     <constraint firstItem="bbd-Y6-FVu" firstAttribute="centerY" secondItem="262-e9-u1q" secondAttribute="centerY" id="FW5-uK-XLn"/>
-                                    <constraint firstItem="mkG-GL-Kky" firstAttribute="height" secondItem="bbd-Y6-FVu" secondAttribute="height" multiplier="0.32" id="KfY-8i-wVz"/>
                                     <constraint firstItem="obq-F5-sSd" firstAttribute="width" secondItem="bbd-Y6-FVu" secondAttribute="width" multiplier="0.853403" id="RNS-m7-rCB"/>
                                     <constraint firstItem="bbd-Y6-FVu" firstAttribute="centerX" secondItem="262-e9-u1q" secondAttribute="centerX" id="W82-zt-dFQ"/>
-                                    <constraint firstItem="obq-F5-sSd" firstAttribute="centerY" secondItem="262-e9-u1q" secondAttribute="centerY" constant="48" id="YGj-9j-2uA"/>
-                                    <constraint firstItem="wLM-ME-WUb" firstAttribute="top" secondItem="bbd-Y6-FVu" secondAttribute="bottom" constant="5" id="mcx-Sy-i8z"/>
+                                    <constraint firstItem="obq-F5-sSd" firstAttribute="centerY" secondItem="262-e9-u1q" secondAttribute="centerY" constant="44" id="YGj-9j-2uA"/>
+                                    <constraint firstItem="BhE-6K-F2q" firstAttribute="centerX" secondItem="U3e-Ed-auE" secondAttribute="centerX" id="eLy-Jt-b0i"/>
+                                    <constraint firstItem="BhE-6K-F2q" firstAttribute="leading" secondItem="obq-F5-sSd" secondAttribute="leading" id="ftS-a1-C1d"/>
+                                    <constraint firstItem="BhE-6K-F2q" firstAttribute="top" secondItem="obq-F5-sSd" secondAttribute="top" id="kRU-8T-mC0"/>
                                     <constraint firstItem="obq-F5-sSd" firstAttribute="centerX" secondItem="262-e9-u1q" secondAttribute="centerX" id="oSJ-ev-5Tf"/>
                                     <constraint firstItem="bbd-Y6-FVu" firstAttribute="width" secondItem="262-e9-u1q" secondAttribute="width" multiplier="0.922705" id="p2Y-8m-QmI"/>
-                                    <constraint firstItem="obq-F5-sSd" firstAttribute="height" secondItem="bbd-Y6-FVu" secondAttribute="height" multiplier="0.690526" id="r48-a2-nPy"/>
+                                    <constraint firstItem="obq-F5-sSd" firstAttribute="height" secondItem="bbd-Y6-FVu" secondAttribute="height" multiplier="0.690526" constant="8.0001500000000192" id="r48-a2-nPy"/>
+                                    <constraint firstItem="BhE-6K-F2q" firstAttribute="centerY" secondItem="U3e-Ed-auE" secondAttribute="centerY" id="s05-uF-yql"/>
+                                    <constraint firstItem="U3e-Ed-auE" firstAttribute="top" secondItem="BhE-6K-F2q" secondAttribute="top" id="taO-MC-XNX"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -378,31 +454,33 @@
                     </view>
                     <connections>
                         <outlet property="backgroundDimmer" destination="PO3-MI-5sS" id="S9M-Pi-MWA"/>
-                        <outlet property="btnOption1" destination="FCU-Hg-biH" id="mYd-ry-sFr"/>
-                        <outlet property="btnOption2" destination="byY-lk-a1T" id="ckl-nv-6hY"/>
+                        <outlet property="btnGotIt" destination="wKd-7f-eBe" id="50m-x8-LBp"/>
+                        <outlet property="btnOption1" destination="O4z-r1-cgO" id="gn8-WS-CM2"/>
+                        <outlet property="btnOption2" destination="WR0-Vv-no2" id="kHi-5M-s19"/>
+                        <outlet property="btnSkip" destination="mfc-fs-LbQ" id="MUb-64-vz6"/>
+                        <outlet property="btnToFactBody" destination="f8z-Yo-8DZ" id="6bi-qU-uRx"/>
                         <outlet property="buttonKePantai" destination="HM3-QM-aks" id="Xcz-QW-ZlL"/>
                         <outlet property="factConstraint" destination="Ge7-5g-cAw" id="kyq-mV-0Qs"/>
-                        <outlet property="factImage" destination="Nuk-Ld-kzf" id="m6l-xZ-XM9"/>
+                        <outlet property="factImage" destination="sfs-m0-ILW" id="hjy-dg-OgN"/>
                         <outlet property="factLabel" destination="5oM-vN-t2h" id="kfp-tM-RbY"/>
                         <outlet property="factWidthConstraint" destination="PTd-nm-JWe" id="6GW-4K-HzW"/>
                         <outlet property="filter" destination="SHo-s7-JQN" id="Qhe-KD-9PS"/>
                         <outlet property="jendela" destination="fL2-84-erP" id="EvA-jB-AZg"/>
                         <outlet property="kura" destination="Z48-Pd-yoL" id="2S3-OU-8yl"/>
                         <outlet property="lampu" destination="9nn-Y6-Q4g" id="a2i-rw-Imz"/>
-                        <outlet property="lblFactBody" destination="uqR-22-0lc" id="nfR-yF-Weq"/>
-                        <outlet property="lblFactTitle" destination="m0e-ql-NRr" id="2Bz-wD-Npg"/>
-                        <outlet property="lblQuestionsTitle" destination="KTb-2b-pz3" id="nyK-PJ-1jj"/>
-                        <outlet property="lblTapToDismiss" destination="wLM-ME-WUb" id="dGH-fW-LC2"/>
+                        <outlet property="lblFactBody" destination="60O-k8-qll" id="KTl-bu-ern"/>
+                        <outlet property="lblFactTitle" destination="tdN-Ev-H8d" id="uqz-jh-dyp"/>
+                        <outlet property="lblQuestionsTitle" destination="KAr-TM-OyI" id="WrW-dQ-HUy"/>
                         <outlet property="popUpBox" destination="bbd-Y6-FVu" id="VGL-lv-7Ah"/>
-                        <outlet property="stackButton" destination="sTV-Az-vfb" id="koM-sF-oU6"/>
+                        <outlet property="stackButtonOptions" destination="8fr-IT-wtj" id="cab-51-LfL"/>
                         <outlet property="tandaSeru" destination="wb7-Rv-KIG" id="C3u-Pn-Yyj"/>
                         <outlet property="tandaSeru2" destination="YWo-s9-g8o" id="bJU-Lh-agw"/>
                         <outlet property="tandaSeruKipas" destination="WNH-rD-hJD" id="EGf-3t-Wqz"/>
                         <outlet property="tandaSeruShoppingBag" destination="Z9f-AP-T2z" id="W7r-F9-j8b"/>
-                        <outlet property="viewBody" destination="mkG-GL-Kky" id="njb-Wr-Pti"/>
-                        <outlet property="viewContents" destination="obq-F5-sSd" id="XdZ-Ha-YyV"/>
-                        <outlet property="viewHeaders" destination="NBU-Dd-A0J" id="2Ug-Zc-dGx"/>
+                        <outlet property="viewFact" destination="BhE-6K-F2q" id="dSH-Bx-0bn"/>
+                        <outlet property="viewFactBody" destination="U3e-Ed-auE" id="yEy-cU-CVx"/>
                         <outlet property="viewPopUpBox" destination="262-e9-u1q" id="WzE-g8-TTC"/>
+                        <outlet property="viewQuestions" destination="obq-F5-sSd" id="sBI-nc-SPP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Klc-81-3Kf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -539,7 +617,6 @@
         <image name="asset.TandaSeru" width="56" height="60.5"/>
         <image name="asset.TandaSeruAtas" width="56" height="60.5"/>
         <image name="bg.RuanganNew" width="414" height="896"/>
-        <image name="foodFact1" width="148" height="88"/>
-        <image name="popUpBoxFood" width="382" height="475"/>
+        <image name="newPopUpFrame" width="382" height="511"/>
     </resources>
 </document>
