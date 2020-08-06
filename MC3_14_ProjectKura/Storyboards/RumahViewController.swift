@@ -485,9 +485,9 @@ extension RumahViewController {
         tandaSeruKipas.isHidden = false
         
         checkListrik()
-        checkMakanan()
         checkKipas()
         checkShoppingBag()
+        checkMakanan()
     }
     
     private func perubahanSore() {
@@ -498,9 +498,9 @@ extension RumahViewController {
         tandaSeru.isHidden = false
         
         checkListrik()
-        checkMakanan()
         checkKipas()
         checkShoppingBag()
+        checkMakanan()
     }
     
     private func perubahanMalam() {
@@ -511,9 +511,9 @@ extension RumahViewController {
         tandaSeru.isHidden = false
         
         checkListrik()
-        checkMakanan()
         checkKipas()
         checkShoppingBag()
+        checkMakanan()
     }
     
     private func checkListrik() {
@@ -540,7 +540,7 @@ extension RumahViewController {
     
     private func checkShoppingBag() {
         guard let lastTappedShoppingBag = UserDefaults.standard.object(forKey: "last_tappedShoppingBag") as? Date else { return }
-        print("Last tapped Shopping bag : \(lastTappedShoppingBag.description(with: .current))\n")
+        print("Last tapped Shopping bag : \(lastTappedShoppingBag.description(with: .current))")
         
         let comparison = Calendar.current.compare(lastTappedShoppingBag, to: Date(), toGranularity: .day)
         
@@ -562,7 +562,7 @@ extension RumahViewController {
             let fifteenToday = Calendar.current.date(bySettingHour: 14, minute: 59, second: 59, of: Date())!
             
             if lastTappedMakanan >= sixToday && lastTappedMakanan <= fifteenToday {
-                print("Last Tapped Makanan Time is between 6.00 - 14.59")
+                print("Last Tapped Makanan Time is between 6.00 - 14.59\n")
                 tandaSeru.isHidden = true
             } else {
                 tandaSeru.isHidden = false
@@ -573,7 +573,7 @@ extension RumahViewController {
             
             //       28 jam 3    >= 29 jam 15          28 jam  3      <=  29 jam 18
             if lastTappedMakanan >= fifteenToday && lastTappedMakanan <= eighteenToday {
-                print("Last Tapped Makanan Time is between 15.00 - 17.59")
+                print("Last Tapped Makanan Time is between 15.00 - 17.59\n")
                 tandaSeru.isHidden = true
             } else {
                 tandaSeru.isHidden = false
@@ -593,7 +593,7 @@ extension RumahViewController {
                 }
             } else {
                 if lastTappedMakanan >= eighteenToday {
-                    print("Last Tapped Makanan Time is between 18.00 - 5:59")
+                    print("Last Tapped Makanan Time is between 18.00 - 5:59\n")
                     tandaSeru.isHidden = true
                 } else {
                     tandaSeru.isHidden = false
