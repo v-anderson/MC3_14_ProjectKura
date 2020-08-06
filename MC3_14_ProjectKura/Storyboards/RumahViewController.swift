@@ -72,6 +72,7 @@ class RumahViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Gallery.configureInitialState(toContext: getViewContext())
         initialViewAlpha()
 
         audioPlayer.setupAudioService()

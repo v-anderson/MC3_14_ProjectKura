@@ -77,11 +77,13 @@ class GalleryHeader: UICollectionReusableView {
                 
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = UIFont(name: "GloriaHallelujah", size: 16)
+        titleLabel.textColor = .black
         
         brushTitleImageView.translatesAutoresizingMaskIntoConstraints = false
         
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         subtitleLabel.font = UIFont(name: "GloriaHallelujah", size: 14)
+        subtitleLabel.textColor = .black
         subtitleLabel.numberOfLines = 0
         
         stackView.axis = .vertical
