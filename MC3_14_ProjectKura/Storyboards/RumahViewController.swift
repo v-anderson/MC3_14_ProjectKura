@@ -265,7 +265,7 @@ class RumahViewController: UIViewController {
     }
     
     func showPopUpBox() {
-        kura.image = UIImage(named: "asset.KuraDudukDiSofa")
+        kura.image = UIImage(named: "asset.KuraDudukNormal")
         factConstraint.constant = -380
         constraintAnimation()
         view.gestureRecognizers?.removeAll()
