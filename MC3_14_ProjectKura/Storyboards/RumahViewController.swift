@@ -498,7 +498,7 @@ extension RumahViewController {
         tandaSeru.isHidden = false
         
         checkListrik()
-//        checkMakanan()
+        checkMakanan()
         checkKipas()
         checkShoppingBag()
     }
