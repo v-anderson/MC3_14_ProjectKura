@@ -472,6 +472,19 @@
                                     <action selector="backToHomeDidTap:" destination="cZF-xF-l8X" eventType="touchUpInside" id="3Tq-WT-uRj"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="papanPantai" translatesAutoresizingMaskIntoConstraints="NO" id="cdw-9n-9GW">
+                                <rect key="frame" x="171" y="308.5" width="72" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cdw-9n-9GW" secondAttribute="height" multiplier="18:25" id="In4-UF-ou7"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EwE-iT-7Mz">
+                                <rect key="frame" x="186" y="334" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -489,11 +502,13 @@
                             <constraint firstItem="cEm-hn-PpQ" firstAttribute="centerY" secondItem="l5Q-8J-vdL" secondAttribute="centerY" multiplier="1.25" id="8E5-AQ-fbc"/>
                             <constraint firstItem="8SM-oM-T7j" firstAttribute="centerY" secondItem="l5Q-8J-vdL" secondAttribute="centerY" multiplier="1.75" id="9Dt-2a-Fks"/>
                             <constraint firstItem="QI0-Id-JII" firstAttribute="centerY" secondItem="l5Q-8J-vdL" secondAttribute="centerY" multiplier="1.5" id="BdM-u1-kHh"/>
+                            <constraint firstItem="cdw-9n-9GW" firstAttribute="height" secondItem="BXh-DY-I08" secondAttribute="height" multiplier="0.111607" id="BvT-kw-zfy"/>
                             <constraint firstItem="J3T-CD-uHd" firstAttribute="centerX" secondItem="l5Q-8J-vdL" secondAttribute="centerX" multiplier="0.7" id="Df5-D9-Dan"/>
                             <constraint firstItem="ptg-GT-u55" firstAttribute="leading" secondItem="PZl-VS-Cxc" secondAttribute="leading" id="Ikd-KL-6QP"/>
                             <constraint firstItem="mem-Q9-PM1" firstAttribute="centerY" secondItem="l5Q-8J-vdL" secondAttribute="centerY" multiplier="1.33" id="Irn-Qa-kpT"/>
                             <constraint firstItem="BXh-DY-I08" firstAttribute="trailing" secondItem="l5Q-8J-vdL" secondAttribute="trailing" id="JbO-lJ-fht"/>
                             <constraint firstItem="cEm-hn-PpQ" firstAttribute="height" secondItem="BXh-DY-I08" secondAttribute="height" multiplier="0.0535714" id="K0n-82-pQf"/>
+                            <constraint firstItem="cdw-9n-9GW" firstAttribute="centerX" secondItem="l5Q-8J-vdL" secondAttribute="centerX" id="MnT-iN-4nO"/>
                             <constraint firstItem="ptg-GT-u55" firstAttribute="top" secondItem="l5Q-8J-vdL" secondAttribute="top" id="Mp9-6Z-iYB"/>
                             <constraint firstAttribute="bottom" secondItem="4Od-xf-HFF" secondAttribute="bottom" constant="-1" id="MwH-dP-6YL"/>
                             <constraint firstItem="QI0-Id-JII" firstAttribute="centerX" secondItem="l5Q-8J-vdL" secondAttribute="centerX" multiplier="1.2" id="NQh-fY-Hdp"/>
@@ -539,6 +554,7 @@
                             <constraint firstItem="uOX-2w-Huv" firstAttribute="centerX" secondItem="l5Q-8J-vdL" secondAttribute="centerX" multiplier="1.5" id="xZu-oX-48W"/>
                             <constraint firstItem="2jP-bX-Fj3" firstAttribute="centerY" secondItem="l5Q-8J-vdL" secondAttribute="centerY" multiplier="0.9" id="xbx-GH-epe"/>
                             <constraint firstAttribute="trailing" secondItem="4Od-xf-HFF" secondAttribute="trailing" constant="-1" id="yC4-pK-EO0"/>
+                            <constraint firstItem="cdw-9n-9GW" firstAttribute="centerY" secondItem="l5Q-8J-vdL" secondAttribute="centerY" multiplier="0.8" id="yLQ-BK-EQU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PZl-VS-Cxc"/>
                     </view>
@@ -650,7 +666,7 @@
                                         <rect key="frame" x="39.5" y="135" width="303" height="333"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you finish all of your food?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGt-Jd-vgR">
-                                                <rect key="frame" x="20" y="106" width="263" height="21"/>
+                                                <rect key="frame" x="20" y="94.5" width="263" height="44"/>
                                                 <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="18"/>
                                                 <color key="textColor" red="0.59607843140000005" green="0.37647058820000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -779,7 +795,7 @@
                                         <rect key="frame" x="39.5" y="135" width="303" height="333"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Z9-Ku-9en">
-                                                <rect key="frame" x="16" y="16" width="271" height="178.5"/>
+                                                <rect key="frame" x="16" y="16" width="271" height="209"/>
                                                 <string key="text">If you have leftovers, save any leftovers, rather than throwing them away. Food waste accounts for about 4,4 gigatonnes of greenhouse gas emissions (GHG) per year. To put this in perspective, if food loss and waste were its own country, it would be the world’s third-largest GHG emitter.</string>
                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                                                 <color key="textColor" red="0.28235294119999998" green="0.1764705882" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -919,6 +935,7 @@
         <image name="asset.Diary" width="87" height="46.5"/>
         <image name="asset.TandaSeru" width="56" height="60.5"/>
         <image name="foodFact3" width="148" height="83.5"/>
+        <image name="papanPantai" width="71.5" height="100"/>
         <image name="popUpBoxOnboarding" width="382" height="511"/>
         <image name="reply" width="92.5" height="28"/>
     </resources>
