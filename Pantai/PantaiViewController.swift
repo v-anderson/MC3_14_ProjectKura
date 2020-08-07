@@ -35,6 +35,10 @@ class PantaiViewController: UIViewController {
     @IBOutlet weak var pantaiBG: UIImageView!
     @IBOutlet weak var koral: UIImageView!
     @IBOutlet weak var buttonKeRumah: UIButton!
+    @IBOutlet weak var papan: UIImageView!
+    
+    private let daysLeftLabel = UILabel()
+    private let daysLabel = UILabel()
     
     let audioPlayer = AudioPlayer(filename: "beach-waves", extension: "wav")
     
@@ -55,6 +59,7 @@ class PantaiViewController: UIViewController {
         super.viewDidLoad()
         
         audioPlayer.setupAudioService()
+        createLabelPapan()
         timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(checkBackgroundBySeconds), userInfo: nil, repeats: true)
         buttonKeRumah.transform = CGAffineTransform(translationX: -100, y: 0)
         transitioningDelegate = self
@@ -69,6 +74,7 @@ class PantaiViewController: UIViewController {
     
     @objc func checkBackgroundBySeconds () {
         setupBackgroundByScore()
+        configurePapan()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,6 +91,8 @@ class PantaiViewController: UIViewController {
         print("")
         
         setupBackgroundByScore()
+        configurePapan()
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -152,6 +160,73 @@ class PantaiViewController: UIViewController {
             print("Last score: \(lastScore)\n")
             
             updateBackgroundWith(score: lastScore)
+        }
+    }
+    
+    private func createLabelPapan() {
+        daysLeftLabel.translatesAutoresizingMaskIntoConstraints = false
+        daysLeftLabel.text = ""
+        daysLeftLabel.textAlignment = .center
+        daysLeftLabel.textColor = UIColor(red: 123/255, green: 71/255, blue: 23/255, alpha: 1)
+        daysLeftLabel.font = UIFont(name: "Rubik-Bold", size: 22)
+        
+        let moreLabel = UILabel()
+        moreLabel.translatesAutoresizingMaskIntoConstraints = false
+        moreLabel.text = "more"
+        moreLabel.textColor = UIColor(red: 123/255, green: 71/255, blue: 23/255, alpha: 1)
+        moreLabel.font = UIFont(name: "Rubik-Medium", size: 9)
+        
+        daysLabel.translatesAutoresizingMaskIntoConstraints = false
+        daysLabel.text = "days"
+        daysLabel.textColor = UIColor(red: 123/255, green: 71/255, blue: 23/255, alpha: 1)
+        daysLabel.font = UIFont(name: "Rubik-Medium", size: 10)
+        
+        let verticalStack = UIStackView(arrangedSubviews: [moreLabel, daysLabel])
+        verticalStack.translatesAutoresizingMaskIntoConstraints = false
+        verticalStack.axis = .vertical
+        verticalStack.spacing = -3
+        
+//        let descriptionLabel = UILabel()
+//        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+//        descriptionLabel.text = "Until the beach changes"
+//        descriptionLabel.textColor = UIColor(red: 123/255, green: 71/255, blue: 23/255, alpha: 1)
+//        descriptionLabel.font = UIFont(name: "Rubik-Regular", size: 5)
+        
+        papan.addSubview(daysLeftLabel)
+        papan.addSubview(verticalStack)
+//        papan.addSubview(descriptionLabel)
+        
+        NSLayoutConstraint(item: daysLeftLabel, attribute: .trailing, relatedBy: .equal, toItem: papan, attribute: .centerX, multiplier: 0.82, constant: 0).isActive = true
+        NSLayoutConstraint(item: daysLeftLabel, attribute: .centerY, relatedBy: .equal, toItem: papan, attribute: .centerY, multiplier: 0.73, constant: 0).isActive = true
+        NSLayoutConstraint(item: verticalStack, attribute: .leading, relatedBy: .equal, toItem: papan, attribute: .centerX, multiplier: 0.9, constant: 0).isActive = true
+        
+        NSLayoutConstraint.activate([
+            verticalStack.topAnchor.constraint(equalTo: daysLeftLabel.topAnchor, constant: 2),
+//
+//            descriptionLabel.topAnchor.constraint(equalTo: verticalStack.bottomAnchor, constant: 2),
+//            descriptionLabel.centerXAnchor.constraint(equalTo: papan.centerXAnchor, constant: 1)
+        ])
+    }
+    
+    private func configurePapan() {
+        guard let lastUpdated = UserDefaults.standard.object(forKey: "last_updated") as? Date else { return }
+
+        let lastUpdateDate = Calendar.current.startOfDay(for: lastUpdated)
+        let daysSinceLastUpdate = Date.daysAfter(date: lastUpdateDate)
+        
+        switch daysSinceLastUpdate {
+        case 0:
+            daysLeftLabel.text = "3"
+            daysLabel.text = "days"
+        case 1:
+            daysLeftLabel.text = "2"
+            daysLabel.text = "days"
+        case 2:
+            daysLeftLabel.text = "1"
+            daysLabel.text = "day"
+        default:
+            daysLeftLabel.text = "3"
+            daysLabel.text = "days"
         }
     }
 }

@@ -61,6 +61,7 @@ class RumahViewController: UIViewController {
     var dateComponents = DateComponents()
     var randomQuestions: Int?
     var factType: FactType?
+    var isAnimating = false
     
     enum FactType {
         case food
@@ -127,6 +128,14 @@ class RumahViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func openDiary(_ sender: UIButton) {
+        UIView.transition(with: kura, duration: 0.2, options: .transitionCrossDissolve, animations: {
+            self.kura.image = UIImage(named: "asset.KuraDudukNormal")
+        }, completion: nil)
+        
+        factConstraint.constant = -380
+        constraintAnimation(initial: false)
+        view.gestureRecognizers?.removeAll()
+        
         let rumahStoryboard = UIStoryboard(name: "Rumah", bundle: nil)
         guard let destinationVC = rumahStoryboard.instantiateViewController(identifier: "DiaryViewController") as? DiaryViewController else { return }
         destinationVC.modalPresentationStyle = .fullScreen
@@ -281,9 +290,13 @@ class RumahViewController: UIViewController {
         viewFactBody.isHidden = true
         lblQuestionsTitle.numberOfLines = 0
         lblQuestionsTitle.adjustsFontSizeToFitWidth = true
-        kura.image = UIImage(named: "asset.KuraDudukNormal")
+        
+        UIView.transition(with: kura, duration: 0.2, options: .transitionCrossDissolve, animations: {
+            self.kura.image = UIImage(named: "asset.KuraDudukNormal")
+        }, completion: nil)
+        
         factConstraint.constant = -380
-        constraintAnimation()
+        constraintAnimation(initial: false)
         view.gestureRecognizers?.removeAll()
 
         viewPopUpBox.alpha = 0
@@ -296,6 +309,7 @@ class RumahViewController: UIViewController {
     }
     
     @IBAction func btnGoToFactBody(_ sender: Any) {
+        viewFact.isHidden = true
         switch factType {
         case .food:
             foodFactBody()
@@ -311,7 +325,6 @@ class RumahViewController: UIViewController {
     }
     
     @IBAction func btnSkip(_ sender: Any) {
-        print("mashuuuuk")
         tapToDismiss()
     }
     
@@ -321,7 +334,10 @@ class RumahViewController: UIViewController {
     
     //
     @objc func randomFact() {
-        kura.image = UIImage(named: "asset.KuraDudukNoleh")
+        UIView.transition(with: kura, duration: 0.2, options: .transitionCrossDissolve, animations: {
+            self.kura.image = UIImage(named: "asset.KuraDudukNoleh")
+        }, completion: nil)
+        
         let index = Int.random(in: 0..<facts.count)
         factLabel.text = facts[index]
         
@@ -332,14 +348,13 @@ class RumahViewController: UIViewController {
         } else {
             factWidthConstraint.constant = 0
         }
-        constraintAnimation()
+        constraintAnimation(initial: false)
         
         if factConstraint.constant == 50 {
             typingAnimation(text: facts[index])
         }
-        
         factConstraint.constant = 50
-        constraintAnimation()
+        constraintAnimation(initial: true)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(closeFactChatBox))
         view.addGestureRecognizer(tap)
@@ -347,14 +362,18 @@ class RumahViewController: UIViewController {
     }
     
     @objc func closeFactChatBox() {
-        view.gestureRecognizers?.removeAll()
         hideFact()
     }
     
     func hideFact() {
-        kura.image = UIImage(named: "asset.KuraDudukNormal")
-        factConstraint.constant = -380
-        constraintAnimation()
+        if !isAnimating {
+            view.gestureRecognizers?.removeAll()
+            UIView.transition(with: kura, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                self.kura.image = UIImage(named: "asset.KuraDudukNormal")
+            }, completion: nil)
+            factConstraint.constant = -380
+            constraintAnimation(initial: false)
+        }
     }
     
     func typingAnimation(text: String) {
@@ -372,9 +391,12 @@ class RumahViewController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
-    func constraintAnimation() {
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
+    func constraintAnimation(initial: Bool) {
+        if initial { isAnimating = true }
+        UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
+        }, completion: { _ in
+            if initial { self.isAnimating = false }
         })
     }
     
@@ -452,7 +474,6 @@ class RumahViewController: UIViewController {
     func electricFactBody() {
         viewFactBody.isHidden = false
         if let index = randomQuestions {
-            print("fat electric")
             lblFactBody.text = electricityQuestions[index].factBody
             lblFactBody.adjustsFontSizeToFitWidth = true
             lblFactBody.numberOfLines = 0
@@ -472,7 +493,6 @@ class RumahViewController: UIViewController {
     func shoppingBagFactBody() {
         viewFactBody.isHidden = false
         if let index = randomQuestions {
-            print("fact shop bag")
             lblFactBody.text = shoppingBagQuestions[index].factBody
             lblFactBody.adjustsFontSizeToFitWidth = true
             lblFactBody.numberOfLines = 0
@@ -492,7 +512,6 @@ class RumahViewController: UIViewController {
     func kipasFactBody() {
         viewFactBody.isHidden = false
         if let index = randomQuestions {
-            print("fact kipas")
             lblFactBody.text = kipasQuestions[index].factBody
             lblFactBody.adjustsFontSizeToFitWidth = true
             lblFactBody.numberOfLines = 0
@@ -529,9 +548,9 @@ extension RumahViewController {
         tandaSeruKipas.isHidden = false
         
         checkListrik()
-        checkMakanan()
         checkKipas()
         checkShoppingBag()
+        checkMakanan()
     }
     
     private func perubahanSore() {
@@ -542,9 +561,9 @@ extension RumahViewController {
         tandaSeru.isHidden = false
         
         checkListrik()
-        checkMakanan()
         checkKipas()
         checkShoppingBag()
+        checkMakanan()
     }
     
     private func perubahanMalam() {
@@ -555,9 +574,9 @@ extension RumahViewController {
         tandaSeru.isHidden = false
         
         checkListrik()
-        checkMakanan()
         checkKipas()
         checkShoppingBag()
+        checkMakanan()
     }
     
     private func checkListrik() {
@@ -584,7 +603,7 @@ extension RumahViewController {
     
     private func checkShoppingBag() {
         guard let lastTappedShoppingBag = UserDefaults.standard.object(forKey: "last_tappedShoppingBag") as? Date else { return }
-        print("Last tapped Shopping bag : \(lastTappedShoppingBag.description(with: .current))\n")
+        print("Last tapped Shopping bag : \(lastTappedShoppingBag.description(with: .current))")
         
         let comparison = Calendar.current.compare(lastTappedShoppingBag, to: Date(), toGranularity: .day)
         
@@ -606,7 +625,7 @@ extension RumahViewController {
             let fifteenToday = Calendar.current.date(bySettingHour: 14, minute: 59, second: 59, of: Date())!
             
             if lastTappedMakanan >= sixToday && lastTappedMakanan <= fifteenToday {
-                print("Last Tapped Makanan Time is between 6.00 - 14.59")
+                print("Last Tapped Makanan Time is between 6.00 - 14.59\n")
                 tandaSeru.isHidden = true
             } else {
                 tandaSeru.isHidden = false
@@ -617,7 +636,7 @@ extension RumahViewController {
             
             //       28 jam 3    >= 29 jam 15          28 jam  3      <=  29 jam 18
             if lastTappedMakanan >= fifteenToday && lastTappedMakanan <= eighteenToday {
-                print("Last Tapped Makanan Time is between 15.00 - 17.59")
+                print("Last Tapped Makanan Time is between 15.00 - 17.59\n")
                 tandaSeru.isHidden = true
             } else {
                 tandaSeru.isHidden = false
@@ -637,7 +656,7 @@ extension RumahViewController {
                 }
             } else {
                 if lastTappedMakanan >= eighteenToday {
-                    print("Last Tapped Makanan Time is between 18.00 - 5:59")
+                    print("Last Tapped Makanan Time is between 18.00 - 5:59\n")
                     tandaSeru.isHidden = true
                 } else {
                     tandaSeru.isHidden = false

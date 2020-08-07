@@ -194,7 +194,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4z-r1-cgO">
                                                         <rect key="frame" x="0.0" y="0.0" width="286" height="40"/>
-                                                        <color key="backgroundColor" red="0.70881849529999996" green="0.52099400760000003" blue="0.2665874064" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" red="0.70980392156862748" green="0.52156862745098043" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="Ehw-Pz-G9f"/>
                                                         </constraints>
@@ -259,8 +259,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BhE-6K-F2q">
                                         <rect key="frame" x="44" y="324" width="326" height="336"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xsk-fj-mFh">
-                                                <rect key="frame" x="20" y="211" width="286" height="95"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="xsk-fj-mFh">
+                                                <rect key="frame" x="20" y="236" width="286" height="84"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8z-Yo-8DZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="286" height="40"/>
@@ -285,7 +285,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfc-fs-LbQ">
-                                                        <rect key="frame" x="0.0" y="55" width="286" height="40"/>
+                                                        <rect key="frame" x="0.0" y="44" width="286" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="Mj3-hh-aLH"/>
                                                         </constraints>
@@ -308,19 +308,18 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huY-bc-fUB">
-                                                <rect key="frame" x="20" y="20" width="286" height="171"/>
+                                                <rect key="frame" x="20" y="16" width="286" height="200"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sfs-m0-ILW">
-                                                        <rect key="frame" x="0.0" y="0.0" width="286" height="98"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="286" height="127"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdN-Ev-H8d">
-                                                        <rect key="frame" x="0.0" y="108" width="286" height="63"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tdN-Ev-H8d">
+                                                        <rect key="frame" x="0.0" y="137" width="286" height="63"/>
                                                         <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="16"/>
                                                         <color key="textColor" red="0.52869641779999998" green="0.39056351779999998" blue="0.2234818935" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstItem="sfs-m0-ILW" firstAttribute="top" secondItem="huY-bc-fUB" secondAttribute="top" id="1hX-ru-ldK"/>
                                                     <constraint firstItem="tdN-Ev-H8d" firstAttribute="top" secondItem="sfs-m0-ILW" secondAttribute="bottom" constant="10" id="45c-MK-Hv3"/>
@@ -333,33 +332,32 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="huY-bc-fUB" secondAttribute="trailing" constant="20" id="1Wk-ad-BmP"/>
                                             <constraint firstItem="xsk-fj-mFh" firstAttribute="top" secondItem="huY-bc-fUB" secondAttribute="bottom" constant="20" id="6Zb-HT-Oyt"/>
-                                            <constraint firstAttribute="bottom" secondItem="xsk-fj-mFh" secondAttribute="bottom" constant="30" id="Rda-yh-FCm"/>
+                                            <constraint firstAttribute="bottom" secondItem="xsk-fj-mFh" secondAttribute="bottom" constant="16" id="Rda-yh-FCm"/>
                                             <constraint firstItem="huY-bc-fUB" firstAttribute="leading" secondItem="BhE-6K-F2q" secondAttribute="leading" constant="20" id="aJr-Un-rP0"/>
                                             <constraint firstItem="xsk-fj-mFh" firstAttribute="leading" secondItem="BhE-6K-F2q" secondAttribute="leading" constant="20" id="kNN-83-EPU"/>
-                                            <constraint firstItem="huY-bc-fUB" firstAttribute="top" secondItem="BhE-6K-F2q" secondAttribute="top" constant="20" id="pmI-BP-CI3"/>
+                                            <constraint firstItem="huY-bc-fUB" firstAttribute="top" secondItem="BhE-6K-F2q" secondAttribute="top" constant="16" id="pmI-BP-CI3"/>
                                             <constraint firstAttribute="trailing" secondItem="xsk-fj-mFh" secondAttribute="trailing" constant="20" id="tcy-im-fKs"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U3e-Ed-auE">
                                         <rect key="frame" x="44" y="324" width="326" height="336"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60O-k8-qll">
-                                                <rect key="frame" x="20" y="20" width="286" height="186"/>
-                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="16"/>
-                                                <nil key="textColor"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="60O-k8-qll">
+                                                <rect key="frame" x="20" y="20" width="286" height="20"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                                <color key="textColor" red="0.27843137254901962" green="0.15686274509803921" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKd-7f-eBe">
-                                                <rect key="frame" x="80" y="256" width="166" height="40"/>
-                                                <color key="backgroundColor" red="0.74222666029999995" green="0.5112794638" blue="0.2131999135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="80" y="264" width="166" height="40"/>
+                                                <color key="backgroundColor" red="0.74117647058823533" green="0.50980392156862742" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="dak-v3-SlC"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="16"/>
+                                                <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="16"/>
                                                 <state key="normal" title="Got It!">
                                                     <color key="titleColor" red="1" green="0.94509803921568625" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -373,10 +371,9 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="wKd-7f-eBe" secondAttribute="bottom" constant="40" id="X9f-jZ-bYJ"/>
-                                            <constraint firstItem="wKd-7f-eBe" firstAttribute="top" secondItem="60O-k8-qll" secondAttribute="bottom" constant="50" id="Y7i-xi-dvH"/>
+                                            <constraint firstAttribute="bottom" secondItem="wKd-7f-eBe" secondAttribute="bottom" constant="32" id="X9f-jZ-bYJ"/>
+                                            <constraint firstItem="wKd-7f-eBe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="60O-k8-qll" secondAttribute="bottom" constant="20" id="Y7i-xi-dvH"/>
                                             <constraint firstItem="wKd-7f-eBe" firstAttribute="leading" secondItem="U3e-Ed-auE" secondAttribute="leading" constant="80" id="hjo-gt-EVp"/>
                                             <constraint firstAttribute="trailing" secondItem="60O-k8-qll" secondAttribute="trailing" constant="20" id="hoa-yy-Q43"/>
                                             <constraint firstAttribute="trailing" secondItem="wKd-7f-eBe" secondAttribute="trailing" constant="80" id="i2E-Kt-Nlo"/>
