@@ -22,6 +22,8 @@ class PantaiOnboardingViewController: UIViewController {
     @IBOutlet weak var secondGrayFish: UIImageView!
     @IBOutlet var filter: UIImageView!
     
+    @IBOutlet weak var papan: UIImageView!
+    
     @IBOutlet weak var fishShadow: UIImageView!
     @IBOutlet weak var fishShadow2: UIImageView!
     @IBOutlet weak var fishShadow3: UIImageView!
@@ -33,8 +35,11 @@ class PantaiOnboardingViewController: UIViewController {
     @IBOutlet weak var koral: UIImageView!
     @IBOutlet var buttonBackToHomeConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var filterGelap: UIView!
     @IBOutlet var kuraChatBox: UILabel!
     @IBOutlet var kuraChatBoxConstraint: NSLayoutConstraint!
+    
+    
     
     let audioPlayer = AudioPlayer(filename: "beach-waves", extension: "wav")
     
@@ -50,8 +55,12 @@ class PantaiOnboardingViewController: UIViewController {
     var textIndex = 0
     var isItFromHome: Bool?
     
+    let daysLeftLabel = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        filterGelap.isHidden = true
         
         transitioningDelegate = self
         
@@ -65,6 +74,41 @@ class PantaiOnboardingViewController: UIViewController {
                 filter.alpha = 0
                 pantaiBG.image = UIImage(named: "Island Pagi Bersih")
                 textIndex = 3
+                
+                daysLeftLabel.translatesAutoresizingMaskIntoConstraints = false
+                daysLeftLabel.text = "3"
+                daysLeftLabel.textAlignment = .center
+                daysLeftLabel.textColor = UIColor(red: 123/255, green: 71/255, blue: 23/255, alpha: 1)
+                daysLeftLabel.font = UIFont(name: "Rubik-Bold", size: 22)
+                
+                papan.isHidden = false
+                let moreLabel = UILabel()
+                moreLabel.translatesAutoresizingMaskIntoConstraints = false
+                moreLabel.text = "more"
+                moreLabel.textColor = UIColor(red: 123/255, green: 71/255, blue: 23/255, alpha: 1)
+                moreLabel.font = UIFont(name: "Rubik-Medium", size: 9)
+                
+                let daysLabel = UILabel()
+                daysLabel.translatesAutoresizingMaskIntoConstraints = false
+                daysLabel.text = "days"
+                daysLabel.textColor = UIColor(red: 123/255, green: 71/255, blue: 23/255, alpha: 1)
+                daysLabel.font = UIFont(name: "Rubik-Medium", size: 10)
+                
+                let verticalStack = UIStackView(arrangedSubviews: [moreLabel, daysLabel])
+                verticalStack.translatesAutoresizingMaskIntoConstraints = false
+                verticalStack.axis = .vertical
+                verticalStack.spacing = -3
+                
+                papan.addSubview(daysLeftLabel)
+                papan.addSubview(verticalStack)
+                
+                NSLayoutConstraint(item: daysLeftLabel, attribute: .trailing, relatedBy: .equal, toItem: papan, attribute: .centerX, multiplier: 0.82, constant: 0).isActive = true
+                NSLayoutConstraint(item: daysLeftLabel, attribute: .centerY, relatedBy: .equal, toItem: papan, attribute: .centerY, multiplier: 0.73, constant: 0).isActive = true
+                NSLayoutConstraint(item: verticalStack, attribute: .leading, relatedBy: .equal, toItem: papan, attribute: .centerX, multiplier: 0.9, constant: 0).isActive = true
+                
+                NSLayoutConstraint.activate([
+                    verticalStack.topAnchor.constraint(equalTo: daysLeftLabel.topAnchor, constant: 2),
+                ])
             }
         }
     
@@ -111,7 +155,19 @@ class PantaiOnboardingViewController: UIViewController {
 
         if textIndex == 3 && isItFromHome == nil {
             dismiss(animated: true)
+        } else if textIndex == 4 {
+            
+            filterGelap.isHidden = false
+            filterGelap.alpha = 0
+            UIView.animate(withDuration: 1) {
+                self.filterGelap.alpha = 0.6
+            }
+            typingAnimation(text: texts[textIndex])
         } else if textIndex == texts.count - 1 {
+            UIView.animate(withDuration: 1) {
+                self.filterGelap.alpha = 0
+            }
+            
             UserDefaults.standard.set(nil, forKey: "fromHome")
             view.gestureRecognizers?.removeAll()
             typingAnimation(text: texts[textIndex])

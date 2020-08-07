@@ -163,6 +163,53 @@ class PantaiViewController: UIViewController {
         }
     }
     
+    private func createLabelPapanPopUp() {
+        
+            
+            daysLeftLabel.translatesAutoresizingMaskIntoConstraints = false
+            daysLeftLabel.text = ""
+            daysLeftLabel.textAlignment = .center
+            daysLeftLabel.textColor = UIColor(red: 123/255, green: 71/255, blue: 23/255, alpha: 1)
+            daysLeftLabel.font = UIFont(name: "Rubik-Bold", size: 22)
+            
+            let moreLabel = UILabel()
+            moreLabel.translatesAutoresizingMaskIntoConstraints = false
+            moreLabel.text = "more"
+            moreLabel.textColor = UIColor(red: 123/255, green: 71/255, blue: 23/255, alpha: 1)
+            moreLabel.font = UIFont(name: "Rubik-Medium", size: 9)
+            
+            daysLabel.translatesAutoresizingMaskIntoConstraints = false
+            daysLabel.text = "days"
+            daysLabel.textColor = UIColor(red: 123/255, green: 71/255, blue: 23/255, alpha: 1)
+            daysLabel.font = UIFont(name: "Rubik-Medium", size: 10)
+            
+            let verticalStack = UIStackView(arrangedSubviews: [moreLabel, daysLabel])
+            verticalStack.translatesAutoresizingMaskIntoConstraints = false
+            verticalStack.axis = .vertical
+            verticalStack.spacing = -3
+            
+    //        let descriptionLabel = UILabel()
+    //        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+    //        descriptionLabel.text = "Until the beach changes"
+    //        descriptionLabel.textColor = UIColor(red: 123/255, green: 71/255, blue: 23/255, alpha: 1)
+    //        descriptionLabel.font = UIFont(name: "Rubik-Regular", size: 5)
+            
+            papan.addSubview(daysLeftLabel)
+            papan.addSubview(verticalStack)
+    //        papan.addSubview(descriptionLabel)
+            
+            NSLayoutConstraint(item: daysLeftLabel, attribute: .trailing, relatedBy: .equal, toItem: papan, attribute: .centerX, multiplier: 0.82, constant: 0).isActive = true
+            NSLayoutConstraint(item: daysLeftLabel, attribute: .centerY, relatedBy: .equal, toItem: papan, attribute: .centerY, multiplier: 0.73, constant: 0).isActive = true
+            NSLayoutConstraint(item: verticalStack, attribute: .leading, relatedBy: .equal, toItem: papan, attribute: .centerX, multiplier: 0.9, constant: 0).isActive = true
+            
+            NSLayoutConstraint.activate([
+                verticalStack.topAnchor.constraint(equalTo: daysLeftLabel.topAnchor, constant: 2),
+    //
+    //            descriptionLabel.topAnchor.constraint(equalTo: verticalStack.bottomAnchor, constant: 2),
+    //            descriptionLabel.centerXAnchor.constraint(equalTo: papan.centerXAnchor, constant: 1)
+            ])
+        }
+    
     private func createLabelPapan() {
         daysLeftLabel.translatesAutoresizingMaskIntoConstraints = false
         daysLeftLabel.text = ""
