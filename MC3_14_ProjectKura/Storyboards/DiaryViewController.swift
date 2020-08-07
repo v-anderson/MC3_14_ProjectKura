@@ -20,6 +20,8 @@ class DiaryViewController: UIViewController {
     @IBOutlet weak var placeHolder: UILabel!
     @IBOutlet weak var kuraHeart: UILabel!
     
+    private let labelTanggal = UILabel()
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .darkContent
     }
@@ -28,6 +30,8 @@ class DiaryViewController: UIViewController {
         super.viewDidLoad()
         
         transitioningDelegate = self
+        
+        NotificationCenter.default.addObserver(self, selector:#selector(updateDiary), name: UIApplication.willEnterForegroundNotification, object: nil)
         
         guard let score = getScore() else { return }
         
@@ -50,7 +54,6 @@ class DiaryViewController: UIViewController {
 //        formatter.dateFormat = "EEEE, d MMMM"
         // Monday, 6 January
         
-        let labelTanggal = UILabel()
         labelTanggal.translatesAutoresizingMaskIntoConstraints = false
         labelTanggal.text = formatter.string(from: tanggal)
         
@@ -94,6 +97,43 @@ class DiaryViewController: UIViewController {
         }
         isiDiaryText.textAlignment = .justified
         isiDiaryText.adjustsFontForContentSizeCategory = true
+    }
+    
+    @objc private func updateDiary() {
+        guard let score = getScore() else { return }
+        guard let randomIndex = UserDefaults.standard.object(forKey: "indexDiaryImage") as? Int else {return}
+        guard let tanggal = UserDefaults.standard.object(forKey: "last_updated") as? Date else {return}
+        guard let diaryRedHeart = diaryContents[.redHeart] else {return}
+        guard let diaryBlueHeart = diaryContents[.blueHeart] else {return}
+        guard let diaryYellowHeart = diaryContents[.yellowHeart] else {return}
+        guard let diaryBlackHeart = diaryContents[.blackHeart] else {return}
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        labelTanggal.text = formatter.string(from: tanggal)
+
+        placeHolder.isHidden = true
+        kuraHeart.isHidden = false
+        
+        if score < 4 {
+            diaryImage.image = UIImage(named: diaryBlackHeart.diaryImage[randomIndex])
+            heartType.image = UIImage(named: "blackHeart")
+            isiDiaryText.text = diaryBlackHeart.isiDiary[randomIndex]
+            
+        } else if score < 8 {
+            diaryImage.image = UIImage(named: diaryYellowHeart.diaryImage[randomIndex])
+            heartType.image = UIImage(named: "yellowHeart")
+            isiDiaryText.text = diaryYellowHeart.isiDiary[randomIndex]
+            
+        } else if score < 12 {
+            diaryImage.image = UIImage(named: diaryBlueHeart.diaryImage[randomIndex])
+            heartType.image = UIImage(named: "blueHeart")
+            isiDiaryText.text = diaryBlueHeart.isiDiary[randomIndex]
+        } else {
+            diaryImage.image = UIImage(named: diaryRedHeart.diaryImage[randomIndex])
+            heartType.image = UIImage(named: "redHeart")
+            isiDiaryText.text = diaryRedHeart.isiDiary[randomIndex]
+        }
     }
     
 

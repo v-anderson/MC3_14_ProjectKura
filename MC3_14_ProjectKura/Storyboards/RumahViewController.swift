@@ -453,7 +453,6 @@ class RumahViewController: UIViewController {
     func foodFactBody() {
         viewFactBody.isHidden = false
         if let index = randomQuestions {
-            print("fct food")
             lblFactBody.text = FoodQuestions[index].factBody
             lblFactBody.adjustsFontSizeToFitWidth = true
             lblFactBody.numberOfLines = 0
