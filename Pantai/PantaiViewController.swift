@@ -78,7 +78,7 @@ class PantaiViewController: UIViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
-        print("Timer invalidated, observers removed")
+        print("Timer invalidated, observers removed\n")
     }
     
     @objc func checkBackgroundBySeconds () {

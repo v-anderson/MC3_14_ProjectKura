@@ -85,7 +85,7 @@ class RumahViewController: UIViewController {
         super.viewDidLoad()
         Gallery.configureInitialState(toContext: getViewContext())
         initialViewAlpha()
-
+        
         audioPlayer.setupAudioService()
         audioPlayer.playSound(withVolume: 1.0)
         transitioningDelegate = self
@@ -108,7 +108,7 @@ class RumahViewController: UIViewController {
         
         
     }
-
+    
     @objc func checkBackgroundBySeconds () {
         checkTimeOfDay()
         setupBackgroundByScore()
@@ -117,13 +117,13 @@ class RumahViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         checkTimeOfDay()
-         setupBackgroundByScore()
+        setupBackgroundByScore()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         hideButtonKePantai()
-       
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -173,7 +173,7 @@ class RumahViewController: UIViewController {
         factType = .shoppingBag
         shoppingBagQuestion()
     }
-
+    
     @IBAction func tanyaKipas(_ sender: Any) {
         tandaSeruKipas.isHidden = true
         randomQuestions = Int.random(in: 0..<kipasQuestions.count)
@@ -261,14 +261,14 @@ class RumahViewController: UIViewController {
             var correctIndex : Int
             
             switch type {
-                case .food:
-                    correctIndex = FoodQuestions[index].goodAnswer
-                case .electric:
-                    correctIndex = electricityQuestions[index].goodAnswer
-                case .kipas:
-                    correctIndex = kipasQuestions[index].goodAnswer
-                case .shoppingBag:
-                    correctIndex = shoppingBagQuestions[index].goodAnswer
+            case .food:
+                correctIndex = FoodQuestions[index].goodAnswer
+            case .electric:
+                correctIndex = electricityQuestions[index].goodAnswer
+            case .kipas:
+                correctIndex = kipasQuestions[index].goodAnswer
+            case .shoppingBag:
+                correctIndex = shoppingBagQuestions[index].goodAnswer
             }
             
             if correctIndex == buttonIndex {
@@ -286,7 +286,7 @@ class RumahViewController: UIViewController {
             // Score not nil, saatnya update
             print("Final score: \(score)\n")
             animateHiglightDiary()
-    
+            
             // Update last updated date to today
             UserDefaults.standard.set(Date(), forKey: "last_updated")
         } 
@@ -318,7 +318,7 @@ class RumahViewController: UIViewController {
         factConstraint.constant = -380
         constraintAnimation(initial: false)
         view.gestureRecognizers?.removeAll()
-
+        
         viewPopUpBox.alpha = 0
         viewPopUpBox.transform = CGAffineTransform(scaleX: 0, y: 0)
         UIView.animate(withDuration: 0.3) {
@@ -623,7 +623,7 @@ extension RumahViewController {
     private func checkKipas() {
         guard let lastTappedKipas = UserDefaults.standard.object(forKey: "last_tappedKipas") as? Date else { return }
         print("Last tapped Kipas        : \(lastTappedKipas.description(with: .current))")
-                
+        
         let comparison = Calendar.current.compare(lastTappedKipas, to: Date(), toGranularity: .day)
         
         if comparison == .orderedSame {
@@ -677,7 +677,7 @@ extension RumahViewController {
             let eighteenYesterday = Calendar.current.date(bySettingHour: 18, minute: 0, second: 0, of: yesterday)!
             let zeroToday = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
             let sixToday = Calendar.current.date(bySettingHour: 6, minute: 0, second: 0, of: Date())!
-
+            
             if Date() >= zeroToday && Date() < sixToday {
                 if lastTappedMakanan >= eighteenYesterday && lastTappedMakanan < sixToday {
                     tandaSeru.isHidden = true
