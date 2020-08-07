@@ -263,6 +263,8 @@ extension CafeViewController {
                 score *= 5
                 print("Onboarding score: \(score)")
                 UserDefaults.standard.set(score, forKey: "last_score")
+                UserDefaults.standard.set(Date(), forKey: "last_updated")
+                
                 audioPlayer.stopSound()
                 changePage(identifier: "RumahOnboardingViewController")
             } else {
@@ -275,6 +277,7 @@ extension CafeViewController {
                             self.addNotif(hour: 6, minute: 00)
                             self.addNotif(hour: 15, minute: 00)
                             self.addNotif(hour: 18, minute: 00)
+                            self.addDiaryNotif()
                             DispatchQueue.main.async {
                                 self.chatboxWidthConstraint.constant = 0
                                 self.showAnswer(answerType: .single)
@@ -303,7 +306,28 @@ extension CafeViewController {
         
     }
     
+    func addDiaryNotif() {
+        let notifContent = UNMutableNotificationContent()
+        let userName = (UserDefaults.standard.object(forKey: "user_name") as? String) ?? ""
+        
+        notifContent.title = "Hi \(userName), have you checked Kura's diary?"
+        notifContent.body = "Let’s see what Kura thinks of you 🤔"
 
+        notifContent.sound = .default
+
+        let threeDaysFromNow = Calendar.current.date(byAdding: .day, value: 3, to: Date())!
+        var dateComponents = Calendar.current.dateComponents([.hour], from: threeDaysFromNow)
+        dateComponents.hour = 7
+  
+        let notifTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: notifContent, trigger: notifTrigger)
+        
+        userNotifCenter.add(request) { (error) in
+            if let err = error {
+                print("Notif error :",err)
+            }
+        }
+    }
     
     func addNotif(hour: Int, minute: Int) {
         let notifContent = UNMutableNotificationContent()

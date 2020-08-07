@@ -69,13 +69,46 @@ extension UIViewController {
             }
         }
         
+        let userNotifCenter = UNUserNotificationCenter.current()
+        userNotifCenter.requestAuthorization(options: [.alert,.badge,.sound]) { (granted, err) in
+            if granted {
+                let notifContent = UNMutableNotificationContent()
+                let userName = (UserDefaults.standard.object(forKey: "user_name") as? String) ?? ""
+                
+                notifContent.title = "Hi \(userName), have you checked Kura's diary!"
+                notifContent.body = "Let’s see what Kura think of you 🤔"
+
+                notifContent.sound = .default
+
+                let threeDaysFromNow = Calendar.current.date(byAdding: .day, value: 3, to: Date())!
+                var dateComponents = Calendar.current.dateComponents([.hour], from: threeDaysFromNow)
+                dateComponents.hour = 7
+                
+                let notifTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+                let request = UNNotificationRequest(identifier: UUID().uuidString, content: notifContent, trigger: notifTrigger)
+                
+                userNotifCenter.add(request) { (error) in
+                    if let err = error {
+                        print("Notif error :",err)
+                    }
+                }
+            }
+        }
+        
         return Int(finalScore)
+        
     }
             
     /// Returns the persistent container's view context
     func getViewContext() -> NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
+    }
+
+    func tes() {
+        
+        
+        
     }
     
     /// Returns true if current time is between 06.00 - 14:59

@@ -48,7 +48,7 @@ class PantaiOnboardingViewController: UIViewController {
         "Me and my family have a job in taking care of the beach. It has been our duty to protect the beaches. We go around to another beach and help the other turtles.",
         "Now that I’ve grown up, it’s time for me to take care of the beach on my own. But it seems to be overwhelming doing this by myself.",
         "The beach will get dirtier if you keep on doing non-eco friendly actions. Try changing your actions to keep the beach clean",
-        "The beach condition will change every 3 days according to your daily habit.",
+        "The beach condition will change every 3 days according to your daily habit. You can tap the sign to zoom in.",
         "Now let’s head back home again by clicking the home sign."
     ]
     
