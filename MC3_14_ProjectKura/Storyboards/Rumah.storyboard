@@ -70,8 +70,14 @@
                                     <constraint firstAttribute="width" secondItem="fL2-84-erP" secondAttribute="height" multiplier="188:179" id="C7y-qc-oVO"/>
                                 </constraints>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="highlightDiary" translatesAutoresizingMaskIntoConstraints="NO" id="I1K-uC-HLW">
+                                <rect key="frame" x="177.5" y="630" width="121" height="66.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="I1K-uC-HLW" secondAttribute="height" multiplier="20:11" id="0kQ-aM-K8f"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BpI-tz-cYX">
-                                <rect key="frame" x="204.5" y="640" width="88" height="46.5"/>
+                                <rect key="frame" x="194" y="640" width="88" height="46.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="BpI-tz-cYX" secondAttribute="height" multiplier="87:46" id="ZpZ-jj-bon"/>
                                 </constraints>
@@ -415,6 +421,7 @@
                             <constraint firstItem="YZP-eJ-fU1" firstAttribute="trailing" secondItem="DfH-MW-HEL" secondAttribute="trailing" constant="-380" id="Ge7-5g-cAw"/>
                             <constraint firstItem="zk3-sL-6bR" firstAttribute="top" secondItem="fUa-ev-uHk" secondAttribute="top" id="JPy-V5-Oj3"/>
                             <constraint firstItem="262-e9-u1q" firstAttribute="centerY" secondItem="fUa-ev-uHk" secondAttribute="centerY" id="Jw8-Y1-oUG"/>
+                            <constraint firstItem="I1K-uC-HLW" firstAttribute="height" secondItem="fUa-ev-uHk" secondAttribute="height" multiplier="0.0742188" id="M4H-AY-4fg"/>
                             <constraint firstItem="YZP-eJ-fU1" firstAttribute="bottom" secondItem="HM3-QM-aks" secondAttribute="bottom" constant="20" id="MR0-iY-hDV"/>
                             <constraint firstItem="262-e9-u1q" firstAttribute="width" secondItem="PO3-MI-5sS" secondAttribute="width" id="P7Z-sC-dC6"/>
                             <constraint firstItem="DfH-MW-HEL" firstAttribute="width" secondItem="fUa-ev-uHk" secondAttribute="width" multiplier="0.8497" id="PTd-nm-JWe"/>
@@ -433,8 +440,9 @@
                             <constraint firstItem="PO3-MI-5sS" firstAttribute="leading" secondItem="fUa-ev-uHk" secondAttribute="leading" id="gz8-yj-lDt"/>
                             <constraint firstItem="zk3-sL-6bR" firstAttribute="trailing" secondItem="YZP-eJ-fU1" secondAttribute="trailing" id="jiF-fO-kMr"/>
                             <constraint firstItem="9nn-Y6-Q4g" firstAttribute="centerY" secondItem="fUa-ev-uHk" secondAttribute="centerY" multiplier="0.68" id="jtC-Z1-700"/>
-                            <constraint firstItem="BpI-tz-cYX" firstAttribute="centerX" secondItem="fUa-ev-uHk" secondAttribute="centerX" multiplier="1.2" id="kY0-Rg-ghk"/>
+                            <constraint firstItem="BpI-tz-cYX" firstAttribute="centerX" secondItem="fUa-ev-uHk" secondAttribute="centerX" multiplier="1.15" id="kY0-Rg-ghk"/>
                             <constraint firstItem="fL2-84-erP" firstAttribute="centerY" secondItem="fUa-ev-uHk" secondAttribute="centerY" multiplier="0.75" id="lIK-oM-qWW"/>
+                            <constraint firstItem="I1K-uC-HLW" firstAttribute="centerX" secondItem="fUa-ev-uHk" secondAttribute="centerX" multiplier="1.15" id="lyK-iB-GMX"/>
                             <constraint firstItem="wb7-Rv-KIG" firstAttribute="height" secondItem="zk3-sL-6bR" secondAttribute="height" multiplier="0.0569196" id="m4C-FO-WtJ"/>
                             <constraint firstItem="Z48-Pd-yoL" firstAttribute="centerY" secondItem="fUa-ev-uHk" secondAttribute="centerY" multiplier="1.2" id="o58-Q5-2Bs"/>
                             <constraint firstItem="wb7-Rv-KIG" firstAttribute="centerX" secondItem="fUa-ev-uHk" secondAttribute="centerX" multiplier="0.75" id="oac-4D-u9M"/>
@@ -442,6 +450,7 @@
                             <constraint firstItem="HM3-QM-aks" firstAttribute="height" secondItem="fUa-ev-uHk" secondAttribute="height" multiplier="0.0546875" id="qXz-yl-5dp"/>
                             <constraint firstItem="PO3-MI-5sS" firstAttribute="top" secondItem="fUa-ev-uHk" secondAttribute="top" id="rQH-KW-SeQ"/>
                             <constraint firstItem="zk3-sL-6bR" firstAttribute="leading" secondItem="YZP-eJ-fU1" secondAttribute="leading" id="rUa-rH-b2q"/>
+                            <constraint firstItem="I1K-uC-HLW" firstAttribute="centerY" secondItem="fUa-ev-uHk" secondAttribute="centerY" multiplier="1.48" id="rmm-KW-910"/>
                             <constraint firstItem="262-e9-u1q" firstAttribute="top" secondItem="fUa-ev-uHk" secondAttribute="top" id="rzT-dK-dUM"/>
                             <constraint firstAttribute="bottom" secondItem="262-e9-u1q" secondAttribute="bottom" id="szo-Kz-y7R"/>
                             <constraint firstItem="Z9f-AP-T2z" firstAttribute="height" secondItem="zk3-sL-6bR" secondAttribute="height" multiplier="0.0680804" constant="-9.9999999999999929" id="x7U-Aa-Er2"/>
@@ -462,6 +471,7 @@
                         <outlet property="factLabel" destination="5oM-vN-t2h" id="kfp-tM-RbY"/>
                         <outlet property="factWidthConstraint" destination="PTd-nm-JWe" id="6GW-4K-HzW"/>
                         <outlet property="filter" destination="SHo-s7-JQN" id="Qhe-KD-9PS"/>
+                        <outlet property="highlightDiary" destination="I1K-uC-HLW" id="OQ8-cf-zsF"/>
                         <outlet property="jendela" destination="fL2-84-erP" id="EvA-jB-AZg"/>
                         <outlet property="kura" destination="Z48-Pd-yoL" id="2S3-OU-8yl"/>
                         <outlet property="lampu" destination="9nn-Y6-Q4g" id="a2i-rw-Imz"/>
@@ -614,6 +624,7 @@
         <image name="asset.TandaSeru" width="56" height="60.5"/>
         <image name="asset.TandaSeruAtas" width="56" height="60.5"/>
         <image name="bg.RuanganNew" width="414" height="896"/>
+        <image name="highlightDiary" width="120" height="66.5"/>
         <image name="newPopUpFrame" width="382" height="511"/>
     </resources>
 </document>

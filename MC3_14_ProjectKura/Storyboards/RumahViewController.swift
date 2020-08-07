@@ -51,6 +51,7 @@ class RumahViewController: UIViewController {
     @IBOutlet var factLabel: UILabel!
     @IBOutlet var factConstraint: NSLayoutConstraint!
     @IBOutlet var factWidthConstraint: NSLayoutConstraint!
+    @IBOutlet var highlightDiary: UIImageView!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .darkContent
@@ -104,20 +105,25 @@ class RumahViewController: UIViewController {
         kura.addGestureRecognizer(tapGesture)
         
         NotificationCenter.default.addObserver(self, selector:#selector(checkBackgroundBySeconds), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
+        
     }
 
     @objc func checkBackgroundBySeconds () {
         checkTimeOfDay()
+        setupBackgroundByScore()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         checkTimeOfDay()
+         setupBackgroundByScore()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         hideButtonKePantai()
+       
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -128,6 +134,9 @@ class RumahViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func openDiary(_ sender: UIButton) {
+        highlightDiary.alpha = 0
+        highlightDiary.layer.removeAllAnimations()
+        
         UIView.transition(with: kura, duration: 0.2, options: .transitionCrossDissolve, animations: {
             self.kura.image = UIImage(named: "asset.KuraDudukNormal")
         }, completion: nil)
@@ -272,6 +281,17 @@ class RumahViewController: UIViewController {
         }
     }
     
+    private func setupBackgroundByScore() {
+        if let score = calculateFinalScore() {
+            // Score not nil, saatnya update
+            print("Final score: \(score)\n")
+            animateHiglightDiary()
+    
+            // Update last updated date to today
+            UserDefaults.standard.set(Date(), forKey: "last_updated")
+        } 
+    }
+    
     func addTapGesture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapToDismiss))
         viewPopUpBox.addGestureRecognizer(tap)
@@ -365,6 +385,17 @@ class RumahViewController: UIViewController {
         hideFact()
     }
     
+    func animateHiglightDiary() {
+        UIView.animateKeyframes(withDuration: 2, delay: 0, options: [.repeat, .autoreverse, .calculationModeLinear], animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5) {
+                self.highlightDiary.alpha = 1
+            }
+            
+            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5) {
+                self.highlightDiary.alpha = 0.5
+            }
+        }, completion: nil)
+    }
     func hideFact() {
         if !isAnimating {
             view.gestureRecognizers?.removeAll()
