@@ -68,6 +68,7 @@ class RumahOnboardingViewController: UIViewController {
         buttonToBeachConstraint.constant = -100
         animateChatBox()
     }
+    
     @IBAction func popUpButtonDidTap(_ sender: UIButton) {
         popUpContent1.alpha = 0
         popUpContent2.alpha = 1
@@ -175,8 +176,6 @@ class RumahOnboardingViewController: UIViewController {
         default:
             print("")
         }
-        
-        
         animateChatBox()
     }
     

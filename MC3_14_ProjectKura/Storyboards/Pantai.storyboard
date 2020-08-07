@@ -206,6 +206,7 @@
                     </view>
                     <connections>
                         <outlet property="buttonKeRumah" destination="pCk-Zz-waK" id="U9d-wH-bsx"/>
+                        <outlet property="filterGelap" destination="xwq-Dr-QXa" id="9he-hH-XRL"/>
                         <outlet property="firstGrayFish" destination="Chm-fL-kO4" id="2Nm-T8-gLr"/>
                         <outlet property="firstOrangeFish" destination="32T-LI-RU1" id="RFR-oK-aQA"/>
                         <outlet property="firstWave" destination="JHe-k8-zEW" id="VNc-r3-LTi"/>
@@ -220,6 +221,7 @@
                         <outlet property="koral" destination="Lfx-Mm-oyX" id="7R8-xP-BwI"/>
                         <outlet property="pantaiBG" destination="AV4-KC-kOS" id="qtk-i3-mSE"/>
                         <outlet property="papan" destination="Mjy-Uv-DOX" id="nnz-Sw-2iN"/>
+                        <outlet property="popUpPapan" destination="Xhv-n2-2wm" id="1W9-ug-nBU"/>
                         <outlet property="secondGrayFish" destination="Y7n-ym-rfP" id="RPh-WC-XAS"/>
                         <outlet property="secondOrangeFish" destination="NDP-X5-W79" id="4T6-72-7sF"/>
                         <outlet property="secondWave" destination="BjX-vd-22D" id="Ys2-nm-DRe"/>
