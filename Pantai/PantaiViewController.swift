@@ -25,6 +25,7 @@ class PantaiViewController: UIViewController {
     @IBOutlet weak var secondOrangeFish: UIImageView!
     @IBOutlet weak var secondGrayFish: UIImageView!
     
+    @IBOutlet weak var popUpPapan: UIImageView!
     @IBOutlet weak var fishShadow: UIImageView!
     @IBOutlet weak var fishShadow2: UIImageView!
     @IBOutlet weak var fishShadow3: UIImageView!
@@ -37,6 +38,7 @@ class PantaiViewController: UIViewController {
     @IBOutlet weak var buttonKeRumah: UIButton!
     @IBOutlet weak var papan: UIImageView!
     
+    @IBOutlet weak var filterGelap: UIView!
     private let daysLeftLabel = UILabel()
     private let daysLabel = UILabel()
     
@@ -57,6 +59,13 @@ class PantaiViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        filterGelap.isHidden = true
+        popUpPapan.isHidden = true
+        papan.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(papanTapped)))
+        papan.isUserInteractionEnabled = true
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapAnywhereToDismiss)))
+        view.isUserInteractionEnabled = true
         
         audioPlayer.setupAudioService()
         createLabelPapan()
@@ -75,6 +84,39 @@ class PantaiViewController: UIViewController {
     @objc func checkBackgroundBySeconds () {
         setupBackgroundByScore()
         configurePapan()
+    }
+    
+    @objc func papanTapped() {
+        filterGelap.isHidden = false
+        popUpPapan.isHidden = false
+        filterGelap.alpha = 0
+        popUpPapan.transform = CGAffineTransform(scaleX: 0, y: 0)
+        createLabelPapanPopUp()
+        UIView.animate(withDuration: 0.3) {
+            self.popUpPapan.transform = CGAffineTransform.identity
+            self.filterGelap.alpha = 0.6
+        }
+    }
+    
+    @objc func tapAnywhereToDismiss() {
+        
+        popUpPapan.transform = CGAffineTransform.identity
+        UIView.animate(withDuration: 0.3, animations: {
+            self.popUpPapan.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+            self.filterGelap.alpha = 0
+        }) { (_) in
+            self.filterGelap.isHidden = true
+            self.popUpPapan.isHidden = true
+        }
+        
+        
+//        UIView.animate(withDuration: 0.3) {
+//            self.filterGelap.alpha = 0
+//            self.popUpPapan.transform = CGAffineTransform(scaleX: 0, y: 0)
+//            self.filterGelap.isHidden = true
+//            self.popUpPapan.isHidden = true
+//            
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -164,49 +206,55 @@ class PantaiViewController: UIViewController {
     }
     
     private func createLabelPapanPopUp() {
-        
             
-            daysLeftLabel.translatesAutoresizingMaskIntoConstraints = false
-            daysLeftLabel.text = ""
-            daysLeftLabel.textAlignment = .center
-            daysLeftLabel.textColor = UIColor(red: 123/255, green: 71/255, blue: 23/255, alpha: 1)
-            daysLeftLabel.font = UIFont(name: "Rubik-Bold", size: 22)
+            let headingPopUp = UILabel()
+            
+            headingPopUp.translatesAutoresizingMaskIntoConstraints = false
+            headingPopUp.text = "Beach changing in:"
+            headingPopUp.textAlignment = .center
+            headingPopUp.textColor = UIColor(red: 123/255, green: 71/255, blue: 23/255, alpha: 1)
+            headingPopUp.font = UIFont(name: "Rubik-Medium", size: 18)
+        
+            let daysLeftLabel2 = UILabel()
+            
+            daysLeftLabel2.translatesAutoresizingMaskIntoConstraints = false
+            daysLeftLabel2.text = daysLeftLabel.text
+            daysLeftLabel2.textAlignment = .center
+            daysLeftLabel2.textColor = UIColor(red: 123/255, green: 71/255, blue: 23/255, alpha: 1)
+            daysLeftLabel2.font = UIFont(name: "Rubik-Bold", size: 70)
+        
             
             let moreLabel = UILabel()
             moreLabel.translatesAutoresizingMaskIntoConstraints = false
             moreLabel.text = "more"
             moreLabel.textColor = UIColor(red: 123/255, green: 71/255, blue: 23/255, alpha: 1)
-            moreLabel.font = UIFont(name: "Rubik-Medium", size: 9)
+            moreLabel.font = UIFont(name: "Rubik-Medium", size: 36)
             
-            daysLabel.translatesAutoresizingMaskIntoConstraints = false
-            daysLabel.text = "days"
-            daysLabel.textColor = UIColor(red: 123/255, green: 71/255, blue: 23/255, alpha: 1)
-            daysLabel.font = UIFont(name: "Rubik-Medium", size: 10)
+            let daysLabel2 = UILabel()
+            daysLabel2.translatesAutoresizingMaskIntoConstraints = false
+            daysLabel2.text = "days"
+            daysLabel2.textColor = UIColor(red: 123/255, green: 71/255, blue: 23/255, alpha: 1)
+            daysLabel2.font = UIFont(name: "Rubik-Medium", size: 36)
             
-            let verticalStack = UIStackView(arrangedSubviews: [moreLabel, daysLabel])
+            let verticalStack = UIStackView(arrangedSubviews: [moreLabel, daysLabel2])
             verticalStack.translatesAutoresizingMaskIntoConstraints = false
             verticalStack.axis = .vertical
             verticalStack.spacing = -3
             
-    //        let descriptionLabel = UILabel()
-    //        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-    //        descriptionLabel.text = "Until the beach changes"
-    //        descriptionLabel.textColor = UIColor(red: 123/255, green: 71/255, blue: 23/255, alpha: 1)
-    //        descriptionLabel.font = UIFont(name: "Rubik-Regular", size: 5)
+            popUpPapan.addSubview(daysLeftLabel2)
+            popUpPapan.addSubview(headingPopUp)
+            popUpPapan.addSubview(verticalStack)
             
-            papan.addSubview(daysLeftLabel)
-            papan.addSubview(verticalStack)
-    //        papan.addSubview(descriptionLabel)
-            
-            NSLayoutConstraint(item: daysLeftLabel, attribute: .trailing, relatedBy: .equal, toItem: papan, attribute: .centerX, multiplier: 0.82, constant: 0).isActive = true
-            NSLayoutConstraint(item: daysLeftLabel, attribute: .centerY, relatedBy: .equal, toItem: papan, attribute: .centerY, multiplier: 0.73, constant: 0).isActive = true
-            NSLayoutConstraint(item: verticalStack, attribute: .leading, relatedBy: .equal, toItem: papan, attribute: .centerX, multiplier: 0.9, constant: 0).isActive = true
+        
+            NSLayoutConstraint(item: daysLeftLabel2, attribute: .trailing, relatedBy: .equal, toItem: popUpPapan, attribute: .centerX, multiplier: 0.82, constant: 0).isActive = true
+        NSLayoutConstraint(item: daysLeftLabel2, attribute: .centerY, relatedBy: .equal, toItem: popUpPapan, attribute: .centerY, multiplier: 1.1, constant: 0).isActive = true
+            NSLayoutConstraint(item: verticalStack, attribute: .leading, relatedBy: .equal, toItem: popUpPapan, attribute: .centerX, multiplier: 0.9, constant: 0).isActive = true
             
             NSLayoutConstraint.activate([
-                verticalStack.topAnchor.constraint(equalTo: daysLeftLabel.topAnchor, constant: 2),
-    //
-    //            descriptionLabel.topAnchor.constraint(equalTo: verticalStack.bottomAnchor, constant: 2),
-    //            descriptionLabel.centerXAnchor.constraint(equalTo: papan.centerXAnchor, constant: 1)
+                verticalStack.topAnchor.constraint(equalTo: daysLeftLabel2.topAnchor, constant: 2),
+                headingPopUp.centerXAnchor.constraint(equalTo: popUpPapan.centerXAnchor),
+                headingPopUp.bottomAnchor.constraint(equalTo: daysLeftLabel2.topAnchor, constant: 8)
+                
             ])
         }
     
