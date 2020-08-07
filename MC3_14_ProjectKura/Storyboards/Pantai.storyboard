@@ -131,9 +131,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PopUpPapan" translatesAutoresizingMaskIntoConstraints="NO" id="Xhv-n2-2wm">
-                                <rect key="frame" x="62" y="343" width="290" height="208.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PopUpPapan" translatesAutoresizingMaskIntoConstraints="NO" id="Xhv-n2-2wm">
+                                <rect key="frame" x="62" y="231" width="290" height="208.5"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -141,8 +140,10 @@
                             <constraint firstItem="NDP-X5-W79" firstAttribute="centerX" secondItem="zkV-J7-CsJ" secondAttribute="centerX" multiplier="1.2" id="0sW-KE-iIl"/>
                             <constraint firstItem="pCk-Zz-waK" firstAttribute="leading" secondItem="f9a-EZ-Xhb" secondAttribute="leading" constant="4" id="1Zk-Px-1MO"/>
                             <constraint firstItem="32T-LI-RU1" firstAttribute="centerY" secondItem="zkV-J7-CsJ" secondAttribute="centerY" multiplier="1.75" id="1t8-kU-k0W"/>
+                            <constraint firstItem="Xhv-n2-2wm" firstAttribute="centerY" secondItem="Mjy-Uv-DOX" secondAttribute="centerY" multiplier="0.96" id="273-0g-aJo"/>
                             <constraint firstItem="AxZ-vq-ywB" firstAttribute="height" secondItem="AV4-KC-kOS" secondAttribute="height" multiplier="0.0535714" id="289-IK-vuU"/>
                             <constraint firstItem="AV4-KC-kOS" firstAttribute="leading" secondItem="zkV-J7-CsJ" secondAttribute="leading" id="2yd-XT-dQK"/>
+                            <constraint firstItem="Xhv-n2-2wm" firstAttribute="centerX" secondItem="zkV-J7-CsJ" secondAttribute="centerX" id="3F4-a4-UJz"/>
                             <constraint firstItem="Chm-fL-kO4" firstAttribute="centerY" secondItem="zkV-J7-CsJ" secondAttribute="centerY" multiplier="1.55" id="3Qr-0C-Nzw"/>
                             <constraint firstItem="0X5-ea-ozr" firstAttribute="centerY" secondItem="zkV-J7-CsJ" secondAttribute="centerY" multiplier="1.3" id="3h3-FG-qgL"/>
                             <constraint firstItem="xwq-Dr-QXa" firstAttribute="leading" secondItem="zkV-J7-CsJ" secondAttribute="leading" id="43S-AA-nzr"/>

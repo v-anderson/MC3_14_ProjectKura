@@ -92,9 +92,11 @@ class PantaiViewController: UIViewController {
         filterGelap.alpha = 0
         popUpPapan.transform = CGAffineTransform(scaleX: 0, y: 0)
         createLabelPapanPopUp()
+        popUpPapan.alpha = 0
         UIView.animate(withDuration: 0.3) {
             self.popUpPapan.transform = CGAffineTransform.identity
             self.filterGelap.alpha = 0.6
+            self.popUpPapan.alpha = 1
         }
     }
     
@@ -103,6 +105,7 @@ class PantaiViewController: UIViewController {
         popUpPapan.transform = CGAffineTransform.identity
         UIView.animate(withDuration: 0.3, animations: {
             self.popUpPapan.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+            self.popUpPapan.alpha = 0
             self.filterGelap.alpha = 0
         }) { (_) in
             self.filterGelap.isHidden = true
@@ -239,7 +242,7 @@ class PantaiViewController: UIViewController {
             let verticalStack = UIStackView(arrangedSubviews: [moreLabel, daysLabel2])
             verticalStack.translatesAutoresizingMaskIntoConstraints = false
             verticalStack.axis = .vertical
-            verticalStack.spacing = -3
+            verticalStack.spacing = -8
             
             popUpPapan.addSubview(daysLeftLabel2)
             popUpPapan.addSubview(headingPopUp)
@@ -247,13 +250,13 @@ class PantaiViewController: UIViewController {
             
         
             NSLayoutConstraint(item: daysLeftLabel2, attribute: .trailing, relatedBy: .equal, toItem: popUpPapan, attribute: .centerX, multiplier: 0.82, constant: 0).isActive = true
-        NSLayoutConstraint(item: daysLeftLabel2, attribute: .centerY, relatedBy: .equal, toItem: popUpPapan, attribute: .centerY, multiplier: 1.1, constant: 0).isActive = true
+        NSLayoutConstraint(item: daysLeftLabel2, attribute: .centerY, relatedBy: .equal, toItem: popUpPapan, attribute: .centerY, multiplier: 1.15, constant: 0).isActive = true
             NSLayoutConstraint(item: verticalStack, attribute: .leading, relatedBy: .equal, toItem: popUpPapan, attribute: .centerX, multiplier: 0.9, constant: 0).isActive = true
             
             NSLayoutConstraint.activate([
                 verticalStack.topAnchor.constraint(equalTo: daysLeftLabel2.topAnchor, constant: 2),
                 headingPopUp.centerXAnchor.constraint(equalTo: popUpPapan.centerXAnchor),
-                headingPopUp.bottomAnchor.constraint(equalTo: daysLeftLabel2.topAnchor, constant: 8)
+                headingPopUp.bottomAnchor.constraint(equalTo: daysLeftLabel2.topAnchor)
                 
             ])
         }
