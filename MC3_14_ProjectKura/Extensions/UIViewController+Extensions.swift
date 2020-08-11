@@ -81,7 +81,7 @@ extension UIViewController {
                 notifContent.sound = .default
 
                 let threeDaysFromNow = Calendar.current.date(byAdding: .day, value: 3, to: Date())!
-                var dateComponents = Calendar.current.dateComponents([.hour], from: threeDaysFromNow)
+                var dateComponents = Calendar.current.dateComponents([.hour, .day, .month, .year], from: threeDaysFromNow)
                 dateComponents.hour = 7
                 
                 let notifTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
@@ -98,6 +98,10 @@ extension UIViewController {
         return Int(finalScore)
         
     }
+    
+    func tes() {
+        
+    }
             
     /// Returns the persistent container's view context
     func getViewContext() -> NSManagedObjectContext {
@@ -105,11 +109,6 @@ extension UIViewController {
         return appDelegate.persistentContainer.viewContext
     }
 
-    func tes() {
-        
-        
-        
-    }
     
     /// Returns true if current time is between 06.00 - 14:59
     func isMorning() -> Bool {

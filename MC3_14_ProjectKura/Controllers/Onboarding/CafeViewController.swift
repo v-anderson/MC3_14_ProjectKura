@@ -307,18 +307,19 @@ extension CafeViewController {
     }
     
     func addDiaryNotif() {
+        
         let notifContent = UNMutableNotificationContent()
         let userName = (UserDefaults.standard.object(forKey: "user_name") as? String) ?? ""
         
-        notifContent.title = "Hi \(userName), have you checked Kura's diary?"
-        notifContent.body = "Let’s see what Kura thinks of you 🤔"
+        notifContent.title = "Hi \(userName), have you checked Kura's diary!"
+        notifContent.body = "Let’s see what Kura think of you 🤔"
 
         notifContent.sound = .default
 
         let threeDaysFromNow = Calendar.current.date(byAdding: .day, value: 3, to: Date())!
-        var dateComponents = Calendar.current.dateComponents([.hour], from: threeDaysFromNow)
+        var dateComponents = Calendar.current.dateComponents([.hour, .day, .month, .year], from: threeDaysFromNow)
         dateComponents.hour = 7
-  
+        
         let notifTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: notifContent, trigger: notifTrigger)
         
