@@ -48,24 +48,28 @@ extension UIViewController {
                 let randomIndex = Int.random(in: 0..<blackHeartCount)
                 Gallery.update(toContext: getViewContext(), withId: 3, imageId: randomIndex)
                 UserDefaults.standard.set(randomIndex,forKey: "indexDiaryImage")
+                changeIcon(to: "KuraDirty")
             }
         } else if finalScore < 8 {
             if let yellowHeartCount = diaryContents[.yellowHeart]?.diaryImage.count {
                 let randomIndex = Int.random(in: 0..<yellowHeartCount)
                 Gallery.update(toContext: getViewContext(), withId: 2, imageId: randomIndex)
                 UserDefaults.standard.set(randomIndex,forKey: "indexDiaryImage")
+                changeIcon(to: "KuraDirty")
             }
         } else if finalScore < 12 {
             if let blueHeartCount = diaryContents[.blueHeart]?.diaryImage.count {
                 let randomIndex = Int.random(in: 0..<blueHeartCount)
                 Gallery.update(toContext: getViewContext(), withId: 1, imageId: randomIndex)
                 UserDefaults.standard.set(randomIndex,forKey: "indexDiaryImage")
+                changeIcon(to: nil)
             }
         } else {
             if let redHeartCount = diaryContents[.yellowHeart]?.diaryImage.count {
                 let randomIndex = Int.random(in: 0..<redHeartCount)
                 Gallery.update(toContext: getViewContext(), withId: 0, imageId: randomIndex)
                 UserDefaults.standard.set(randomIndex,forKey: "indexDiaryImage")
+                changeIcon(to: nil)
             }
         }
         
@@ -75,7 +79,7 @@ extension UIViewController {
                 let notifContent = UNMutableNotificationContent()
                 let userName = (UserDefaults.standard.object(forKey: "user_name") as? String) ?? ""
                 
-                notifContent.title = "Hi \(userName), have you checked Kura's diary!"
+                notifContent.title = "Hi \(userName), have you checked Kura's diary?"
                 notifContent.body = "Let’s see what Kura think of you 🤔"
 
                 notifContent.sound = .default
@@ -96,11 +100,6 @@ extension UIViewController {
         }
         
         return Int(finalScore)
-        
-    }
-    
-    func tes() {
-        
     }
             
     /// Returns the persistent container's view context
@@ -109,7 +108,6 @@ extension UIViewController {
         return appDelegate.persistentContainer.viewContext
     }
 
-    
     /// Returns true if current time is between 06.00 - 14:59
     func isMorning() -> Bool {
         let now = Date()
@@ -148,6 +146,21 @@ extension UIViewController {
         return false
     }
     
-    
-    
+    /// Changes app icon to the given icon name, set nil to reset the app icon to the default app icon
+    func changeIcon(to name: String?) {
+        guard UIApplication.shared.supportsAlternateIcons else { return }
+        
+        UIApplication.shared.setAlternateIconName(name) { (error) in
+            if let error = error {
+                print("Error changing icon: \(error)")
+            }
+        }
+                
+        let tempVC = TempViewController()
+        tempVC.modalPresentationStyle = .overCurrentContext
+        
+        present(tempVC, animated: false, completion: {
+            tempVC.dismiss(animated: false, completion: nil)
+        })
+    }
 }

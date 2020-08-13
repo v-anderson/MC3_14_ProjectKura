@@ -335,10 +335,10 @@ extension CafeViewController {
         let userName = (UserDefaults.standard.object(forKey: "user_name") as? String) ?? ""
         
         if hour == 6 {
-            notifContent.title = "Wakey wakey \(userName) ⛅️, I have new questions for you 👀"
-            notifContent.body = "Go check 'em out!"
+            notifContent.title = "Wakey wakey \(userName) ⛅️"
+            notifContent.body = "I have new questions for you 👀, Go check 'em out!"
         } else if hour == 15 {
-            notifContent.title = "Hi \(userName), time to take a break "
+            notifContent.title = "Hi \(userName), time to take a break"
             notifContent.body = "I have new questions for you 👀"
         } else {
             notifContent.title = "Hi \(userName), how's your day?"

@@ -83,6 +83,13 @@ class RumahViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "dd/MM/yyyy"
+//        let date = formatter.date(from: "10/08/2020")
+//        UserDefaults.standard.set(date, forKey: "last_updated")
+        
+        
         Gallery.configureInitialState(toContext: getViewContext())
         initialViewAlpha()
         
@@ -134,6 +141,7 @@ class RumahViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func openDiary(_ sender: UIButton) {
+        UserDefaults.standard.set(false, forKey: "diary_glowing")
         highlightDiary.alpha = 0
         highlightDiary.layer.removeAllAnimations()
         
@@ -287,9 +295,15 @@ class RumahViewController: UIViewController {
             print("Final score: \(score)\n")
             animateHiglightDiary()
             
+            UserDefaults.standard.set(true, forKey: "diary_glowing")
+            
             // Update last updated date to today
             UserDefaults.standard.set(Date(), forKey: "last_updated")
-        } 
+        } else {
+            if UserDefaults.standard.bool(forKey: "diary_glowing") {
+                animateHiglightDiary()
+            }
+        }
     }
     
     func addTapGesture() {

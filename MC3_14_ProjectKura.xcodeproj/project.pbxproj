@@ -15,6 +15,9 @@
 		57777DF124CACA7F00C3F342 /* FadeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57777DF024CACA7F00C3F342 /* FadeAnimation.swift */; };
 		5778151624DC4C2500F4098C /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECB1369524D2E32A00156A25 /* Rubik-Bold.ttf */; };
 		5778151824DC51DC00F4098C /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5778151724DC51DC00F4098C /* Rubik-Medium.ttf */; };
+		577B0EFE24E559C6000033FE /* KuraDirty@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 577B0EFC24E559C5000033FE /* KuraDirty@3x.png */; };
+		577B0EFF24E559C6000033FE /* KuraDirty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 577B0EFD24E559C5000033FE /* KuraDirty@2x.png */; };
+		577B0F0124E55F9A000033FE /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B0F0024E55F9A000033FE /* TempViewController.swift */; };
 		57BFDA0724D9505400D50F46 /* Gallery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57BFDA0624D9505400D50F46 /* Gallery.storyboard */; };
 		57BFDA0924D950D900D50F46 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFDA0824D950D900D50F46 /* GalleryViewController.swift */; };
 		57BFDA0B24D9565100D50F46 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFDA0A24D9565100D50F46 /* GalleryCell.swift */; };
@@ -63,6 +66,9 @@
 		5756A52424D056E100839343 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		57777DF024CACA7F00C3F342 /* FadeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeAnimation.swift; sourceTree = "<group>"; };
 		5778151724DC51DC00F4098C /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		577B0EFC24E559C5000033FE /* KuraDirty@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KuraDirty@3x.png"; sourceTree = "<group>"; };
+		577B0EFD24E559C5000033FE /* KuraDirty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KuraDirty@2x.png"; sourceTree = "<group>"; };
+		577B0F0024E55F9A000033FE /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		57BFDA0624D9505400D50F46 /* Gallery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Gallery.storyboard; sourceTree = "<group>"; };
 		57BFDA0824D950D900D50F46 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		57BFDA0A24D9565100D50F46 /* GalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
@@ -146,6 +152,15 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		577B0EFB24E559BA000033FE /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				577B0EFD24E559C5000033FE /* KuraDirty@2x.png */,
+				577B0EFC24E559C5000033FE /* KuraDirty@3x.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
 		5789034C24BF16F2006A0291 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				57D68BED24D2DA8A00C7BB1E /* MainViewController.swift */,
+				577B0F0024E55F9A000033FE /* TempViewController.swift */,
 				EC1E480B24CEF07600975C83 /* Onboarding */,
 				5789035224BF179F006A0291 /* Rumah */,
 				5789035124BF1797006A0291 /* Pantai */,
@@ -233,6 +249,7 @@
 		71907B7824BDFCD5008E44CF /* MC3_14_ProjectKura */ = {
 			isa = PBXGroup;
 			children = (
+				577B0EFB24E559BA000033FE /* Icons */,
 				57392E9524D1694B00908246 /* Sounds */,
 				CBC4A82124CEC5EB00B3F5DC /* Fonts */,
 				71907B7924BDFCD5008E44CF /* AppDelegate.swift */,
@@ -368,6 +385,7 @@
 				710F595124C595870037185E /* Rumah.storyboard in Resources */,
 				57BFDA0724D9505400D50F46 /* Gallery.storyboard in Resources */,
 				CBC4A83724CEC61700B3F5DC /* Rubik-Regular.ttf in Resources */,
+				577B0EFF24E559C6000033FE /* KuraDirty@2x.png in Resources */,
 				EC1E480A24CEC0D600975C83 /* Onboarding.storyboard in Resources */,
 				57D68BEB24D2B83600C7BB1E /* BetterLife_Kantor.mp3 in Resources */,
 				CB2D0AB224DC10DA003A0479 /* Nunito-Regular.ttf in Resources */,
@@ -377,6 +395,7 @@
 				71BED25124D96823009DC214 /* GloriaHallelujah-Regular.ttf in Resources */,
 				5778151824DC51DC00F4098C /* Rubik-Medium.ttf in Resources */,
 				57392E9424D1645100908246 /* after-the-rain.wav in Resources */,
+				577B0EFE24E559C6000033FE /* KuraDirty@3x.png in Resources */,
 				71907B8924BDFCD7008E44CF /* LaunchScreen.storyboard in Resources */,
 				5778151624DC4C2500F4098C /* Rubik-Bold.ttf in Resources */,
 				71907B8624BDFCD7008E44CF /* Assets.xcassets in Resources */,
@@ -409,6 +428,7 @@
 				572ABDC724C6D75D00481B86 /* UIViewController+Extensions.swift in Sources */,
 				713A7BFE24C723B7006049FB /* PantaiViewController.swift in Sources */,
 				57BFDA1524DA5CC400D50F46 /* Gallery+Extensions.swift in Sources */,
+				577B0F0124E55F9A000033FE /* TempViewController.swift in Sources */,
 				57392E9224D1637A00908246 /* AudioPlayer.swift in Sources */,
 				71907B8424BDFCD5008E44CF /* MC3_14_ProjectKura.xcdatamodeld in Sources */,
 				EC1E480F24CEFC4400975C83 /* PantaiOnboardingViewController.swift in Sources */,
