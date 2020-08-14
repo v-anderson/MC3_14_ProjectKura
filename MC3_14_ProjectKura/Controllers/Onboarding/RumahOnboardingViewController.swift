@@ -141,8 +141,22 @@ class RumahOnboardingViewController: UIViewController {
         else if tapIndex == 3 {
             //onboarding selsesai
             UserDefaults.standard.set(true, forKey: "has_launched_before")
+            
             audioPlayer.stopSound()
-            changePage(identifier: "RumahViewController")
+
+            if let lastScore = UserDefaults.standard.object(forKey: "last_score") as? Int {
+                print("Last score: \(lastScore)\n")
+                
+                if lastScore < 8 {
+                    changeIcon(to: "KuraDirty", completion: { [weak self] in
+                        self?.changePage(identifier: "RumahViewController")
+                    })
+                } else {
+                    changePage(identifier: "RumahViewController")
+                }
+            } else {
+                changePage(identifier: "RumahViewController")
+            }
         }
     }
     

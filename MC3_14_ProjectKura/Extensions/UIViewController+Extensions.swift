@@ -147,20 +147,25 @@ extension UIViewController {
     }
     
     /// Changes app icon to the given icon name, set nil to reset the app icon to the default app icon
-    func changeIcon(to name: String?) {
+    func changeIcon(to name: String?, completion: (() -> Void)? = nil) {
         guard UIApplication.shared.supportsAlternateIcons else { return }
         
-        UIApplication.shared.setAlternateIconName(name) { (error) in
-            if let error = error {
-                print("Error changing icon: \(error)")
-            }
-        }
-                
         let tempVC = TempViewController()
         tempVC.modalPresentationStyle = .overCurrentContext
         
         present(tempVC, animated: false, completion: {
-            tempVC.dismiss(animated: false, completion: nil)
+            
+            UIApplication.shared.setAlternateIconName(name) { (error) in
+                if let error = error {
+                    print("Error changing icon: \(error)")
+                }
+            }
+            
+            tempVC.dismiss(animated: false, completion: {
+                if let completion = completion {
+                    completion()
+                }
+            })
         })
     }
 }
