@@ -173,7 +173,7 @@ extension LetterViewController {
 
         let shakeAnimation = CAKeyframeAnimation(keyPath: "transform.translation.x")
         shakeAnimation.duration = 0.1
-        shakeAnimation.values = [-2, 2, -2, 2, -2, 2, -2, 2, -1, 1]
+        shakeAnimation.values = [-3, 3, -3, 3, -2, 2, -2, 2, -1, 1]
 
         animationGroup.animations = [shakeAnimation]
 

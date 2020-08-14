@@ -260,7 +260,7 @@ extension CafeViewController {
             changePage(identifier: "PantaiOnboardingViewController")
         } else {
             if questionIndex == 9 {
-                score *= 5
+                score *= 3
                 print("Onboarding score: \(score)")
                 UserDefaults.standard.set(score, forKey: "last_score")
                 UserDefaults.standard.set(Date(), forKey: "last_updated")

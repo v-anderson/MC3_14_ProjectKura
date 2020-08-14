@@ -739,13 +739,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's make sure to eat what you can eat." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0m-lC-AlV">
-                                                <rect key="frame" x="20" y="159" width="263" height="69"/>
+                                                <rect key="frame" x="20" y="158" width="263" height="69"/>
                                                 <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="16"/>
                                                 <color key="textColor" red="0.55294117647058827" green="0.38431372549019605" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bxP-qI-92e">
-                                                <rect key="frame" x="16" y="248" width="271" height="77"/>
+                                                <rect key="frame" x="16" y="273" width="271" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13S-dn-psH">
                                                         <rect key="frame" x="0.0" y="0.0" width="271" height="40"/>
@@ -766,38 +766,29 @@
                                                             <action selector="readMoreDidTap:" destination="KEe-uM-20z" eventType="touchUpInside" id="dGl-aJ-djp"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdY-dZ-LNG">
-                                                        <rect key="frame" x="0.0" y="45" width="271" height="32"/>
-                                                        <fontDescription key="fontDescription" name="FredokaOne-Regular" family="Fredoka One" pointSize="16"/>
-                                                        <state key="normal" title="Skip">
-                                                            <color key="titleColor" red="0.55294117647058827" green="0.38431372549019605" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                    </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="bxP-qI-92e" firstAttribute="height" secondItem="2s1-yd-2A5" secondAttribute="height" multiplier="0.231231" id="2Ji-6M-mIE"/>
                                             <constraint firstItem="bxP-qI-92e" firstAttribute="leading" secondItem="2s1-yd-2A5" secondAttribute="leading" constant="16" id="4Xm-z3-9Wp"/>
                                             <constraint firstItem="q0m-lC-AlV" firstAttribute="leading" secondItem="2s1-yd-2A5" secondAttribute="leading" constant="20" id="79E-wi-g8y"/>
                                             <constraint firstAttribute="trailing" secondItem="q0m-lC-AlV" secondAttribute="trailing" constant="20" id="8Q6-oe-Vf6"/>
-                                            <constraint firstItem="bxP-qI-92e" firstAttribute="top" secondItem="q0m-lC-AlV" secondAttribute="bottom" constant="20" id="9Go-qb-asU"/>
                                             <constraint firstItem="QrS-4q-JIv" firstAttribute="height" secondItem="2s1-yd-2A5" secondAttribute="height" multiplier="0.36036" id="GZX-y0-Ea5"/>
                                             <constraint firstAttribute="trailing" secondItem="q0m-lC-AlV" secondAttribute="trailing" constant="20" id="KHy-Ei-YQ6"/>
+                                            <constraint firstItem="q0m-lC-AlV" firstAttribute="top" secondItem="QrS-4q-JIv" secondAttribute="bottom" constant="15" id="jZt-Bg-8fT"/>
                                             <constraint firstItem="QrS-4q-JIv" firstAttribute="centerY" secondItem="2s1-yd-2A5" secondAttribute="centerY" multiplier="0.5" id="mmA-Dh-UsO"/>
                                             <constraint firstItem="q0m-lC-AlV" firstAttribute="leading" secondItem="2s1-yd-2A5" secondAttribute="leading" constant="20" id="pZ2-dK-eKe"/>
                                             <constraint firstItem="QrS-4q-JIv" firstAttribute="centerX" secondItem="2s1-yd-2A5" secondAttribute="centerX" id="pkG-2D-t7h"/>
                                             <constraint firstItem="q0m-lC-AlV" firstAttribute="height" secondItem="2s1-yd-2A5" secondAttribute="height" multiplier="0.207207" id="qTx-mg-KA8"/>
                                             <constraint firstAttribute="trailing" secondItem="bxP-qI-92e" secondAttribute="trailing" constant="16" id="t1U-yQ-37k"/>
                                             <constraint firstAttribute="width" secondItem="2s1-yd-2A5" secondAttribute="height" multiplier="101:111" id="vY9-dE-99t"/>
-                                            <constraint firstItem="bxP-qI-92e" firstAttribute="top" secondItem="q0m-lC-AlV" secondAttribute="bottom" constant="20" id="voa-yD-CUP"/>
-                                            <constraint firstAttribute="bottom" secondItem="bxP-qI-92e" secondAttribute="bottom" constant="8" id="zjr-Nx-e2l"/>
+                                            <constraint firstAttribute="bottom" secondItem="bxP-qI-92e" secondAttribute="bottom" constant="20" id="zjr-Nx-e2l"/>
                                         </constraints>
                                     </view>
                                     <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bja-qD-g6l" userLabel="View3">
                                         <rect key="frame" x="39.5" y="135" width="303" height="333"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Z9-Ku-9en">
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Z9-Ku-9en">
                                                 <rect key="frame" x="16" y="16" width="271" height="178.5"/>
                                                 <string key="text">If you have leftovers, save any leftovers, rather than throwing them away. Food waste accounts for about 4,4 gigatonnes of greenhouse gas emissions (GHG) per year. To put this in perspective, if food loss and waste were its own country, it would be the world’s third-largest GHG emitter.</string>
                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
@@ -928,7 +919,7 @@
         <image name="Laut Depan Pagi Bersih" width="706.5" height="391"/>
         <image name="Laut Kedua Pagi Bersih" width="684" height="395"/>
         <image name="Letter" width="264" height="181.5"/>
-        <image name="Letter Paper horizontal" width="590" height="389.5"/>
+        <image name="Letter Paper horizontal" width="586" height="382"/>
         <image name="LetterBuka" width="301" height="279.5"/>
         <image name="Pagi - Bersih Onboarding" width="418" height="896"/>
         <image name="Phone" width="157.5" height="216"/>
