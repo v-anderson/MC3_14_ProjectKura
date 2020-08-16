@@ -31,7 +31,7 @@ class DiaryViewController: UIViewController {
         
         transitioningDelegate = self
         
-        NotificationCenter.default.addObserver(self, selector:#selector(updateDiary), name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(updateDiary), name: UIApplication.didBecomeActiveNotification, object: nil)
         
         guard let score = getScore() else { return }
         

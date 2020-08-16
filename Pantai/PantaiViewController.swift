@@ -73,7 +73,7 @@ class PantaiViewController: UIViewController {
         buttonKeRumah.transform = CGAffineTransform(translationX: -100, y: 0)
         transitioningDelegate = self
         
-        NotificationCenter.default.addObserver(self, selector:#selector(checkBackgroundBySeconds), name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(checkBackgroundBySeconds), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     deinit {

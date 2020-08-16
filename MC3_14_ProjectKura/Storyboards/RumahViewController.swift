@@ -111,7 +111,7 @@ class RumahViewController: UIViewController {
         kura.isUserInteractionEnabled = true
         kura.addGestureRecognizer(tapGesture)
         
-        NotificationCenter.default.addObserver(self, selector:#selector(checkBackgroundBySeconds), name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(checkBackgroundBySeconds), name: UIApplication.didBecomeActiveNotification, object: nil)
         
         
     }
