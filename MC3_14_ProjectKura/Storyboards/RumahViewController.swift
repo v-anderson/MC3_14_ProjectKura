@@ -112,8 +112,6 @@ class RumahViewController: UIViewController {
         kura.addGestureRecognizer(tapGesture)
         
         NotificationCenter.default.addObserver(self, selector:#selector(checkBackgroundBySeconds), name: UIApplication.didBecomeActiveNotification, object: nil)
-        
-        
     }
     
     @objc func checkBackgroundBySeconds () {
@@ -130,7 +128,6 @@ class RumahViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         hideButtonKePantai()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
