@@ -599,7 +599,10 @@ extension RumahViewController {
         filter.gradientSore(view: filter)
         lampu.image = UIImage(named: "asset.LampuNyalaMalam")
         jendela.image = UIImage(named: "asset.JendelaSore")
+        tandaSeru2.isHidden = false
         tandaSeru.isHidden = false
+        tandaSeruShoppingBag.isHidden = false
+        tandaSeruKipas.isHidden = false
         
         checkListrik()
         checkKipas()
@@ -612,7 +615,10 @@ extension RumahViewController {
         filter.gradientMalam(view: filter)
         lampu.image = UIImage(named: "asset.LampuNyalaMalam")
         jendela.image = UIImage(named: "asset.JendelaMalam")
+        tandaSeru2.isHidden = false
         tandaSeru.isHidden = false
+        tandaSeruShoppingBag.isHidden = false
+        tandaSeruKipas.isHidden = false
         
         checkListrik()
         checkKipas()
