@@ -154,17 +154,19 @@ extension UIViewController {
             if let error = error {
                 print("Error changing icon: \(error)")
             }
+            completion?()
         }
         
-        let tempVC = TempViewController()
-        tempVC.modalPresentationStyle = .overCurrentContext
+//        let tempVC = TempViewController()
+//        tempVC.modalPresentationStyle = .overCurrentContext
         
-        present(tempVC, animated: false, completion: {
-            tempVC.dismiss(animated: false, completion: {
-                if let completion = completion {
-                    completion()
-                }
-            })
-        })
+        
+//        present(tempVC, animated: false, completion: {
+//            tempVC.dismiss(animated: false, completion: {
+//                if let completion = completion {
+//                    completion()
+//                }
+//            })
+//        })
     }
 }
