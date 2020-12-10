@@ -150,17 +150,18 @@ extension UIViewController {
     func changeIcon(to name: String?, completion: (() -> Void)? = nil) {
         guard UIApplication.shared.supportsAlternateIcons else { return }
         
-        UIApplication.shared.setAlternateIconName(name) { (error) in
-            if let error = error {
-                print("Error changing icon: \(error)")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+            UIApplication.shared.setAlternateIconName(name) { (error) in
+                if let error = error {
+                    print("Error changing icon: \(error)")
+                }
+                completion?()
             }
-            completion?()
         }
         
 //        let tempVC = TempViewController()
 //        tempVC.modalPresentationStyle = .overCurrentContext
-        
-        
+//
 //        present(tempVC, animated: false, completion: {
 //            tempVC.dismiss(animated: false, completion: {
 //                if let completion = completion {
